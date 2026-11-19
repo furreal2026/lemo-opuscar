@@ -1,0 +1,45 @@
+{
+  "ratio": "9:16",
+  "fps": 30,
+  "language": "en",
+  "duration_s": [
+    60,
+    75
+  ],
+  "style": "midcentury-toon (lemo-opuscar)",
+  "hero": {
+    "hair": "short brown",
+    "gloves": "4-finger white"
+  },
+  "voice": {
+    "provider": "ElevenLabs",
+    "name": "Mike - Animation Explainers, Gaming",
+    "settings": {
+      "stability": 50,
+      "similarity": 75
+    },
+    "tone": "fast, clear, male, slightly high, not deep"
+  },
+  "captions": {
+    "color": "white",
+    "lines": 1,
+    "max_words": 3,
+    "height_fraction": 0.74
+  },
+  "music": {
+    "source": "lemo-opuscar audio library",
+    "default": "bgm-bossabossa",
+    "credit": "Kevin MacLeod, CC BY 4.0",
+    "duck_db": 8
+  },
+  "loudness": {
+    "target_lufs": -14,
+    "true_peak_dbtp": -1.2
+  },
+  "forbidden": [
+    "gemini image/tts services"
+  ],
+  "rejected": [
+    "code-drawn B4 look"
+  ]
+}
