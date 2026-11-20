@@ -3,7 +3,9 @@
  "en": "Colour Stick Explainer",
  "cn": "彩色火柴人讲解",
  "based_on": "stick-explainer",
- "borrows": [],
+ "borrows": [
+  "ipad-sketch"
+ ],
  "library_version": "00a7f9e",
  "created": "2026-11-20",
  "line": "Ink stick people in a flat-coloured world; one power colour for what changed.",

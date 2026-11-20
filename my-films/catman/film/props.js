@@ -25,6 +25,11 @@ function box(x,gy,w,h,{label=true}={}){
   poly([[x,bt],[x-w*.2,bt-h*.3],[x+w*.12,bt-h*.25],[x+w*.24,bt]],C.boxD);
   poly([[x+w,bt],[x+w*1.17,bt-h*.36],[x+w*.84,bt-h*.27],[x+w*.76,bt]],C.boxD);
   rect(x,bt,w,h,C.box);
+  // cardboard details: a crease under the flaps, corrugated edges, a stain, a stamp
+  line([[x+6,bt+h*.1],[x+w-6,bt+h*.1]],C.boxD,2.2);
+  for(let k=0;k<Math.floor(w/14);k++) ORIG.line([[x+8+k*14,bt+2],[x+12+k*14,bt+7]],C.boxD,1.6);
+  { g.save(); g.globalAlpha=.25; g.fillStyle=C.boxD; g.beginPath(); g.ellipse(x+w*.78,gy-h*.28,w*.07,h*.06,.3,0,Math.PI*2); g.fill(); g.restore(); }
+  g.save(); g.translate(x+w*.72,gy-h*.62); g.rotate(-.12); g.strokeStyle='rgba(200,60,40,.55)'; g.lineWidth=2.5; g.strokeRect(-w*.13,-12,w*.26,24); g.font=`600 ${Math.round(w*.045)}px Jost`; g.fillStyle='rgba(200,60,40,.6)'; g.textAlign='center'; g.fillText('FRAGILE',0,6); g.restore();
   rect(x+w*.42,bt,w*.16,h*.45,C2.tape,{lw:DL});
   dline([[x+w*.06,bt+10],[x+w*.06,gy-10]],C.boxD); dline([[x+w*.94,bt+10],[x+w*.94,gy-10]],C.boxD);
   if(label){ const lx=x+w*.12, ly=gy-h*.38; rect(lx,ly,w*.3,h*.24,C2.white,{lw:DL});
