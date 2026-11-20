@@ -1,5 +1,7 @@
 // Storyboard key frames for "What if you used 100% of your brain?" — ?scene=b01 … b18
 const SB = {};
+let BUZZ = 0, HIDE = 0, TT = 0;
+{ const s0 = subtitle, c0 = chapter, h0 = headline; subtitle = x => { if (!HIDE) s0(x); }; chapter = (a, b) => { if (!HIDE) c0(a, b); }; headline = (...a) => { if (!HIDE) h0(...a); }; }
 const GY = 880;
 
 // ---- B01 Hook: the impossible upgrade (bedroom, morning) ----
@@ -100,6 +102,7 @@ SB.b04 = () => {
   text('?', 1740, 470, { size: 70, w: 600, col: C.mute }); text('?', 1790, 430, { size: 50, w: 600, col: C.mute });
   // you
   desk(520); const j = brainy({ x: 520, gy: GY, S: 340 }, pose({ la: -.45, lb: -.9, ra: .45, rb: .9, head: .08 }), { spark: 1 });
+  deskPhone(600, 674, BUZZ);
   thought(110, 360, 320, 180, j.Hd[0] - 30, j.Hd[1] - 50, '#FFF6EA');
   poly([[170, 390], [270, 406], [270, 504], [170, 488]], C2.white, { lw: 4 }); poly([[270, 406], [370, 390], [370, 488], [270, 504]], C2.white, { lw: 4 });
   for (let k = 0; k < 5; k++) { dline([[182, 420 + k * 15], [258, 426 + k * 15]], C.ginger); dline([[282, 426 + k * 15], [358, 420 + k * 15]], C.ginger); }
@@ -461,5 +464,240 @@ SB.b18 = () => {
 };
 
 const QS3 = new URLSearchParams(location.search).get('scene') || 'b01';
-window.render = () => { g.setTransform(1, 0, 0, 1, 0, 0); paper(); (SB[QS3] || SB.b01)(); };
+window.render = (t = 0) => { TT = t; g.setTransform(1, 0, 0, 1, 0, 0); paper(); (SB[QS3] || SB.b01)(); };
 document.fonts.load(`600 40px ${EN}`).then(() => Promise.all([document.fonts.load(`500 40px ${EN}`), document.fonts.load(`400 40px ${EN}`)])).then(() => { window.render(0); window.READY = true; });
+
+// ======================= v2 storyboard: 15 more frames, camera moves and the notification zoom =======================
+// camera: draw a scene through a zoom/rotate about world point (cx, cy); text overlays (chapter, headline, subtitle) hidden
+function shot(fn, z, cx, cy, rot = 0, dx = 0, dy = 0) {
+  const c = Math.cos(rot) * z, sn = Math.sin(rot) * z;
+  HIDE = 1; g.setTransform(c, sn, -sn, c, W / 2 + dx - (c * cx - sn * cy), H / 2 + dy - (sn * cx + c * cy)); paper(); fn(); HIDE = 0; g.setTransform(1, 0, 0, 1, 0, 0);
+}
+// ink speed lines for a fast push (comic device; the style forbids zoom BLUR, not lines)
+function speedLines(cx, cy, k = 1, seed = 3, n = 46) {
+  const r = mulberry(seed);
+  for (let i = 0; i < n; i++) { const a = r() * Math.PI * 2, r0 = (330 + r() * 260) / Math.max(.4, k), r1 = r0 + (220 + r() * 520) * k;
+    ink([[cx + Math.cos(a) * r0, cy + Math.sin(a) * r0], [cx + Math.cos(a) * r1, cy + Math.sin(a) * r1]], { w: 3 + r() * 5, col: 'rgba(36,36,44,.5)', ta: .6, tb: .05, amp: .3 }); }
+}
+function buzz(x, y, k = 1, col = C.ink) { for (const sd of [-1, 1]) for (const m of [0, 1]) { const X = x + sd * (34 + m * 16) * k; ink([[X, y - 22 * k + m * 4], [X + sd * 6 * k, y], [X, y + 22 * k - m * 4]], { w: 3.4 * k, col }); } }
+function deskPhone(x, y, buzzing) {   // a phone propped on a desk, screen toward the viewer
+  withRot(x, y, buzzing ? .07 : 0, () => { rrect(x - 18, y - 56, 36, 58, 7, C.ink, { lw: 3 }); rect(x - 14, y - 51, 28, 44, buzzing ? '#FCE2C6' : '#CFE6F2', { lw: 0 }); if (buzzing) { circ(x - 5, y - 38, 5, C3.hair, { lw: 0 }); rrect(x - 11, y - 27, 22, 8, 4, C3.bubbleG, { lw: 0 }); } });
+  if (buzzing) { buzz(x, y - 28, .8); rrect(x + 30, y - 120, 150, 44, 22, C2.white, { lw: 3 }); circ(x + 52, y - 98, 11, C3.hair, { lw: 2 }); text('Her · 1 new', x + 70, y - 90, { size: 20, w: 600 }); }
+}
+// a phone filling the frame, over your shoulder: msgs = [[text, 'me'|'her', size?], …]
+function phoneFull(msgs, o = {}) {
+  wall(0, H, o.bg || '#E9E4DA');
+  if (o.ghost) alpha(.18, o.ghost);
+  const x = 760, y = 60, w = 600, h = 880;
+  withRot(x + w / 2, y + h / 2, o.rot ?? -.035, () => {
+    rrect(x, y, w, h, 70, C.ink, { lw: 6 }); rrect(x + 24, y + 24, w - 48, h - 48, 50, '#FBFAF6', { lw: 0 });
+    rrect(x + w / 2 - 70, y + 34, 140, 26, 13, '#111', { lw: 0 });
+    rect(x + 24, y + 70, w - 48, 110, '#F1EDE5', { lw: 0 }); ink([[x + 24, y + 180], [x + w - 24, y + 180]], { w: 2.4, col: C.tint });
+    // her avatar: hair cap + ponytail
+    circ(x + 100, y + 126, 36, C.paper, { lw: 4 }); shape(() => { g.arc(x + 100, y + 126, 37, Math.PI * 1.05, Math.PI * 1.95); g.closePath(); }, C3.hair, { lw: 3 }); circ(x + 140, y + 120, 12, C3.hair, { lw: 3 });
+    text('Her ❤', x + 156, y + 120, { size: 36, w: 600 }); text(o.status || 'online', x + 158, y + 156, { size: 22, w: 500, col: C.grass });
+    let yy = y + 230;
+    for (const [m, who, sz] of msgs) { const size = sz || 30; if (who === 'me') chat(x + w - 50, yy, m, { me: 1, right: 1, size }); else if (who === 'her') chat(x + 50, yy, m, { size, wt: size > 40 ? 600 : 500 }); else { text(m, x + w / 2, yy + 26, { size: 20, w: 500, col: C.mute, align: 'center' }); yy -= 30; } yy += size * 1.75 + 22; }
+    if (o.typing) { rrect(x + 50, yy, 110, 52, 26, C3.bubbleG, { lw: 4 }); for (const k of [0, 1, 2]) circ(x + 80 + k * 25, yy + 26, 6, C.mute, { lw: 0 }); }
+    rrect(x + 44, y + h - 100, w - 88, 64, 32, '#F1EDE5', { lw: 3 }); text('Message…', x + 74, y + h - 58, { size: 24, w: 500, col: C.mute });
+    if (o.read) text(o.read, x + w - 52, yy + (o.typing ? 90 : 10), { size: 20, w: 500, col: C.mute, align: 'right' });
+  });
+  // over the shoulder: your ginger head, cropped by the frame
+  const hx = o.hx ?? 1640, hy = o.hy ?? 1010, R = 300;
+  circ(hx, hy, R, o.red ? C.red : C.ginger, { lw: 0 }); brainFolds(hx, hy, R, -Math.PI / 2 - .3, o.red ? '#9E2A1C' : C.gingerD); circ(hx, hy, R, null, { lw: 9, col: C.ink });
+  if (o.sweat) sweat(hx - 250, hy - 300, 2.2);
+}
+
+// ---- B01z Hook → Ch 1: through the ginger head ----
+SB.b01z = () => { shot(SB.b01, 7.5, 1760, 545, .05); speedLines(W / 2, H / 2, 1.1, 7); label('Day one', 124, 150); text('Day one.', 118, 238, { size: 92, w: 600, track: -2 }); subtitle('Day one.'); };
+
+// ---- B04n / B04z / B05p: the notification zoom (Ch 1) ----
+SB.b04n = () => { BUZZ = 1; SB.b04(); BUZZ = 0; };
+SB.b04z = () => { BUZZ = 1; shot(SB.b04, 3.3, 610, 650, .045); BUZZ = 0; speedLines(W / 2 + 80, H / 2 + 60, .9, 11, 40); };
+SB.b05p = () => { phoneFull([['Sorry I forgot to say', 'me', 26], ['I love the new haircut!!', 'me', 26], ['Yesterday 9:58 PM', 'ts'], ['Fine.', 'her', 64]], { read: 'Read 9:41 AM', status: 'online' }); label('Chapter 1', 124, 150); subtitle('"Fine." Just one word.'); };
+
+// ---- B05c: the crash beat ----
+SB.b05c = () => {
+  wall(0, GY, '#E5EEF0');
+  const j = brainy({ x: 760, gy: GY, S: 400 }, pose({ lean: -.08, head: .55, la: -.15, lb: .05, ra: .35, rb: .9, hy: .03, bend: .05 }), { red: 1 });
+  const h = j.aR[1]; rrect(h[0] - 14, h[1] - 40, 30, 50, 6, C.ink, { lw: 0 });
+  bubble(820, 360, 300, 90, 'Whatever.', { tx: h[0] + 10, ty: h[1] - 50, size: 38, wt: 600 });
+  for (const [x, y, a] of [[640, 420, -.3], [700, 380, 0], [770, 400, .4]]) withRot(x, y, a, () => line([[x, y], [x + 4, y - 40]], C.red, 7));
+  errorCard(1180, 380, 560, 230, 'BRAIN CRASHED', 'Not responding… restarting');
+  ground(GY, -20, W + 20);
+  chapter(1, 'Perfect memory'); headline('Your brain', 'crashes.', C.red, 238, 84);
+  subtitle('You still need a PhD in girlfriend communication.');
+};
+
+// ---- B06z: top-down chess, twelve moves ahead ----
+SB.b06z = () => {
+  wall(0, H, '#EEE6F4');
+  const bx = 820, by = 120, s = 96;
+  rect(bx - 30, by - 30, s * 8 + 60, s * 8 + 60, C2.wood);
+  for (let r = 0; r < 8; r++) for (let c = 0; c < 8; c++) rect(bx + c * s, by + r * s, s, s, (r + c) % 2 ? '#8A6B4E' : '#EFE2C8', { lw: 0 });
+  ink([[bx, by], [bx + 8 * s, by], [bx + 8 * s, by + 8 * s], [bx, by + 8 * s], [bx, by]], { w: 4, sharp: true });
+  const pc = (c, r, white, L) => { const x = bx + (c + .5) * s, y = by + (r + .5) * s; circ(x, y, 34, white ? '#FBFAF6' : '#3A3530', { lw: 4 }); circ(x, y, 22, null, { lw: 2.4, col: white ? '#9C978C' : '#77706A' }); text(L, x, y + 11, { size: 30, w: 600, align: 'center', col: white ? C.ink : C.paper }); };
+  for (const [c, r, L] of [[4, 0, '♚'], [3, 0, '♛'], [0, 1, '♟'], [5, 1, '♟'], [6, 2, '♞'], [2, 2, '♝']]) pc(c, r, 0, L);
+  for (const [c, r, L] of [[4, 7, '♔'], [1, 6, '♙'], [4, 4, '♙'], [3, 6, '♙'], [5, 5, '♘'], [6, 7, '♖']]) pc(c, r, 1, L);
+  // the path of 12 moves, numbered
+  const path = [[4, 4], [5, 5], [4, 3], [6, 4], [5, 2], [7, 3], [6, 1], [4, 2], [3, 1], [5, 1], [4, 1], [4, 0]];
+  for (let i = 0; i < path.length - 1; i++) { const a = path[i], b = path[i + 1]; line([[bx + (a[0] + .5) * s, by + (a[1] + .5) * s], [bx + (b[0] + .5) * s, by + (b[1] + .5) * s]], C.ginger, 5, [2, 12]); }
+  path.forEach(([c, r], i) => { if (i === 0) return; const x = bx + (c + .5) * s + 26, y = by + (r + .5) * s - 26; circ(x, y, 17, C.ginger, { lw: 3 }); text(String(i), x, y + 7, { size: 18, w: 600, align: 'center' }); });
+  // the opponent's hand, sweating, above the pawn
+  ink([[bx + 4.5 * s + 160, by + 4 * s - 200], [bx + 4.5 * s + 40, by + 4.5 * s - 30]], { w: 9 }); sweat(bx + 4.5 * s + 120, by + 3 * s, 1);
+  chapter(2, 'Super processing speed'); text('12 moves', 118, 238, { size: 84, w: 600, track: -2, col: C.ginger }); text('ahead.', 118, 329, { size: 84, w: 600, track: -2 });
+  text('Before he touches', 122, 420, { size: 34, w: 500, col: C.mute }); text('a piece.', 122, 462, { size: 34, w: 500, col: C.mute });
+  subtitle('You predict your opponent\'s mistakes before they happen.');
+};
+
+// ---- B09a Ch 3: a computer is not a spaceship ----
+SB.b09a = () => {
+  wall(0, GY, '#E8EEF2');
+  // desk + laptop with a ginger glow
+  rect(300, 690, 620, 22, C2.woodL); rect(320, 712, 18, GY - 712, C2.wood); rect(880, 712, 18, GY - 712, C2.wood);
+  poly([[480, 690], [760, 690], [790, 676], [450, 676]], C2.chrome); poly([[490, 676], [500, 500], [740, 500], [750, 676]], C.ink);
+  poly([[510, 664], [518, 516], [722, 516], [730, 664]], '#FCE2C6', { lw: 0 }); text('100%', 620, 600, { size: 40, w: 600, col: C.ginger, align: 'center' });
+  brainy({ x: 230, gy: GY, S: 380 }, pose({ la: -.5, lb: .2, ra: 1.3, rb: .3, head: .15 }), { spark: 1 });
+  // a blueprint of a rocket with question marks
+  rect(1100, 220, 640, 480, '#3F6FA8'); g.save(); g.globalAlpha = .35; for (let x = 1120; x < 1740; x += 32) ORIG.line([[x, 230], [x, 690]], '#FFFFFF', 1); for (let y = 240; y < 700; y += 32) ORIG.line([[1110, y], [1730, y]], '#FFFFFF', 1); g.restore();
+  const R = (P) => ink(P, { w: 3.4, col: '#FFFFFF', amp: .4 });
+  R([[1420, 260], [1470, 340], [1470, 560], [1370, 560], [1370, 340], [1420, 260]]); R([[1370, 500], [1320, 590], [1370, 560]]); R([[1470, 500], [1520, 590], [1470, 560]]); circ(1420, 400, 28, null, { lw: 3.4, col: '#FFFFFF' });
+  for (const [x, y, sz] of [[1240, 360, 64], [1600, 330, 52], [1580, 520, 72], [1250, 560, 44]]) text('?', x, y, { size: sz, w: 600, col: '#FFFFFF', align: 'center' });
+  label('Rocket v0.1  ·  no idea', 1120, 740);
+  ground(GY, -20, W + 20);
+  chapter(3, 'The Einstein question'); headline('A fast computer', 'is not a spaceship.', C.ginger, 238, 76);
+  subtitle('You still need knowledge, experience, and practice.');
+};
+
+// ---- B10z Ch 4: slow-mo close-up, a few centimetres ----
+SB.b10z = () => {
+  rect(-20, 0, W + 40, H, C3.field, { lw: 0 }); rect(-20, 0, W + 40, 400, '#D9E7EF', { lw: 0 }); dline([[-20, 400], [W + 20, 400]]);
+  const hx = 760, hy = 600, R = 230;
+  line([[hx - 20, hy + R], [hx - 60, H + 40]], C.ink, 30);
+  circ(hx, hy, R, C.ginger, { lw: 0 }); brainFolds(hx, hy, R, -Math.PI / 2 - .35, C.gingerD); circ(hx, hy, R, null, { lw: 12, col: C.ink });
+  const bx = hx + R + 250, by = hy - 90, br = 120;
+  for (let k = 0; k < 5; k++) line([[bx + br + 40 + k * 70, by - 60 + k * 30], [bx + br + 140 + k * 70, by - 60 + k * 30]], C.mute, 5);
+  circ(bx, by, br, '#FFFFFF', { lw: 8 }); poly([[bx - 30, by - 36], [bx + 30, by - 36], [bx + 44, by + 14], [bx, by + 46], [bx - 44, by + 14]], C.ink, { lw: 0 });
+  for (const a of [-2.4, -1.2, 0, 1.2, 2.4]) line([[bx + Math.cos(a) * 52, by + Math.sin(a) * 52], [bx + Math.cos(a) * br, by + Math.sin(a) * br]], C.ink, 4);
+  // the gap
+  const gx0 = hx + R * Math.cos(-.5) + 6, gx1 = bx - br * Math.cos(.25) - 6, gy0 = by + 30;
+  line([[gx0, gy0], [gx1, gy0]], C.ginger, 5); for (const x of [gx0, gx1]) line([[x, gy0 - 18], [x, gy0 + 18]], C.ginger, 5); text('3 cm', (gx0 + gx1) / 2, gy0 - 26, { size: 44, w: 600, col: C.ginger, align: 'center' });
+  label('Slow motion  ·  ×20', 1500, 860, { col: C.ink });
+  chapter(4, 'The athlete brain'); headline('A few', 'centimetres.', C.ginger, 238, 84);
+  subtitle('You move your head. The ball misses by a few centimetres.');
+};
+
+// ---- B12q Ch 4: the question, pushed in ----
+SB.b12q = () => {
+  wall(0, H, '#F3E3E6');
+  const gyy = 1300;
+  brainy({ x: 1180, gy: gyy, S: 760 }, pose({ la: -.4, lb: .2, ra: .4, rb: -.2, head: .1 }), { spark: 1 });
+  gf({ x: 1700, gy: gyy, S: 740, face: -1 }, pose({ la: .9, lb: -1.7, ra: -.9, rb: 1.7, head: -.05 }));
+  bubble(1240, 140, 560, 120, ['Do you remember', 'what day today is?'], { tx: 1600, ty: 330, size: 36 });
+  rrect(170, 300, 330, 110, 16, C2.white, { lw: 4 }); label('Calendar scan', 196, 340); text('0.004 s', 196, 392, { size: 46, w: 600, col: C.ginger });
+  subtitle('She suddenly asks: "Do you remember what day today is?"');
+};
+
+// ---- B14n Ch 5: "Nothing's wrong." — the analysis overlay ----
+SB.b14n = () => {
+  wall(0, GY, '#EAE5F2'); windowW(1500, 200, 260, 220, C.sky); plant(1360, GY, 150);
+  const gj = gf({ x: 1220, gy: GY, S: 470, face: -1 }, pose({ la: .9, lb: -1.7, ra: -.9, rb: 1.7, head: -.12 }));
+  // analysis boxes (ginger, dashed)
+  const box = (x, y, w, h, t, v) => { g.save(); g.strokeStyle = C.ginger; g.lineWidth = 4; g.setLineDash([12, 10]); g.strokeRect(x, y, w, h); g.restore(); label(t, x, y - 12, { col: C.ginger }); if (v) text(v, x + w + 14, y + 30, { size: 24, w: 600 }); };
+  box(gj.Hd[0] - 70, gj.Hd[1] - 70, 140, 140, 'Face', 'neutral?');
+  box(gj.N[0] - 95, gj.N[1] + 30, 190, 150, 'Arms', 'crossed');
+  label('Tone: flat  ·  Reply delay: 4 s', gj.Hp[0] - 150, GY + 40, { col: C.ginger });
+  bubble(800, 330, 330, 90, 'Nothing\'s wrong.', { tx: gj.Hd[0] - 60, ty: gj.Hd[1] - 10, size: 34, wt: 600 });
+  brainy({ x: 600, gy: GY, S: 390 }, pose({ la: -.5, lb: .2, ra: 1.2, rb: 1.8, head: .08 }), { spark: 1 });
+  rrect(124, 430, 300, 150, 16, C2.white, { lw: 4 }); label('Emotional database', 146, 470); text('4,812', 146, 530, { size: 50, w: 600, col: C.ginger }); text('patterns', 300, 530, { size: 24, w: 500, col: C.mute });
+  ground(GY, -20, W + 20);
+  chapter(5, 'Learning at super speed'); headline('The language of', 'relationships.', C.ginger, 238, 76);
+  subtitle('"Based on your tone and previous behaviour, something is wrong."');
+};
+
+// ---- B16p / B16r Ch 6: "Can we talk?" on the phone, then the reveal ----
+SB.b16p = () => { phoneFull([['ok see you tonight', 'her', 26], ['Today 11:02 AM', 'ts'], ['Can we talk?', 'her', 56]], { typing: 1, sweat: 1, status: 'typing…' }); label('Chapter 6', 124, 150); subtitle('Meanwhile, your girlfriend sends another message.'); };
+SB.b16r = () => {
+  phoneFull([['Can we talk?', 'her', 30], ['sure what\'s up?', 'me', 30], ['Why did you like', 'her', 40], ['her picture?', 'her', 40]], { red: 1, status: 'online' });
+  // the liked picture: a small photo card with a red heart
+  const x = 1390, y = 400; withRot(x + 150, y + 170, .06, () => { rect(x, y, 300, 340, C2.white); rect(x + 18, y + 18, 264, 230, C.sky, { lw: DL }); circ(x + 150, y + 140, 50, C.wall, { lw: DL }); poly([[x + 18, y + 248], [x + 100, y + 180], [x + 180, y + 248]], C.grass, { lw: DL });
+    text('❤', x + 40, y + 300, { size: 40, w: 400, col: C.red }); text('liked by you', x + 90, y + 296, { size: 22, w: 500, col: C.mute }); });
+  label('Chapter 6', 124, 150); subtitle('"Why did you like her Instagram picture?"');
+};
+
+// ---- B17m Ch 7: the emergency meeting inside your head ----
+SB.b17m = () => {
+  const cx = 1040, cy = 520, R = 390;
+  circ(cx, cy, R, '#FCE2C6', { lw: 9 }); g.save(); g.beginPath(); g.arc(cx, cy, R - 6, 0, Math.PI * 2); g.clip();
+  rect(cx - R, cy + 170, 2 * R, 300, '#F6C796', { lw: 0 }); dline([[cx - R, cy + 170], [cx + R, cy + 170]]);
+  // projector screen + whiteboard
+  rect(cx - 300, cy - 290, 300, 180, C2.white); text('ARGUMENTS', cx - 150, cy - 230, { size: 26, w: 600, align: 'center' }); text('2021 → 2026', cx - 150, cy - 190, { size: 24, w: 500, col: C.mute, align: 'center' }); ink([[cx - 260, cy - 150], [cx - 40, cy - 150]], { w: 3, col: C.red });
+  rect(cx + 40, cy - 290, 260, 180, C2.white); text('17 DISASTER', cx + 170, cy - 230, { size: 24, w: 600, align: 'center', col: C.red }); text('SCENARIOS', cx + 170, cy - 196, { size: 24, w: 600, align: 'center', col: C.red }); for (let k = 0; k < 3; k++) ink([[cx + 70, cy - 170 + k * 18 - 10], [cx + 270, cy - 170 + k * 18 - 10]], { w: 2, col: C.mute });
+  // the meeting table and the panicking neurons
+  shape(() => g.ellipse(cx, cy + 120, 300, 46, 0, 0, Math.PI * 2), C2.woodL);
+  const P = [[cx - 260, 1, -2.4, 2.4], [cx - 150, 1, -2.2, .4], [cx - 40, -1, -2.5, 2.5], [cx + 70, 1, -.4, 2.3], [cx + 180, -1, -2.4, 2.4], [cx + 280, -1, -1.6, 1.6]];
+  for (const [x, f, la, ra] of P) plain({ x, gy: cy + 170, S: 200, face: f }, pose({ la, lb: -.3, ra, rb: .3, head: .15 * f }));
+  shape(() => g.ellipse(cx, cy + 150, 300, 30, 0, 0, Math.PI), C2.wood);
+  g.restore();
+  // alarm light on top of the head
+  shape(() => { g.arc(cx, cy - R + 4, 54, Math.PI, 0); g.closePath(); }, C.red, { lw: 5 }); for (const a of [-2.6, -2.0, -1.57, -1.1, -.5]) line([[cx + Math.cos(a) * 76, cy - R + Math.sin(a) * 76], [cx + Math.cos(a) * 110, cy - R + Math.sin(a) * 110]], C.red, 6);
+  bubble(1480, 300, 320, 90, 'We need to talk.', { tx: 1420, ty: 470, size: 32, wt: 600 });
+  chapter(7, 'Every neuron at once?'); text('All neurons working.', 118, 238, { size: 64, w: 600, track: -2 }); text('No solution.', 118, 312, { size: 64, w: 600, track: -2, col: C.red });
+  subtitle('Your entire brain becomes one giant emergency meeting.');
+};
+
+// ---- B18a Ending: the callback line-up ----
+SB.b18a = () => {
+  const gy = 800;
+  const xs = [260, 470, 660, 860, 1060, 1260, 1450, 1650];
+  // book stack, chess king, mini chalkboard, football, sushi + wasabi, energy can, violin, phone
+  for (let k = 0; k < 3; k++) rect(xs[0] - 70 + k * 6, gy - 40 - k * 40, 140, 40, [C.sky, C.roof, C.wall][k]);
+  poly([[xs[1] - 36, gy], [xs[1] - 24, gy - 150], [xs[1] + 24, gy - 150], [xs[1] + 36, gy]], '#3A3530'); rect(xs[1] - 30, gy - 175, 60, 25, '#3A3530'); line([[xs[1], gy - 215], [xs[1], gy - 175]], C.ink, 8); line([[xs[1] - 16, gy - 198], [xs[1] + 16, gy - 198]], C.ink, 8);
+  rect(xs[2] - 90, gy - 170, 180, 130, C2.wood); rect(xs[2] - 78, gy - 158, 156, 106, C3.board, { lw: DL }); text('E=mc²', xs[2], gy - 92, { size: 32, w: 500, col: C3.chalk, align: 'center' }); line([[xs[2] - 60, gy - 40], [xs[2] - 80, gy]], C.ink, 6); line([[xs[2] + 60, gy - 40], [xs[2] + 80, gy]], C.ink, 6);
+  circ(xs[3], gy - 60, 60, '#FFFFFF', { lw: 6 }); poly([[xs[3] - 16, gy - 80], [xs[3] + 16, gy - 80], [xs[3] + 24, gy - 54], [xs[3], gy - 36], [xs[3] - 24, gy - 54]], C.ink, { lw: 0 });
+  shape(() => g.ellipse(xs[4], gy - 14, 100, 16, 0, 0, Math.PI * 2), C2.white, { lw: 4 }); rrect(xs[4] - 70, gy - 52, 70, 32, 10, C3.rice, { lw: 3 }); rrect(xs[4] - 74, gy - 62, 78, 20, 9, C3.salmon, { lw: 3 }); fillC([[xs[4] + 20, gy - 20], [xs[4] + 30, gy - 50], [xs[4] + 55, gy - 52], [xs[4] + 70, gy - 20]], C3.wasabi); ink([[xs[4] + 20, gy - 20], [xs[4] + 30, gy - 50], [xs[4] + 55, gy - 52], [xs[4] + 70, gy - 20]], { w: 3.4 });
+  rrect(xs[5] - 30, gy - 130, 60, 130, 10, '#7FC3B8', { lw: 4 }); rect(xs[5] - 30, gy - 85, 60, 36, C.ink, { lw: 0 }); text('⚡', xs[5], gy - 57, { size: 28, w: 600, col: C.wall, align: 'center' });
+  withRot(xs[6], gy - 90, -.5, () => { shape(() => g.ellipse(xs[6], gy - 70, 46, 70, 0, 0, Math.PI * 2), '#B9652F', { lw: 5 }); line([[xs[6], gy - 140], [xs[6], gy - 250]], C.ink, 10); });
+  phone(xs[7] - 40, gy - 150, 80, 150, { screen: '#FCE2C6' }); text('Fine.', xs[7], gy - 70, { size: 22, w: 600, align: 'center' });
+  ['memory', 'speed', 'knowledge', 'reflexes', 'learning', 'energy', 'timing', 'the boss'].forEach((s, i) => label(s, xs[i] - 40, gy + 44, { col: i === 7 ? C.red : C.mute }));
+  ground(gy, 124, 1796);
+  brainy({ x: 1820, gy, S: 300, face: -1, prof: true }, Object.assign(pose({}), walkPose(.6)));
+  headline('Intelligence isn\'t', 'a percentage.', C.ginger, 238, 84);
+  label('Ending  ·  The final boss', 124, 150);
+  subtitle('Memory, learning, reasoning, creativity, experience.');
+};
+function walkPose(ph) { const p = rest(), A = .07; p.lfx = A * Math.sin(ph); p.rfx = -A * Math.sin(ph); p.lfy = .045 * Math.max(0, Math.cos(ph)); p.la = -.7 * Math.sin(ph) - .3; p.lb = .5; p.ra = .7 * Math.sin(ph) + .3; p.rb = -.5; p.lean = .06; return p; }
+
+// ---- B18e End card: they finally hold hands, see you in the next experiment ----
+SB.b18e = () => {
+  rect(-20, 0, W + 40, GY, '#2E3556', { lw: 0 }); for (const [x, y] of [[300, 140], [700, 220], [1100, 120], [1500, 180], [1800, 260], [520, 330]]) circ(x, y, 3, '#F4F1E6', { lw: 0 });
+  rect(1240, 330, 520, GY - 330, '#F1E4CC'); rect(1240, 330, 520, 90, C.pink); text('TACOS', 1500, 392, { size: 44, w: 600, align: 'center', track: 4 });
+  rect(1290, 470, 220, 220, '#FBE7A1'); rect(1560, 500, 140, GY - 500, '#B97C47'); rrect(1580, 540, 100, 40, 8, C2.white, { lw: 3 }); text('OPEN', 1630, 568, { size: 22, w: 600, align: 'center', col: C.grass });
+  rect(-20, GY, W + 40, 200, '#BDB6A8', { lw: 0 });
+  // the couple, holding hands (one curve through the clasp)
+  const A = brainy({ x: 900, gy: GY, S: 360 }, pose({ ra: .95, rb: -.35, la: -.4, lb: .2, head: .2 }));
+  const B = gf({ x: 1080, gy: GY, S: 350, face: -1 }, pose({ la: -.95, lb: .35, ra: .4, rb: -.2, head: -.15 }));
+  const cl = [(A.aR[1][0] + B.aL[1][0]) / 2, (A.aR[1][1] + B.aL[1][1]) / 2]; circ(cl[0], cl[1], 7, C.ink, { lw: 0 });
+  text('♥', 990, 470, { size: 44, w: 400, col: C.pink, align: 'center' });
+  ground(GY, -20, W + 20);
+  text('See you in the next', 118, 238, { size: 84, w: 600, track: -2, col: C.paper }); text('experiment!', 118, 329, { size: 84, w: 600, track: -2, col: C.ginger });
+  label('Curious Mind', 124, 150, { col: '#BFC4D8' });
+  subtitle('See you in the next experiment!');
+};
+
+// ---- TZ: the notification zoom as motion (t in seconds, 0 → 2.4) ----
+// 0.0–0.5 wide, phone buzzes · 0.5–0.85 fast spring push to the phone with speed lines · 0.85 cut on the buzz · phone screen settles with a small overshoot
+SB.tz = () => {
+  const t = TT, push = t < .5 ? 0 : 1 - Math.pow(1 - clamp((t - .5) / .35), 3);
+  if (t < .85) {
+    BUZZ = t > .18 ? 1 : 0;
+    const z = lerp(1, 3.3, push), cx = lerp(960, 610, push), cy = lerp(540, 650, push), rot = lerp(0, .045, push);
+    if (push > 0) { shot(SB.b04, z, cx, cy, rot); speedLines(W / 2 + 80 * push, H / 2 + 60 * push, .4 + push * .7, 11 + Math.floor(t * 30), 40); }
+    else { SB.b04(); }
+    BUZZ = 0;
+  } else {
+    const u = t - .85, s = 1 + .08 * Math.exp(-7 * u) * Math.cos(16 * u);
+    g.save(); g.translate(W / 2, H / 2); g.scale(s, s); g.rotate(-.02 * Math.exp(-6 * u)); g.translate(-W / 2, -H / 2);
+    SB.b05p(); g.restore();
+  }
+};
