@@ -1,0 +1,5 @@
+Colour Stick Explainer: demo source
+
+- Figure rig, springs, paper and text helpers copied from Lemo-Opuscar styles/stick-explainer/demo/index.html (MIT licence, see the library's LICENSE).
+- Font: Jost (SIL Open Font License 1.1), downloaded by build.sh from github.com/google/fonts.
+- All props, scenes and the Meow Man character are drawn in code (index.html, scenes2.js).
