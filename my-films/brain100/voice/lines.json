@@ -373,7 +373,7 @@
   "sub": "Next, your thinking speed.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2a"
  },
  {
   "id": "p048",
@@ -381,7 +381,7 @@
   "sub": "Your brain processes enormous amounts of information every second, but conscious thinking and decision-making have their own limitations.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2a"
  },
  {
   "id": "p049",
@@ -389,7 +389,7 @@
   "sub": "Now imagine your brain becoming incredibly efficient at recognizing patterns and connecting information.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2a"
  },
  {
   "id": "p050",
@@ -397,7 +397,7 @@
   "sub": "Let's test this with chess.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2b"
  },
  {
   "id": "p051",
@@ -405,7 +405,7 @@
   "sub": "An ordinary player looks at the board and considers a few possible moves.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2b"
  },
  {
   "id": "p052",
@@ -413,7 +413,7 @@
   "sub": "A professional chess player can recognize familiar patterns and anticipate several possible responses.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2b"
  },
  {
   "id": "p053",
@@ -421,7 +421,7 @@
   "sub": "But with your upgraded brain?",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2b"
  },
  {
   "id": "p054",
@@ -429,7 +429,7 @@
   "sub": "You examine the board, calculate possible strategies, and predict your opponent's mistakes before they even touch a piece.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2b"
  },
  {
   "id": "p055",
@@ -437,7 +437,7 @@
   "sub": "Your opponent moves a pawn.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter2"
+  "scene": "c2c"
  },
  {
   "id": "p056",
@@ -445,7 +445,7 @@
   "sub": "You smile.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter2"
+  "scene": "c2c"
  },
  {
   "id": "p057",
@@ -453,7 +453,7 @@
   "sub": "Checkmate in twelve moves.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2c"
  },
  {
   "id": "p058",
@@ -461,7 +461,7 @@
   "sub": "He starts sweating.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2c"
  },
  {
   "id": "p059",
@@ -469,7 +469,7 @@
   "sub": "Then he asks for a rematch.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2d"
  },
  {
   "id": "p060",
@@ -477,7 +477,7 @@
   "sub": "You calculate another twelve moves.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2d"
  },
  {
   "id": "p061",
@@ -485,7 +485,7 @@
   "sub": "He starts questioning his career choices.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2d"
  },
  {
   "id": "p062",
@@ -493,7 +493,7 @@
   "sub": "At this point, even a chess computer might need a coffee break.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2d"
  },
  {
   "id": "p063",
@@ -501,7 +501,7 @@
   "sub": "Feeling unstoppable, you decide to test your processing speed on something even harder.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2e"
  },
  {
   "id": "p064",
@@ -509,7 +509,7 @@
   "sub": "Your girlfriend asks:",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2e"
  },
  {
   "id": "p065",
@@ -517,7 +517,7 @@
   "sub": "\"Do you think I look fat in this dress?\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2e"
  },
  {
   "id": "p066",
@@ -525,7 +525,7 @@
   "sub": "Your brain immediately activates every available processor.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2e"
  },
  {
   "id": "p067",
@@ -533,7 +533,7 @@
   "sub": "You calculate her facial expression, the dress design, previous conversations, emotional context, and the possible consequences of every answer.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2e"
  },
  {
   "id": "p068",
@@ -541,7 +541,7 @@
   "sub": "Option A: Tell the truth.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2f"
  },
  {
   "id": "p069",
@@ -549,7 +549,7 @@
   "sub": "Option B: Say she looks beautiful.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2f"
  },
  {
   "id": "p070",
@@ -557,7 +557,7 @@
   "sub": "Option C: Pretend you didn't hear the question.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2f"
  },
  {
   "id": "p071",
@@ -565,7 +565,7 @@
   "sub": "Your brain simulates ten million possible outcomes.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2f"
  },
  {
   "id": "p072",
@@ -573,7 +573,7 @@
   "sub": "And finally, it chooses option B.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2f"
  },
  {
   "id": "p073",
@@ -581,7 +581,7 @@
   "sub": "\"You look beautiful.\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2f"
  },
  {
   "id": "p074",
@@ -589,7 +589,7 @@
   "sub": "She responds:",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter2"
+  "scene": "c2f"
  },
  {
   "id": "p075",
@@ -597,7 +597,7 @@
   "sub": "\"So you're saying I looked ugly yesterday?\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2f"
  },
  {
   "id": "p076",
@@ -605,7 +605,7 @@
   "sub": "System error.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter2"
+  "scene": "c2f"
  },
  {
   "id": "p077",
@@ -613,7 +613,7 @@
   "sub": "No solution found.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter2"
+  "scene": "c2f"
  },
  {
   "id": "p078",
@@ -621,7 +621,7 @@
   "sub": "But how smart could you actually become?",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3a"
  },
  {
   "id": "p079",
@@ -629,7 +629,7 @@
   "sub": "Let's talk about Albert Einstein.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3a"
  },
  {
   "id": "p080",
@@ -637,7 +637,7 @@
   "sub": "Einstein is famous for developing the theory of relativity, which completely changed how scientists understand space and time.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3a"
  },
  {
   "id": "p081",
@@ -645,7 +645,7 @@
   "sub": "But here's the interesting part.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3a"
  },
  {
   "id": "p082",
@@ -653,7 +653,7 @@
   "sub": "There is no scientific evidence that Einstein used only a certain percentage of his brain.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3a"
  },
  {
   "id": "p083",
@@ -661,7 +661,7 @@
   "sub": "His intelligence wasn't caused by unlocking a secret brain region.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3a"
  },
  {
   "id": "p084",
@@ -669,7 +669,7 @@
   "sub": "It involved extraordinary mathematical thinking, imagination, curiosity, and years of scientific work.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3a"
  },
  {
   "id": "p085",
@@ -677,7 +677,7 @@
   "sub": "So, if you had an optimized brain, would you automatically become Einstein?",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3b"
  },
  {
   "id": "p086",
@@ -685,7 +685,7 @@
   "sub": "Not necessarily.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter3"
+  "scene": "c3b"
  },
  {
   "id": "p087",
@@ -693,7 +693,7 @@
   "sub": "Having a powerful computer doesn't mean you automatically know how to build a spaceship.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3b"
  },
  {
   "id": "p088",
@@ -701,7 +701,7 @@
   "sub": "You still need knowledge, experience, and practice.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3b"
  },
  {
   "id": "p089",
@@ -709,7 +709,7 @@
   "sub": "Although, at least now you could understand why your computer keeps crashing.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3b"
  },
  {
   "id": "p090",
@@ -717,7 +717,7 @@
   "sub": "But imagine Einstein had your upgraded brain.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3c"
  },
  {
   "id": "p091",
@@ -725,7 +725,7 @@
   "sub": "He could spend years calculating the mysteries of the universe.",
   "voice": "am_puck",
   "speed": 1.1,
-  "scene": "chapter3"
+  "scene": "c3c"
  },
  {
   "id": "p092",
@@ -733,7 +733,7 @@
   "sub": "Developing complicated equations.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3c"
  },
  {
   "id": "p093",
@@ -741,7 +741,7 @@
   "sub": "Understanding the nature of time and space.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3c"
  },
  {
   "id": "p094",
@@ -749,7 +749,7 @@
   "sub": "And then his girlfriend walks into the room.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3c"
  },
  {
   "id": "p095",
@@ -757,7 +757,7 @@
   "sub": "\"Baby, what are you thinking about?\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3c"
  },
  {
   "id": "p096",
@@ -765,7 +765,7 @@
   "sub": "\"The curvature of spacetime.\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3c"
  },
  {
   "id": "p097",
@@ -773,7 +773,7 @@
   "sub": "\"Okay. So you're not thinking about me?\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3c"
  },
  {
   "id": "p098",
@@ -781,7 +781,7 @@
   "sub": "Einstein might have understood the universe.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3c"
  },
  {
   "id": "p099",
@@ -789,7 +789,7 @@
   "sub": "But explaining why he didn't text back for three hours?",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3c"
  },
  {
   "id": "p100",
@@ -797,7 +797,7 @@
   "sub": "That's a different theory of relativity.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter3"
+  "scene": "c3c"
  },
  {
   "id": "p101",
@@ -805,7 +805,7 @@
   "sub": "Now let's move from laboratories to the sports field.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4a"
  },
  {
   "id": "p102",
@@ -813,7 +813,7 @@
   "sub": "Imagine becoming a professional athlete.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4a"
  },
  {
   "id": "p103",
@@ -821,7 +821,7 @@
   "sub": "Do Olympic athletes use one hundred and fifty percent of their brains?",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4a"
  },
  {
   "id": "p104",
@@ -829,7 +829,7 @@
   "sub": "Of course not.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4a"
  },
  {
   "id": "p105",
@@ -837,7 +837,7 @@
   "sub": "There is no special brain-power percentage for professional athletes.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4a"
  },
  {
   "id": "p106",
@@ -845,7 +845,7 @@
   "sub": "Their advantage comes from years of training that improve coordination, timing, reaction, and decision-making.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4a"
  },
  {
   "id": "p107",
@@ -853,7 +853,7 @@
   "sub": "Take a professional goalkeeper.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4b"
  },
  {
   "id": "p108",
@@ -861,7 +861,7 @@
   "sub": "When a striker prepares to kick a football, the goalkeeper doesn't simply wait for the ball to arrive.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4b"
  },
  {
   "id": "p109",
@@ -869,7 +869,7 @@
   "sub": "Their brain uses visual information, body position, movement, and experience to anticipate where the ball might go.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4b"
  },
  {
   "id": "p110",
@@ -877,7 +877,7 @@
   "sub": "Now imagine your brain processing those patterns much more efficiently.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4b"
  },
  {
   "id": "p111",
@@ -885,7 +885,7 @@
   "sub": "A football flies toward your face.",
   "voice": "am_puck",
   "speed": 1.1,
-  "scene": "chapter4"
+  "scene": "c4c"
  },
  {
   "id": "p112",
@@ -893,7 +893,7 @@
   "sub": "You move your head.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4c"
  },
  {
   "id": "p113",
@@ -901,7 +901,7 @@
   "sub": "The ball misses by a few centimeters.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4c"
  },
  {
   "id": "p114",
@@ -909,7 +909,7 @@
   "sub": "You catch it with one hand.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4d"
  },
  {
   "id": "p115",
@@ -917,7 +917,7 @@
   "sub": "Your friends are shocked.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4d"
  },
  {
   "id": "p116",
@@ -925,7 +925,7 @@
   "sub": "You look at them and say…",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4d"
  },
  {
   "id": "p117",
@@ -933,7 +933,7 @@
   "sub": "\"That was calculated.\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4d"
  },
  {
   "id": "p118",
@@ -941,7 +941,7 @@
   "sub": "Then someone throws a pillow at you.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4d"
  },
  {
   "id": "p119",
@@ -949,7 +949,7 @@
   "sub": "You dodge it.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4d"
  },
  {
   "id": "p120",
@@ -957,7 +957,7 @@
   "sub": "Someone throws another.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4d"
  },
  {
   "id": "p121",
@@ -965,7 +965,7 @@
   "sub": "You dodge that too.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4d"
  },
  {
   "id": "p122",
@@ -973,7 +973,7 @@
   "sub": "Suddenly, your entire family is testing your reflexes.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4d"
  },
  {
   "id": "p123",
@@ -981,7 +981,7 @@
   "sub": "Congratulations.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter4"
+  "scene": "c4d"
  },
  {
   "id": "p124",
@@ -989,7 +989,7 @@
   "sub": "You've become the household goalkeeper.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4d"
  },
  {
   "id": "p125",
@@ -997,7 +997,7 @@
   "sub": "But your girlfriend decides to test your reflexes too.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4e"
  },
  {
   "id": "p126",
@@ -1005,7 +1005,7 @@
   "sub": "She suddenly asks:",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4e"
  },
  {
   "id": "p127",
@@ -1013,7 +1013,7 @@
   "sub": "\"Do you remember what day today is?\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4e"
  },
  {
   "id": "p128",
@@ -1021,7 +1021,7 @@
   "sub": "Your brain scans the calendar.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p129",
@@ -1029,7 +1029,7 @@
   "sub": "Anniversaries.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p130",
@@ -1037,7 +1037,7 @@
   "sub": "Birthdays.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p131",
@@ -1045,7 +1045,7 @@
   "sub": "First dates.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p132",
@@ -1053,7 +1053,7 @@
   "sub": "The day you first met.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p133",
@@ -1061,7 +1061,7 @@
   "sub": "The day she first called you handsome.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p134",
@@ -1069,7 +1069,7 @@
   "sub": "Within milliseconds, you identify the correct answer.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p135",
@@ -1077,7 +1077,7 @@
   "sub": "You smile confidently.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p136",
@@ -1085,7 +1085,7 @@
   "sub": "\"Of course. It's our six-month anniversary.\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p137",
@@ -1093,7 +1093,7 @@
   "sub": "She stares at you.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p138",
@@ -1101,7 +1101,7 @@
   "sub": "\"It's our seven-month anniversary.\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p139",
@@ -1109,7 +1109,7 @@
   "sub": "Your reflexes were perfect.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p140",
@@ -1117,7 +1117,7 @@
   "sub": "Your survival instincts were not.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter4"
+  "scene": "c4f"
  },
  {
   "id": "p141",
@@ -1125,7 +1125,7 @@
   "sub": "But perhaps your greatest power isn't memory or reaction.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5a"
  },
  {
   "id": "p142",
@@ -1133,7 +1133,7 @@
   "sub": "It's learning.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter5"
+  "scene": "c5a"
  },
  {
   "id": "p143",
@@ -1141,7 +1141,7 @@
   "sub": "Your brain has something called neuroplasticity.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5a"
  },
  {
   "id": "p144",
@@ -1149,7 +1149,7 @@
   "sub": "This is the ability of your brain to change and reorganize its connections as you learn and experience new things.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5a"
  },
  {
   "id": "p145",
@@ -1157,7 +1157,7 @@
   "sub": "Every time you practice something, your brain adapts.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5a"
  },
  {
   "id": "p146",
@@ -1165,7 +1165,7 @@
   "sub": "Think about learning a new language.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5b"
  },
  {
   "id": "p147",
@@ -1173,7 +1173,7 @@
   "sub": "Normally, you struggle with pronunciation, grammar, and remembering vocabulary.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5b"
  },
  {
   "id": "p148",
@@ -1181,7 +1181,7 @@
   "sub": "You spend hours trying to understand the difference between \"their\", \"there\", and \"they're\".",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5b"
  },
  {
   "id": "p149",
@@ -1189,7 +1189,7 @@
   "sub": "Your brain starts questioning your life choices.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5b"
  },
  {
   "id": "p150",
@@ -1197,7 +1197,7 @@
   "sub": "But imagine learning much more efficiently.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5b"
  },
  {
   "id": "p151",
@@ -1205,7 +1205,7 @@
   "sub": "You recognize patterns in sentences, connect new words with existing knowledge, and improve your pronunciation through practice.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5b"
  },
  {
   "id": "p152",
@@ -1213,7 +1213,7 @@
   "sub": "You could become conversational in a new language much faster.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5b"
  },
  {
   "id": "p153",
@@ -1221,7 +1221,7 @@
   "sub": "You walk into a Japanese restaurant.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5c"
  },
  {
   "id": "p154",
@@ -1229,7 +1229,7 @@
   "sub": "You confidently order your food.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5c"
  },
  {
   "id": "p155",
@@ -1237,7 +1237,7 @@
   "sub": "The waiter responds in Japanese.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5c"
  },
  {
   "id": "p156",
@@ -1245,7 +1245,7 @@
   "sub": "You understand everything.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5c"
  },
  {
   "id": "p157",
@@ -1253,7 +1253,7 @@
   "sub": "Then he asks whether you want extra wasabi.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5c"
  },
  {
   "id": "p158",
@@ -1261,7 +1261,7 @@
   "sub": "Your brain processes the information.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5c"
  },
  {
   "id": "p159",
@@ -1269,7 +1269,7 @@
   "sub": "You confidently say yes.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5c"
  },
  {
   "id": "p160",
@@ -1277,7 +1277,7 @@
   "sub": "Five seconds later, your entire face turns red.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5c"
  },
  {
   "id": "p161",
@@ -1285,7 +1285,7 @@
   "sub": "Apparently, intelligence doesn't protect your tongue.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5c"
  },
  {
   "id": "p162",
@@ -1293,7 +1293,7 @@
   "sub": "But that's not all.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p163",
@@ -1301,7 +1301,7 @@
   "sub": "You decide to learn the language of relationships.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p164",
@@ -1309,7 +1309,7 @@
   "sub": "You study psychology, emotional intelligence, facial expressions, body language, and communication.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p165",
@@ -1317,7 +1317,7 @@
   "sub": "You analyze thousands of conversations.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p166",
@@ -1325,7 +1325,7 @@
   "sub": "You build a database of emotional patterns.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p167",
@@ -1333,7 +1333,7 @@
   "sub": "Finally, you think you've cracked the code.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p168",
@@ -1341,7 +1341,7 @@
   "sub": "Your girlfriend says:",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p169",
@@ -1349,7 +1349,7 @@
   "sub": "\"Nothing's wrong.\"",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p170",
@@ -1357,7 +1357,7 @@
   "sub": "You confidently respond:",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p171",
@@ -1365,7 +1365,7 @@
   "sub": "\"Based on your facial expression, tone, and previous behavior, I believe something is wrong.\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p172",
@@ -1373,7 +1373,7 @@
   "sub": "She looks at you.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p173",
@@ -1381,7 +1381,7 @@
   "sub": "\"Wow. So now I'm not allowed to have feelings?\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p174",
@@ -1389,7 +1389,7 @@
   "sub": "You have successfully learned twelve languages.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p175",
@@ -1397,7 +1397,7 @@
   "sub": "But the language of \"nothing's wrong\" remains undocumented.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter5"
+  "scene": "c5d"
  },
  {
   "id": "p176",
@@ -1405,7 +1405,7 @@
   "sub": "But there's one tiny problem.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6a"
  },
  {
   "id": "p177",
@@ -1413,7 +1413,7 @@
   "sub": "Your brain is already an energy-hungry organ.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6a"
  },
  {
   "id": "p178",
@@ -1421,7 +1421,7 @@
   "sub": "Although it makes up only about two percent of your body weight, it uses roughly twenty percent of your body's energy at rest.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6a"
  },
  {
   "id": "p179",
@@ -1429,7 +1429,7 @@
   "sub": "That's a lot of electricity for something that sometimes forgets why you opened the refrigerator.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6a"
  },
  {
   "id": "p180",
@@ -1437,7 +1437,7 @@
   "sub": "Now imagine making your brain work even more efficiently and intensely.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6a"
  },
  {
   "id": "p181",
@@ -1445,7 +1445,7 @@
   "sub": "Your body still needs oxygen, glucose, blood flow, and the right balance of chemicals to keep everything functioning.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6a"
  },
  {
   "id": "p182",
@@ -1453,7 +1453,7 @@
   "sub": "You can't just turn your brain into a supercomputer and expect your body to keep up.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6a"
  },
  {
   "id": "p183",
@@ -1461,7 +1461,7 @@
   "sub": "You might need more energy, better sleep, and plenty of recovery.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6a"
  },
  {
   "id": "p184",
@@ -1469,7 +1469,7 @@
   "sub": "And no, drinking seventeen energy drinks won't turn you into Einstein.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6a"
  },
  {
   "id": "p185",
@@ -1477,7 +1477,7 @@
   "sub": "It will probably just turn your heart into a washing machine.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6a"
  },
  {
   "id": "p186",
@@ -1485,7 +1485,7 @@
   "sub": "Meanwhile, your girlfriend sends another message.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6b"
  },
  {
   "id": "p187",
@@ -1493,7 +1493,7 @@
   "sub": "\"Can we talk?\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6b"
  },
  {
   "id": "p188",
@@ -1501,7 +1501,7 @@
   "sub": "Your brain immediately activates every available resource.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6c"
  },
  {
   "id": "p189",
@@ -1509,7 +1509,7 @@
   "sub": "The memory system starts reviewing your past mistakes.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6c"
  },
  {
   "id": "p190",
@@ -1517,7 +1517,7 @@
   "sub": "The emotional system detects possible danger.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6c"
  },
  {
   "id": "p191",
@@ -1525,7 +1525,7 @@
   "sub": "The reasoning system calculates possible outcomes.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6c"
  },
  {
   "id": "p192",
@@ -1533,7 +1533,7 @@
   "sub": "Your body starts sweating.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6c"
  },
  {
   "id": "p193",
@@ -1541,7 +1541,7 @@
   "sub": "Your brain is now using more processing power than a NASA supercomputer.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6c"
  },
  {
   "id": "p194",
@@ -1549,7 +1549,7 @@
   "sub": "And all of this…",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6c"
  },
  {
   "id": "p195",
@@ -1557,7 +1557,7 @@
   "sub": "For a conversation that starts with:",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6c"
  },
  {
   "id": "p196",
@@ -1565,7 +1565,7 @@
   "sub": "\"Why did you like her Instagram picture?\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter6"
+  "scene": "c6d"
  },
  {
   "id": "p197",
@@ -1573,7 +1573,7 @@
   "sub": "And here's where things get really interesting.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7a"
  },
  {
   "id": "p198",
@@ -1581,7 +1581,7 @@
   "sub": "What if you literally forced one hundred percent of your neurons to fire simultaneously?",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7a"
  },
  {
   "id": "p199",
@@ -1589,7 +1589,7 @@
   "sub": "Would you become a god?",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7a"
  },
  {
   "id": "p200",
@@ -1597,7 +1597,7 @@
   "sub": "Absolutely not.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter7"
+  "scene": "c7a"
  },
  {
   "id": "p201",
@@ -1605,7 +1605,7 @@
   "sub": "Your brain doesn't work like a light switch.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7a"
  },
  {
   "id": "p202",
@@ -1613,7 +1613,7 @@
   "sub": "Different groups of neurons perform different jobs, communicating through carefully coordinated electrical and chemical signals.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7a"
  },
  {
   "id": "p203",
@@ -1621,7 +1621,7 @@
   "sub": "Think of your brain as a massive orchestra.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7b"
  },
  {
   "id": "p204",
@@ -1629,7 +1629,7 @@
   "sub": "The violin, drums, piano, and trumpet all have different roles.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7b"
  },
  {
   "id": "p205",
@@ -1637,7 +1637,7 @@
   "sub": "Now imagine forcing every musician to play as loudly as possible at exactly the same time.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7b"
  },
  {
   "id": "p206",
@@ -1645,7 +1645,7 @@
   "sub": "No rhythm.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter7"
+  "scene": "c7b"
  },
  {
   "id": "p207",
@@ -1653,7 +1653,7 @@
   "sub": "No coordination.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter7"
+  "scene": "c7b"
  },
  {
   "id": "p208",
@@ -1661,7 +1661,7 @@
   "sub": "Just noise.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter7"
+  "scene": "c7b"
  },
  {
   "id": "p209",
@@ -1669,7 +1669,7 @@
   "sub": "That's not intelligence.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7b"
  },
  {
   "id": "p210",
@@ -1677,7 +1677,7 @@
   "sub": "That's a musical disaster.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7b"
  },
  {
   "id": "p211",
@@ -1685,7 +1685,7 @@
   "sub": "In reality, uncontrolled synchronized electrical activity in the brain can cause seizures.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7c"
  },
  {
   "id": "p212",
@@ -1693,7 +1693,7 @@
   "sub": "So the goal isn't to make every neuron fire at once.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7c"
  },
  {
   "id": "p213",
@@ -1701,7 +1701,7 @@
   "sub": "It's to make the right neurons communicate at the right time.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7c"
  },
  {
   "id": "p214",
@@ -1709,7 +1709,7 @@
   "sub": "And this is exactly what happens when your girlfriend says:",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7d"
  },
  {
   "id": "p215",
@@ -1717,7 +1717,7 @@
   "sub": "\"We need to talk.\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7d"
  },
  {
   "id": "p216",
@@ -1725,7 +1725,7 @@
   "sub": "Your memory starts playing every argument from the last five years.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7d"
  },
  {
   "id": "p217",
@@ -1733,7 +1733,7 @@
   "sub": "Your imagination creates seventeen different disaster scenarios.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7d"
  },
  {
   "id": "p218",
@@ -1741,7 +1741,7 @@
   "sub": "Your reasoning tries to identify what you did wrong.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7d"
  },
  {
   "id": "p219",
@@ -1749,7 +1749,7 @@
   "sub": "Your emotional system activates.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7d"
  },
  {
   "id": "p220",
@@ -1757,7 +1757,7 @@
   "sub": "And your entire brain becomes one giant emergency meeting.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "chapter7"
+  "scene": "c7d"
  },
  {
   "id": "p221",
@@ -1765,7 +1765,7 @@
   "sub": "All neurons are working.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7d"
  },
  {
   "id": "p222",
@@ -1773,7 +1773,7 @@
   "sub": "None of them has a solution.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "chapter7"
+  "scene": "c7d"
  },
  {
   "id": "p223",
@@ -1781,7 +1781,7 @@
   "sub": "So, would unlocking one hundred percent of your brain make you the smartest human alive?",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e1"
  },
  {
   "id": "p224",
@@ -1789,7 +1789,7 @@
   "sub": "Not automatically.",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "ending"
+  "scene": "e1"
  },
  {
   "id": "p225",
@@ -1797,7 +1797,7 @@
   "sub": "Because intelligence isn't a percentage.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e1"
  },
  {
   "id": "p226",
@@ -1805,7 +1805,7 @@
   "sub": "It's a combination of memory, learning, reasoning, creativity, experience, and how efficiently your brain uses information.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e1"
  },
  {
   "id": "p227",
@@ -1813,7 +1813,7 @@
   "sub": "Einstein didn't need a secret brain switch.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e1"
  },
  {
   "id": "p228",
@@ -1821,7 +1821,7 @@
   "sub": "Professional athletes didn't unlock hidden brain regions.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e1"
  },
  {
   "id": "p229",
@@ -1829,7 +1829,7 @@
   "sub": "They developed extraordinary abilities through practice, experience, and dedication.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e1"
  },
  {
   "id": "p230",
@@ -1837,7 +1837,7 @@
   "sub": "And perhaps the greatest lesson is this:",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e2"
  },
  {
   "id": "p231",
@@ -1845,7 +1845,7 @@
   "sub": "You might be able to solve complicated equations, memorize thousands of books, predict the movement of a football, and understand the mysteries of the universe.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e2"
  },
  {
   "id": "p232",
@@ -1853,7 +1853,7 @@
   "sub": "But when your girlfriend says:",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e2"
  },
  {
   "id": "p233",
@@ -1861,7 +1861,7 @@
   "sub": "\"Do whatever you want.\"",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e2"
  },
  {
   "id": "p234",
@@ -1869,7 +1869,7 @@
   "sub": "Even a supercomputer might need professional help.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e2"
  },
  {
   "id": "p235",
@@ -1877,7 +1877,7 @@
   "sub": "Because you can study the human brain for decades.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e3"
  },
  {
   "id": "p236",
@@ -1885,7 +1885,7 @@
   "sub": "You can understand the universe.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e3"
  },
  {
   "id": "p237",
@@ -1893,7 +1893,7 @@
   "sub": "You can calculate the distance between galaxies.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e3"
  },
  {
   "id": "p238",
@@ -1901,7 +1901,7 @@
   "sub": "But sometimes…",
   "voice": "am_puck",
   "speed": 1.12,
-  "scene": "ending"
+  "scene": "e3"
  },
  {
   "id": "p239",
@@ -1909,7 +1909,7 @@
   "sub": "The hardest problem isn't science.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e3"
  },
  {
   "id": "p240",
@@ -1917,7 +1917,7 @@
   "sub": "It's deciding where to eat.",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e3"
  },
  {
   "id": "p241",
@@ -1925,6 +1925,6 @@
   "sub": "See you in the next experiment!",
   "voice": "am_puck",
   "speed": 1.25,
-  "scene": "ending"
+  "scene": "e3"
  }
 ]

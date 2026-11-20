@@ -1,13 +1,18 @@
 [
  {
   "t0": 0.95,
-  "t1": 2.59,
-  "text": "What if you woke up tomorrow and your brain"
+  "t1": 2.33,
+  "text": "What if you woke up tomorrow and your"
  },
  {
-  "t0": 2.63,
-  "t1": 5.7,
-  "text": "suddenly unlocked one hundred percent of its full potential?"
+  "t0": 2.37,
+  "t1": 4.51,
+  "text": "brain suddenly unlocked one hundred"
+ },
+ {
+  "t0": 4.55,
+  "t1": 5.75,
+  "text": "percent of its full potential?"
  },
  {
   "t0": 5.907,
@@ -21,13 +26,18 @@
  },
  {
   "t0": 9.707,
-  "t1": 11.327,
-  "text": "and learn new languages faster than a"
+  "t1": 10.887,
+  "text": "and learn new languages faster"
  },
  {
-  "t0": 11.367,
-  "t1": 13.457,
-  "text": "toddler learns to scream in a supermarket."
+  "t0": 10.927,
+  "t1": 12.387,
+  "text": "than a toddler learns to scream"
+ },
+ {
+  "t0": 12.427,
+  "t1": 13.627,
+  "text": "in a supermarket."
  },
  {
   "t0": 13.737,
@@ -46,18 +56,23 @@
  },
  {
   "t0": 20.22,
-  "t1": 21.2,
-  "text": "and solve problems that"
+  "t1": 21.48,
+  "text": "and solve problems that ordinary"
  },
  {
-  "t0": 21.24,
+  "t0": 21.52,
   "t1": 23.49,
-  "text": "ordinary humans couldn't even imagine."
+  "text": "humans couldn't even imagine."
  },
  {
   "t0": 23.656,
+  "t1": 24.616,
+  "text": "You'd basically become a"
+ },
+ {
+  "t0": 24.656,
   "t1": 25.886,
-  "text": "You'd basically become a walking supercomputer."
+  "text": "walking supercomputer."
  },
  {
   "t0": 26.575,
@@ -76,18 +91,28 @@
  },
  {
   "t0": 30.29,
+  "t1": 31.47,
+  "text": "Because no matter how powerful"
+ },
+ {
+  "t0": 31.51,
   "t1": 32.65,
-  "text": "Because no matter how powerful your brain becomes,"
+  "text": "your brain becomes,"
  },
  {
   "t0": 32.69,
-  "t1": 34.43,
-  "text": "there's one mysterious creature whose messages"
+  "t1": 34.15,
+  "text": "there's one mysterious creature whose"
  },
  {
-  "t0": 34.47,
+  "t0": 34.19,
+  "t1": 35.77,
+  "text": "messages might still crash your"
+ },
+ {
+  "t0": 35.81,
   "t1": 37.54,
-  "text": "might still crash your entire operating system."
+  "text": "entire operating system."
  },
  {
   "t0": 38.8,
@@ -96,13 +121,18 @@
  },
  {
   "t0": 40.106,
-  "t1": 41.546,
-  "text": "Let's find out what would actually happen"
+  "t1": 41.126,
+  "text": "Let's find out what would actually"
  },
  {
-  "t0": 41.586,
-  "t1": 43.956,
-  "text": "if your brain reached its maximum potential."
+  "t0": 41.166,
+  "t1": 42.746,
+  "text": "happen if your brain reached its"
+ },
+ {
+  "t0": 42.786,
+  "t1": 43.986,
+  "text": "maximum potential."
  },
  {
   "t0": 45.75,
@@ -136,8 +166,13 @@
  },
  {
   "t0": 57.8,
-  "t1": 60.23,
-  "text": "Normally, your brain constantly filters information,"
+  "t1": 59.02,
+  "text": "Normally, your brain constantly"
+ },
+ {
+  "t0": 59.06,
+  "t1": 60.26,
+  "text": "filters information,"
  },
  {
   "t0": 60.38,
@@ -151,8 +186,13 @@
  },
  {
   "t0": 64.003,
+  "t1": 65.583,
+  "text": "almost every detail with"
+ },
+ {
+  "t0": 65.623,
   "t1": 66.913,
-  "text": "almost every detail with incredible accuracy."
+  "text": "incredible accuracy."
  },
  {
   "t0": 68.3,
@@ -191,13 +231,13 @@
  },
  {
   "t0": 81.958,
-  "t1": 82.218,
-  "text": "And suddenly,"
+  "t1": 83.138,
+  "text": "And suddenly, the entire textbook"
  },
  {
-  "t0": 82.258,
+  "t0": 83.178,
   "t1": 84.668,
-  "text": "the entire textbook appears inside your head."
+  "text": "appears inside your head."
  },
  {
   "t0": 84.724,
@@ -236,38 +276,53 @@
  },
  {
   "t0": 96.95,
-  "t1": 99.02,
-  "text": "You immediately activate your upgraded memory."
+  "t1": 98.05,
+  "text": "You immediately activate your"
+ },
+ {
+  "t0": 98.09,
+  "t1": 99.268,
+  "text": "upgraded memory."
  },
  {
   "t0": 99.308,
+  "t1": 100.428,
+  "text": "You search through thousands of"
+ },
+ {
+  "t0": 100.468,
   "t1": 101.738,
-  "text": "You search through thousands of previous conversations."
+  "text": "previous conversations."
  },
  {
   "t0": 101.983,
+  "t1": 102.903,
+  "text": "Three months ago, she said"
+ },
+ {
+  "t0": 102.943,
   "t1": 104.353,
-  "text": "Three months ago, she said \"fine\" with a heart emoji."
+  "text": "\"fine\" with a heart emoji."
  },
  {
   "t0": 104.623,
+  "t1": 105.683,
+  "text": "Two weeks ago, she said \"fine\""
+ },
+ {
+  "t0": 105.723,
   "t1": 107.253,
-  "text": "Two weeks ago, she said \"fine\" followed by a full stop."
+  "text": "followed by a full stop."
  },
  {
   "t0": 107.502,
-  "t1": 107.982,
-  "text": "Yesterday,"
+  "t1": 109.342,
+  "text": "Yesterday, she said \"fine\" after you forgot"
  },
  {
-  "t0": 108.022,
-  "t1": 109.082,
-  "text": "she said \"fine\" after you"
- },
- {
-  "t0": 109.122,
+  "t0": 109.382,
   "t1": 110.892,
-  "text": "forgot to compliment her new haircut."
+  "text": "to compliment her new haircut."
  },
  {
   "t0": 111.102,
@@ -326,1392 +381,1627 @@
  },
  {
   "t0": 131.069,
+  "t1": 131.989,
+  "text": "You can remember the entire"
+ },
+ {
+  "t0": 132.029,
   "t1": 133.479,
-  "text": "You can remember the entire history of humanity,"
+  "text": "history of humanity,"
  },
  {
   "t0": 133.549,
-  "t1": 133.849,
-  "text": "but apparently,"
+  "t1": 135.029,
+  "text": "but apparently, you still need a PhD"
  },
  {
-  "t0": 133.889,
+  "t0": 135.069,
   "t1": 137.179,
-  "text": "you still need a PhD in girlfriend communication."
+  "text": "in girlfriend communication."
  },
  {
-  "t0": 139.3,
-  "t1": 140.5,
+  "t0": 139.85,
+  "t1": 141.05,
   "text": "Next, your thinking speed."
  },
  {
-  "t0": 140.689,
-  "t1": 141.869,
-  "text": "Your brain processes enormous"
+  "t0": 141.239,
+  "t1": 142.859,
+  "text": "Your brain processes enormous amounts"
  },
  {
-  "t0": 141.909,
-  "t1": 143.969,
-  "text": "amounts of information every second,"
+  "t0": 142.899,
+  "t1": 144.519,
+  "text": "of information every second,"
  },
  {
-  "t0": 144.009,
-  "t1": 144.889,
+  "t0": 144.559,
+  "t1": 145.439,
   "text": "but conscious thinking and"
  },
  {
-  "t0": 144.929,
-  "t1": 146.619,
+  "t0": 145.479,
+  "t1": 147.169,
   "text": "decision-making have their own limitations."
  },
  {
-  "t0": 147.452,
-  "t1": 149.392,
-  "text": "Now imagine your brain becoming incredibly"
+  "t0": 148.002,
+  "t1": 149.362,
+  "text": "Now imagine your brain becoming"
  },
  {
-  "t0": 149.432,
-  "t1": 152.722,
-  "text": "efficient at recognizing patterns and connecting information."
+  "t0": 149.402,
+  "t1": 151.042,
+  "text": "incredibly efficient at recognizing"
  },
  {
-  "t0": 153.085,
-  "t1": 154.355,
+  "t0": 151.082,
+  "t1": 153.272,
+  "text": "patterns and connecting information."
+ },
+ {
+  "t0": 154.3,
+  "t1": 155.57,
   "text": "Let's test this with chess."
  },
  {
-  "t0": 154.481,
-  "t1": 155.741,
-  "text": "An ordinary player looks at the"
+  "t0": 155.696,
+  "t1": 157.476,
+  "text": "An ordinary player looks at the board and"
  },
  {
-  "t0": 155.781,
-  "t1": 158.071,
-  "text": "board and considers a few possible moves."
+  "t0": 157.516,
+  "t1": 159.286,
+  "text": "considers a few possible moves."
  },
  {
-  "t0": 158.296,
-  "t1": 159.896,
-  "text": "A professional chess player can recognize"
+  "t0": 159.511,
+  "t1": 160.731,
+  "text": "A professional chess player can"
  },
  {
-  "t0": 159.936,
-  "t1": 163.506,
-  "text": "familiar patterns and anticipate several possible responses."
+  "t0": 160.771,
+  "t1": 162.451,
+  "text": "recognize familiar patterns and"
  },
  {
-  "t0": 163.823,
-  "t1": 165.243,
+  "t0": 162.491,
+  "t1": 164.721,
+  "text": "anticipate several possible responses."
+ },
+ {
+  "t0": 165.038,
+  "t1": 166.458,
   "text": "But with your upgraded brain?"
  },
  {
-  "t0": 165.283,
-  "t1": 167.813,
-  "text": "You examine the board, calculate possible strategies,"
+  "t0": 166.498,
+  "t1": 167.518,
+  "text": "You examine the board,"
  },
  {
-  "t0": 168.003,
-  "t1": 169.183,
+  "t0": 167.558,
+  "t1": 169.028,
+  "text": "calculate possible strategies,"
+ },
+ {
+  "t0": 169.218,
+  "t1": 170.398,
   "text": "and predict your opponent's mistakes"
  },
  {
-  "t0": 169.223,
-  "t1": 171.093,
+  "t0": 170.438,
+  "t1": 172.308,
   "text": "before they even touch a piece."
  },
  {
-  "t0": 171.291,
-  "t1": 172.501,
+  "t0": 173.45,
+  "t1": 174.66,
   "text": "Your opponent moves a pawn."
  },
  {
-  "t0": 172.749,
-  "t1": 173.63,
+  "t0": 174.908,
+  "t1": 176.089,
   "text": "You smile."
  },
  {
-  "t0": 173.67,
-  "t1": 174.98,
+  "t0": 176.129,
+  "t1": 177.439,
   "text": "Checkmate in twelve moves."
  },
  {
-  "t0": 175.137,
-  "t1": 176.223,
+  "t0": 177.596,
+  "t1": 178.796,
   "text": "He starts sweating."
  },
  {
-  "t0": 176.263,
-  "t1": 177.463,
+  "t0": 179.8,
+  "t1": 181.0,
   "text": "Then he asks for a rematch."
  },
  {
-  "t0": 177.657,
-  "t1": 179.307,
+  "t0": 181.194,
+  "t1": 182.844,
   "text": "You calculate another twelve moves."
  },
  {
-  "t0": 179.499,
-  "t1": 181.389,
+  "t0": 183.036,
+  "t1": 184.926,
   "text": "He starts questioning his career choices."
  },
  {
-  "t0": 181.635,
-  "t1": 182.315,
-  "text": "At this point,"
+  "t0": 185.172,
+  "t1": 186.612,
+  "text": "At this point, even a chess computer"
  },
  {
-  "t0": 182.355,
-  "t1": 184.505,
-  "text": "even a chess computer might need a coffee break."
+  "t0": 186.652,
+  "t1": 188.042,
+  "text": "might need a coffee break."
  },
  {
-  "t0": 184.663,
-  "t1": 185.743,
-  "text": "Feeling unstoppable,"
+  "t0": 189.3,
+  "t1": 191.16,
+  "text": "Feeling unstoppable, you decide to test your"
  },
  {
-  "t0": 185.783,
-  "t1": 186.523,
-  "text": "you decide to test your"
- },
- {
-  "t0": 186.563,
-  "t1": 188.793,
+  "t0": 191.2,
+  "t1": 193.43,
   "text": "processing speed on something even harder."
  },
  {
-  "t0": 189.001,
-  "t1": 190.133,
+  "t0": 193.638,
+  "t1": 194.77,
   "text": "Your girlfriend asks:"
  },
  {
-  "t0": 190.173,
-  "t1": 191.703,
+  "t0": 194.81,
+  "t1": 196.34,
   "text": "\"Do you think I look fat in this dress?\""
  },
  {
-  "t0": 191.93,
-  "t1": 192.71,
-  "text": "Your brain immediately"
+  "t0": 196.567,
+  "t1": 197.827,
+  "text": "Your brain immediately activates"
  },
  {
-  "t0": 192.75,
-  "t1": 194.94,
-  "text": "activates every available processor."
+  "t0": 197.867,
+  "t1": 199.577,
+  "text": "every available processor."
  },
  {
-  "t0": 195.214,
-  "t1": 197.734,
-  "text": "You calculate her facial expression, the dress design,"
+  "t0": 199.851,
+  "t1": 201.511,
+  "text": "You calculate her facial expression,"
  },
  {
-  "t0": 197.774,
-  "t1": 200.314,
-  "text": "previous conversations, emotional context,"
+  "t0": 201.551,
+  "t1": 203.711,
+  "text": "the dress design, previous conversations,"
  },
  {
-  "t0": 200.354,
-  "t1": 202.644,
-  "text": "and the possible consequences of every answer."
+  "t0": 203.751,
+  "t1": 205.391,
+  "text": "emotional context, and the possible"
  },
  {
-  "t0": 202.84,
-  "t1": 204.04,
+  "t0": 205.431,
+  "t1": 207.281,
+  "text": "consequences of every answer."
+ },
+ {
+  "t0": 208.3,
+  "t1": 209.5,
   "text": "Option A: Tell the truth."
  },
  {
-  "t0": 204.179,
-  "t1": 205.729,
+  "t0": 209.639,
+  "t1": 211.189,
   "text": "Option B: Say she looks beautiful."
  },
  {
-  "t0": 205.987,
-  "t1": 208.117,
-  "text": "Option C: Pretend you didn't hear the question."
+  "t0": 211.447,
+  "t1": 212.667,
+  "text": "Option C: Pretend you didn't"
  },
  {
-  "t0": 208.302,
-  "t1": 210.712,
-  "text": "Your brain simulates ten million possible outcomes."
+  "t0": 212.707,
+  "t1": 213.722,
+  "text": "hear the question."
  },
  {
-  "t0": 210.958,
-  "t1": 212.768,
+  "t0": 213.762,
+  "t1": 214.682,
+  "text": "Your brain simulates ten"
+ },
+ {
+  "t0": 214.722,
+  "t1": 216.172,
+  "text": "million possible outcomes."
+ },
+ {
+  "t0": 216.418,
+  "t1": 218.228,
   "text": "And finally, it chooses option B."
  },
  {
-  "t0": 212.895,
-  "t1": 213.952,
+  "t0": 218.655,
+  "t1": 219.712,
   "text": "\"You look beautiful.\""
  },
  {
-  "t0": 213.992,
-  "t1": 215.016,
+  "t0": 219.752,
+  "t1": 220.952,
   "text": "She responds:"
  },
  {
-  "t0": 215.056,
-  "t1": 216.866,
+  "t0": 221.166,
+  "t1": 222.976,
   "text": "\"So you're saying I looked ugly yesterday?\""
  },
  {
-  "t0": 217.06,
-  "t1": 218.088,
+  "t0": 223.67,
+  "t1": 224.698,
   "text": "System error."
  },
  {
-  "t0": 218.128,
-  "t1": 219.328,
+  "t0": 224.738,
+  "t1": 225.938,
   "text": "No solution found."
  },
  {
-  "t0": 220.3,
-  "t1": 222.01,
+  "t0": 227.85,
+  "t1": 229.56,
   "text": "But how smart could you actually become?"
  },
  {
-  "t0": 222.152,
-  "t1": 223.442,
+  "t0": 229.702,
+  "t1": 230.992,
   "text": "Let's talk about Albert Einstein."
  },
  {
-  "t0": 223.788,
-  "t1": 224.848,
-  "text": "Einstein is famous for"
+  "t0": 231.338,
+  "t1": 232.658,
+  "text": "Einstein is famous for developing"
  },
  {
-  "t0": 224.888,
-  "t1": 226.638,
-  "text": "developing the theory of relativity,"
+  "t0": 232.698,
+  "t1": 234.188,
+  "text": "the theory of relativity,"
  },
  {
-  "t0": 226.728,
-  "t1": 227.968,
-  "text": "which completely changed how"
+  "t0": 234.278,
+  "t1": 235.938,
+  "text": "which completely changed how scientists"
  },
  {
-  "t0": 228.008,
-  "t1": 230.318,
-  "text": "scientists understand space and time."
+  "t0": 235.978,
+  "t1": 237.868,
+  "text": "understand space and time."
  },
  {
-  "t0": 230.522,
-  "t1": 231.952,
+  "t0": 238.072,
+  "t1": 239.502,
   "text": "But here's the interesting part."
  },
  {
-  "t0": 232.028,
-  "t1": 233.788,
-  "text": "There is no scientific evidence that Einstein"
+  "t0": 239.578,
+  "t1": 241.158,
+  "text": "There is no scientific evidence that"
  },
  {
-  "t0": 233.828,
-  "t1": 236.658,
-  "text": "used only a certain percentage of his brain."
+  "t0": 241.198,
+  "t1": 242.738,
+  "text": "Einstein used only a certain"
  },
  {
-  "t0": 236.852,
-  "t1": 238.292,
+  "t0": 242.778,
+  "t1": 244.208,
+  "text": "percentage of his brain."
+ },
+ {
+  "t0": 244.402,
+  "t1": 245.842,
   "text": "His intelligence wasn't caused by"
  },
  {
-  "t0": 238.332,
-  "t1": 240.342,
+  "t0": 245.882,
+  "t1": 247.892,
   "text": "unlocking a secret brain region."
  },
  {
-  "t0": 240.488,
-  "t1": 242.968,
-  "text": "It involved extraordinary mathematical thinking,"
+  "t0": 248.038,
+  "t1": 248.938,
+  "text": "It involved extraordinary"
  },
  {
-  "t0": 243.008,
-  "t1": 246.338,
-  "text": "imagination, curiosity, and years of scientific work."
+  "t0": 248.978,
+  "t1": 250.518,
+  "text": "mathematical thinking,"
  },
  {
-  "t0": 246.46,
-  "t1": 248.36,
+  "t0": 250.558,
+  "t1": 252.128,
+  "text": "imagination, curiosity,"
+ },
+ {
+  "t0": 252.338,
+  "t1": 253.888,
+  "text": "and years of scientific work."
+ },
+ {
+  "t0": 254.8,
+  "t1": 256.7,
   "text": "So, if you had an optimized brain,"
  },
  {
-  "t0": 248.4,
-  "t1": 250.11,
+  "t0": 256.74,
+  "t1": 258.45,
   "text": "would you automatically become Einstein?"
  },
  {
-  "t0": 250.488,
-  "t1": 251.666,
+  "t0": 258.828,
+  "t1": 260.006,
   "text": "Not necessarily."
  },
  {
-  "t0": 251.706,
-  "t1": 253.506,
+  "t0": 260.046,
+  "t1": 261.846,
   "text": "Having a powerful computer doesn't mean you"
  },
  {
-  "t0": 253.546,
-  "t1": 255.856,
+  "t0": 261.886,
+  "t1": 264.196,
   "text": "automatically know how to build a spaceship."
  },
  {
-  "t0": 255.93,
-  "t1": 258.06,
-  "text": "You still need knowledge, experience, and practice."
+  "t0": 264.27,
+  "t1": 265.65,
+  "text": "You still need knowledge, experience,"
  },
  {
-  "t0": 258.353,
-  "t1": 258.773,
-  "text": "Although,"
+  "t0": 265.69,
+  "t1": 266.653,
+  "text": "and practice."
  },
  {
-  "t0": 258.813,
-  "t1": 259.593,
-  "text": "at least now you could"
+  "t0": 266.693,
+  "t1": 268.213,
+  "text": "Although, at least now you could understand"
  },
  {
-  "t0": 259.633,
-  "t1": 261.723,
-  "text": "understand why your computer keeps crashing."
+  "t0": 268.253,
+  "t1": 270.063,
+  "text": "why your computer keeps crashing."
  },
  {
-  "t0": 261.981,
-  "t1": 264.211,
-  "text": "But imagine Einstein had your upgraded brain."
+  "t0": 271.3,
+  "t1": 272.4,
+  "text": "But imagine Einstein had"
  },
  {
-  "t0": 264.428,
-  "t1": 265.728,
-  "text": "He could spend years calculating"
+  "t0": 272.44,
+  "t1": 273.64,
+  "text": "your upgraded brain."
  },
  {
-  "t0": 265.768,
-  "t1": 267.518,
-  "text": "the mysteries of the universe."
+  "t0": 273.747,
+  "t1": 275.387,
+  "text": "He could spend years calculating the"
  },
  {
-  "t0": 267.779,
-  "t1": 269.449,
+  "t0": 275.427,
+  "t1": 276.837,
+  "text": "mysteries of the universe."
+ },
+ {
+  "t0": 277.098,
+  "t1": 278.768,
   "text": "Developing complicated equations."
  },
  {
-  "t0": 269.796,
-  "t1": 271.666,
+  "t0": 279.115,
+  "t1": 280.985,
   "text": "Understanding the nature of time and space."
  },
  {
-  "t0": 271.902,
-  "t1": 273.792,
+  "t0": 281.221,
+  "t1": 283.111,
   "text": "And then his girlfriend walks into the room."
  },
  {
-  "t0": 273.93,
-  "t1": 275.4,
+  "t0": 283.249,
+  "t1": 284.719,
   "text": "\"Baby, what are you thinking about?\""
  },
  {
-  "t0": 275.483,
-  "t1": 276.833,
+  "t0": 284.802,
+  "t1": 286.152,
   "text": "\"The curvature of spacetime.\""
  },
  {
-  "t0": 276.981,
-  "t1": 278.751,
+  "t0": 286.6,
+  "t1": 288.37,
   "text": "\"Okay. So you're not thinking about me?\""
  },
  {
-  "t0": 278.821,
-  "t1": 280.611,
+  "t0": 288.44,
+  "t1": 290.23,
   "text": "Einstein might have understood the universe."
  },
  {
-  "t0": 280.91,
-  "t1": 283.44,
-  "text": "But explaining why he didn't text back for three hours?"
+  "t0": 290.529,
+  "t1": 291.749,
+  "text": "But explaining why he didn't text"
  },
  {
-  "t0": 283.624,
-  "t1": 285.214,
+  "t0": 291.789,
+  "t1": 293.059,
+  "text": "back for three hours?"
+ },
+ {
+  "t0": 293.643,
+  "t1": 295.233,
   "text": "That's a different theory of relativity."
  },
  {
-  "t0": 286.3,
-  "t1": 288.75,
-  "text": "Now let's move from laboratories to the sports field."
+  "t0": 297.35,
+  "t1": 298.35,
+  "text": "Now let's move from laboratories"
  },
  {
-  "t0": 288.935,
-  "t1": 290.705,
+  "t0": 298.39,
+  "t1": 299.8,
+  "text": "to the sports field."
+ },
+ {
+  "t0": 299.985,
+  "t1": 301.755,
   "text": "Imagine becoming a professional athlete."
  },
  {
-  "t0": 290.883,
-  "t1": 293.383,
-  "text": "Do Olympic athletes use one hundred"
+  "t0": 301.933,
+  "t1": 304.573,
+  "text": "Do Olympic athletes use one hundred and"
  },
  {
-  "t0": 293.423,
-  "t1": 294.496,
-  "text": "and fifty percent of their brains?"
+  "t0": 304.613,
+  "t1": 305.813,
+  "text": "fifty percent of their brains?"
  },
  {
-  "t0": 294.536,
-  "t1": 295.466,
+  "t0": 305.886,
+  "t1": 306.816,
   "text": "Of course not."
  },
  {
-  "t0": 295.506,
-  "t1": 296.186,
-  "text": "There is no special"
+  "t0": 306.856,
+  "t1": 307.816,
+  "text": "There is no special brain-power"
  },
  {
-  "t0": 296.226,
-  "t1": 298.216,
-  "text": "brain-power percentage for professional athletes."
+  "t0": 307.856,
+  "t1": 309.566,
+  "text": "percentage for professional athletes."
  },
  {
-  "t0": 298.925,
-  "t1": 300.085,
-  "text": "Their advantage comes from years"
+  "t0": 310.275,
+  "t1": 311.615,
+  "text": "Their advantage comes from years of"
  },
  {
-  "t0": 300.125,
-  "t1": 301.975,
-  "text": "of training that improve coordination,"
+  "t0": 311.655,
+  "t1": 313.325,
+  "text": "training that improve coordination,"
  },
  {
-  "t0": 302.285,
-  "t1": 304.115,
+  "t0": 313.635,
+  "t1": 315.465,
   "text": "timing, reaction, and decision-making."
  },
  {
-  "t0": 304.669,
-  "t1": 305.919,
+  "t0": 316.8,
+  "t1": 318.05,
   "text": "Take a professional goalkeeper."
  },
  {
-  "t0": 306.178,
-  "t1": 307.988,
+  "t0": 318.309,
+  "t1": 320.119,
   "text": "When a striker prepares to kick a football,"
  },
  {
-  "t0": 308.038,
-  "t1": 309.338,
+  "t0": 320.169,
+  "t1": 321.469,
   "text": "the goalkeeper doesn't simply wait"
  },
  {
-  "t0": 309.378,
-  "t1": 310.688,
+  "t0": 321.509,
+  "t1": 322.819,
   "text": "for the ball to arrive."
  },
  {
-  "t0": 310.851,
-  "t1": 313.521,
-  "text": "Their brain uses visual information, body position,"
+  "t0": 322.982,
+  "t1": 324.612,
+  "text": "Their brain uses visual information,"
  },
  {
-  "t0": 313.591,
-  "t1": 313.831,
-  "text": "movement,"
+  "t0": 324.862,
+  "t1": 325.962,
+  "text": "body position, movement,"
  },
  {
-  "t0": 313.871,
-  "t1": 316.921,
-  "text": "and experience to anticipate where the ball might go."
+  "t0": 326.002,
+  "t1": 327.422,
+  "text": "and experience to anticipate"
  },
  {
-  "t0": 317.01,
-  "t1": 318.37,
-  "text": "Now imagine your brain processing"
+  "t0": 327.462,
+  "t1": 329.052,
+  "text": "where the ball might go."
  },
  {
-  "t0": 318.41,
-  "t1": 320.42,
-  "text": "those patterns much more efficiently."
+  "t0": 329.141,
+  "t1": 330.821,
+  "text": "Now imagine your brain processing those"
  },
  {
-  "t0": 320.697,
-  "t1": 322.447,
+  "t0": 330.861,
+  "t1": 332.551,
+  "text": "patterns much more efficiently."
+ },
+ {
+  "t0": 334.05,
+  "t1": 335.8,
   "text": "A football flies toward your face."
  },
  {
-  "t0": 322.661,
-  "t1": 323.633,
+  "t0": 336.014,
+  "t1": 336.986,
   "text": "You move your head."
  },
  {
-  "t0": 323.673,
-  "t1": 325.383,
+  "t0": 337.026,
+  "t1": 338.736,
   "text": "The ball misses by a few centimeters."
  },
  {
-  "t0": 325.679,
-  "t1": 326.909,
+  "t0": 339.8,
+  "t1": 341.03,
   "text": "You catch it with one hand."
  },
  {
-  "t0": 327.018,
-  "t1": 328.159,
+  "t0": 341.139,
+  "t1": 342.28,
   "text": "Your friends are shocked."
  },
  {
-  "t0": 328.199,
-  "t1": 329.373,
+  "t0": 342.32,
+  "t1": 343.52,
   "text": "You look at them and say\u2026"
  },
  {
-  "t0": 329.413,
-  "t1": 330.576,
+  "t0": 343.834,
+  "t1": 344.997,
   "text": "\"That was calculated.\""
  },
  {
-  "t0": 330.616,
-  "t1": 332.306,
+  "t0": 345.037,
+  "t1": 346.727,
   "text": "Then someone throws a pillow at you."
  },
  {
-  "t0": 332.37,
-  "t1": 333.313,
+  "t0": 346.791,
+  "t1": 347.734,
   "text": "You dodge it."
  },
  {
-  "t0": 333.353,
-  "t1": 334.553,
+  "t0": 347.774,
+  "t1": 348.974,
   "text": "Someone throws another."
  },
  {
-  "t0": 334.615,
-  "t1": 335.771,
+  "t0": 349.036,
+  "t1": 350.192,
   "text": "You dodge that too."
  },
  {
-  "t0": 335.811,
-  "t1": 338.561,
-  "text": "Suddenly, your entire family is testing your reflexes."
+  "t0": 350.232,
+  "t1": 351.552,
+  "text": "Suddenly, your entire family is"
  },
  {
-  "t0": 338.639,
-  "t1": 339.839,
+  "t0": 351.592,
+  "t1": 352.982,
+  "text": "testing your reflexes."
+ },
+ {
+  "t0": 353.06,
+  "t1": 354.26,
   "text": "Congratulations."
  },
  {
-  "t0": 340.021,
-  "t1": 341.591,
+  "t0": 354.742,
+  "t1": 356.312,
   "text": "You've become the household goalkeeper."
  },
  {
-  "t0": 341.823,
-  "t1": 344.373,
-  "text": "But your girlfriend decides to test your reflexes too."
+  "t0": 357.3,
+  "t1": 358.42,
+  "text": "But your girlfriend decides to"
  },
  {
-  "t0": 344.532,
-  "t1": 345.587,
+  "t0": 358.46,
+  "t1": 359.85,
+  "text": "test your reflexes too."
+ },
+ {
+  "t0": 360.009,
+  "t1": 361.064,
   "text": "She suddenly asks:"
  },
  {
-  "t0": 345.627,
-  "t1": 347.357,
+  "t0": 361.104,
+  "t1": 362.834,
   "text": "\"Do you remember what day today is?\""
  },
  {
-  "t0": 347.499,
-  "t1": 348.829,
+  "t0": 363.8,
+  "t1": 365.13,
   "text": "Your brain scans the calendar."
  },
  {
-  "t0": 349.053,
-  "t1": 350.137,
+  "t0": 365.354,
+  "t1": 366.438,
   "text": "Anniversaries."
  },
  {
-  "t0": 350.177,
-  "t1": 351.073,
+  "t0": 366.478,
+  "t1": 367.374,
   "text": "Birthdays."
  },
  {
-  "t0": 351.113,
-  "t1": 352.027,
+  "t0": 367.414,
+  "t1": 368.328,
   "text": "First dates."
  },
  {
-  "t0": 352.067,
-  "t1": 353.193,
+  "t0": 368.368,
+  "t1": 369.494,
   "text": "The day you first met."
  },
  {
-  "t0": 353.233,
-  "t1": 354.743,
+  "t0": 369.534,
+  "t1": 371.044,
   "text": "The day she first called you handsome."
  },
  {
-  "t0": 354.96,
-  "t1": 357.55,
-  "text": "Within milliseconds, you identify the correct answer."
+  "t0": 371.261,
+  "t1": 372.221,
+  "text": "Within milliseconds, you"
  },
  {
-  "t0": 357.74,
-  "t1": 358.94,
+  "t0": 372.261,
+  "t1": 373.851,
+  "text": "identify the correct answer."
+ },
+ {
+  "t0": 374.041,
+  "t1": 375.241,
   "text": "You smile confidently."
  },
  {
-  "t0": 359.143,
-  "t1": 360.853,
+  "t0": 375.444,
+  "t1": 377.154,
   "text": "\"Of course. It's our six-month anniversary.\""
  },
  {
-  "t0": 361.104,
-  "t1": 362.238,
+  "t0": 377.405,
+  "t1": 378.605,
   "text": "She stares at you."
  },
  {
-  "t0": 362.278,
-  "t1": 363.478,
+  "t0": 378.979,
+  "t1": 380.179,
   "text": "\"It's our seven-month anniversary.\""
  },
  {
-  "t0": 363.984,
-  "t1": 365.314,
+  "t0": 380.685,
+  "t1": 382.015,
   "text": "Your reflexes were perfect."
  },
  {
-  "t0": 365.465,
-  "t1": 366.995,
+  "t0": 382.466,
+  "t1": 383.996,
   "text": "Your survival instincts were not."
  },
  {
-  "t0": 367.8,
-  "t1": 368.46,
-  "text": "But perhaps your greatest"
+  "t0": 385.85,
+  "t1": 386.87,
+  "text": "But perhaps your greatest power"
  },
  {
-  "t0": 368.5,
-  "t1": 370.49,
-  "text": "power isn't memory or reaction."
+  "t0": 386.91,
+  "t1": 388.54,
+  "text": "isn't memory or reaction."
  },
  {
-  "t0": 370.759,
-  "t1": 371.686,
+  "t0": 388.809,
+  "t1": 389.736,
   "text": "It's learning."
  },
  {
-  "t0": 371.726,
-  "t1": 374.076,
-  "text": "Your brain has something called neuroplasticity."
+  "t0": 389.776,
+  "t1": 390.556,
+  "text": "Your brain has something"
  },
  {
-  "t0": 374.137,
-  "t1": 376.177,
-  "text": "This is the ability of your brain to change and"
+  "t0": 390.596,
+  "t1": 392.126,
+  "text": "called neuroplasticity."
  },
  {
-  "t0": 376.217,
-  "t1": 379.767,
-  "text": "reorganize its connections as you learn and experience new things."
+  "t0": 392.187,
+  "t1": 393.947,
+  "text": "This is the ability of your brain to change"
  },
  {
-  "t0": 380.015,
-  "t1": 382.499,
-  "text": "Every time you practice something, your brain adapts."
+  "t0": 393.987,
+  "t1": 396.107,
+  "text": "and reorganize its connections as you learn"
  },
  {
-  "t0": 382.539,
-  "t1": 384.009,
+  "t0": 396.147,
+  "t1": 397.817,
+  "text": "and experience new things."
+ },
+ {
+  "t0": 398.065,
+  "t1": 399.425,
+  "text": "Every time you practice something,"
+ },
+ {
+  "t0": 399.465,
+  "t1": 400.665,
+  "text": "your brain adapts."
+ },
+ {
+  "t0": 401.3,
+  "t1": 402.77,
   "text": "Think about learning a new language."
  },
  {
-  "t0": 384.226,
-  "t1": 386.816,
-  "text": "Normally, you struggle with pronunciation, grammar,"
+  "t0": 402.987,
+  "t1": 404.837,
+  "text": "Normally, you struggle with pronunciation,"
  },
  {
-  "t0": 386.866,
-  "t1": 388.196,
-  "text": "and remembering vocabulary."
+  "t0": 405.067,
+  "t1": 406.957,
+  "text": "grammar, and remembering vocabulary."
  },
  {
-  "t0": 388.602,
-  "t1": 389.622,
-  "text": "You spend hours trying to"
+  "t0": 407.363,
+  "t1": 408.923,
+  "text": "You spend hours trying to understand the"
  },
  {
-  "t0": 389.662,
-  "t1": 391.282,
-  "text": "understand the difference between \"their\","
+  "t0": 408.963,
+  "t1": 410.043,
+  "text": "difference between \"their\","
  },
  {
-  "t0": 391.322,
-  "t1": 392.282,
+  "t0": 410.083,
+  "t1": 411.043,
   "text": "\"there\", and \"they're\"."
  },
  {
-  "t0": 392.322,
-  "t1": 394.392,
-  "text": "Your brain starts questioning your life choices."
+  "t0": 411.083,
+  "t1": 412.123,
+  "text": "Your brain starts questioning"
  },
  {
-  "t0": 394.705,
-  "t1": 396.515,
+  "t0": 412.163,
+  "t1": 413.363,
+  "text": "your life choices."
+ },
+ {
+  "t0": 413.466,
+  "t1": 415.276,
   "text": "But imagine learning much more efficiently."
  },
  {
-  "t0": 396.798,
-  "t1": 398.778,
+  "t0": 415.559,
+  "t1": 417.539,
   "text": "You recognize patterns in sentences,"
  },
  {
-  "t0": 398.818,
-  "t1": 400.818,
+  "t0": 417.579,
+  "t1": 419.579,
   "text": "connect new words with existing knowledge,"
  },
  {
-  "t0": 400.858,
-  "t1": 403.108,
-  "text": "and improve your pronunciation through practice."
+  "t0": 419.619,
+  "t1": 420.459,
+  "text": "and improve your pronunciation"
  },
  {
-  "t0": 403.324,
-  "t1": 404.744,
-  "text": "You could become conversational in"
+  "t0": 420.499,
+  "t1": 421.869,
+  "text": "through practice."
  },
  {
-  "t0": 404.784,
-  "t1": 406.334,
-  "text": "a new language much faster."
+  "t0": 422.085,
+  "t1": 423.585,
+  "text": "You could become conversational in a"
  },
  {
-  "t0": 406.54,
-  "t1": 408.27,
+  "t0": 423.625,
+  "t1": 425.095,
+  "text": "new language much faster."
+ },
+ {
+  "t0": 426.3,
+  "t1": 428.03,
   "text": "You walk into a Japanese restaurant."
  },
  {
-  "t0": 408.47,
-  "t1": 409.98,
+  "t0": 428.23,
+  "t1": 429.74,
   "text": "You confidently order your food."
  },
  {
-  "t0": 410.099,
-  "t1": 411.589,
+  "t0": 429.859,
+  "t1": 431.349,
   "text": "The waiter responds in Japanese."
  },
  {
-  "t0": 411.893,
-  "t1": 413.093,
+  "t0": 431.653,
+  "t1": 432.853,
   "text": "You understand everything."
  },
  {
-  "t0": 413.212,
-  "t1": 415.222,
+  "t0": 432.972,
+  "t1": 434.982,
   "text": "Then he asks whether you want extra wasabi."
  },
  {
-  "t0": 415.413,
-  "t1": 416.963,
+  "t0": 435.173,
+  "t1": 436.723,
   "text": "Your brain processes the information."
  },
  {
-  "t0": 417.33,
-  "t1": 418.74,
+  "t0": 437.09,
+  "t1": 438.5,
   "text": "You confidently say yes."
  },
  {
-  "t0": 418.866,
-  "t1": 421.296,
-  "text": "Five seconds later, your entire face turns red."
+  "t0": 439.126,
+  "t1": 440.006,
+  "text": "Five seconds later, your"
  },
  {
-  "t0": 421.386,
-  "t1": 423.736,
-  "text": "Apparently, intelligence doesn't protect your tongue."
+  "t0": 440.046,
+  "t1": 441.556,
+  "text": "entire face turns red."
  },
  {
-  "t0": 423.858,
-  "t1": 424.89,
+  "t0": 441.646,
+  "t1": 443.026,
+  "text": "Apparently, intelligence doesn't"
+ },
+ {
+  "t0": 443.066,
+  "t1": 444.266,
+  "text": "protect your tongue."
+ },
+ {
+  "t0": 444.8,
+  "t1": 445.832,
   "text": "But that's not all."
  },
  {
-  "t0": 424.93,
-  "t1": 427.0,
-  "text": "You decide to learn the language of relationships."
+  "t0": 445.872,
+  "t1": 446.592,
+  "text": "You decide to learn the"
  },
  {
-  "t0": 427.377,
-  "t1": 429.507,
-  "text": "You study psychology, emotional intelligence,"
+  "t0": 446.632,
+  "t1": 447.942,
+  "text": "language of relationships."
  },
  {
-  "t0": 429.657,
-  "t1": 432.347,
-  "text": "facial expressions, body language, and communication."
+  "t0": 448.319,
+  "t1": 449.439,
+  "text": "You study psychology,"
  },
  {
-  "t0": 432.684,
-  "t1": 434.354,
+  "t0": 449.479,
+  "t1": 450.559,
+  "text": "emotional intelligence,"
+ },
+ {
+  "t0": 450.599,
+  "t1": 452.419,
+  "text": "facial expressions, body language,"
+ },
+ {
+  "t0": 452.459,
+  "t1": 453.586,
+  "text": "and communication."
+ },
+ {
+  "t0": 453.626,
+  "t1": 455.296,
   "text": "You analyze thousands of conversations."
  },
  {
-  "t0": 434.793,
-  "t1": 436.763,
+  "t0": 455.735,
+  "t1": 457.705,
   "text": "You build a database of emotional patterns."
  },
  {
-  "t0": 437.062,
-  "t1": 438.772,
+  "t0": 458.004,
+  "t1": 459.714,
   "text": "Finally, you think you've cracked the code."
  },
  {
-  "t0": 438.906,
-  "t1": 440.036,
+  "t0": 459.848,
+  "t1": 460.978,
   "text": "Your girlfriend says:"
  },
  {
-  "t0": 440.076,
-  "t1": 441.069,
+  "t0": 461.018,
+  "t1": 462.011,
   "text": "\"Nothing's wrong.\""
  },
  {
-  "t0": 441.109,
-  "t1": 442.319,
+  "t0": 462.051,
+  "t1": 463.261,
   "text": "You confidently respond:"
  },
  {
-  "t0": 442.532,
-  "t1": 444.412,
+  "t0": 463.474,
+  "t1": 465.354,
   "text": "\"Based on your facial expression, tone,"
  },
  {
-  "t0": 444.452,
-  "t1": 447.002,
-  "text": "and previous behavior, I believe something is wrong.\""
+  "t0": 465.394,
+  "t1": 466.534,
+  "text": "and previous behavior,"
  },
  {
-  "t0": 447.147,
-  "t1": 448.144,
+  "t0": 466.574,
+  "t1": 467.944,
+  "text": "I believe something is wrong.\""
+ },
+ {
+  "t0": 468.089,
+  "t1": 469.289,
   "text": "She looks at you."
  },
  {
-  "t0": 448.184,
-  "t1": 450.034,
+  "t0": 469.476,
+  "t1": 471.326,
   "text": "\"Wow. So now I'm not allowed to have feelings?\""
  },
  {
-  "t0": 450.275,
-  "t1": 452.245,
-  "text": "You have successfully learned twelve languages."
+  "t0": 471.567,
+  "t1": 472.447,
+  "text": "You have successfully learned"
  },
  {
-  "t0": 452.513,
-  "t1": 453.173,
-  "text": "But the language of"
+  "t0": 472.487,
+  "t1": 473.687,
+  "text": "twelve languages."
  },
  {
-  "t0": 453.213,
-  "t1": 455.243,
-  "text": "\"nothing's wrong\" remains undocumented."
+  "t0": 473.805,
+  "t1": 474.845,
+  "text": "But the language of \"nothing's"
  },
  {
-  "t0": 456.3,
-  "t1": 457.73,
+  "t0": 474.885,
+  "t1": 476.535,
+  "text": "wrong\" remains undocumented."
+ },
+ {
+  "t0": 478.85,
+  "t1": 480.28,
   "text": "But there's one tiny problem."
  },
  {
-  "t0": 457.894,
-  "t1": 459.904,
-  "text": "Your brain is already an energy-hungry organ."
+  "t0": 480.444,
+  "t1": 481.364,
+  "text": "Your brain is already an"
  },
  {
-  "t0": 460.32,
-  "t1": 461.5,
-  "text": "Although it makes up only about"
+  "t0": 481.404,
+  "t1": 482.604,
+  "text": "energy-hungry organ."
  },
  {
-  "t0": 461.54,
-  "t1": 463.08,
-  "text": "two percent of your body weight,"
+  "t0": 482.87,
+  "t1": 484.39,
+  "text": "Although it makes up only about two"
  },
  {
-  "t0": 463.12,
-  "t1": 464.4,
-  "text": "it uses roughly twenty percent"
+  "t0": 484.43,
+  "t1": 485.63,
+  "text": "percent of your body weight,"
  },
  {
-  "t0": 464.44,
-  "t1": 466.03,
-  "text": "of your body's energy at rest."
+  "t0": 485.67,
+  "t1": 487.09,
+  "text": "it uses roughly twenty percent of"
  },
  {
-  "t0": 466.226,
-  "t1": 467.686,
-  "text": "That's a lot of electricity for something"
+  "t0": 487.13,
+  "t1": 488.58,
+  "text": "your body's energy at rest."
  },
  {
-  "t0": 467.726,
-  "t1": 470.776,
-  "text": "that sometimes forgets why you opened the refrigerator."
+  "t0": 488.776,
+  "t1": 489.956,
+  "text": "That's a lot of electricity for"
  },
  {
-  "t0": 471.055,
-  "t1": 472.275,
-  "text": "Now imagine making your brain"
+  "t0": 489.996,
+  "t1": 491.776,
+  "text": "something that sometimes forgets why"
  },
  {
-  "t0": 472.315,
-  "t1": 474.685,
-  "text": "work even more efficiently and intensely."
+  "t0": 491.816,
+  "t1": 493.326,
+  "text": "you opened the refrigerator."
  },
  {
-  "t0": 474.961,
-  "t1": 477.761,
-  "text": "Your body still needs oxygen, glucose, blood flow,"
+  "t0": 493.605,
+  "t1": 495.425,
+  "text": "Now imagine making your brain work even"
  },
  {
-  "t0": 477.801,
-  "t1": 478.641,
-  "text": "and the right balance of"
+  "t0": 495.465,
+  "t1": 497.235,
+  "text": "more efficiently and intensely."
  },
  {
-  "t0": 478.681,
-  "t1": 480.711,
+  "t0": 497.511,
+  "t1": 499.511,
+  "text": "Your body still needs oxygen, glucose,"
+ },
+ {
+  "t0": 499.551,
+  "t1": 501.191,
+  "text": "blood flow, and the right balance of"
+ },
+ {
+  "t0": 501.231,
+  "t1": 503.261,
   "text": "chemicals to keep everything functioning."
  },
  {
-  "t0": 480.889,
-  "t1": 482.129,
-  "text": "You can't just turn your brain into a"
+  "t0": 503.439,
+  "t1": 504.319,
+  "text": "You can't just turn your brain"
  },
  {
-  "t0": 482.169,
-  "t1": 484.739,
-  "text": "supercomputer and expect your body to keep up."
+  "t0": 504.359,
+  "t1": 505.779,
+  "text": "into a supercomputer and expect"
  },
  {
-  "t0": 484.906,
-  "t1": 486.706,
+  "t0": 505.819,
+  "t1": 507.289,
+  "text": "your body to keep up."
+ },
+ {
+  "t0": 507.456,
+  "t1": 509.256,
   "text": "You might need more energy, better sleep,"
  },
  {
-  "t0": 486.746,
-  "t1": 487.946,
+  "t0": 509.296,
+  "t1": 510.496,
   "text": "and plenty of recovery."
  },
  {
-  "t0": 488.052,
-  "t1": 488.552,
-  "text": "And no,"
+  "t0": 510.602,
+  "t1": 512.462,
+  "text": "And no, drinking seventeen energy drinks"
  },
  {
-  "t0": 488.592,
-  "t1": 489.912,
-  "text": "drinking seventeen energy drinks"
- },
- {
-  "t0": 489.952,
-  "t1": 491.342,
+  "t0": 512.502,
+  "t1": 513.892,
   "text": "won't turn you into Einstein."
  },
  {
-  "t0": 491.718,
-  "t1": 492.738,
-  "text": "It will probably just turn"
+  "t0": 514.568,
+  "t1": 515.708,
+  "text": "It will probably just turn your"
  },
  {
-  "t0": 492.778,
-  "t1": 494.468,
-  "text": "your heart into a washing machine."
+  "t0": 515.748,
+  "t1": 517.318,
+  "text": "heart into a washing machine."
  },
  {
-  "t0": 494.625,
-  "t1": 496.755,
-  "text": "Meanwhile, your girlfriend sends another message."
+  "t0": 518.25,
+  "t1": 519.01,
+  "text": "Meanwhile, your girlfriend"
  },
  {
-  "t0": 496.964,
-  "t1": 497.829,
+  "t0": 519.05,
+  "t1": 520.38,
+  "text": "sends another message."
+ },
+ {
+  "t0": 521.089,
+  "t1": 522.289,
   "text": "\"Can we talk?\""
  },
  {
-  "t0": 497.869,
-  "t1": 498.589,
-  "text": "Your brain immediately"
+  "t0": 522.8,
+  "t1": 523.98,
+  "text": "Your brain immediately activates"
  },
  {
-  "t0": 498.629,
-  "t1": 500.839,
-  "text": "activates every available resource."
+  "t0": 524.02,
+  "t1": 525.77,
+  "text": "every available resource."
  },
  {
-  "t0": 501.106,
-  "t1": 503.576,
-  "text": "The memory system starts reviewing your past mistakes."
+  "t0": 526.037,
+  "t1": 526.917,
+  "text": "The memory system starts"
  },
  {
-  "t0": 503.789,
-  "t1": 506.159,
-  "text": "The emotional system detects possible danger."
+  "t0": 526.957,
+  "t1": 528.507,
+  "text": "reviewing your past mistakes."
  },
  {
-  "t0": 506.433,
-  "t1": 508.883,
-  "text": "The reasoning system calculates possible outcomes."
+  "t0": 528.72,
+  "t1": 529.82,
+  "text": "The emotional system detects"
  },
  {
-  "t0": 509.13,
-  "t1": 510.34,
+  "t0": 529.86,
+  "t1": 531.09,
+  "text": "possible danger."
+ },
+ {
+  "t0": 531.364,
+  "t1": 532.464,
+  "text": "The reasoning system calculates"
+ },
+ {
+  "t0": 532.504,
+  "t1": 533.814,
+  "text": "possible outcomes."
+ },
+ {
+  "t0": 534.061,
+  "t1": 535.271,
   "text": "Your body starts sweating."
  },
  {
-  "t0": 510.547,
-  "t1": 511.907,
-  "text": "Your brain is now using more"
+  "t0": 535.478,
+  "t1": 537.238,
+  "text": "Your brain is now using more processing"
  },
  {
-  "t0": 511.947,
-  "t1": 514.397,
-  "text": "processing power than a NASA supercomputer."
+  "t0": 537.278,
+  "t1": 539.328,
+  "text": "power than a NASA supercomputer."
  },
  {
-  "t0": 514.561,
-  "t1": 515.463,
+  "t0": 539.492,
+  "t1": 540.394,
   "text": "And all of this\u2026"
  },
  {
-  "t0": 515.503,
-  "t1": 517.134,
+  "t0": 540.434,
+  "t1": 542.104,
   "text": "For a conversation that starts with:"
  },
  {
-  "t0": 517.174,
-  "t1": 518.924,
+  "t0": 543.05,
+  "t1": 544.8,
   "text": "\"Why did you like her Instagram picture?\""
  },
  {
-  "t0": 520.3,
-  "t1": 522.15,
-  "text": "And here's where things get really interesting."
+  "t0": 546.85,
+  "t1": 547.63,
+  "text": "And here's where things get"
  },
  {
-  "t0": 522.378,
-  "t1": 524.138,
-  "text": "What if you literally forced one hundred"
+  "t0": 547.67,
+  "t1": 548.87,
+  "text": "really interesting."
  },
  {
-  "t0": 524.178,
-  "t1": 526.328,
-  "text": "percent of your neurons to fire simultaneously?"
+  "t0": 548.928,
+  "t1": 550.288,
+  "text": "What if you literally forced one"
  },
  {
-  "t0": 526.792,
-  "t1": 527.952,
+  "t0": 550.328,
+  "t1": 551.808,
+  "text": "hundred percent of your neurons to"
+ },
+ {
+  "t0": 551.848,
+  "t1": 553.048,
+  "text": "fire simultaneously?"
+ },
+ {
+  "t0": 553.342,
+  "t1": 554.542,
   "text": "Would you become a god?"
  },
  {
-  "t0": 527.992,
-  "t1": 529.105,
+  "t0": 554.842,
+  "t1": 555.955,
   "text": "Absolutely not."
  },
  {
-  "t0": 529.145,
-  "t1": 531.035,
+  "t0": 555.995,
+  "t1": 557.885,
   "text": "Your brain doesn't work like a light switch."
  },
  {
-  "t0": 531.256,
-  "t1": 533.716,
-  "text": "Different groups of neurons perform different jobs,"
+  "t0": 558.106,
+  "t1": 558.926,
+  "text": "Different groups of neurons"
  },
  {
-  "t0": 533.756,
-  "t1": 535.456,
+  "t0": 558.966,
+  "t1": 560.566,
+  "text": "perform different jobs,"
+ },
+ {
+  "t0": 560.606,
+  "t1": 562.306,
   "text": "communicating through carefully coordinated"
  },
  {
-  "t0": 535.496,
-  "t1": 537.746,
+  "t0": 562.346,
+  "t1": 564.596,
   "text": "electrical and chemical signals."
  },
  {
-  "t0": 537.948,
-  "t1": 539.858,
+  "t0": 565.8,
+  "t1": 567.71,
   "text": "Think of your brain as a massive orchestra."
  },
  {
-  "t0": 540.086,
-  "t1": 541.446,
+  "t0": 567.938,
+  "t1": 569.298,
   "text": "The violin, drums, piano,"
  },
  {
-  "t0": 541.486,
-  "t1": 543.116,
+  "t0": 569.338,
+  "t1": 570.968,
   "text": "and trumpet all have different roles."
  },
  {
-  "t0": 543.333,
-  "t1": 545.673,
-  "text": "Now imagine forcing every musician to play as"
+  "t0": 571.185,
+  "t1": 572.825,
+  "text": "Now imagine forcing every musician"
  },
  {
-  "t0": 545.713,
-  "t1": 548.463,
-  "text": "loudly as possible at exactly the same time."
+  "t0": 572.865,
+  "t1": 574.765,
+  "text": "to play as loudly as possible at"
  },
  {
-  "t0": 548.578,
-  "t1": 549.489,
+  "t0": 574.805,
+  "t1": 576.315,
+  "text": "exactly the same time."
+ },
+ {
+  "t0": 576.43,
+  "t1": 577.341,
   "text": "No rhythm."
  },
  {
-  "t0": 549.529,
-  "t1": 550.729,
+  "t0": 577.381,
+  "t1": 578.581,
   "text": "No coordination."
  },
  {
-  "t0": 550.862,
-  "t1": 551.857,
+  "t0": 579.014,
+  "t1": 580.009,
   "text": "Just noise."
  },
  {
-  "t0": 551.897,
-  "t1": 553.097,
+  "t0": 580.049,
+  "t1": 581.249,
   "text": "That's not intelligence."
  },
  {
-  "t0": 553.234,
-  "t1": 554.434,
+  "t0": 581.386,
+  "t1": 582.586,
   "text": "That's a musical disaster."
  },
  {
-  "t0": 554.689,
-  "t1": 555.389,
-  "text": "In reality,"
+  "t0": 583.8,
+  "t1": 584.78,
+  "text": "In reality, uncontrolled"
  },
  {
-  "t0": 555.429,
-  "t1": 557.749,
-  "text": "uncontrolled synchronized electrical activity in"
+  "t0": 584.82,
+  "t1": 586.86,
+  "text": "synchronized electrical activity in"
  },
  {
-  "t0": 557.789,
-  "t1": 559.299,
+  "t0": 586.9,
+  "t1": 588.41,
   "text": "the brain can cause seizures."
  },
  {
-  "t0": 559.544,
-  "t1": 562.194,
-  "text": "So the goal isn't to make every neuron fire at once."
+  "t0": 588.655,
+  "t1": 589.855,
+  "text": "So the goal isn't to make every"
  },
  {
-  "t0": 562.396,
-  "t1": 563.096,
-  "text": "It's to make the right"
+  "t0": 589.895,
+  "t1": 591.305,
+  "text": "neuron fire at once."
  },
  {
-  "t0": 563.136,
-  "t1": 565.286,
-  "text": "neurons communicate at the right time."
+  "t0": 591.507,
+  "t1": 592.547,
+  "text": "It's to make the right neurons"
  },
  {
-  "t0": 565.473,
-  "t1": 566.473,
-  "text": "And this is exactly what"
+  "t0": 592.587,
+  "t1": 594.397,
+  "text": "communicate at the right time."
  },
  {
-  "t0": 566.513,
-  "t1": 568.123,
-  "text": "happens when your girlfriend says:"
+  "t0": 595.3,
+  "t1": 596.6,
+  "text": "And this is exactly what happens"
  },
  {
-  "t0": 568.292,
-  "t1": 569.277,
+  "t0": 596.64,
+  "t1": 597.95,
+  "text": "when your girlfriend says:"
+ },
+ {
+  "t0": 598.519,
+  "t1": 599.504,
   "text": "\"We need to talk.\""
  },
  {
-  "t0": 569.317,
-  "t1": 570.657,
+  "t0": 599.544,
+  "t1": 600.884,
   "text": "Your memory starts playing every"
  },
  {
-  "t0": 570.697,
-  "t1": 572.667,
+  "t0": 600.924,
+  "t1": 602.894,
   "text": "argument from the last five years."
  },
  {
-  "t0": 572.874,
-  "t1": 573.874,
-  "text": "Your imagination creates"
+  "t0": 603.101,
+  "t1": 604.561,
+  "text": "Your imagination creates seventeen"
  },
  {
-  "t0": 573.914,
-  "t1": 576.144,
-  "text": "seventeen different disaster scenarios."
+  "t0": 604.601,
+  "t1": 606.371,
+  "text": "different disaster scenarios."
  },
  {
-  "t0": 576.402,
-  "t1": 578.912,
-  "text": "Your reasoning tries to identify what you did wrong."
+  "t0": 606.629,
+  "t1": 607.769,
+  "text": "Your reasoning tries to identify"
  },
  {
-  "t0": 579.03,
-  "t1": 580.7,
+  "t0": 607.809,
+  "t1": 609.139,
+  "text": "what you did wrong."
+ },
+ {
+  "t0": 609.257,
+  "t1": 610.927,
   "text": "Your emotional system activates."
  },
  {
-  "t0": 580.908,
-  "t1": 581.748,
-  "text": "And your entire brain"
+  "t0": 611.135,
+  "t1": 612.715,
+  "text": "And your entire brain becomes one"
  },
  {
-  "t0": 581.788,
-  "t1": 584.278,
-  "text": "becomes one giant emergency meeting."
+  "t0": 612.755,
+  "t1": 614.505,
+  "text": "giant emergency meeting."
  },
  {
-  "t0": 584.427,
-  "t1": 585.627,
+  "t0": 614.654,
+  "t1": 615.854,
   "text": "All neurons are working."
  },
  {
-  "t0": 585.723,
-  "t1": 586.923,
+  "t0": 616.25,
+  "t1": 617.45,
   "text": "None of them has a solution."
  },
  {
-  "t0": 587.8,
-  "t1": 588.18,
-  "text": "So,"
+  "t0": 619.35,
+  "t1": 621.01,
+  "text": "So, would unlocking one hundred"
  },
  {
-  "t0": 588.22,
-  "t1": 590.02,
-  "text": "would unlocking one hundred percent of your"
+  "t0": 621.05,
+  "t1": 622.39,
+  "text": "percent of your brain make you the"
  },
  {
-  "t0": 590.06,
-  "t1": 591.93,
-  "text": "brain make you the smartest human alive?"
+  "t0": 622.43,
+  "t1": 623.63,
+  "text": "smartest human alive?"
  },
  {
-  "t0": 592.146,
-  "t1": 593.288,
+  "t0": 623.696,
+  "t1": 624.838,
   "text": "Not automatically."
  },
  {
-  "t0": 593.328,
-  "t1": 595.038,
+  "t0": 624.878,
+  "t1": 626.588,
   "text": "Because intelligence isn't a percentage."
  },
  {
-  "t0": 595.387,
-  "t1": 597.787,
-  "text": "It's a combination of memory, learning, reasoning,"
+  "t0": 626.937,
+  "t1": 628.817,
+  "text": "It's a combination of memory, learning,"
  },
  {
-  "t0": 597.827,
-  "t1": 599.327,
-  "text": "creativity, experience,"
+  "t0": 628.857,
+  "t1": 630.877,
+  "text": "reasoning, creativity, experience,"
  },
  {
-  "t0": 599.367,
-  "t1": 601.677,
-  "text": "and how efficiently your brain uses information."
+  "t0": 630.917,
+  "t1": 632.017,
+  "text": "and how efficiently your brain"
  },
  {
-  "t0": 601.973,
-  "t1": 603.963,
+  "t0": 632.057,
+  "t1": 633.257,
+  "text": "uses information."
+ },
+ {
+  "t0": 633.523,
+  "t1": 635.513,
   "text": "Einstein didn't need a secret brain switch."
  },
  {
-  "t0": 604.175,
-  "t1": 605.255,
+  "t0": 635.725,
+  "t1": 636.805,
   "text": "Professional athletes didn't"
  },
  {
-  "t0": 605.295,
-  "t1": 606.865,
+  "t0": 636.845,
+  "t1": 638.415,
   "text": "unlock hidden brain regions."
  },
  {
-  "t0": 607.122,
-  "t1": 609.702,
-  "text": "They developed extraordinary abilities through practice,"
+  "t0": 638.672,
+  "t1": 639.492,
+  "text": "They developed extraordinary"
  },
  {
-  "t0": 609.742,
-  "t1": 611.072,
+  "t0": 639.532,
+  "t1": 641.252,
+  "text": "abilities through practice,"
+ },
+ {
+  "t0": 641.292,
+  "t1": 642.622,
   "text": "experience, and dedication."
  },
  {
-  "t0": 611.473,
-  "t1": 613.223,
+  "t0": 643.8,
+  "t1": 645.55,
   "text": "And perhaps the greatest lesson is this:"
  },
  {
-  "t0": 613.37,
-  "t1": 615.71,
-  "text": "You might be able to solve complicated equations,"
+  "t0": 645.697,
+  "t1": 646.597,
+  "text": "You might be able to solve"
  },
  {
-  "t0": 615.75,
-  "t1": 616.97,
+  "t0": 646.637,
+  "t1": 648.037,
+  "text": "complicated equations,"
+ },
+ {
+  "t0": 648.077,
+  "t1": 649.297,
   "text": "memorize thousands of books,"
  },
  {
-  "t0": 617.01,
-  "t1": 618.62,
+  "t0": 649.337,
+  "t1": 650.947,
   "text": "predict the movement of a football,"
  },
  {
-  "t0": 618.69,
-  "t1": 620.72,
-  "text": "and understand the mysteries of the universe."
+  "t0": 651.017,
+  "t1": 651.937,
+  "text": "and understand the mysteries"
  },
  {
-  "t0": 620.959,
-  "t1": 622.319,
+  "t0": 651.977,
+  "t1": 653.177,
+  "text": "of the universe."
+ },
+ {
+  "t0": 653.286,
+  "t1": 654.996,
   "text": "But when your girlfriend says:"
  },
  {
-  "t0": 622.359,
-  "t1": 623.545,
+  "t0": 655.186,
+  "t1": 656.372,
   "text": "\"Do whatever you want.\""
  },
  {
-  "t0": 623.585,
-  "t1": 626.075,
-  "text": "Even a supercomputer might need professional help."
+  "t0": 656.412,
+  "t1": 657.792,
+  "text": "Even a supercomputer might need"
  },
  {
-  "t0": 626.202,
-  "t1": 628.432,
-  "text": "Because you can study the human brain for decades."
+  "t0": 657.832,
+  "t1": 659.032,
+  "text": "professional help."
  },
  {
-  "t0": 628.705,
-  "t1": 630.055,
+  "t0": 659.8,
+  "t1": 660.78,
+  "text": "Because you can study the human"
+ },
+ {
+  "t0": 660.82,
+  "t1": 662.03,
+  "text": "brain for decades."
+ },
+ {
+  "t0": 662.303,
+  "t1": 663.653,
   "text": "You can understand the universe."
  },
  {
-  "t0": 630.32,
-  "t1": 632.47,
-  "text": "You can calculate the distance between galaxies."
+  "t0": 663.918,
+  "t1": 664.958,
+  "text": "You can calculate the distance"
  },
  {
-  "t0": 632.813,
-  "t1": 633.866,
+  "t0": 664.998,
+  "t1": 666.198,
+  "text": "between galaxies."
+ },
+ {
+  "t0": 666.411,
+  "t1": 667.464,
   "text": "But sometimes\u2026"
  },
  {
-  "t0": 633.906,
-  "t1": 635.236,
+  "t0": 667.504,
+  "t1": 668.834,
   "text": "The hardest problem isn't science."
  },
  {
-  "t0": 635.745,
-  "t1": 636.975,
+  "t0": 669.843,
+  "t1": 671.073,
   "text": "It's deciding where to eat."
  },
  {
-  "t0": 637.109,
-  "t1": 638.499,
+  "t0": 671.807,
+  "t1": 673.197,
   "text": "See you in the next experiment!"
  }
 ]

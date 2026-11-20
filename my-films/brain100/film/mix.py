@@ -22,13 +22,23 @@ BEAT = .5
 MAJ = [('C2', ['C3', 'E3', 'G3']), ('A1', ['A2', 'C3', 'E3']), ('F1', ['F2', 'A2', 'C3']), ('G1', ['G2', 'B2', 'D3'])]
 MIN = [('A1', ['A2', 'C3', 'E3']), ('F1', ['F2', 'A2', 'C3']), ('D2', ['D3', 'F3', 'A3']), ('E2', ['E3', 'G#3', 'B3'])]
 FEEL = {'h1': ('maj', 'light'), 'h2': ('maj', 'bounce'), 'h3': ('maj', 'tick'), 'c1a': ('maj', 'light'), 'c1b': ('maj', 'tick'), 'c1c': ('maj', 'bounce'),
-        'c1d': ('maj', 'tick'), 'c1e': ('min', 'light'), 'c1f': ('min', 'tick'), 'c1g': ('min', 'walk')}
+        'c1d': ('maj', 'tick'), 'c1e': ('min', 'light'), 'c1f': ('min', 'tick'), 'c1g': ('min', 'walk'),
+        'c2a': ('maj', 'tick'), 'c2b': ('maj', 'bounce'), 'c2c': ('maj', 'tick'), 'c2d': ('maj', 'bounce'), 'c2e': ('min', 'light'), 'c2f': ('min', 'tick'),
+        'c3a': ('maj', 'light'), 'c3b': ('maj', 'walk'), 'c3c': ('min', 'light'),
+        'c4a': ('maj', 'bounce'), 'c4b': ('maj', 'tick'), 'c4c': ('maj', 'light'), 'c4d': ('maj', 'bounce'), 'c4e': ('min', 'light'), 'c4f': ('min', 'tick'),
+        'c5a': ('maj', 'light'), 'c5b': ('maj', 'bounce'), 'c5c': ('maj', 'walk'), 'c5d': ('min', 'light'),
+        'c6a': ('maj', 'walk'), 'c6b': ('min', 'light'), 'c6c': ('min', 'tick'), 'c6d': ('min', 'light'),
+        'c7a': ('maj', 'light'), 'c7b': ('maj', 'bounce'), 'c7c': ('min', 'light'), 'c7d': ('min', 'tick'),
+        'e1': ('maj', 'light'), 'e2': ('min', 'light'), 'e3': ('maj', 'light')}
 MOTIF = ['G5', 'E5', 'C6', 'D6']
 mute = []
 for t in evt('stop'): mute.append((t - .35, t + .9))
 for t in evt('crash'): mute.append((t - .55, t + 1.0))
 for t in evt('gauge'): mute.append((t - .4, t + .05))
 for t in evt('buzz2'): mute.append((t - .2, t + .6))
+for t in evt('noise'): mute.append((t, t + 3.5))
+for t in evt('stop'): mute.append((t, t + 1.2))
+for t in evt('slowmo'): mute.append((t - .2, t + 1.0))
 def muted(t): return any(a <= t < b for a, b in mute)
 ev = []
 for sc in TL['scenes']:
@@ -64,6 +74,13 @@ for t in evt('womp'): ev += [(t + i * .26, 'bassoon_stac', p, .25, .5, 0) for i,
 for t in evt('check'): ev.append((t, 'marimba', 'G5', .4, .5, .3))
 for t in evt('boing'): ev += [(t, 'violins_pizz', 'C5', .3, .4, 0), (t + .12, 'violins_pizz', 'G5', .3, .4, 0)]
 for t in evt('alarm'): ev += [(t + i * .32, 'vibraphone_hard', p, .3, .45, 0) for i, p in enumerate(['A5', 'F5', 'A5', 'F5'])]
+for t in evt('reboot'): ev += [(t + i * .07, 'xylophone', S.name(S.midi('C5') + d), .25, .35, 0) for i, d in enumerate([0, 7, 12])]
+for t in evt('choir'): ev += [(t, 'vibraphone', p, 2.0, .4, k) for p, k in [('C5', -.3), ('E5', 0), ('G5', .3)]] + [(t, 'glockenspiel', 'C7', 1.5, .4, 0)]
+for t in evt('orch'): ev += [(t + i * .35, ins, p, .5, .4, pn) for i, (ins, p, pn) in enumerate([('violins_pizz', 'E5', -.4), ('woodblock', 'b', 0), ('marimba', 'C5', .2), ('trombone_stac', 'G3', .4)])]
+for t in evt('tada'): ev += [(t - .3 + i * .04, 'harp', S.name(S.midi('C4') + d), .8, .42, -.3 + i * .06) for i, d in enumerate([0, 2, 4, 5, 7, 9, 11, 12, 14, 16])] + [(t + .1, 'glockenspiel', 'C7', 1.2, .5, 0)]
+for t in evt('end'): ev += [(t + .2, 'glockenspiel', 'C6', 2.5, .45, 0), (t + .2, 'vibraphone', 'C4', 3.0, .45, -.2), (t + .2, 'vibraphone', 'E4', 3.0, .4, .2), (t + .2, 'contrabass_pizz', 'C2', 1.0, .6, 0)]
+for t in evt('land'): ev.append((t, 'marimba', S.name(S.midi('C5') + [0, 2, 4, 5, 7, 9, 11, 12][[e for e in EV if e['type'] == 'land' and e['t'] == t][0].get('i', 0) % 8]), .3, .45, 0))
+for t in evt('pulse'): ev.append((t, 'glockenspiel', S.name(S.midi('C6') + [0, 2, 4, 5, 7, 9, 12][[e for e in EV if e['type'] == 'pulse' and e['t'] == t][0].get('i', 0) % 7]), .4, .32, .2))
 for t in evt('party'): ev += [(t + i * .09, 'glockenspiel', p, .4, .35, 0) for i, p in enumerate(['C6', 'E6', 'G6'])] + [(t + .4, 'bassoon_stac', 'C3', .3, .45, 0)]
 music = S.render(ev, dur=DUR + 1.0)
 music = S.room(music, size=.35, mix=.15)
@@ -114,6 +131,23 @@ for e in EV:
     elif tp == 'crash': add(fx, X.crash(.9), t, .65, .2); add(fx, X.thump(1, 60), t, .8, 0); add(fx, chirp(800, 60, .7, .35), t + .05, .45, 0)
     elif tp == 'stamp': add(fx, X.thump(.8, 110), t, .6, .3)
     elif tp == 'ding': add(fx, X.ding(.7), t, .35, .3)
+    elif tp == 'reboot': add(fx, chirp(300, 900, .25, .25), t, .3, 0)
+    elif tp == 'clack': add(fx, X.clack(1.1, .8), t, .5, .2)
+    elif tp == 'slash': add(fx, X.whoosh(.15, 1.0), t, .4, 0)
+    elif tp == 'door': add(fx, X.creak(.6), t, .35, .4)
+    elif tp == 'kick': add(fx, X.thump(.9, 120), t, .6, -.3)
+    elif tp == 'slowmo': add(fx, chirp(400, 120, 1.0, .3), t, .35, 0)
+    elif tp == 'catch': add(fx, X.thump(.7, 150), t, .6, .3); add(fx, X.click(1.2, .6), t, .4, .3)
+    elif tp == 'gasp': add(fx, X.bp(X.noise(.4) * X.env_exp(.4, .15), 600, 3000).astype(np.float32), t, .3, 0)
+    elif tp == 'thud': add(fx, X.thump(.5, 140), t, .4, .3)
+    elif tp == 'sizzle': add(fx, X.hp(X.noise(1.2) * np.minimum(1, X.t_(1.2) * 4) * X.env_exp(1.2, .8), 3000).astype(np.float32), t, .25, -.2)
+    elif tp == 'washer': tt = X.t_(2.2); add(fx, (np.sin(2 * np.pi * 60 * tt) * .3 * (1 + .5 * np.sin(2 * np.pi * 7 * tt)) * np.minimum(1, np.minimum(tt * 4, (2.2 - tt) * 3))).astype(np.float32), t, .5, .3)
+    elif tp == 'can': add(fx, X.click(2.2, .5), t, .3, .4)
+    elif tp == 'switch': add(fx, X.clack(1.6, .9), t, .5, .3)
+    elif tp == 'noise': tt = X.t_(2.8); add(fx, (X.noise(2.8) * .25 + np.sign(np.sin(2 * np.pi * 220 * tt)) * .12).astype(np.float32) * np.minimum(1, tt * 1.5) * np.minimum(1, (2.8 - tt) * 4), t, .45, 0)
+    elif tp == 'crowd': add(fx, X.bp(X.noise(1.5) * np.minimum(1, X.t_(1.5) * 3) * X.env_exp(1.5, .9), 300, 2500).astype(np.float32), t, .35, 0)
+    elif tp == 'tada': pass
+    elif tp == 'end': pass
 
 # ---------------- mix ----------------
 env = np.abs(voice[:, 0]); k = int(.12 * SR)

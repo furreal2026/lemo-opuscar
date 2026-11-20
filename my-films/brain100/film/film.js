@@ -30,7 +30,7 @@ function scr() { g.setTransform(1, 0, 0, 1, 0, 0); }
 function world(fn) { HIDE = 1; fn(); HIDE = 0; }
 // zoom z about world point P, which sits at screen point A (no sideways swing while zooming)
 function camAnchor(z, P, A, r = 0) { camSet(z, P[0] - (A[0] - W / 2) / z, P[1] - (A[1] - H / 2) / z, r); }
-let SUBWASH = 0;
+let SUBWASH = 0, SUBDARK = 0;
 
 // ---------- events for the mixer ----------
 const EV = []; const ev = (t, type, o = {}) => { if (t <= DUR + .5) EV.push({ t: +t.toFixed(3), type, ...o }); };
@@ -352,19 +352,390 @@ function classroom(t, o) {
   };
 }
 
-// placeholder for chapters not animated yet
-for (const id of ['chapter2', 'chapter3', 'chapter4', 'chapter5', 'chapter6', 'chapter7', 'ending']) FILM[id] = t => { text(id + ' — not animated yet', 960, 540, { size: 48, w: 600, align: 'center', col: C.mute }); };
+// Chapters 2–7 and the ending. Scenes reuse the storyboard drawings (look/board.js) through VIS (0…1 reveals) and PZ (pose overrides).
+let SCN_I = 0;
+const bp = (p, t, ph = 0) => breathe(pose(p), t, ph);
+// one scene drawn from a storyboard frame: vis(t, V, P) fills the hooks; over(t) draws on top in world space; ttl(t) draws screen text; cam(t, s, pc) may set the camera
+function board(id, sb, o) {
+  const sign = (SCN_I++ % 2) ? 1 : -1;
+  FILM[id] = t => {
+    const s = SC[id], pc = pinch(t, s, sign);
+    if (o.cam) o.cam(t, s, pc); else camSet(pc.z, 960, 540, pc.r);
+    VIS = {}; PZ = {}; if (o.vis) o.vis(t, VIS, PZ, s);
+    world(() => { SB[sb](); if (o.over) o.over(t, s); });
+    VIS = null; PZ = null; scr();
+    if (o.ttl) o.ttl(t, s);
+  };
+}
+const CH = n => ['', 'Perfect memory', 'Super processing speed', 'The Einstein question', 'The athlete brain', 'Learning at super speed', 'The energy problem', 'Every neuron at once?'][n];
+const chap = (n, t, s) => Lb(`Chapter ${n}  ·  ${CH(n)}`, 124, 150, t, s.t0 + .2);
+function chips(list, x, y, t, times, col = '#FCE2C6') { let xx = x; list.forEach((w, i) => { g.save(); g.font = '500 24px Jost'; const tw = g.measureText(w).width + 36; g.restore(); const k = pop(t, times[i]); popIn(xx + tw / 2, y + 22, k, () => { rrect(xx, y, tw, 44, 22, col, { lw: 3 }); text(w, xx + 18, y + 30, { size: 24, w: 500 }); }); xx += tw + 12; }); }
+function redCross(x, y, r, k) { if (k <= 0) return; ink([[x - r, y - r], [lerp(x - r, x + r, k), lerp(y - r, y + r, k)]], { w: 10, col: C.red }); if (k > .5) ink([[x + r, y - r], [lerp(x + r, x - r, (k - .5) * 2), lerp(y - r, y + r, (k - .5) * 2)]], { w: 10, col: C.red }); }
+
+// ================= CHAPTER 2 · SUPER PROCESSING SPEED =================
+// ---- c2a: thinking speed — a stream of information, a narrow gate, then patterns connect ----
+{ const s = SC.c2a, tLim = wt('p048', 'limitations'), tPat = wt('p049', 'patterns'), tCon = wt('p049', 'connecting');
+  ev(s.t0 + .1, 'reboot'); ev(s.t0 + .4, 'pop'); ev(tLim, 'womp'); ev(tPat, 'shimmer'); ev(tCon, 'grow2');
+  const NODES = [[1180, 300], [1340, 240], [1500, 320], [1660, 260], [1250, 460], [1420, 430], [1600, 470], [1720, 400], [1300, 620], [1500, 600], [1680, 640]];
+  const EDGES = [[0, 1], [1, 2], [2, 3], [0, 4], [4, 5], [5, 2], [5, 6], [6, 7], [3, 7], [4, 8], [8, 9], [9, 5], [9, 10], [10, 6]];
+  FILM.c2a = t => {
+    const pc = pinch(t, s, 1); camSet(pc.z, 960, 540, pc.r);
+    world(() => {
+      const j = brainy({ x: 420, gy: GY, S: 420 }, bp({ la: -.5, lb: .2, ra: .5, rb: -.2, head: .1 }, t), { spark: t > tPat });
+      const hd = j.Hd, gate = ein(t, tLim - .2, .4) * (1 - ein(t, tPat, .5));
+      // the gate ("conscious thinking")
+      if (gate > 0) { g.save(); g.globalAlpha = gate; rect(820, 380, 26, 260, C2.chrome, { lw: 4 }); rect(820, 380, 26, 110, C.red, { lw: 0 }); label('Conscious thinking', 700, 680); g.restore(); }
+      // dots flowing in from the right
+      const r = mulberry(21);
+      for (let i = 0; i < 40; i++) { const sp_ = .22 + r() * .1, ph = r(), yo = (r() - .5) * 180; let u = ((t - s.t0) * sp_ + ph) % 1; const x0 = 1850, x1 = hd[0] + 40;
+        let x = lerp(x0, x1, u), y = 520 + yo * (1 - u) + Math.sin(u * 8 + i) * 10;
+        if (gate > .5 && x < 870 && i % 4) { x = 870 + (i % 7) * 18; y = 520 + yo * .3; }
+        circ(x, y, 9, i % 3 ? C.sky : C.wall, { lw: 2.5 }); }
+      // the pattern network
+      const pk = seg(t, tPat - .2, tCon + 1.2);
+      if (pk > 0) { EDGES.forEach(([a, b], i) => { const k = clamp(pk * EDGES.length - i); if (k <= 0) return; const A = NODES[a], B = NODES[b]; line([A, [lerp(A[0], B[0], k), lerp(A[1], B[1], k)]], C.ginger, 5); });
+        NODES.forEach(([x, y], i) => circ(x, y, 16, pk * NODES.length > i ? C.ginger : C2.white, { lw: 4 })); }
+      ground(GY, 124, 1796);
+    });
+    scr(); chap(2, t, s); headline2('Next:', 'thinking speed.', C.ginger, t, s.t0 + .3, s.t0 + .6);
+  };
+}
+// ---- c2b: chess — ordinary player, professional, you ----
+{ const s = SC.c2b, tOrd = lt('p051'), tPro = lt('p052'), tUp = lt('p053'), tEx = lt('p054'), tMis = wt('p054', 'mistakes');
+  ev(tOrd, 'pop'); ev(tPro, 'pop'); ev(tUp, 'sting'); ev(tEx, 'scan');
+  board('c2b', 'b06', {
+    vis: (t, V, P) => { V.path = Math.floor(4 * seg(t, tEx, tMis + .4) + .001); V.brb = 0; V.sweat = 0; V.spark = t > tUp ? 1 : 0;
+      P.you = bp({ la: -.4, lb: -.6, ra: .9, rb: .8, head: t > tUp ? .12 : .3 }, t); P.opp = bp({ la: -1.1, lb: -1.9, ra: .6, rb: 1.6, head: -.15, lean: -.02 }, t, 1); },
+    over: t => { const k = pop(t, tOrd) * (1 - ein(t, tUp, .3)); if (k > 0) popIn(1440, 340, k, () => { thought(1290, 250, 300, 170, 1430, 520); const n = t > tPro ? 5 : 2; for (let i = 0; i < n; i++) { const x = 1340 + i * 46, y = 330 + (i % 2) * 18; circ(x, y + 30, 9, C2.white, { lw: 3 }); line([[x, y + 20], [x + 14, y - 8]], C.ink, 3); arrowHead(x + 14, y - 8, -1.1, 9, C.ink, 3); } label(t > tPro ? 'pro: ' + n + ' moves' : 'ordinary: 2 moves', 1350, 400); }); },
+    ttl: (t, s) => { chap(2, t, s); headline2('Let\'s test it', 'with chess.', C.ginger, t, s.t0 + .3, s.t0 + .7); }
+  });
+}
+// ---- c2c: top view, twelve moves ahead ----
+{ const s = SC.c2c, tPawn = wt('p055', 'pawn'), tSm = lt('p056'), tMate = lt('p057'), tSw = lt('p058');
+  ev(s.t0 + .05, 'whoosh'); ev(tPawn, 'clack'); ev(tMate, 'chime'); for (let i = 0; i < 11; i++) ev(tSm + i * ((tMate + 1.2 - tSm) / 11), 'tick');
+  board('c2c', 'b06z', {
+    cam: (t, s, pc) => { const u = eout3((t - s.t0) / .5); camSet(lerp(1.15, 1, u) * pc.z * (1 + .03 * seg(t, s.t0 + .5, s.t1)), lerp(1100, 960, u), 540, pc.r); },
+    vis: (t, V) => { V.n = Math.floor(11 * seg(t, tSm, tMate + 1.2)); V.hand = pop(t, tPawn - .4) * (1 - ein(t, tPawn + .8, .3)); V.sweat = pop(t, tSw); },
+    ttl: (t, s) => { chap(2, t, s); T('12 moves', 118, 238, { size: 84, w: 600, track: -2, col: C.ginger }, t, tMate); T('ahead.', 118, 329, { size: 84, w: 600, track: -2 }, t, tMate + .2); }
+  });
+}
+// ---- c2d: rematch, career doubts, the computer takes a break ----
+{ const s = SC.c2d, tRe = wt('p059', 'rematch'), tAn = lt('p060'), tCar = wt('p061', 'career'), tCof = wt('p062', 'coffee');
+  ev(tRe, 'pop'); ev(tAn, 'scan'); ev(tCar, 'womp'); ev(tCof, 'ding');
+  board('c2d', 'b06', {
+    vis: (t, V, P) => { V.path = t > tAn ? Math.floor(4 * seg(t, tAn, tAn + 1)) : 4; V.brb = pop(t, tCof - .2); V.sweat = 1;
+      P.you = bp({ la: -.4, lb: -.6, ra: .9, rb: .8, head: .12 }, t);
+      P.opp = poseAt([[0, pose({ la: -1.1, lb: -1.9, ra: .6, rb: 1.6, head: -.25, lean: -.05 })], [tRe - .2, pose({ la: -1.1, lb: -1.9, ra: 2.6, rb: .2, head: -.1 })], [tCar - .2, pose({ la: -.2, lb: .1, ra: .2, rb: -.1, head: .55, lean: .08, hy: .02 })]], t); },
+    ttl: (t, s) => { chap(2, t, s); headline2('Rematch?', 'Another 12 moves.', C.ginger, t, tRe - .2, tAn + .3); }
+  });
+}
+// ---- c2e: the hardest test, the dress question ----
+{ const s = SC.c2e, tQ = lt('p065'), tProc = lt('p066'), tC = lt('p067');
+  ev(tQ, 'pop'); ev(tProc, 'power'); [0, 1, 2, 3, 4].forEach(i => ev(tC + .3 + i * .55, 'tick'));
+  board('c2e', 'b07', {
+    vis: (t, V, P) => { V.q = pop(t, tQ - .1); V.A = V.B = V.C = 0; V.tree = 0; V.spark = t > tProc ? 1 : 0;
+      P.gf = bp({ la: -1.3, lb: -1.7, ra: .5, rb: .3, head: .05 }, t, 1); P.you = bp({ la: -.6, lb: -.3, ra: 1.0, rb: 1.9, head: .1 }, t); },
+    over: t => { const tags = [['face', 1290, 470], ['dress', 1520, 760], ['history', 980, 420], ['emotion', 1000, 520], ['consequences', 980, 620]];
+      tags.forEach(([w, x, y], i) => { const k = pop(t, tC + .3 + i * .55); popIn(x, y, k, () => { g.save(); g.font = '500 22px Jost'; const tw = g.measureText(w).width + 30; g.restore(); rrect(x - tw / 2, y - 20, tw, 40, 20, '#FCE2C6', { lw: 3 }); text(w, x, y + 8, { size: 22, w: 500, align: 'center' }); }); }); },
+    ttl: (t, s) => { chap(2, t, s); headline2('Something', 'even harder.', C.red, t, s.t0 + .3, s.t0 + .8); }
+  });
+}
+// ---- c2f: options A/B/C, ten million outcomes, option B, system error ----
+{ const s = SC.c2f, tA = lt('p068'), tB = lt('p069'), tC = lt('p070'), tSim = lt('p071'), tPick = lt('p072'), tSay = lt('p073'), tResp = lt('p075'), tErr = lt('p076');
+  ev(tA, 'pop'); ev(tB, 'pop'); ev(tC, 'pop'); ev(tSim, 'grow2'); ev(tSim + .3, 'scan'); ev(tPick, 'chime'); ev(tSay, 'pop'); ev(tResp, 'boss'); ev(tErr - .02, 'crash');
+  board('c2f', 'b07', {
+    cam: (t, s, pc) => { const [sx, sy] = shakeAt(t, tErr, 7, .28); camSet(pc.z, 960, 540, pc.r, sx, sy); },
+    vis: (t, V, P) => { V.q = t < tResp - .2 ? 1 : 0; V.A = pop(t, tA); V.B = pop(t, tB); V.C = pop(t, tC); V.tree = ss(seg(t, tSim, tSim + 1.6)); V.count = ss(seg(t, tSim, tSim + 2.2)); V.pickB = t > tPick ? 1 : 0;
+      V.spark = t < tErr ? 1 : 0; V.red = t > tErr ? 1 : 0;
+      P.gf = poseAt([[0, pose({ la: -1.3, lb: -1.7, ra: .5, rb: .3, head: .05 })], [tResp - .2, pose({ la: .9, lb: -1.7, ra: -.9, rb: 1.7, head: -.1 })]], t);
+      P.you = poseAt([[0, pose({ la: -.6, lb: -.3, ra: 1.0, rb: 1.9, head: .1 })], [tSay, pose({ la: -.4, lb: .2, ra: 1.6, rb: .4, head: -.05 })], [tErr, pose({ lean: -.08, head: .55, la: -.15, lb: .05, ra: .2, rb: .05, hy: .03 })]], t); },
+    over: t => { popIn(320, 300, pop(t, tSay) * (1 - ein(t, tResp, .3)), () => bubble(170, 250, 320, 90, 'You look beautiful.', { tx: 330, ty: 400, size: 28, fill: '#FCE2C6' }));
+      popIn(1510, 230, pop(t, tResp - .1), () => bubble(1200, 170, 600, 120, ['So you\'re saying I', 'looked ugly yesterday?'], { tx: 1420, ty: 400, size: 34, col: C.red }));
+      popIn(880, 490, pop(t, tErr), () => errorCard(560, 360, 640, 260, 'SYSTEM ERROR', 'No solution found.')); },
+    ttl: (t, s) => { chap(2, t, s); if (t > tPick - .2) T('Option B.', 118, 238, { size: 84, w: 600, track: -2, col: C.ginger }, t, tPick - .2); }
+  });
+}
+
+// ================= CHAPTER 3 · THE EINSTEIN QUESTION =================
+{ const s = SC.c3a, tEin = wt('p079', 'einstein'), tRel = wt('p080', 'relativity'), tNo = lt('p082'), tSec = wt('p083', 'secret'), tMath = lt('p084');
+  ev(s.t0 + .1, 'reboot'); ev(tEin, 'pop'); ev(tRel, 'chalk'); ev(tNo, 'pop'); ev(tSec, 'slash'); ev(tMath, 'tick');
+  board('c3a', 'b08', {
+    vis: (t, V, P) => { V.myth = pop(t, tNo); V.strike = ss(seg(t, tSec, tSec + .4)); V.real = t > tMath ? 1 : 0;
+      const wr = t > tRel - .3 && t < tRel + 2.5 ? Math.sin(t * 9) * .18 : 0; P.ein = bp({ la: -1.9 + wr, lb: -.9 - wr, ra: .35, rb: -.3, head: -.1 + (t > tNo ? .3 : 0) }, t); },
+    ttl: (t, s) => { chap(3, t, s); if (t < tSec - .2) headline2('How smart', 'could you get?', C.ginger, t, s.t0 + .3, s.t0 + .8, 84); else headline2('No secret', 'brain switch.', C.ginger, t, tSec - .2, tSec); }
+  });
+}
+{ const s = SC.c3b, tEin = wt('p085', 'einstein'), tNot = lt('p086'), tShip = wt('p087', 'spaceship'), tCr = wt('p089', 'crashing');
+  ev(tNot, 'womp'); ev(tShip, 'pop'); ev(tCr, 'glitch');
+  board('c3b', 'b09a', {
+    vis: (t, V, P) => { V.q = t > tShip ? 1 : 0; V.crash = t > tCr && t < tCr + 1.4 && Math.sin(t * 20) > -.6 ? 1 : 0; P.you = bp({ la: -.5, lb: .2, ra: 1.3, rb: .3, head: t > tShip ? -.2 : .15 }, t); },
+    ttl: (t, s) => { chap(3, t, s); if (t < tShip - .2) headline2('Automatically', 'Einstein?', C.ginger, t, s.t0 + .3, tEin - .2, 76); else headline2('A fast computer', 'is not a spaceship.', C.ginger, t, tShip - .2, tShip, 76); }
+  });
+}
+{ const s = SC.c3c, tEq = lt('p092'), tWalk = lt('p094'), tB1 = lt('p095'), tB2 = lt('p096'), tB3 = lt('p097'), tText = lt('p099'), tRel = lt('p100');
+  ev(tEq, 'chalk'); ev(tWalk, 'door'); ev(tB1, 'pop'); ev(tB2, 'pop'); ev(tB3, 'boss'); ev(tText, 'pop'); ev(tRel, 'sting');
+  board('c3c', 'b09', {
+    vis: (t, V, P) => { V.gf = t > tWalk - .3 ? 1 : 0; V.gfx = lerp(1900, 1700, eout3((t - tWalk + .3) / .8)); V.b1 = pop(t, tB1 - .1) * (1 - ein(t, tB3 - .1, .2)); V.b2 = pop(t, tB2 - .1) * (1 - ein(t, tText, .3)); V.b3 = pop(t, tB3 - .1);
+      const wr = t < tWalk ? Math.sin(t * 9) * .18 : 0; P.ein = bp({ la: -1.8 + wr, lb: -.7 - wr, ra: .4, rb: -.4, head: t > tB1 ? .25 : -.18 }, t);
+      P.gf = poseAt([[0, pose({ la: -.5, lb: .3, ra: .9, rb: 2.3, head: .1 })], [tB3, pose({ la: .9, lb: -1.7, ra: -.9, rb: 1.7, head: -.05 })]], t); },
+    over: t => { const k = pop(t, tText); if (k > 0) popIn(800, 700, k, () => { phone(700, 600, 120, 210, { screen: '#F7F5F0' }); text('Seen', 760, 690, { size: 20, w: 600, align: 'center', col: C.mute }); text('3 h ago', 760, 720, { size: 20, w: 600, align: 'center', col: C.red }); }); },
+    ttl: (t, s) => { chap(3, t, s); if (t < tRel - .2) headline2('Einstein,', 'with your brain.', C.ginger, t, s.t0 + .3, s.t0 + .8, 70); else headline2('A different', 'theory of relativity.', C.red, t, tRel - .2, tRel, 70); }
+  });
+}
+
+// ================= CHAPTER 4 · THE ATHLETE BRAIN =================
+{ const s = SC.c4a, t150 = wt('p103', 'one'), tNot = lt('p104'), tTr = wt('p106', 'training'), W4 = ['coordination', 'timing', 'reaction', 'decision'].map(w => wt('p106', w));
+  ev(s.t0 + .1, 'reboot'); ev(t150, 'pop'); ev(tNot, 'slash'); W4.forEach(x => ev(x, 'tick'));
+  board('c4a', 'b10', {
+    vis: (t, V, P) => { V.pred = 0; V.ring = 0; V.ball = .02; V.kx = 1640; P.keeper = bp({ la: -.6, lb: .3, ra: .6, rb: -.3, head: .05 }, t); P.striker = bp({ la: -.5, lb: .2, ra: .5, rb: -.2 }, t, 1); },
+    over: t => { const k = pop(t, t150); if (k > 0) popIn(980, 330, k, () => { rrect(780, 270, 400, 120, 18, C2.white, { lw: 4 }); text('150%', 980, 352, { size: 72, w: 600, align: 'center', col: C.ginger }); redCross(980, 330, 70, ss(seg(t, tNot, tNot + .4))); }); },
+    ttl: (t, s) => { chap(4, t, s); headline2('From the lab', 'to the field.', C.ginger, t, s.t0 + .3, s.t0 + .8); chips(['coordination', 'timing', 'reaction', 'decisions'], 124, 420, t, W4); }
+  });
+}
+{ const s = SC.c4b, tKick = wt('p108', 'kick'), tAnt = wt('p109', 'anticipate'), tEff = lt('p110');
+  ev(tKick, 'kick'); ev(tAnt, 'scan'); ev(tEff, 'chime');
+  board('c4b', 'b10', {
+    vis: (t, V, P) => { V.ball = t < tKick ? .02 : lerp(.02, .5, ss(seg(t, tKick, tEff + 2))); V.pred = ss(seg(t, tAnt - .2, tAnt + 1)); V.ring = pop(t, tAnt + .8); V.kx = lerp(1640, 1470, eout3((t - tEff) / .6));
+      P.striker = poseAt([[0, pose({ la: -.5, lb: .2, ra: .5, rb: -.2 })], [tKick - .5, pose({ lean: .1, la: -.8, lb: .2, ra: .8, rb: -.2, rfx: -.12, rfy: .05 })], [tKick, pose({ lean: -.12, la: -1.4, lb: .3, ra: 1.0, rb: .2, rfx: .2, rfy: .16, lfx: -.06, head: .05 })]], t);
+      P.keeper = poseAt([[0, pose({ la: -.6, lb: .3, ra: .6, rb: -.3, head: .05, hy: .02 })], [tEff, pose({ lean: .55, la: -1.2, lb: -.3, ra: 2.5, rb: .3, lfx: -.18, rfx: .12, rfy: .1, head: .3, hy: .03 })]], t); },
+    ttl: (t, s) => { chap(4, t, s); headline2('Prediction,', 'not magic.', C.ginger, t, s.t0 + .3, tAnt); }
+  });
+}
+{ const s = SC.c4c, tFly = lt('p111'), tHead = wt('p112', 'head'), tMiss = lt('p113');
+  ev(s.t0, 'whoosh'); ev(tFly + .2, 'whoosh'); ev(tMiss, 'slowmo');
+  board('c4c', 'b10z', {
+    cam: (t, s, pc) => { const u = eout3((t - s.t0) / .35); camSet(lerp(1.3, 1, u), 960, 540, 0); },
+    vis: (t, V) => { V.bx = lerp(900, 0, eout3(seg(t, tFly, tMiss))); V.hx = -60 * ss(seg(t, tHead - .2, tHead + .2)); V.gap = t > tMiss ? 1 : 0; },
+    ttl: (t, s) => { chap(4, t, s); headline2('A few', 'centimetres.', C.ginger, t, tMiss, tMiss + .2); }
+  });
+}
+{ const s = SC.c4d, tCatch = wt('p114', 'catch'), tShock = lt('p115'), tCalc = lt('p117'), tP1 = wt('p118', 'pillow'), tD1 = lt('p119'), tP2 = lt('p120'), tD2 = lt('p121'), tFam = lt('p122'), tGk = lt('p124');
+  ev(tCatch, 'catch'); ev(tShock, 'gasp'); ev(tCalc, 'pop'); ev(tP1, 'whoosh'); ev(tP1 + .7, 'thud'); ev(tP2, 'whoosh'); ev(tP2 + .7, 'thud'); ev(tGk, 'sting');
+  const dodge = pose({ lean: .45, la: -1.2, lb: -.5, ra: 1.2, rb: .4, head: .5, lfx: -.12, rfx: .14, hy: .03 });
+  board('c4d', 'b11', {
+    vis: (t, V, P) => { V.ball = t > tCatch - .1 ? 1 : 0; V.calc = pop(t, tCalc - .1) * (1 - ein(t, tP1, .3)); V.fam = t > tShock - .3 ? 1 : 0; V.pl1 = seg(t, tP1, tP1 + .75) * (t < tP1 + 2 ? 1 : 0); V.pl2 = seg(t, tP2, tP2 + .75) * (t < tP2 + 2 ? 1 : 0);
+      P.you = poseAt([[0, pose({ la: -.4, lb: .2, ra: .4, rb: -.2 })], [tCatch - .2, pose({ lean: .3, la: -2.4, lb: -.5, ra: .8, rb: .4, head: .35, lfx: -.08, rfx: .1 })], [tP1 + .45, dodge], [tP1 + 1.2, pose({ la: -.5, lb: .2, ra: .5, rb: -.2 })], [tP2 + .45, pose({ lean: -.4, la: -1.2, lb: -.5, ra: 1.2, rb: .4, head: -.4, lfx: -.14, rfx: .1, hy: .03 })], [tP2 + 1.2, pose({ la: -2.3, lb: -.4, ra: 2.3, rb: .4 })]], t);
+      const thr = (a, b) => poseAt([[0, pose({ la: -.5, lb: .2, ra: .5, rb: -.2 })], [tShock, pose({ la: -2.3, lb: -.3, ra: 2.3, rb: .3 })], [a, b]], t);
+      P.f1 = thr(tP1 - .2, pose({ la: -2.2, lb: -.5, ra: .5, rb: .2, head: .1, lean: .1 })); P.f2 = thr(tP2 - .2, pose({ la: -.5, lb: -.2, ra: 2.4, rb: .4, head: -.05, lean: -.1 })); P.f3 = bp({ la: -2.3, lb: -.3, ra: 2.3, rb: .3, head: .1 }, t, 2); },
+    ttl: (t, s) => { chap(4, t, s); if (t > tFam - .2) headline2('The household', 'goalkeeper.', C.ginger, t, tFam - .2, tGk); }
+  });
+}
+{ const s = SC.c4e, tAsk = wt('p126', 'asks'), tQ = lt('p127');
+  ev(tAsk, 'whoosh'); ev(tQ, 'pop');
+  board('c4e', 'b12q', {
+    cam: (t, s, pc) => { const u = t > tAsk ? eout3((t - tAsk) / .35) : 0; camAnchor(lerp(1, 1.14, u), [1440, 560], [1440, 560]); },
+    vis: (t, V, P) => { V.q = pop(t, tQ - .1); V.scan = 0; V.spark = 1; P.you = bp({ la: -.4, lb: .2, ra: .4, rb: -.2, head: .1 }, t); },
+    ttl: (t, s) => chap(4, t, s)
+  });
+}
+{ const s = SC.c4f, tScan = lt('p128'), tId = lt('p134'), tSm = lt('p135'), t6 = lt('p136'), tSt = lt('p137'), t7 = lt('p138'), tRef = lt('p139'), tSurv = lt('p140');
+  ev(tScan, 'scan'); [lt('p129'), lt('p130'), lt('p131'), lt('p132'), lt('p133')].forEach(x => ev(x, 'tick')); ev(tId, 'chime'); ev(t6, 'pop'); ev(t7, 'boss'); ev(tRef, 'womp');
+  board('c4f', 'b12', {
+    vis: (t, V, P) => { V.beam = ein(t, tScan, .3) * (1 - ein(t, tId + .4, .3)); V.b6 = pop(t, t6 - .1) * (1 - ein(t, t7 + 1.2, .3)); V.b7 = pop(t, t7 - .1); V.spark = t < t7 ? 1 : 0; V.red = t > t7 + .3 ? 1 : 0;
+      P.you = poseAt([[0, pose({ la: -.5, lb: .2, ra: .5, rb: -.2, head: .05 })], [tSm, pose({ la: -.5, lb: .2, ra: 1.0, rb: 1.9, head: .05 })], [t7 + .3, pose({ lean: -.06, head: .5, la: -.2, lb: .1, ra: .2, rb: -.1, hy: .02 })]], t);
+      P.gf = poseAt([[0, pose({ la: -.4, lb: .2, ra: .4, rb: -.2, head: -.05 })], [tSt, pose({ la: .9, lb: -1.7, ra: -.9, rb: 1.7, head: -.05 })]], t); },
+    ttl: (t, s) => { chap(4, t, s); if (t > tRef - .2) headline2('Reflexes: perfect.', 'Survival: not.', C.red, t, tRef - .2, tSurv, 76); }
+  });
+}
+
+// ================= CHAPTER 5 · LEARNING AT SUPER SPEED =================
+{ const s = SC.c5a, tLearn = lt('p142'), tNeu = lt('p143'), tAd = lt('p145');
+  ev(s.t0 + .1, 'reboot'); ev(tLearn, 'sting'); ev(tNeu, 'pop'); for (let i = 0; i < 7; i++) ev(tNeu + .6 + i * ((tAd + 1.5 - tNeu - .6) / 7), 'pulse', { i });
+  board('c5a', 'b13', {
+    vis: (t, V) => { V.lit = 7.2 * seg(t, tNeu + .6, tAd + 1.5); V.w0 = V.w1 = V.w2 = 0; },
+    ttl: (t, s) => { chap(5, t, s); if (t < tNeu - .2) headline2('Your greatest power?', 'Learning.', C.ginger, t, s.t0 + .3, tLearn, 76); else { T('Neuroplasticity', 118, 238, { size: 84, w: 600, track: -2 }, t, tNeu - .2); T('Practice rewires the connections.', 122, 310, { size: 36, w: 500, col: C.ginger }, t, tAd); } }
+  });
+}
+{ const s = SC.c5b, tW = ['their', 'there', 'they'].map((w, i) => wt('p148', w)), tQ = lt('p149'), tEff = lt('p150'), tFast = lt('p152'), HI = ['Hola!', 'Bonjour!', 'Ciao!', 'Hallo!', 'Olá!'];
+  tW.forEach(x => ev(x, 'pop')); ev(tQ, 'womp'); ev(tEff, 'shimmer'); HI.forEach((h, i) => ev(tFast + .2 + i * .3, 'pop'));
+  board('c5b', 'b13', {
+    vis: (t, V) => { V.lit = t < tEff ? 2 : 2 + 5.2 * seg(t, tEff, tFast); V.w0 = pop(t, tW[0]); V.w1 = pop(t, tW[1]); V.w2 = pop(t, tW[2]); },
+    over: t => { const k = pop(t, tQ) * (1 - ein(t, tEff, .3)); if (k > 0) popIn(1330, 430, k, () => text('???', 1330, 450, { size: 70, w: 600, col: C.mute, align: 'center' }));
+      HI.forEach((h, i) => { const x = 560 + i * 260, y = 470; popIn(x + 80, y + 30, pop(t, tFast + .2 + i * .3), () => chat(x, y, h, { me: 1, size: 28 })); }); },
+    ttl: (t, s) => { chap(5, t, s); headline2('A new language?', 'Much faster.', C.ginger, t, s.t0 + .3, tFast, 76); }
+  });
+}
+{ const s = SC.c5c, tJp = lt('p155'), tUnd = lt('p156'), tWas = wt('p157', 'wasabi'), tYes = lt('p159'), tRed = wt('p160', 'red'), tFive = lt('p160');
+  ev(tJp, 'pop'); ev(tUnd, 'chime'); ev(tWas, 'pop'); ev(tYes, 'pop'); ev(tRed - .2, 'sizzle'); ev(tRed, 'boing');
+  board('c5c', 'b14', {
+    vis: (t, V, P) => { V.jp = pop(t, tJp - .1) * (1 - ein(t, tWas - .3, .2)); V.wq = pop(t, tWas - .2) * (1 - ein(t, tYes + 1, .2)); V.yes = pop(t, tYes - .05) * (1 - ein(t, tFive, .2)); V.red = t > tRed - .1 ? 1 : 0; V.steam = t > tRed ? 1 : 0;
+      P.you = poseAt([[0, pose({ la: -.5, lb: .2, ra: .5, rb: -.2, head: .05 })], [tYes, pose({ la: -.5, lb: .2, ra: 2.3, rb: .3, head: -.05 })], [tRed - .1, pose({ la: -2.3, lb: -.4, ra: 2.3, rb: .4, head: -.1 })]], t); },
+    ttl: (t, s) => { chap(5, t, s); headline2('You understand', 'everything.', C.ginger, t, s.t0 + .3, tUnd, 76); T('5 seconds later', 124, 420, { size: 30, w: 500, col: C.mute }, t, tFive); }
+  });
+}
+{ const s = SC.c5d, tStudy = lt('p164'), tDb = lt('p165'), tCr = lt('p167'), tNw = lt('p169'), tMe = lt('p171'), tHer = lt('p173'), t12 = lt('p174');
+  ev(tStudy, 'pop'); ev(tDb, 'scan'); ev(tCr, 'chime'); ev(tNw, 'pop'); ev(tMe, 'pop'); ev(tHer, 'boss'); ev(t12, 'womp');
+  board('c5d', 'b14n', {
+    vis: (t, V, P) => { V.db = pop(t, tStudy) * (1 - ein(t, tMe, .25)); V.dbn = 4812 * ss(seg(t, tDb, tCr)); V.nw = pop(t, tNw - .1) * (1 - ein(t, tHer - .2, .2)); V.boxes = pop(t, tMe) * (1 - ein(t, tHer, .3));
+      P.gf = poseAt([[0, pose({ la: .9, lb: -1.7, ra: -.9, rb: 1.7, head: -.12 })], [tHer, pose({ la: -2.2, lb: -.6, ra: .9, rb: 1.9, head: -.05 })]], t);
+      P.you = poseAt([[0, pose({ la: -.5, lb: .2, ra: 1.2, rb: 1.8, head: .08 })], [tMe, pose({ la: -.5, lb: .2, ra: 1.9, rb: .2, head: -.05 })], [tHer + .2, pose({ la: -.4, lb: .2, ra: .4, rb: -.2, head: .4, hy: .02 })]], t); },
+    over: t => { popIn(480, 460, pop(t, tMe + .1) * (1 - ein(t, tHer - .2, .2)), () => bubble(160, 400, 560, 120, ['Based on your tone and behaviour,', 'something is wrong.'], { tx: 560, ty: 540, size: 28, fill: '#FCE2C6' }));
+      popIn(1240, 360, pop(t, tHer - .1) * (1 - ein(t, t12 + 1.5, .3)), () => bubble(960, 300, 560, 120, ['Wow. So now I\'m not', 'allowed to have feelings?'], { tx: 1150, ty: 440, size: 30, col: C.red })); },
+    ttl: (t, s) => { chap(5, t, s); if (t < t12 - .2) headline2('The language of', 'relationships.', C.ginger, t, lt('p163'), lt('p163') + .3, 76); else headline2('12 languages: ✓', '"Nothing\'s wrong": ?', C.red, t, t12 - .2, lt('p175'), 76); }
+  });
+}
+
+// ================= CHAPTER 6 · THE ENERGY PROBLEM =================
+{ const s = SC.c6a, t2 = wt('p178', 'two'), t20 = wt('p178', 'twenty'), tFr = wt('p179', 'refrigerator'), tNeeds = lt('p181'), N4 = ['oxygen', 'glucose', 'blood', 'chemicals'].map(w => wt('p181', w)), tSev = wt('p184', 'seventeen'), tHeart = wt('p185', 'washing');
+  ev(s.t0 + .1, 'reboot'); ev(t2, 'pop'); ev(t20, 'grow2'); ev(tFr, 'boing'); N4.forEach(x => ev(x, 'tick')); for (let i = 0; i < 17; i++) ev(tSev + i * .06, 'can'); ev(tHeart, 'washer');
+  board('c6a', 'b15', {
+    vis: (t, V, P) => { V.bar0 = ss(seg(t, t2, t2 + .4)); V.bar1 = ss(seg(t, t20, t20 + .9)); V.q = pop(t, tFr); V.cans = 17 * seg(t, tSev, tSev + 1.0); V.heart = pop(t, tHeart - .2); V.shake = t > tHeart ? Math.sin(t * 50) * 8 * (1 - seg(t, tHeart + 1.8, tHeart + 2.4)) : 0;
+      P.you = bp({ la: -.4, lb: .1, ra: .4, rb: -.1 }, t); },
+    ttl: (t, s) => { chap(6, t, s); if (t < t2 - .2) headline2('One tiny problem:', 'energy.', C.red, t, s.t0 + .3, lt('p177'), 76); else headline2('2% of you.', '20% of the energy.', C.ginger, t, t2 - .2, t20, 76);
+      if (t > tNeeds - .2 && t < tSev - .3) chips(['oxygen', 'glucose', 'blood flow', 'chemicals'], 124, 420, t, N4); }
+  });
+}
+// ---- c6b: the notification zoom, again (same move as Chapter 1) ----
+{ const s = SC.c6b, tBuzz = s.t0 + .1, tPush = wt('p186', 'girlfriend'), tTalk = lt('p187');
+  ev(tBuzz, 'buzz'); ev(tPush - .05, 'whoosh'); ev(tTalk - .05, 'buzz2'); ev(tTalk, 'pop');
+  const P0 = pose({ la: -.4, lb: .1, ra: .5, rb: 2.4, head: .3 });
+  FILM.c6b = t => {
+    if (t < tTalk - .05) {
+      const j0 = joints({ x: 300, gy: GY, S: 420 }, P0), ph = [j0.aR[1][0], j0.aR[1][1] - 30], u = t > tPush ? eout3((t - tPush) / .38) : 0;
+      camAnchor(lerp(1, 3.2, u), ph, [lerp(ph[0], W / 2, u), lerp(ph[1], H / 2, u)], .03 * u); SUBWASH = u;
+      VIS = { bar0: 1, bar1: 1, q: 1, cans: 17, heart: 1, shake: 0 }; PZ = { you: breathe(P0, t) };
+      world(() => { SB.b15(); const h = ph, bz = Math.sin(t * 60) > -.3 ? 3 : 0; rrect(h[0] - 18 + bz, h[1] - 30, 36, 60, 7, C.ink, { lw: 0 }); rect(h[0] - 14 + bz, h[1] - 24, 28, 46, '#FCE2C6', { lw: 0 }); buzz(h[0], h[1], .8); });
+      VIS = PZ = null; scr(); if (t > tPush && t < tPush + .5) speedLines(W / 2, H / 2, .4 + u * .7, 3 + Math.floor((t - tPush) * 30), 40);
+    } else {
+      const u = t - tTalk + .05, sc = 1 + .06 * Math.exp(-7 * u) * Math.cos(16 * u);
+      g.save(); g.translate(W / 2, H / 2); g.scale(sc, sc); g.translate(-W / 2, -H / 2);
+      wall(0, H, '#E9E4DA'); withRot(1060, 500, -.035, () => phoneUI(760, 60, 600, 880, [['ok see you tonight', 'her', 26], ['Today 11:02 AM', 'ts'], ['Can we talk?', 'her', 56, pop(t, tTalk)]], { typing: 1, status: 'typing…' }));
+      bigHead(1640, 1010, 300, false); sweat(1390, 710, 2.2 * pop(t, tTalk + .5));
+      g.restore();
+    }
+    scr(); if (t > tTalk) Lb('Chapter 6', 124, 150, t, tTalk);
+  };
+}
+{ const s = SC.c6c, tAct = lt('p188'), tMem = lt('p189'), tEmo = lt('p190'), tRea = lt('p191'), tSw = lt('p192'), tNasa = wt('p193', 'nasa'), tAll = lt('p194');
+  ev(s.t0, 'whoosh'); ev(tAct, 'power'); ev(tMem, 'card'); ev(tEmo, 'alarm'); ev(tRea, 'scan'); ev(tNasa, 'grow2');
+  board('c6c', 'b16', {
+    cam: (t, s, pc) => { const u = eout3((t - s.t0) / .7); camAnchor(lerp(2.2, 1, u) * (u >= 1 ? pc.z : 1), [1040, 530], [W / 2, H / 2], u >= 1 ? pc.r : 0); },
+    vis: (t, V) => { V.phone = 0; V.mem = seg(t, tMem, tMem + 1.5); V.alarm = t > tEmo ? 1 : 0; V.wb = seg(t, tRea, tRea + 1.5); V.panic = ss(seg(t, tAct, tSw)); V.load = lerp(.15, .98, ss(seg(t, tAct, tNasa + .8))); },
+    over: t => { if (t > tSw) { const k = pop(t, tSw); popIn(1430, 260, k, () => sweat(1420, 240, 2)); popIn(700, 430, k, () => sweat(700, 410, 1.6)); } },
+    ttl: (t, s) => { chap(6, t, s); if (t < tNasa - .2) headline2('Every resource:', 'on.', C.ginger, t, s.t0 + .4, tAct + .3, 76); else headline2('More power than', 'a supercomputer…', C.red, t, tNasa - .2, tAll, 76); }
+  });
+}
+{ const s = SC.c6d, tQ = lt('p196');
+  ev(s.t0 + .05, 'buzz2'); ev(tQ + .2, 'pop'); ev(tQ + 1.4, 'boss');
+  FILM.c6d = t => {
+    scr(); wall(0, H, '#E9E4DA');
+    withRot(1060, 500, -.035, () => phoneUI(760, 60, 600, 880, [['Can we talk?', 'her', 30], ['sure what\'s up?', 'me', 30], ['Why did you like', 'her', 40, pop(t, tQ)], ['her picture?', 'her', 40, pop(t, tQ + .3)]], {}));
+    const x = 1390, y = 400, k = pop(t, tQ + 1.2); popIn(x + 150, y + 170, k, () => withRot(x + 150, y + 170, .06, () => { rect(x, y, 300, 340, C2.white); rect(x + 18, y + 18, 264, 230, C.sky, { lw: DL }); circ(x + 150, y + 140, 50, C.wall, { lw: DL }); poly([[x + 18, y + 248], [x + 100, y + 180], [x + 180, y + 248]], C.grass, { lw: DL }); text('❤', x + 40, y + 300, { size: 40, w: 400, col: C.red }); text('liked by you', x + 90, y + 296, { size: 22, w: 500, col: C.mute }); }));
+    bigHead(1640, 1010, 300, t > tQ + 1.2);
+    Lb('Chapter 6', 124, 150, t, s.t0);
+  };
+}
+
+// ================= CHAPTER 7 · EVERY NEURON AT ONCE? =================
+{ const s = SC.c7a, tFire = wt('p198', 'fire'), tGod = wt('p199', 'god'), tNot = lt('p200'), tSw = wt('p201', 'switch'), tGrp = lt('p202');
+  ev(s.t0 + .1, 'reboot'); ev(tFire, 'switch'); ev(tGod, 'choir'); ev(tNot, 'slash'); ev(tSw, 'switch'); ev(tGrp, 'shimmer');
+  const CL = [[1180, 380, C.sky], [1500, 330, C.wall], [1350, 620, C.pink]];
+  FILM.c7a = t => {
+    const pc = pinch(t, s, -1); camSet(pc.z, 960, 540, pc.r);
+    world(() => {
+      const j = brainy({ x: 520, gy: GY, S: 420 }, bp({ la: t > tGod && t < tNot ? -2.4 : -.5, lb: .2, ra: t > tGod && t < tNot ? 2.4 : .5, rb: -.2, head: .1 }, t), { spark: 1 });
+      // halo
+      const hk = pop(t, tGod) * (1 - ein(t, tNot + 1.2, .3)); if (hk > 0) popIn(j.Hd[0], j.Hd[1] - 80, hk, () => { shape(() => g.ellipse(j.Hd[0], j.Hd[1] - 80, 70, 18, 0, 0, Math.PI * 2), null, { lw: 8, col: C.wall }); redCross(j.Hd[0], j.Hd[1] - 80, 50, ss(seg(t, tNot, tNot + .4))); });
+      if (t < tGrp - .2) { // the light switch
+        const on = t > tFire, x = 1350, y = 480; rrect(x - 110, y - 170, 220, 340, 20, C2.white, { lw: 5 }); rrect(x - 40, y - 90, 80, 180, 14, '#EDE8DF', { lw: 4 });
+        rrect(x - 30, on ? y - 82 : y + 2, 60, 80, 10, on ? C.ginger : C2.chrome, { lw: 4 }); text(on ? 'ON' : 'OFF', x, y + 130, { size: 30, w: 600, align: 'center', col: on ? C.ginger : C.mute });
+        label('All neurons', x - 70, y - 200); redCross(x, y, 120, ss(seg(t, tSw, tSw + .5)));
+      } else { // groups of neurons with their own jobs, firing in turn
+        CL.forEach(([cx, cy, col], ci) => { const r = mulberry(ci + 3); const P = []; for (let i = 0; i < 7; i++) P.push([cx + (r() - .5) * 220, cy + (r() - .5) * 160]);
+          for (let i = 0; i < 6; i++) line([P[i], P[i + 1]], C.mute, 3); const act = Math.floor((t - tGrp) * 3 + ci * 2.3) % 3 === ci % 3;
+          P.forEach(p => circ(p[0], p[1], 14, act ? col : C2.white, { lw: 3.5 })); label(['vision', 'movement', 'memory'][ci], cx - 50, cy + 120); });
+        for (let k = 0; k < 2; k++) { const A = CL[k], B = CL[k + 1], u = ((t - tGrp) * .8 + k * .5) % 1; circ(lerp(A[0], B[0], u), lerp(A[1], B[1], u), 9, C.ginger, { lw: 0 }); }
+      }
+      ground(GY, 124, 1796);
+    });
+    scr(); chap(7, t, s); if (t < tSw - .2) headline2('Fire 100%', 'at once?', C.ginger, t, s.t0 + .3, tFire); else headline2('Not a', 'light switch.', C.red, t, tSw - .2, tSw);
+  };
+}
+{ const s = SC.c7b, tRoles = lt('p204'), tLoud = wt('p205', 'loudly'), tRh = lt('p206'), tNoise = lt('p208'), tDis = lt('p210');
+  ev(tRoles, 'orch'); ev(tLoud, 'noise'); ev(tNoise, 'crash'); ev(tDis, 'womp');
+  FILM.c7b = t => {
+    const pc = pinch(t, s, 1), [sx, sy] = shakeAt(t, tNoise, 5, .3); camSet(pc.z, 960, 540, pc.r, sx, sy);
+    VIS = { notes: 12 * seg(t, s.t0 + .5, tRoles + 2), noise: seg(t, tLoud, tNoise), nz: pop(t, tNoise) }; PZ = {};
+    world(() => SB.b17n()); VIS = PZ = null; scr(); chap(7, t, s);
+    if (t < tDis - 1.6) headline2('Think of', 'an orchestra.', C.ginger, t, s.t0 + .3, s.t0 + .7, 76); else headline2('Not intelligence.', 'A musical disaster.', C.red, t, lt('p209') - .2, tDis, 76);
+  };
+}
+{ const s = SC.c7c, tSz = wt('p211', 'seizures'), tGoal = lt('p212'), tRight = lt('p213');
+  ev(lt('p211'), 'pop'); ev(tSz, 'alarm'); ev(tRight, 'chime');
+  FILM.c7c = t => {
+    const pc = pinch(t, s, -1); camSet(pc.z, 960, 540, pc.r);
+    world(() => {
+      const x0 = 740, x1 = 1760, y0 = 320; rrect(x0 - 40, y0 - 60, x1 - x0 + 80, 600, 20, C2.white, { lw: 5 });
+      const sync = ss(seg(t, lt('p211') + .4, tSz + .3)) * (1 - ss(seg(t, tGoal, tGoal + .8)));
+      for (let ch = 0; ch < 5; ch++) { const yb = y0 + 40 + ch * 105, P = []; for (let x = x0; x <= x1; x += 6) { const u = (x - x0) / 60 - t * 2;
+          const calm = Math.sin(u * (1.3 + ch * .37) + ch * 2) * 14 + Math.sin(u * 3.1 + ch) * 6, spike = Math.pow(Math.max(0, Math.sin(u * 1.4)), 12) * -80;
+          P.push([x, yb + lerp(calm, spike, sync)]); }
+        g.save(); g.strokeStyle = sync > .5 ? C.red : C.ink; g.lineWidth = 4; g.lineJoin = 'round'; g.beginPath(); P.forEach((p, i) => i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1])); g.stroke(); g.restore();
+        if (t > tRight) { const u = ((t - tRight) * .9 - ch * .18); if (u > 0 && u < 1) circ(lerp(x0, x1, u), yb, 12, C.ginger, { lw: 3 }); } }
+      label(sync > .5 ? 'Every neuron, at once: a seizure' : t > tGoal ? 'The right neurons, at the right time' : 'Normal activity', x0, y0 - 24, { col: sync > .5 ? C.red : C.ink });
+    });
+    scr(); chap(7, t, s); if (t < tGoal - .2) headline2('In real life:', 'seizures.', C.red, t, s.t0 + .3, tSz, 76); else headline2('The goal:', 'the right time.', C.ginger, t, tGoal - .2, tRight, 76);
+  };
+}
+{ const s = SC.c7d, tTalk = lt('p215'), tMem = lt('p216'), tImg = lt('p217'), tEmo = lt('p219'), tMeet = lt('p220'), tAll = lt('p221'), tNone = lt('p222');
+  ev(tTalk, 'boss'); ev(tMem, 'card'); ev(tImg, 'card'); ev(tEmo, 'alarm'); ev(tMeet, 'crowd'); ev(tNone, 'womp');
+  board('c7d', 'b17m', {
+    cam: (t, s, pc) => camSet(pc.z, 860, 540, pc.r),
+    vis: (t, V) => { V.talk = pop(t, tTalk - .1) * (1 - ein(t, tMem + 1.5, .3)); V.proj = pop(t, tMem); V.wb2 = pop(t, tImg); V.panic = ss(seg(t, tEmo - .3, tMeet + .5)); },
+    ttl: (t, s) => { chap(7, t, s); T('All neurons', 118, 238, { size: 64, w: 600, track: -2 }, t, tAll - .1); T('working.', 118, 308, { size: 64, w: 600, track: -2 }, t, tAll); T('No solution.', 118, 378, { size: 64, w: 600, track: -2, col: C.red }, t, tNone - .1); }
+  });
+}
+
+// ================= ENDING =================
+{ const s = SC.e1, tPct = lt('p225'), tCombo = lt('p226');
+  ev(s.t0 + .1, 'reboot'); ev(tPct, 'sting'); for (let i = 0; i < 8; i++) ev(tCombo + i * .42, 'land', { i });
+  board('e1', 'b18a', {
+    vis: (t, V) => { for (let i = 0; i < 8; i++) V['p' + i] = pop(t, tCombo + i * .42); const w = seg(t, s.t0, s.t0 + 2.5); V.wx = lerp(2050, 1820, eout3(w)); V.wph = w < 1 ? t * 9 : .6; },
+    ttl: (t, s) => { Lb('Ending  ·  The final boss', 124, 150, t, s.t0 + .2); if (t < tPct - .2) headline2('The smartest', 'human alive?', C.ginger, t, s.t0 + .3, s.t0 + .8); else headline2('Intelligence isn\'t', 'a percentage.', C.ginger, t, tPct - .2, tPct); }
+  });
+}
+{ const s = SC.e2, tGf = lt('p232'), tDw = lt('p233'), tHelp = lt('p234');
+  ev(tGf, 'boss'); ev(tDw, 'pop'); ev(tHelp, 'womp');
+  board('e2', 'b18', {
+    vis: (t, V, P) => { V.dw = pop(t, tDw - .1); V.qm = t > tDw + .8 ? 1 : 0; V.red = t > tDw + .8 ? 1 : 0;
+      P.you = poseAt([[0, pose({ la: -.5, lb: .2, ra: .5, rb: -.2, head: .05 })], [tDw + .8, pose({ la: -2.5, lb: -.4, ra: 2.5, rb: .4, head: .1 })]], t); P.gf = bp({ la: -.4, lb: .2, ra: .9, rb: -1.9, head: -.05 }, t, 1); },
+    ttl: (t, s) => { Lb('Ending  ·  The hardest problem', 124, 150, t, s.t0 + .2, null, { col: '#BFC4D8' }); T('The final boss', 118, 238, { size: 84, w: 600, track: -2, col: C.paper }, t, s.t0 + .4); }
+  });
+}
+{ const s = SC.e3, tB = lt('p235'), tU = lt('p236'), tG = lt('p237'), tBut = lt('p238'), tHard = lt('p239'), tEat = lt('p240'), tEnd = lt('p241');
+  ev(tB, 'pop'); ev(tU, 'pop'); ev(tG, 'pop'); ev(tBut, 'stop'); ev(tEat, 'tada'); ev(tEnd, 'end');
+  FILM.e3 = t => {
+    const pc = pinch(t, s, 1); camSet(pc.z, 960, 540, pc.r);
+    if (t < tEat - .1) {
+      SUBDARK = 1; rect(-40, -40, W + 80, H + 80, '#2E3556', { lw: 0 }); const r = mulberry(5); for (let i = 0; i < 60; i++) circ(r() * W, r() * 900, 1.5 + r() * 2, '#F4F1E6', { lw: 0 });
+      const items = [[tB, 'the human brain', 620], [tU, 'the universe', 960], [tG, 'the distance between galaxies', 1300]];
+      items.forEach(([a, s2, x], i) => { const k = pop(t, a) * (1 - ein(t, tBut, .4)); popIn(x, 520, k, () => {
+        if (i === 0) bigHead(x, 500, 90, false, -.2); if (i === 1) { circ(x, 500, 80, C.sky, { lw: 5 }); shape(() => g.ellipse(x, 500, 130, 26, -.3, 0, Math.PI * 2), null, { lw: 5, col: C.wall }); }
+        if (i === 2) { g.save(); g.strokeStyle = C.lilac; g.lineWidth = 6; g.lineCap = 'round'; for (const sg of [0, Math.PI]) { g.beginPath(); for (let a = 0; a < 9; a += .1) { const rr = 8 * a; g.lineTo(x + Math.cos(a + sg) * rr, 500 + Math.sin(a + sg) * rr * .6); } g.stroke(); } g.restore(); }
+        text(s2, x, 660, { size: 28, w: 500, col: C.paper, align: 'center' }); }); });
+      scr(); if (t > tBut - .2) { T('The hardest problem', 118, 420, { size: 84, w: 600, track: -2, col: C.paper }, t, tHard - .2); T('isn\'t science.', 118, 512, { size: 84, w: 600, track: -2, col: C.paper }, t, tHard + .3); }
+    } else {
+      const u = seg(t, tEat, tEnd + 2.5);
+      VIS = { cx: 260 * ss(u), heart: pop(t, tEat + .6) }; PZ = { you: breathe(pose({ ra: .95, rb: -.35, la: -.4, lb: .2, head: .2 }), t), gf: breathe(pose({ la: -.95, lb: .35, ra: .4, rb: -.2, head: -.15 }), t, 1) };
+      world(() => SB.b18e()); VIS = PZ = null; scr();
+      T('Where to eat.', 118, 238, { size: 84, w: 600, track: -2, col: C.ginger }, t, tEat, tEnd - .1);
+      if (t > tEnd - .2) { T('See you in the next', 118, 238, { size: 84, w: 600, track: -2, col: C.paper }, t, tEnd - .1); T('experiment!', 118, 329, { size: 84, w: 600, track: -2, col: C.ginger }, t, tEnd + .2); Lb('Curious Mind', 124, 150, t, tEnd, null, { col: '#BFC4D8' }); }
+      const fo = ein(t, s.t1 - 1.0, .9); if (fo > 0) { g.save(); g.globalAlpha = fo; g.fillStyle = C.paper; g.fillRect(0, 0, W, H); g.restore(); }
+    }
+  };
+}
+
 
 // ---------- subtitles ----------
 function drawSubs(t) { const q = TLS.cues.find(c => t >= c.t0 && t < c.t1); if (!q) return; const k = ein(t, q.t0, .1) * (1 - ein(t, q.t1 - .1, .1));
   if (SUBWASH > 0) { const gr = g.createLinearGradient(0, 930, 0, 1080); gr.addColorStop(0, 'rgba(243,240,234,0)'); gr.addColorStop(.35, 'rgba(243,240,234,.88)'); g.save(); g.globalAlpha = SUBWASH * k; g.fillStyle = gr; g.fillRect(0, 930, W, 150); g.restore(); }
-  g.save(); g.globalAlpha = k; g.fillStyle = C.ginger; g.fillRect(124, 968, 4, 46); g.restore(); text(q.text, 146, 1003, { size: 36, w: 500, a: k }); }
+  g.save(); g.globalAlpha = k; g.fillStyle = C.ginger; g.fillRect(124, 968, 4, 46); g.restore(); g.save(); g.font = '500 36px Jost'; const tw = g.measureText(q.text).width; g.restore(); const fs = tw > 1640 ? Math.floor(36 * 1640 / tw) : 36; text(q.text, 146, 1003, { size: fs, w: 500, a: k, col: SUBDARK ? C.paper : C.ink }); }
 
 // ================= page contract =================
 window.EV = EV.sort((a, b) => a.t - b.t);
 window.DUR = DUR;
 window.render = t => {
-  scr(); paper(); SUBWASH = 0;
+  scr(); paper(); SUBWASH = 0; SUBDARK = 0;
   const s = TLS.scenes.find(x => t >= x.t0 && t < x.t1) || TLS.scenes[TLS.scenes.length - 1];
   g.save(); FILM[s.id](t); g.restore(); scr();
   drawSubs(t);

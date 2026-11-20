@@ -1,6 +1,11 @@
 // Storyboard key frames for "What if you used 100% of your brain?" — ?scene=b01 … b18
 const SB = {};
 let BUZZ = 0, HIDE = 0, TT = 0;
+// animation hooks for the film: VIS[name] = 0…1 (pop/scale or progress), PZ[name] = a pose override
+let VIS = null, PZ = null;
+const V = (n, d = 1) => (VIS && n in VIS) ? VIS[n] : d;
+const pz = (n, p) => (PZ && PZ[n]) ? PZ[n] : p;
+function vis(n, cx, cy, fn, d = 1) { const k = V(n, d); if (k <= .001) return; if (Math.abs(k - 1) < .001) return fn(); g.save(); g.translate(cx, cy); g.scale(k, k); g.translate(-cx, -cy); fn(); g.restore(); }
 { const s0 = subtitle, c0 = chapter, h0 = headline; subtitle = x => { if (!HIDE) s0(x); }; chapter = (a, b) => { if (!HIDE) c0(a, b); }; headline = (...a) => { if (!HIDE) h0(...a); }; }
 const GY = 880;
 
@@ -145,7 +150,7 @@ SB.b06 = () => {
   windowW(1060, 200, 220, 170, C.sky);
   const mx = 1520; rect(mx, 300, 260, 180, C.ink); rect(mx + 14, 314, 232, 152, '#D6ECF5', { lw: 0 }); rect(mx + 110, 480, 40, 50, C.ink, { lw: 4 }); rect(mx + 60, 528, 140, 14, C.ink, { lw: 0 });
   for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) if ((r + c) % 2) rect(mx + 30 + c * 22, 330 + r * 22, 22, 22, '#9DB5C2', { lw: 0 });
-  text('BRB', mx + 190, 390, { size: 26, w: 600, align: 'center' }); text('☕', mx + 190, 440, { size: 34, w: 400, align: 'center' });
+  vis('brb', mx + 190, 410, () => { text('BRB', mx + 190, 390, { size: 26, w: 600, align: 'center' }); text('☕', mx + 190, 440, { size: 34, w: 400, align: 'center' }); });
   rect(mx - 60, 542, 380, 18, C2.woodL); rect(mx - 40, 560, 16, GY - 560, C2.wood); rect(mx + 280, 560, 16, GY - 560, C2.wood);
   // chess table in 3/4
   tableP(620, 1300, 640, GY, 60, 26);
@@ -156,12 +161,12 @@ SB.b06 = () => {
   for (const [u, v] of [[.12, .2], [.3, .15], [.55, .3], [.7, .12], [.85, .25]]) piece(u, v, '#3A3530');
   for (const [u, v] of [[.2, .8], [.45, .7], [.6, .85], [.8, .75], [.35, .55]]) piece(u, v, '#FBFAF6');
   // predicted moves (ginger), many steps ahead
-  const pr = [[.45, .7], [.6, .45], [.4, .3], [.62, .18], [.78, .12]]; for (let i = 0; i < pr.length - 1; i++) { const a = B(...pr[i]), b = B(...pr[i + 1]); line([[a[0], a[1] - 50], [b[0], b[1] - 50]], C.ginger, 5, [2, 12]); }
-  { const e = B(.78, .12); circ(e[0], e[1] - 50, 14, C.ginger, { lw: 3 }); }
+  const pr = [[.45, .7], [.6, .45], [.4, .3], [.62, .18], [.78, .12]]; for (let i = 0; i < Math.min(pr.length - 1, V('path', 4)); i++) { const a = B(...pr[i]), b = B(...pr[i + 1]); line([[a[0], a[1] - 50], [b[0], b[1] - 50]], C.ginger, 5, [2, 12]); }
+  if (V('path', 4) >= 4) { const e = B(.78, .12); circ(e[0], e[1] - 50, 14, C.ginger, { lw: 3 }); }
   // the players
-  brainy({ x: 470, gy: GY, S: 370 }, pose({ la: -.4, lb: -.6, ra: .9, rb: .8, head: .12 }), { spark: 1 });
-  const j = plain({ x: 1440, gy: GY, S: 370, face: -1 }, pose({ la: -1.1, lb: -1.9, ra: .6, rb: 1.6, head: -.25, lean: -.05 }));
-  sweat(j.Hd[0] + 50, j.Hd[1] - 60, 1.1);
+  brainy({ x: 470, gy: GY, S: 370 }, pz('you', pose({ la: -.4, lb: -.6, ra: .9, rb: .8, head: .12 })), { spark: V('spark', 1) > .5 });
+  const j = plain({ x: 1440, gy: GY, S: 370, face: -1 }, pz('opp', pose({ la: -1.1, lb: -1.9, ra: .6, rb: 1.6, head: -.25, lean: -.05 })));
+  vis('sweat', j.Hd[0] + 60, j.Hd[1] - 40, () => sweat(j.Hd[0] + 50, j.Hd[1] - 60, 1.1));
   ground(GY, -20, W + 20);
   chapter(2, 'Super processing speed'); headline('Checkmate', 'in 12 moves.', C.ginger, 238, 84);
   subtitle('Even a chess computer might need a coffee break.');
@@ -174,17 +179,17 @@ SB.b07 = () => {
   for (const x of [1490, 1650]) rect(x, 340, 110, 200, null, { lw: DL });
   shape(() => g.ellipse(1250, 560, 90, 170, 0, 0, Math.PI * 2), C2.wood); shape(() => g.ellipse(1250, 560, 72, 150, 0, 0, Math.PI * 2), '#DCEFF6', { lw: DL });
   ink([[1215, 470], [1260, 430]], { w: 6, col: '#FFFFFF' }); line([[1210, 728], [1180, GY]], C.ink, 8); line([[1290, 728], [1320, GY]], C.ink, 8);
-  gf({ x: 1440, gy: GY, S: 390, face: -1 }, pose({ la: -1.3, lb: -1.7, ra: .5, rb: .3, head: .05 }), { dress: 1 });
-  bubble(1240, 170, 540, 120, ['Do you think I look', 'fat in this dress?'], { tx: 1420, ty: 400, size: 34 });
+  gf({ x: 1440, gy: GY, S: 390, face: -1 }, pz('gf', pose({ la: -1.3, lb: -1.7, ra: .5, rb: .3, head: .05 })), { dress: 1 });
+  vis('q', 1510, 230, () => bubble(1240, 170, 540, 120, ['Do you think I look', 'fat in this dress?'], { tx: 1420, ty: 400, size: 34 }));
   // your side: options and the outcome tree
-  const j = brainy({ x: 300, gy: GY, S: 380 }, pose({ la: -.6, lb: -.3, ra: 1.0, rb: 1.9, head: .1 }), { spark: 1 });
+  const j = brainy({ x: 300, gy: GY, S: 380 }, pz('you', pose({ la: -.6, lb: -.3, ra: 1.0, rb: 1.9, head: .1 })), { spark: V('spark', 1) > .5, red: V('red', 0) > .5 });
   const root = [j.Hd[0] + 70, j.Hd[1] - 10];
   const opts = [['A', 'Tell the truth', 380], ['B', 'Say she looks beautiful', 520], ['C', 'Pretend you didn\'t hear', 660]];
   const r = mulberry(5);
-  opts.forEach(([k, s, y]) => { line([root, [520, y]], C.ginger, 4);
-    for (let i = 0; i < 6; i++) { const yy = y - 50 + i * 20; line([[860, y], [1010, yy + (r() - .5) * 8]], C.ginger, 2); const X = [1018, yy]; line([[X[0] - 7, X[1] - 7], [X[0] + 7, X[1] + 7]], C.red, 3); line([[X[0] - 7, X[1] + 7], [X[0] + 7, X[1] - 7]], C.red, 3); }
-    rrect(520, y - 34, 340, 68, 16, k === 'B' ? '#FCE2C6' : C2.white, { lw: 4 }); text(k, 548, y + 13, { size: 38, w: 600, col: C.ginger }); text(s, 590, y + 11, { size: 26, w: 500 }); });
-  label('10,000,000 outcomes simulated', 520, 300);
+  opts.forEach(([k, s, y]) => { if (V(k) <= 0) return; line([root, [520, y]], C.ginger, 4);
+    if (V('tree') > 0) for (let i = 0; i < Math.round(6 * V('tree')); i++) { const yy = y - 50 + i * 20; line([[860, y], [1010, yy + (r() - .5) * 8]], C.ginger, 2); const X = [1018, yy]; line([[X[0] - 7, X[1] - 7], [X[0] + 7, X[1] + 7]], C.red, 3); line([[X[0] - 7, X[1] + 7], [X[0] + 7, X[1] - 7]], C.red, 3); }
+    vis(k, 690, y, () => { rrect(520, y - 34, 340, 68, 16, k === 'B' && V('pickB') > .5 ? '#FCE2C6' : C2.white, { lw: k === 'B' && V('pickB') > .5 ? 6 : 4 }); text(k, 548, y + 13, { size: 38, w: 600, col: C.ginger }); text(s, 590, y + 11, { size: 26, w: 500 }); }); });
+  if (V('tree') > 0) label(Math.round(1e7 * V('count')).toLocaleString('en') + ' outcomes simulated', 520, 300);
   ground(GY, -20, W + 20);
   chapter(2, 'Super processing speed'); headline('Option B.', null, C.ginger, 238, 84);
   subtitle('"So you\'re saying I looked ugly yesterday?"');
@@ -212,23 +217,24 @@ function einsteinRoom(withDoor) {
 }
 SB.b08 = () => {
   einsteinRoom(false);
-  einstein({ x: 1660, gy: GY, S: 400, face: -1 }, pose({ la: -1.9, lb: -.9, ra: .35, rb: -.3, head: -.1 }));
+  einstein({ x: 1660, gy: GY, S: 400, face: -1 }, pz('ein', pose({ la: -1.9, lb: -.9, ra: .35, rb: -.3, head: -.1 })));
   rrect(1700, 520, 0, 0, 0, null, { lw: 0 });
   ground(GY, -20, W + 20);
-  chapter(3, 'The Einstein question'); text('No secret', 118, 238, { size: 84, w: 600, track: -2 }); text('brain switch.', 118, 329, { size: 84, w: 600, track: -2, col: C.ginger });
-  rrect(124, 420, 560, 210, 18, C2.white, { lw: 4 }); label('Myth', 150, 462, { col: C.red }); text('"Einstein used', 150, 510, { size: 30, w: 500 }); text('only 10% of his brain"', 150, 550, { size: 30, w: 500 });
-  line([[150, 500], [520, 570]], C.red, 7);
-  label('Real: maths · imagination · work', 150, 600);
+  chapter(3, 'The Einstein question'); if (!HIDE) text('No secret', 118, 238, { size: 84, w: 600, track: -2 }); if (!HIDE) text('brain switch.', 118, 329, { size: 84, w: 600, track: -2, col: C.ginger });
+  vis('myth', 404, 525, () => { rrect(124, 420, 560, 210, 18, C2.white, { lw: 4 }); label('Myth', 150, 462, { col: C.red }); text('"Einstein used', 150, 510, { size: 30, w: 500 }); text('only 10% of his brain"', 150, 550, { size: 30, w: 500 });
+  if (V('strike') > 0) line([[150, 500], [lerp(150, 520, V('strike')), lerp(500, 570, V('strike'))]], C.red, 7);
+  if (V('real') > .5) label('Real: maths · imagination · work', 150, 600); });
   subtitle('There is no scientific evidence for a "brain percentage".');
 };
 
 // ---- B09 Chapter 3: a different theory of relativity ----
 SB.b09 = () => {
   einsteinRoom(true);
-  einstein({ x: 1200, gy: GY, S: 400, face: -1 }, pose({ la: -1.8, lb: -.7, ra: .4, rb: -.4, head: -.18 }));
-  gf({ x: 1700, gy: GY, S: 380, face: -1 }, pose({ la: -.5, lb: .3, ra: .9, rb: 2.3, head: .1 }));
-  bubble(1420, 170, 460, 100, 'Baby, what are you thinking about?', { tx: 1660, ty: 400, size: 26 });
-  bubble(700, 600, 400, 90, 'The curvature of spacetime.', { tx: 1140, ty: 520, size: 26, fill: '#FFF6EA' });
+  einstein({ x: 1200, gy: GY, S: 400, face: -1 }, pz('ein', pose({ la: -1.8, lb: -.7, ra: .4, rb: -.4, head: -.18 })));
+  if (V('gf') > 0) gf({ x: V('gfx', 1700), gy: GY, S: 380, face: -1 }, pz('gf', pose({ la: -.5, lb: .3, ra: .9, rb: 2.3, head: .1 })));
+  vis('b1', 1650, 220, () => bubble(1420, 170, 460, 100, 'Baby, what are you thinking about?', { tx: 1660, ty: 400, size: 26 }));
+  vis('b2', 900, 645, () => bubble(700, 600, 400, 90, 'The curvature of spacetime.', { tx: 1140, ty: 520, size: 26, fill: '#FFF6EA' }));
+  vis('b3', 1600, 220, () => bubble(1360, 170, 520, 100, 'So you\'re not thinking about me?', { tx: 1660, ty: 400, size: 26, col: C.red }), 0);
   ground(GY, -20, W + 20);
   chapter(3, 'The Einstein question'); headline('A different', 'theory of relativity.', C.red, 238, 70);
   subtitle('"Okay. So you\'re not thinking about me?"');
@@ -247,18 +253,20 @@ SB.b10 = () => {
   line([[gx0, gb], [gx0, gt], [gx1, gt], [gx1, gb]], C2.white, 18); line([[gx0, gb], [gx0, gt], [gx1, gt], [gx1, gb]], C.ink, 4);
   line([[gx0 - 300, gb + 20], [gx1 + 160, gb + 20]], '#FFFFFF', 6);
   // striker
-  plain({ x: 420, gy: GY, S: 380, face: 1, prof: true }, pose({ lean: -.12, la: -1.4, lb: .3, ra: 1.0, rb: .2, rfx: .2, rfy: .16, lfx: -.06, head: .05 }));
+  plain({ x: 420, gy: GY, S: 380, face: 1, prof: true }, pz('striker', pose({ lean: -.12, la: -1.4, lb: .3, ra: 1.0, rb: .2, rfx: .2, rfy: .16, lfx: -.06, head: .05 })));
   // ball + predicted path
-  const ball = [760, 640]; dashedP([[560, 860], [760, 640], [1150, 470], [1560, 430]]);
-  circ(1560, 430, 44, null, { col: C.ginger, lw: 6 }); circ(1560, 430, 22, C.ginger, { lw: 0 });
+  const BP = [[560, 860], [760, 640], [1150, 470], [1560, 430]], bu = V('ball', .22), ball = bez3(BP, bu);
+  if (V('pred') > 0) { g.save(); g.beginPath(); g.rect(0, 0, 560 + 1000 * V('pred'), H); g.clip(); dashedP(BP); g.restore(); }
+  vis('ring', 1560, 430, () => { circ(1560, 430, 44, null, { col: C.ginger, lw: 6 }); circ(1560, 430, 22, C.ginger, { lw: 0 }); });
   circ(ball[0], ball[1], 30, '#FFFFFF', { lw: 5 }); poly([[ball[0] - 8, ball[1] - 10], [ball[0] + 8, ball[1] - 10], [ball[0] + 12, ball[1] + 4], [ball[0], ball[1] + 13], [ball[0] - 12, ball[1] + 4]], C.ink, { lw: 0 });
   for (const k of [1, 2, 3]) line([[ball[0] - 30 - k * 26, ball[1] + 26 + k * 18], [ball[0] - 50 - k * 26, ball[1] + 40 + k * 18]], C.mute, 3);
   // keeper (you) already diving to the right spot
-  brainy({ x: 1470, gy: GY - 40, S: 380 }, pose({ lean: .55, la: -1.2, lb: -.3, ra: 2.5, rb: .3, lfx: -.18, rfx: .12, rfy: .1, head: .3, hy: .03 }), { spark: 1 });
+  brainy({ x: V('kx', 1470), gy: GY - 40, S: 380 }, pz('keeper', pose({ lean: .55, la: -1.2, lb: -.3, ra: 2.5, rb: .3, lfx: -.18, rfx: .12, rfy: .1, head: .3, hy: .03 })), { spark: 1 });
   chapter(4, 'The athlete brain'); headline('Prediction,', 'not magic.', C.ginger, 238, 84);
-  text('Years of training: timing, reaction, reading the body.', 122, 420, { size: 30, w: 500, col: C.mute });
+  if (!HIDE) text('Years of training: timing, reaction, reading the body.', 122, 420, { size: 30, w: 500, col: C.mute });
   subtitle('Their brain anticipates where the ball might go.');
 };
+function bez3(P, u) { const s = 1 - u; return [0, 1].map(i => s * s * s * P[0][i] + 3 * s * s * u * P[1][i] + 3 * s * u * u * P[2][i] + u * u * u * P[3][i]); }
 function dashedP(P) { g.save(); g.strokeStyle = C.ginger; g.lineWidth = 6; g.setLineDash([2, 16]); g.lineCap = 'round'; g.beginPath(); g.moveTo(...P[0]); g.bezierCurveTo(...P[1], ...P[2], ...P[3]); g.stroke(); g.restore(); }
 
 // ---- B11 Chapter 4: the household goalkeeper ----
@@ -271,15 +279,14 @@ SB.b11 = () => {
   rrect(sx + 20, 700, 600, 100, 24, '#F2B4AD'); dline([[sx + 320, 706], [sx + 320, 796]], '#C98078'); for (const x of [sx + 10, sx + 610]) rect(x, 820, 20, GY - 820, C2.wood);
   shape(() => g.ellipse(960, GY + 6, 520, 26, 0, 0, Math.PI * 2), C2.rugL || '#7FA6E0', { lw: 4 });
   // family throwing pillows
-  plain({ x: 800, gy: GY - 110, S: 300 }, pose({ la: -2.2, lb: -.5, ra: .5, rb: .2, head: .1, lean: .1 }));
-  plain({ x: 1060, gy: GY - 110, S: 330 }, pose({ la: -.5, lb: -.2, ra: 2.4, rb: .4, head: -.05, lean: -.1 }));
-  plain({ x: 1340, gy: GY, S: 220, face: -1 }, pose({ la: -2.3, lb: -.3, ra: 2.3, rb: .3, head: .1 }));
-  for (const [x, y, a] of [[1450, 360, .3], [1620, 520, -.4]]) withRot(x, y, a, () => { rrect(x - 50, y - 34, 100, 68, 20, C3.lilac); dline([[x - 30, y], [x + 30, y]], '#9C88C6'); });
-  for (const [x, y] of [[1380, 380], [1550, 540]]) line([[x, y], [x - 60, y + 10]], C.mute, 3);
+  if (V('fam') > 0) { plain({ x: 800, gy: GY - 110, S: 300 }, pz('f1', pose({ la: -2.2, lb: -.5, ra: .5, rb: .2, head: .1, lean: .1 })));
+  plain({ x: 1060, gy: GY - 110, S: 330 }, pz('f2', pose({ la: -.5, lb: -.2, ra: 2.4, rb: .4, head: -.05, lean: -.1 })));
+  plain({ x: 1340, gy: GY, S: 220, face: -1 }, pz('f3', pose({ la: -2.3, lb: -.3, ra: 2.3, rb: .3, head: .1 }))); }
+  [[860, 420, 1450, 360, .3, 'pl1'], [1120, 400, 1620, 520, -.4, 'pl2']].forEach(([x0, y0, x1, y1, a, n]) => { const u = V(n); if (u <= 0 || u >= 1.5) return; const x = lerp(x0, x1, u), y = lerp(y0, y1, u) - 120 * Math.sin(Math.PI * Math.min(1, u)); withRot(x, y, a + u * 3, () => { rrect(x - 50, y - 34, 100, 68, 20, C3.lilac); dline([[x - 30, y], [x + 30, y]], '#9C88C6'); }); if (u < 1) line([[x - 40, y + 4], [x - 110, y + 14]], C.mute, 3); });
   // you: dodging, catching the ball one-handed
-  const j = brainy({ x: 1720, gy: GY, S: 390, face: -1 }, pose({ lean: .3, la: -2.4, lb: -.5, ra: .8, rb: .4, head: .35, lfx: -.08, rfx: .1 }), { spark: 1 });
-  const h = j.aL[1]; circ(h[0] - 10, h[1] - 26, 32, '#FFFFFF', { lw: 5 }); poly([[h[0] - 18, h[1] - 36], [h[0] - 2, h[1] - 36], [h[0] + 2, h[1] - 22], [h[0] - 10, h[1] - 14], [h[0] - 22, h[1] - 22]], C.ink, { lw: 0 });
-  bubble(1440, 600, 270, 80, 'Calculated.', { tx: 1650, ty: 540, size: 30 });
+  const j = brainy({ x: 1720, gy: GY, S: 390, face: -1 }, pz('you', pose({ lean: .3, la: -2.4, lb: -.5, ra: .8, rb: .4, head: .35, lfx: -.08, rfx: .1 })), { spark: 1 });
+  const h = j.aL[1]; if (V('ball') > .5) circ(h[0] - 10, h[1] - 26, 32, '#FFFFFF', { lw: 5 }); if (V('ball') > .5) poly([[h[0] - 18, h[1] - 36], [h[0] - 2, h[1] - 36], [h[0] + 2, h[1] - 22], [h[0] - 10, h[1] - 14], [h[0] - 22, h[1] - 22]], C.ink, { lw: 0 });
+  vis('calc', 1575, 640, () => bubble(1440, 600, 270, 80, 'Calculated.', { tx: 1650, ty: 540, size: 30 }));
   ground(GY, -20, W + 20);
   chapter(4, 'The athlete brain'); headline('The household', 'goalkeeper.', C.ginger, 238, 84);
   subtitle('Suddenly, your entire family is testing your reflexes.');
@@ -296,12 +303,11 @@ SB.b12 = () => {
     if (n === 14) { text('♥', x + 40, y + 62, { size: 30, w: 400, col: C.red, align: 'center' }); circ(x + 36, y + 38, 34, null, { col: C.red, lw: 4 }); }
     if (n === 3 || n === 22) circ(x + 36, y + 38, 30, null, { col: C.mute, lw: 3 }); }
   // scanning beam
-  g.save(); g.globalAlpha = .28; poly([[560, 470], [cx + 20, cy + 110], [cx + 20, cy + ch - 20]], C.ginger, { lw: 0 }); g.restore();
-  label('scanning: anniversaries · birthdays · first dates', cx, cy + ch + 46);
-  const j = brainy({ x: 470, gy: GY, S: 390 }, pose({ la: -.5, lb: .2, ra: 1.0, rb: 1.9, head: .05 }), { spark: 1 });
-  bubble(124, 400, 360, 110, ['Of course! Our', 'six-month anniversary.'], { tx: 440, ty: 560, size: 26 });
-  gf({ x: 1560, gy: GY, S: 390, face: -1 }, pose({ la: .9, lb: -1.7, ra: -.9, rb: 1.7, head: -.05 }));
-  bubble(1360, 300, 440, 110, ['It\'s our', 'SEVEN-month anniversary.'], { tx: 1540, ty: 470, size: 28, col: C.red });
+  if (V('beam') > 0) { g.save(); g.globalAlpha = .28 * V('beam'); poly([[560, 470], [cx + 20, cy + 110], [cx + 20, cy + ch - 20]], C.ginger, { lw: 0 }); g.restore(); if (V('beam') > .5) label('scanning: anniversaries · birthdays · first dates', cx, cy + ch + 46); }
+  const j = brainy({ x: 470, gy: GY, S: 390 }, pz('you', pose({ la: -.5, lb: .2, ra: 1.0, rb: 1.9, head: .05 })), { spark: V('spark', 1) > .5, red: V('red', 0) > .5 });
+  vis('b6', 300, 455, () => bubble(124, 400, 360, 110, ['Of course! Our', 'six-month anniversary.'], { tx: 440, ty: 560, size: 26 }));
+  gf({ x: 1560, gy: GY, S: 390, face: -1 }, pz('gf', pose({ la: .9, lb: -1.7, ra: -.9, rb: 1.7, head: -.05 })));
+  vis('b7', 1580, 355, () => bubble(1360, 300, 440, 110, ['It\'s our', 'SEVEN-month anniversary.'], { tx: 1540, ty: 470, size: 28, col: C.red }));
   ground(GY, -20, W + 20);
   chapter(4, 'The athlete brain');
   subtitle('Your reflexes were perfect. Your survival instincts were not.');
@@ -310,7 +316,7 @@ SB.b12 = () => {
 // ---- B13 Chapter 5: neuroplasticity, people as neurons holding hands ----
 SB.b13 = () => {
   const gy = 820, n = 7, S = 260, x0 = 520, step = 175;
-  const lit = 4.4;   // the pulse has reached this far
+  const lit = V('lit', 4.4);   // the pulse has reached this far
   const J = [];
   for (let i = 0; i < n; i++) { const x = x0 + i * step, isLit = i < lit;
     const p = pose({ la: i === 0 ? -.5 : -1.35, lb: i === 0 ? .2 : -.05, ra: i === n - 1 ? .5 : 1.35, rb: i === n - 1 ? -.2 : .05, head: .04 * Math.sin(i * 1.7) });
@@ -322,9 +328,9 @@ SB.b13 = () => {
   for (let i = 0; i < n; i++) circ(x0 + i * step, gy, 9, i < lit ? C.ginger : C.tint, { lw: 3 });
   // their / there / they're cards
   const words = [['their', 'belongs to them'], ['there', 'a place'], ['they\'re', 'they are']];
-  words.forEach(([w, m], i) => { const x = 1080 + i * 250, y = 230; rrect(x, y, 220, 120, 16, C2.white, { lw: 4 }); text(w, x + 110, y + 62, { size: 40, w: 600, align: 'center' }); text(m, x + 110, y + 98, { size: 20, w: 500, col: C.mute, align: 'center' }); if (i < 2) line([[x + 220, y + 60], [x + 250, y + 60]], C.ginger, 4); });
+  words.forEach(([w, m], i) => { const x = 1080 + i * 250, y = 230; if (V('w' + i) <= 0) return; vis('w' + i, x + 110, y + 60, () => { rrect(x, y, 220, 120, 16, C2.white, { lw: 4 }); text(w, x + 110, y + 62, { size: 40, w: 600, align: 'center' }); text(m, x + 110, y + 98, { size: 20, w: 500, col: C.mute, align: 'center' }); }); if (i < 2 && V('w' + (i + 1)) > .5) line([[x + 220, y + 60], [x + 250, y + 60]], C.ginger, 4); });
   chapter(5, 'Learning at super speed'); headline('Neuroplasticity', null, C.ink, 238, 84);
-  text('Practice rewires the connections.', 122, 310, { size: 36, w: 500, col: C.ginger });
+  if (!HIDE) text('Practice rewires the connections.', 122, 310, { size: 36, w: 500, col: C.ginger });
   subtitle('Every time you practise something, your brain adapts.');
 };
 
@@ -340,17 +346,19 @@ SB.b14 = () => {
   // counter
   rect(300, 700, 1300, 30, C2.woodL); rect(320, 730, 1260, GY - 730, '#B97C47'); for (let x = 380; x < 1560; x += 120) dline([[x, 740], [x, GY - 10]], '#9A6337');
   // waiter behind the counter (headband)
-  const wj = plain({ x: 1250, gy: 900, S: 400, face: -1 }, pose({ la: -1.1, lb: -.9, ra: .3, rb: .2, head: -.05 }));
+  const wj = plain({ x: 1250, gy: 900, S: 400, face: -1 }, pz('waiter', pose({ la: -1.1, lb: -.9, ra: .3, rb: .2, head: -.05 })));
   line([[wj.Hd[0] - 44, wj.Hd[1] - 12], [wj.Hd[0] + 44, wj.Hd[1] - 12]], C.paper, 10); line([[wj.Hd[0] - 44, wj.Hd[1] - 18], [wj.Hd[0] + 44, wj.Hd[1] - 18]], C.ink, 3);
-  bubble(1240, 300, 330, 90, 'Wasabi, extra?', { tx: 1270, ty: 420, size: 30 });
+  vis('jp', 1400, 345, () => bubble(1240, 300, 330, 90, 'いらっしゃいませ！', { tx: 1270, ty: 420, size: 30 }), 0);
+  vis('wq', 1400, 345, () => bubble(1240, 300, 330, 90, 'Wasabi, extra?', { tx: 1270, ty: 420, size: 30 }));
   // plate with sushi + wasabi
   shape(() => g.ellipse(860, 690, 170, 26, 0, 0, Math.PI * 2), C2.white, { lw: 4 });
   for (const [x, top] of [[760, C3.salmon], [860, C3.tuna]]) { rrect(x - 40, 650, 80, 36, 12, C3.rice, { lw: 3 }); rrect(x - 44, 638, 88, 22, 10, top, { lw: 3 }); for (const k of [-20, 0, 20]) dline([[x + k - 6, 642], [x + k + 6, 656]], '#FFFFFF'); }
   const wb = [[930, 684], [940, 652], [962, 640], [986, 652], [994, 684]]; fillC(wb, C3.wasabi); ink(wb.concat([wb[0]]), { w: 3.4 });
   // you: red head, steam
-  const j = brainy({ x: 520, gy: 900, S: 400 }, pose({ la: -2.3, lb: -.4, ra: 2.3, rb: .4, head: -.1 }), { red: 1 });
-  for (const sd of [-1, 1]) for (const k of [0, 1]) { const x = j.Hd[0] + sd * (40 + k * 26), y = j.Hd[1] - 60 - k * 20; ink([[x, y], [x + sd * 10, y - 22], [x, y - 44], [x + sd * 10, y - 66]], { w: 4, col: C.mute }); }
-  text('5 seconds later', 124, 420, { size: 30, w: 500, col: C.mute });
+  const j = brainy({ x: 520, gy: 900, S: 400 }, pz('you', pose({ la: -2.3, lb: -.4, ra: 2.3, rb: .4, head: -.1 })), { red: V('red', 1) > .5, spark: V('red', 1) <= .5 });
+  vis('yes', 760, 420, () => bubble(640, 380, 220, 80, 'Yes!', { tx: 600, ty: 520, size: 34, wt: 600 }), 0);
+  if (V('steam') > .5) for (const sd of [-1, 1]) for (const k of [0, 1]) { const x = j.Hd[0] + sd * (40 + k * 26), y = j.Hd[1] - 60 - k * 20; ink([[x, y], [x + sd * 10, y - 22], [x, y - 44], [x + sd * 10, y - 66]], { w: 4, col: C.mute }); }
+  if (!HIDE) text('5 seconds later', 124, 420, { size: 30, w: 500, col: C.mute });
   chapter(5, 'Learning at super speed'); headline('You understand', 'everything.', C.ginger, 238, 76);
   subtitle('Apparently, intelligence doesn\'t protect your tongue.');
 };
@@ -358,26 +366,26 @@ SB.b14 = () => {
 // ---- B15 Chapter 6: the energy problem ----
 SB.b15 = () => {
   // the comparison: 2 % weight vs 20 % energy
-  const j = plain({ x: 300, gy: GY, S: 420 }, pose({ la: -.4, lb: .1, ra: .4, rb: -.1 }));
+  const j = plain({ x: 300, gy: GY, S: 420 }, pz('you', pose({ la: -.4, lb: .1, ra: .4, rb: -.1 })));
   circ(j.Hd[0], j.Hd[1], GEO.headR * 420 * .82, C.ginger, { lw: 0 }); brainFolds(j.Hd[0], j.Hd[1], GEO.headR * 420, -Math.PI / 2, C.gingerD); circ(j.Hd[0], j.Hd[1], GEO.headR * 420, null, { lw: 7, col: C.ink });
   const bx = 520, by = 820, bh = 420;
-  for (const [i, v, lab, val] of [[0, .02, 'body weight', '2%'], [1, .20, 'energy at rest', '20%']]) { const x = bx + i * 200, h = Math.max(10, bh * v / .2);
+  for (const [i, v, lab, val] of [[0, .02, 'body weight', '2%'], [1, .20, 'energy at rest', '20%']]) { const x = bx + i * 200, h = Math.max(10, bh * v / .2) * V('bar' + i); if (h <= .5) continue;
     rect(x, by - h, 120, h, i ? C.ginger : '#F6C796'); label(lab, x - 6, by + 40); text(val, x + 60, by - h - 20, { size: 54, w: 600, align: 'center', col: i ? C.ginger : C.ink }); }
   line([[bx - 20, by], [bx + 360, by]], C.ink, 4);
   // fridge, open, with a "?"
   const fx = 1000; rrect(fx, 330, 240, GY - 330, 18, C2.white); dline([[fx, 560], [fx + 240, 560]]); rect(fx + 200, 380, 12, 120, C2.chrome, { lw: 3 }); rect(fx + 200, 600, 12, 160, C2.chrome, { lw: 3 });
   poly([[fx + 240, 560], [fx + 380, 600], [fx + 380, GY - 10], [fx + 240, GY]], '#EAF4F7');
   for (const y of [660, 760]) dline([[fx + 250, y], [fx + 372, y + 8]]); rrect(fx + 270, 620, 40, 40, 8, C3.olive, { lw: 3 }); rrect(fx + 320, 720, 34, 46, 6, C.sky, { lw: 3 });
-  text('?', fx + 120, 470, { size: 120, w: 600, col: C.mute, align: 'center' });
+  vis('q', fx + 120, 440, () => text('?', fx + 120, 470, { size: 120, w: 600, col: C.mute, align: 'center' }));
   // 17 energy drinks
   const can = (x, y) => { rrect(x, y, 44, 80, 8, '#7FC3B8', { lw: 3.5 }); rect(x, y + 28, 44, 24, C.ink, { lw: 0 }); text('⚡', x + 22, y + 48, { size: 20, w: 600, col: C.wall, align: 'center' }); };
-  let k = 0; for (let r = 0; r < 5; r++) for (let c = 0; c < 5 - r; c++) { if (k++ >= 15) break; can(1460 + c * 50 + r * 25, GY - 84 - r * 84); }
-  can(1720, GY - 84); can(1772, GY - 84);
-  label('×17', 1740, GY - 110, { col: C.ink });
+  const NC = Math.round(V('cans', 17));
+  { const pos = []; for (let r = 0; r < 5; r++) for (let c = 0; c < 5 - r; c++) pos.push([1460 + c * 50 + r * 25, GY - 84 - r * 84]); pos.splice(15); pos.push([1720, GY - 84], [1772, GY - 84]); pos.slice(0, NC).forEach(([x, y]) => can(x, y)); }
+  if (NC > 0) label('×' + NC, 1740, GY - 110, { col: C.ink });
   // heart as a washing machine
-  const hx = 1690, hy = 380; rrect(hx - 90, hy - 100, 180, 200, 18, C2.white); circ(hx, hy + 14, 58, C.heart, { lw: 5 });
+  vis('heart', 1690, 380, () => { const hx = 1690 + V('shake', 0), hy = 380; rrect(hx - 90, hy - 100, 180, 200, 18, C2.white); circ(hx, hy + 14, 58, C.heart, { lw: 5 });
   const hp = [[hx, hy + 46], [hx - 36, hy + 8], [hx - 26, hy - 18], [hx, hy - 6], [hx + 26, hy - 18], [hx + 36, hy + 8]]; fillC(hp, '#B83B3B'); ink(hp, { w: 3, closed: true });
-  for (const s of [-1, 1]) line([[hx + s * 110, hy - 40], [hx + s * 130, hy - 10]], C.mute, 4);
+  for (const s of [-1, 1]) line([[hx + s * 110, hy - 40], [hx + s * 130, hy - 10]], C.mute, 4); });
   ground(GY, 124, 1796);
   chapter(6, 'The energy problem'); headline('2% of you.', '20% of the energy.', C.ginger, 238, 76);
   subtitle('…for something that forgets why you opened the fridge.');
@@ -392,19 +400,19 @@ SB.b16 = () => {
   dline([[cx - 140, cy - R], [cx - 140, cy + 140]]); dline([[cx + 140, cy - R], [cx + 140, cy + 140]]);
   // memory: filing cabinets
   for (let k = 0; k < 2; k++) { rect(cx - 330 + k * 96, cy - 60, 82, 200, C2.chrome); for (let d = 0; d < 3; d++) { dline([[cx - 330 + k * 96, cy - 60 + (d + 1) * 66], [cx - 248 + k * 96, cy - 60 + (d + 1) * 66]]); rect(cx - 306 + k * 96, cy - 32 + d * 66, 34, 8, C.ink, { lw: 0 }); } }
-  for (let k = 0; k < 6; k++) withRot(cx - 260 + k * 18, cy - 120 - k * 14, k * .5, () => rect(cx - 280 + k * 18, cy - 140 - k * 14, 40, 52, C2.white, { lw: 3 }));
+  for (let k = 0; k < Math.round(6 * V('mem')); k++) withRot(cx - 260 + k * 18, cy - 120 - k * 14, k * .5, () => rect(cx - 280 + k * 18, cy - 140 - k * 14, 40, 52, C2.white, { lw: 3 }));
   // emotion: the alarm light
-  rect(cx - 50, cy - 260, 100, 30, C.ink, { lw: 0 }); shape(() => { g.arc(cx, cy - 260, 54, Math.PI, 0); g.closePath(); }, C.red, { lw: 5 });
-  for (const a of [-2.6, -2.1, -1.57, -1.05, -.5]) line([[cx + Math.cos(a) * 74, cy - 262 + Math.sin(a) * 74], [cx + Math.cos(a) * 110, cy - 262 + Math.sin(a) * 110]], C.red, 6);
+  rect(cx - 50, cy - 260, 100, 30, C.ink, { lw: 0 }); shape(() => { g.arc(cx, cy - 260, 54, Math.PI, 0); g.closePath(); }, V('alarm') > .5 ? C.red : '#C9B8B0', { lw: 5 });
+  if (V('alarm') > .5 && Math.sin(TT * 12) > -.3) for (const a of [-2.6, -2.1, -1.57, -1.05, -.5]) line([[cx + Math.cos(a) * 74, cy - 262 + Math.sin(a) * 74], [cx + Math.cos(a) * 110, cy - 262 + Math.sin(a) * 110]], C.red, 6);
   // reasoning: a whiteboard full of branches
-  rect(cx + 180, cy - 200, 200, 150, C2.white); for (let k = 0; k < 4; k++) { line([[cx + 210, cy - 125], [cx + 330, cy - 180 + k * 36]], C.ginger, 3); text('?', cx + 350, cy - 168 + k * 36, { size: 22, w: 600, col: C.red }); }
+  rect(cx + 180, cy - 200, 200, 150, C2.white); for (let k = 0; k < Math.round(4 * V('wb')); k++) { line([[cx + 210, cy - 125], [cx + 330, cy - 180 + k * 36]], C.ginger, 3); text('?', cx + 350, cy - 168 + k * 36, { size: 22, w: 600, col: C.red }); }
   g.restore();
   // workers (small figures) in each department, all panicking
-  for (const [x, a] of [[cx - 230, 1], [cx, -1], [cx + 260, 1], [cx - 80, 1], [cx + 120, -1]]) plain({ x, gy: cy + 140, S: 190, face: a }, pose({ la: -2.4, lb: -.3, ra: 2.4, rb: .3, head: .1 * a }));
+  [[cx - 230, 1], [cx, -1], [cx + 260, 1], [cx - 80, 1], [cx + 120, -1]].forEach(([x, a], i) => { const pk = V('panic'), w = Math.sin(TT * 9 + i * 1.7) * .25 * pk; plain({ x, gy: cy + 140, S: 190, face: a }, pose({ la: lerp(-.4, -2.4, pk) + w, lb: -.3, ra: lerp(.4, 2.4, pk) - w, rb: .3, head: .1 * a, hy: .01 * pk * Math.abs(Math.sin(TT * 9 + i)) })); });
   for (const [s, x] of [['Memory', cx - 320], ['Emotion', cx - 70], ['Reasoning', cx + 180]]) label(s, x, cy + 190, { col: C.ink });
-  meterBar(cx - 200, cy + 250, 400, .98, C.red, 'Processing load', '');
+  meterBar(cx - 200, cy + 250, 400, V('load', .98), V('load', .98) > .7 ? C.red : C.ginger, 'Processing load', '');
   // the phone
-  const [sx, sy, sw] = phone(1580, 360, 220, 410, { screen: '#F7F5F0' }); chat(sx + 12, sy + 120, 'Can we talk?', { size: 26, wt: 600 });
+  vis('phone', 1690, 565, () => { const [sx, sy, sw] = phone(1580, 360, 220, 410, { screen: '#F7F5F0' }); chat(sx + 12, sy + 120, 'Can we talk?', { size: 26, wt: 600 }); });
   chapter(6, 'The energy problem'); headline('"Can we talk?"', null, C.ink, 238, 84);
   subtitle('…for a conversation about her Instagram picture.');
 };
@@ -432,14 +440,14 @@ SB.b17 = () => {
   poly([[t.Hd[0] - 30, t.Hd[1] + 10], [t.Hd[0] - 130, t.Hd[1] - 2], [t.Hd[0] - 160, t.Hd[1] - 26], [t.Hd[0] - 160, t.Hd[1] + 34], [t.Hd[0] - 130, t.Hd[1] + 18]], C.wall);
   // coordinated notes: one tidy staff, ginger
   for (let k = 0; k < 5; k++) ORIG.line([[300, 520 + k * 14], [1620, 520 + k * 14]], C.mute, 2);
-  for (let k = 0; k < 12; k++) { const x = 340 + k * 110, y = 520 + ((k * 3) % 5) * 14; shape(() => g.ellipse(x, y, 12, 9, -.3, 0, Math.PI * 2), C.ginger, { lw: 3 }); line([[x + 11, y], [x + 11, y - 46]], C.ink, 3); }
+  for (let k = 0; k < Math.round(V('notes', 12)); k++) { const x = 340 + k * 110, y = 520 + ((k * 3) % 5) * 14; shape(() => g.ellipse(x, y, 12, 9, -.3, 0, Math.PI * 2), C.ginger, { lw: 3 }); line([[x + 11, y], [x + 11, y - 46]], C.ink, 3); }
   chapter(7, 'Every neuron at once?'); headline('Not a light switch.', 'An orchestra.', C.ginger, 238, 76);
   subtitle('The right neurons, at the right time.');
 };
 SB.b17n = () => {   // same stage, everyone at full volume: noise (the seizure beat)
   SB.b17();
-  const r = mulberry(9); for (let k = 0; k < 26; k++) { const x = 300 + r() * 1320, y = 450 + r() * 170; line([[x, y], [x + 30, y - 24], [x + 10, y + 6], [x + 46, y - 12]], C.red, 5); }
-  text('NOISE', 960, 600, { size: 120, w: 600, col: C.red, align: 'center', track: 6 });
+  const r = mulberry(9); for (let k = 0; k < Math.round(26 * V('noise')); k++) { const x = 300 + r() * 1320, y = 450 + r() * 170; line([[x, y], [x + 30, y - 24], [x + 10, y + 6], [x + 46, y - 12]], C.red, 5); }
+  vis('nz', 960, 560, () => text('NOISE', 960, 600, { size: 120, w: 600, col: C.red, align: 'center', track: 6 }));
 };
 
 // ---- B18 Ending: the final boss, where to eat ----
@@ -452,14 +460,14 @@ SB.b18 = () => {
     for (let k = 0; k < 6; k++) poly([[x + k * 55, 410], [x + k * 55 + 55, 410], [x + k * 55 + 27, 440]], k % 2 ? col : '#FFFFFF', { lw: 3 }); }
   rect(-20, GY, W + 40, 200, '#BDB6A8', { lw: 0 });
   // the couple
-  gf({ x: 1120, gy: GY, S: 390, face: -1 }, pose({ la: -.4, lb: .2, ra: .9, rb: -1.9, head: -.05 }));
-  bubble(1180, 160, 420, 90, 'Do whatever you want.', { tx: 1150, ty: 410, size: 30 });
-  const j = brainy({ x: 780, gy: GY, S: 390 }, pose({ la: -2.5, lb: -.4, ra: 2.5, rb: .4, head: .1 }), { red: 1 });
-  for (const [dx, dy, s] of [[-120, -120, 70], [90, -150, 54], [-40, -200, 44]]) text('?', j.Hd[0] + dx, j.Hd[1] + dy, { size: s, w: 600, col: C.red, align: 'center' });
+  gf({ x: 1120, gy: GY, S: 390, face: -1 }, pz('gf', pose({ la: -.4, lb: .2, ra: .9, rb: -1.9, head: -.05 })));
+  vis('dw', 1390, 205, () => bubble(1180, 160, 420, 90, 'Do whatever you want.', { tx: 1150, ty: 410, size: 30 }));
+  const j = brainy({ x: 780, gy: GY, S: 390 }, pz('you', pose({ la: -2.5, lb: -.4, ra: 2.5, rb: .4, head: .1 })), { red: V('red', 1) > .5, spark: V('red', 1) <= .5 });
+  for (const [dx, dy, s] of [[-120, -120, 70], [90, -150, 54], [-40, -200, 44]]) if (V('qm') > .5) text('?', j.Hd[0] + dx, j.Hd[1] + dy, { size: s, w: 600, col: C.red, align: 'center' });
   ground(GY, -20, W + 20);
   g.save(); g.fillStyle = 'rgba(46,53,86,.0)'; g.restore();
-  text('The final boss', 124, 238, { size: 84, w: 600, track: -2, col: C.paper });
-  label('Ending  ·  The hardest problem', 124, 150, { col: '#BFC4D8' });
+  if (!HIDE) { text('The final boss', 124, 238, { size: 84, w: 600, track: -2, col: C.paper });
+  label('Ending  ·  The hardest problem', 124, 150, { col: '#BFC4D8' }); }
   subtitle('It\'s deciding where to eat.');
 };
 
@@ -543,12 +551,12 @@ SB.b06z = () => {
   for (const [c, r, L] of [[4, 7, '♔'], [1, 6, '♙'], [4, 4, '♙'], [3, 6, '♙'], [5, 5, '♘'], [6, 7, '♖']]) pc(c, r, 1, L);
   // the path of 12 moves, numbered
   const path = [[4, 4], [5, 5], [4, 3], [6, 4], [5, 2], [7, 3], [6, 1], [4, 2], [3, 1], [5, 1], [4, 1], [4, 0]];
-  for (let i = 0; i < path.length - 1; i++) { const a = path[i], b = path[i + 1]; line([[bx + (a[0] + .5) * s, by + (a[1] + .5) * s], [bx + (b[0] + .5) * s, by + (b[1] + .5) * s]], C.ginger, 5, [2, 12]); }
-  path.forEach(([c, r], i) => { if (i === 0) return; const x = bx + (c + .5) * s + 26, y = by + (r + .5) * s - 26; circ(x, y, 17, C.ginger, { lw: 3 }); text(String(i), x, y + 7, { size: 18, w: 600, align: 'center' }); });
+  for (let i = 0; i < Math.min(path.length - 1, V('n', 11)); i++) { const a = path[i], b = path[i + 1]; line([[bx + (a[0] + .5) * s, by + (a[1] + .5) * s], [bx + (b[0] + .5) * s, by + (b[1] + .5) * s]], C.ginger, 5, [2, 12]); }
+  path.forEach(([c, r], i) => { if (i === 0 || i > V('n', 11)) return; const x = bx + (c + .5) * s + 26, y = by + (r + .5) * s - 26; circ(x, y, 17, C.ginger, { lw: 3 }); text(String(i), x, y + 7, { size: 18, w: 600, align: 'center' }); });
   // the opponent's hand, sweating, above the pawn
-  ink([[bx + 4.5 * s + 160, by + 4 * s - 200], [bx + 4.5 * s + 40, by + 4.5 * s - 30]], { w: 9 }); sweat(bx + 4.5 * s + 120, by + 3 * s, 1);
-  chapter(2, 'Super processing speed'); text('12 moves', 118, 238, { size: 84, w: 600, track: -2, col: C.ginger }); text('ahead.', 118, 329, { size: 84, w: 600, track: -2 });
-  text('Before he touches', 122, 420, { size: 34, w: 500, col: C.mute }); text('a piece.', 122, 462, { size: 34, w: 500, col: C.mute });
+  vis('hand', bx + 4.5 * s + 100, by + 4 * s - 100, () => ink([[bx + 4.5 * s + 160, by + 4 * s - 200], [bx + 4.5 * s + 40, by + 4.5 * s - 30]], { w: 9 })); vis('sweat', bx + 4.5 * s + 130, by + 3 * s, () => sweat(bx + 4.5 * s + 120, by + 3 * s, 1));
+  chapter(2, 'Super processing speed'); if (!HIDE) text('12 moves', 118, 238, { size: 84, w: 600, track: -2, col: C.ginger }); if (!HIDE) { text('ahead.', 118, 329, { size: 84, w: 600, track: -2 });
+  text('Before he touches', 122, 420, { size: 34, w: 500, col: C.mute }); text('a piece.', 122, 462, { size: 34, w: 500, col: C.mute }); }
   subtitle('You predict your opponent\'s mistakes before they happen.');
 };
 
@@ -558,13 +566,13 @@ SB.b09a = () => {
   // desk + laptop with a ginger glow
   rect(300, 690, 620, 22, C2.woodL); rect(320, 712, 18, GY - 712, C2.wood); rect(880, 712, 18, GY - 712, C2.wood);
   poly([[480, 690], [760, 690], [790, 676], [450, 676]], C2.chrome); poly([[490, 676], [500, 500], [740, 500], [750, 676]], C.ink);
-  poly([[510, 664], [518, 516], [722, 516], [730, 664]], '#FCE2C6', { lw: 0 }); text('100%', 620, 600, { size: 40, w: 600, col: C.ginger, align: 'center' });
-  brainy({ x: 230, gy: GY, S: 380 }, pose({ la: -.5, lb: .2, ra: 1.3, rb: .3, head: .15 }), { spark: 1 });
+  if (V('crash', 0) > .5) { poly([[510, 664], [518, 516], [722, 516], [730, 664]], C.red, { lw: 0 }); text('ERROR', 620, 600, { size: 40, w: 600, col: C.paper, align: 'center' }); } else { poly([[510, 664], [518, 516], [722, 516], [730, 664]], '#FCE2C6', { lw: 0 }); text('100%', 620, 600, { size: 40, w: 600, col: C.ginger, align: 'center' }); }
+  brainy({ x: 230, gy: GY, S: 380 }, pz('you', pose({ la: -.5, lb: .2, ra: 1.3, rb: .3, head: .15 })), { spark: 1 });
   // a blueprint of a rocket with question marks
   rect(1100, 220, 640, 480, '#3F6FA8'); g.save(); g.globalAlpha = .35; for (let x = 1120; x < 1740; x += 32) ORIG.line([[x, 230], [x, 690]], '#FFFFFF', 1); for (let y = 240; y < 700; y += 32) ORIG.line([[1110, y], [1730, y]], '#FFFFFF', 1); g.restore();
   const R = (P) => ink(P, { w: 3.4, col: '#FFFFFF', amp: .4 });
   R([[1420, 260], [1470, 340], [1470, 560], [1370, 560], [1370, 340], [1420, 260]]); R([[1370, 500], [1320, 590], [1370, 560]]); R([[1470, 500], [1520, 590], [1470, 560]]); circ(1420, 400, 28, null, { lw: 3.4, col: '#FFFFFF' });
-  for (const [x, y, sz] of [[1240, 360, 64], [1600, 330, 52], [1580, 520, 72], [1250, 560, 44]]) text('?', x, y, { size: sz, w: 600, col: '#FFFFFF', align: 'center' });
+  for (const [x, y, sz] of [[1240, 360, 64], [1600, 330, 52], [1580, 520, 72], [1250, 560, 44]]) if (V('q') > .5) text('?', x, y, { size: sz, w: 600, col: '#FFFFFF', align: 'center' });
   label('Rocket v0.1  ·  no idea', 1120, 740);
   ground(GY, -20, W + 20);
   chapter(3, 'The Einstein question'); headline('A fast computer', 'is not a spaceship.', C.ginger, 238, 76);
@@ -574,16 +582,16 @@ SB.b09a = () => {
 // ---- B10z Ch 4: slow-mo close-up, a few centimetres ----
 SB.b10z = () => {
   rect(-20, 0, W + 40, H, C3.field, { lw: 0 }); rect(-20, 0, W + 40, 400, '#D9E7EF', { lw: 0 }); dline([[-20, 400], [W + 20, 400]]);
-  const hx = 760, hy = 600, R = 230;
-  line([[hx - 20, hy + R], [hx - 60, H + 40]], C.ink, 30);
+  const hx = 760 + V('hx', 0), hy = 600, R = 230;
+  line([[hx - 20, hy + R], [760 - 60, H + 40]], C.ink, 30);
   circ(hx, hy, R, C.ginger, { lw: 0 }); brainFolds(hx, hy, R, -Math.PI / 2 - .35, C.gingerD); circ(hx, hy, R, null, { lw: 12, col: C.ink });
-  const bx = hx + R + 250, by = hy - 90, br = 120;
+  const bx = 760 + R + 250 + V('bx', 0), by = hy - 90, br = 120;
   for (let k = 0; k < 5; k++) line([[bx + br + 40 + k * 70, by - 60 + k * 30], [bx + br + 140 + k * 70, by - 60 + k * 30]], C.mute, 5);
   circ(bx, by, br, '#FFFFFF', { lw: 8 }); poly([[bx - 30, by - 36], [bx + 30, by - 36], [bx + 44, by + 14], [bx, by + 46], [bx - 44, by + 14]], C.ink, { lw: 0 });
   for (const a of [-2.4, -1.2, 0, 1.2, 2.4]) line([[bx + Math.cos(a) * 52, by + Math.sin(a) * 52], [bx + Math.cos(a) * br, by + Math.sin(a) * br]], C.ink, 4);
   // the gap
   const gx0 = hx + R * Math.cos(-.5) + 6, gx1 = bx - br * Math.cos(.25) - 6, gy0 = by + 30;
-  line([[gx0, gy0], [gx1, gy0]], C.ginger, 5); for (const x of [gx0, gx1]) line([[x, gy0 - 18], [x, gy0 + 18]], C.ginger, 5); text('3 cm', (gx0 + gx1) / 2, gy0 - 26, { size: 44, w: 600, col: C.ginger, align: 'center' });
+  if (V('gap') > .5) { line([[gx0, gy0], [gx1, gy0]], C.ginger, 5); for (const x of [gx0, gx1]) line([[x, gy0 - 18], [x, gy0 + 18]], C.ginger, 5); } if (V('gap') > .5) text('3 cm', (gx0 + gx1) / 2, gy0 - 26, { size: 44, w: 600, col: C.ginger, align: 'center' });
   label('Slow motion  ·  ×20', 1500, 860, { col: C.ink });
   chapter(4, 'The athlete brain'); headline('A few', 'centimetres.', C.ginger, 238, 84);
   subtitle('You move your head. The ball misses by a few centimetres.');
@@ -593,25 +601,25 @@ SB.b10z = () => {
 SB.b12q = () => {
   wall(0, H, '#F3E3E6');
   const gyy = 1300;
-  brainy({ x: 1180, gy: gyy, S: 760 }, pose({ la: -.4, lb: .2, ra: .4, rb: -.2, head: .1 }), { spark: 1 });
+  brainy({ x: 1180, gy: gyy, S: 760 }, pz('you', pose({ la: -.4, lb: .2, ra: .4, rb: -.2, head: .1 })), { spark: V('spark', 1) > .5 });
   gf({ x: 1700, gy: gyy, S: 740, face: -1 }, pose({ la: .9, lb: -1.7, ra: -.9, rb: 1.7, head: -.05 }));
-  bubble(1240, 140, 560, 120, ['Do you remember', 'what day today is?'], { tx: 1600, ty: 330, size: 36 });
-  rrect(170, 300, 330, 110, 16, C2.white, { lw: 4 }); label('Calendar scan', 196, 340); text('0.004 s', 196, 392, { size: 46, w: 600, col: C.ginger });
+  vis('q', 1520, 200, () => bubble(1240, 140, 560, 120, ['Do you remember', 'what day today is?'], { tx: 1600, ty: 330, size: 36 }));
+  vis('scan', 335, 355, () => { rrect(170, 300, 330, 110, 16, C2.white, { lw: 4 }); label('Calendar scan', 196, 340); text('0.004 s', 196, 392, { size: 46, w: 600, col: C.ginger }); });
   subtitle('She suddenly asks: "Do you remember what day today is?"');
 };
 
 // ---- B14n Ch 5: "Nothing's wrong." — the analysis overlay ----
 SB.b14n = () => {
   wall(0, GY, '#EAE5F2'); windowW(1500, 200, 260, 220, C.sky); plant(1360, GY, 150);
-  const gj = gf({ x: 1220, gy: GY, S: 470, face: -1 }, pose({ la: .9, lb: -1.7, ra: -.9, rb: 1.7, head: -.12 }));
+  const gj = gf({ x: 1220, gy: GY, S: 470, face: -1 }, pz('gf', pose({ la: .9, lb: -1.7, ra: -.9, rb: 1.7, head: -.12 })));
   // analysis boxes (ginger, dashed)
   const box = (x, y, w, h, t, v) => { g.save(); g.strokeStyle = C.ginger; g.lineWidth = 4; g.setLineDash([12, 10]); g.strokeRect(x, y, w, h); g.restore(); label(t, x, y - 12, { col: C.ginger }); if (v) text(v, x + w + 14, y + 30, { size: 24, w: 600 }); };
-  box(gj.Hd[0] - 70, gj.Hd[1] - 70, 140, 140, 'Face', 'neutral?');
+  vis('boxes', gj.Hd[0], gj.Hd[1] + 60, () => { box(gj.Hd[0] - 70, gj.Hd[1] - 70, 140, 140, 'Face', 'neutral?');
   box(gj.N[0] - 95, gj.N[1] + 30, 190, 150, 'Arms', 'crossed');
-  label('Tone: flat  ·  Reply delay: 4 s', gj.Hp[0] - 150, GY + 40, { col: C.ginger });
-  bubble(800, 330, 330, 90, 'Nothing\'s wrong.', { tx: gj.Hd[0] - 60, ty: gj.Hd[1] - 10, size: 34, wt: 600 });
-  brainy({ x: 600, gy: GY, S: 390 }, pose({ la: -.5, lb: .2, ra: 1.2, rb: 1.8, head: .08 }), { spark: 1 });
-  rrect(124, 430, 300, 150, 16, C2.white, { lw: 4 }); label('Emotional database', 146, 470); text('4,812', 146, 530, { size: 50, w: 600, col: C.ginger }); text('patterns', 300, 530, { size: 24, w: 500, col: C.mute });
+  label('Tone: flat  ·  Reply delay: 4 s', gj.Hp[0] - 150, GY + 40, { col: C.ginger }); });
+  vis('nw', 965, 375, () => bubble(800, 330, 330, 90, 'Nothing\'s wrong.', { tx: gj.Hd[0] - 60, ty: gj.Hd[1] - 10, size: 34, wt: 600 }));
+  brainy({ x: 600, gy: GY, S: 390 }, pz('you', pose({ la: -.5, lb: .2, ra: 1.2, rb: 1.8, head: .08 })), { spark: 1 });
+  vis('db', 274, 505, () => { rrect(124, 430, 300, 150, 16, C2.white, { lw: 4 }); label('Emotional database', 146, 470); text(Math.round(V('dbn', 4812)).toLocaleString('en'), 146, 530, { size: 50, w: 600, col: C.ginger }); text('patterns', 300, 530, { size: 24, w: 500, col: C.mute }); });
   ground(GY, -20, W + 20);
   chapter(5, 'Learning at super speed'); headline('The language of', 'relationships.', C.ginger, 238, 76);
   subtitle('"Based on your tone and previous behaviour, something is wrong."');
@@ -633,18 +641,18 @@ SB.b17m = () => {
   circ(cx, cy, R, '#FCE2C6', { lw: 9 }); g.save(); g.beginPath(); g.arc(cx, cy, R - 6, 0, Math.PI * 2); g.clip();
   rect(cx - R, cy + 170, 2 * R, 300, '#F6C796', { lw: 0 }); dline([[cx - R, cy + 170], [cx + R, cy + 170]]);
   // projector screen + whiteboard
-  rect(cx - 300, cy - 290, 300, 180, C2.white); text('ARGUMENTS', cx - 150, cy - 230, { size: 26, w: 600, align: 'center' }); text('2021 → 2026', cx - 150, cy - 190, { size: 24, w: 500, col: C.mute, align: 'center' }); ink([[cx - 260, cy - 150], [cx - 40, cy - 150]], { w: 3, col: C.red });
-  rect(cx + 40, cy - 290, 260, 180, C2.white); text('17 DISASTER', cx + 170, cy - 230, { size: 24, w: 600, align: 'center', col: C.red }); text('SCENARIOS', cx + 170, cy - 196, { size: 24, w: 600, align: 'center', col: C.red }); for (let k = 0; k < 3; k++) ink([[cx + 70, cy - 170 + k * 18 - 10], [cx + 270, cy - 170 + k * 18 - 10]], { w: 2, col: C.mute });
+  vis('proj', cx - 150, cy - 200, () => { rect(cx - 300, cy - 290, 300, 180, C2.white); text('ARGUMENTS', cx - 150, cy - 230, { size: 26, w: 600, align: 'center' }); text('2021 → 2026', cx - 150, cy - 190, { size: 24, w: 500, col: C.mute, align: 'center' }); ink([[cx - 260, cy - 150], [cx - 40, cy - 150]], { w: 3, col: C.red }); });
+  vis('wb2', cx + 170, cy - 200, () => { rect(cx + 40, cy - 290, 260, 180, C2.white); text('17 DISASTER', cx + 170, cy - 230, { size: 24, w: 600, align: 'center', col: C.red }); text('SCENARIOS', cx + 170, cy - 196, { size: 24, w: 600, align: 'center', col: C.red }); for (let k = 0; k < 3; k++) ink([[cx + 70, cy - 170 + k * 18 - 10], [cx + 270, cy - 170 + k * 18 - 10]], { w: 2, col: C.mute }); });
   // the meeting table and the panicking neurons
   shape(() => g.ellipse(cx, cy + 120, 300, 46, 0, 0, Math.PI * 2), C2.woodL);
   const P = [[cx - 260, 1, -2.4, 2.4], [cx - 150, 1, -2.2, .4], [cx - 40, -1, -2.5, 2.5], [cx + 70, 1, -.4, 2.3], [cx + 180, -1, -2.4, 2.4], [cx + 280, -1, -1.6, 1.6]];
-  for (const [x, f, la, ra] of P) plain({ x, gy: cy + 170, S: 200, face: f }, pose({ la, lb: -.3, ra, rb: .3, head: .15 * f }));
+  P.forEach(([x, f, la, ra], i) => { const pk = V('panic'), w = Math.sin(TT * 9 + i * 1.3) * .25 * pk; plain({ x, gy: cy + 170, S: 200, face: f }, pose({ la: lerp(-.4, la, pk) + w, lb: -.3, ra: lerp(.4, ra, pk) - w, rb: .3, head: .15 * f })); });
   shape(() => g.ellipse(cx, cy + 150, 300, 30, 0, 0, Math.PI), C2.wood);
   g.restore();
   // alarm light on top of the head
   shape(() => { g.arc(cx, cy - R + 4, 54, Math.PI, 0); g.closePath(); }, C.red, { lw: 5 }); for (const a of [-2.6, -2.0, -1.57, -1.1, -.5]) line([[cx + Math.cos(a) * 76, cy - R + Math.sin(a) * 76], [cx + Math.cos(a) * 110, cy - R + Math.sin(a) * 110]], C.red, 6);
-  bubble(1480, 300, 320, 90, 'We need to talk.', { tx: 1420, ty: 470, size: 32, wt: 600 });
-  chapter(7, 'Every neuron at once?'); text('All neurons working.', 118, 238, { size: 64, w: 600, track: -2 }); text('No solution.', 118, 312, { size: 64, w: 600, track: -2, col: C.red });
+  vis('talk', 1640, 345, () => bubble(1480, 300, 320, 90, 'We need to talk.', { tx: 1420, ty: 470, size: 32, wt: 600 }));
+  chapter(7, 'Every neuron at once?'); if (!HIDE) text('All neurons working.', 118, 238, { size: 64, w: 600, track: -2 }); if (!HIDE) text('No solution.', 118, 312, { size: 64, w: 600, track: -2, col: C.red });
   subtitle('Your entire brain becomes one giant emergency meeting.');
 };
 
@@ -653,19 +661,20 @@ SB.b18a = () => {
   const gy = 800;
   const xs = [260, 470, 660, 860, 1060, 1260, 1450, 1650];
   // book stack, chess king, mini chalkboard, football, sushi + wasabi, energy can, violin, phone
-  for (let k = 0; k < 3; k++) rect(xs[0] - 70 + k * 6, gy - 40 - k * 40, 140, 40, [C.sky, C.roof, C.wall][k]);
-  poly([[xs[1] - 36, gy], [xs[1] - 24, gy - 150], [xs[1] + 24, gy - 150], [xs[1] + 36, gy]], '#3A3530'); rect(xs[1] - 30, gy - 175, 60, 25, '#3A3530'); line([[xs[1], gy - 215], [xs[1], gy - 175]], C.ink, 8); line([[xs[1] - 16, gy - 198], [xs[1] + 16, gy - 198]], C.ink, 8);
-  rect(xs[2] - 90, gy - 170, 180, 130, C2.wood); rect(xs[2] - 78, gy - 158, 156, 106, C3.board, { lw: DL }); text('E=mc²', xs[2], gy - 92, { size: 32, w: 500, col: C3.chalk, align: 'center' }); line([[xs[2] - 60, gy - 40], [xs[2] - 80, gy]], C.ink, 6); line([[xs[2] + 60, gy - 40], [xs[2] + 80, gy]], C.ink, 6);
-  circ(xs[3], gy - 60, 60, '#FFFFFF', { lw: 6 }); poly([[xs[3] - 16, gy - 80], [xs[3] + 16, gy - 80], [xs[3] + 24, gy - 54], [xs[3], gy - 36], [xs[3] - 24, gy - 54]], C.ink, { lw: 0 });
-  shape(() => g.ellipse(xs[4], gy - 14, 100, 16, 0, 0, Math.PI * 2), C2.white, { lw: 4 }); rrect(xs[4] - 70, gy - 52, 70, 32, 10, C3.rice, { lw: 3 }); rrect(xs[4] - 74, gy - 62, 78, 20, 9, C3.salmon, { lw: 3 }); fillC([[xs[4] + 20, gy - 20], [xs[4] + 30, gy - 50], [xs[4] + 55, gy - 52], [xs[4] + 70, gy - 20]], C3.wasabi); ink([[xs[4] + 20, gy - 20], [xs[4] + 30, gy - 50], [xs[4] + 55, gy - 52], [xs[4] + 70, gy - 20]], { w: 3.4 });
-  rrect(xs[5] - 30, gy - 130, 60, 130, 10, '#7FC3B8', { lw: 4 }); rect(xs[5] - 30, gy - 85, 60, 36, C.ink, { lw: 0 }); text('⚡', xs[5], gy - 57, { size: 28, w: 600, col: C.wall, align: 'center' });
-  withRot(xs[6], gy - 90, -.5, () => { shape(() => g.ellipse(xs[6], gy - 70, 46, 70, 0, 0, Math.PI * 2), '#B9652F', { lw: 5 }); line([[xs[6], gy - 140], [xs[6], gy - 250]], C.ink, 10); });
-  phone(xs[7] - 40, gy - 150, 80, 150, { screen: '#FCE2C6' }); text('Fine.', xs[7], gy - 70, { size: 22, w: 600, align: 'center' });
-  ['memory', 'speed', 'knowledge', 'reflexes', 'learning', 'energy', 'timing', 'the boss'].forEach((s, i) => label(s, xs[i] - 40, gy + 44, { col: i === 7 ? C.red : C.mute }));
+  const P_ = (i, fn) => vis('p' + i, xs[i], gy - 40, fn);
+  P_(0, () => { for (let k = 0; k < 3; k++) rect(xs[0] - 70 + k * 6, gy - 40 - k * 40, 140, 40, [C.sky, C.roof, C.wall][k]); });
+  P_(1, () => { poly([[xs[1] - 36, gy], [xs[1] - 24, gy - 150], [xs[1] + 24, gy - 150], [xs[1] + 36, gy]], '#3A3530'); rect(xs[1] - 30, gy - 175, 60, 25, '#3A3530'); line([[xs[1], gy - 215], [xs[1], gy - 175]], C.ink, 8); line([[xs[1] - 16, gy - 198], [xs[1] + 16, gy - 198]], C.ink, 8); });
+  P_(2, () => { rect(xs[2] - 90, gy - 170, 180, 130, C2.wood); rect(xs[2] - 78, gy - 158, 156, 106, C3.board, { lw: DL }); text('E=mc²', xs[2], gy - 92, { size: 32, w: 500, col: C3.chalk, align: 'center' }); line([[xs[2] - 60, gy - 40], [xs[2] - 80, gy]], C.ink, 6); line([[xs[2] + 60, gy - 40], [xs[2] + 80, gy]], C.ink, 6); });
+  P_(3, () => { circ(xs[3], gy - 60, 60, '#FFFFFF', { lw: 6 }); poly([[xs[3] - 16, gy - 80], [xs[3] + 16, gy - 80], [xs[3] + 24, gy - 54], [xs[3], gy - 36], [xs[3] - 24, gy - 54]], C.ink, { lw: 0 }); });
+  P_(4, () => { shape(() => g.ellipse(xs[4], gy - 14, 100, 16, 0, 0, Math.PI * 2), C2.white, { lw: 4 }); rrect(xs[4] - 70, gy - 52, 70, 32, 10, C3.rice, { lw: 3 }); rrect(xs[4] - 74, gy - 62, 78, 20, 9, C3.salmon, { lw: 3 }); fillC([[xs[4] + 20, gy - 20], [xs[4] + 30, gy - 50], [xs[4] + 55, gy - 52], [xs[4] + 70, gy - 20]], C3.wasabi); ink([[xs[4] + 20, gy - 20], [xs[4] + 30, gy - 50], [xs[4] + 55, gy - 52], [xs[4] + 70, gy - 20]], { w: 3.4 }); });
+  P_(5, () => { rrect(xs[5] - 30, gy - 130, 60, 130, 10, '#7FC3B8', { lw: 4 }); rect(xs[5] - 30, gy - 85, 60, 36, C.ink, { lw: 0 }); text('⚡', xs[5], gy - 57, { size: 28, w: 600, col: C.wall, align: 'center' }); });
+  P_(6, () => withRot(xs[6], gy - 90, -.5, () => { shape(() => g.ellipse(xs[6], gy - 70, 46, 70, 0, 0, Math.PI * 2), '#B9652F', { lw: 5 }); line([[xs[6], gy - 140], [xs[6], gy - 250]], C.ink, 10); }));
+  P_(7, () => { phone(xs[7] - 40, gy - 150, 80, 150, { screen: '#FCE2C6' }); text('Fine.', xs[7], gy - 70, { size: 22, w: 600, align: 'center' }); });
+  ['memory', 'speed', 'knowledge', 'reflexes', 'learning', 'energy', 'timing', 'the boss'].forEach((s, i) => V('p' + i) > .9 && label(s, xs[i] - 40, gy + 44, { col: i === 7 ? C.red : C.mute }));
   ground(gy, 124, 1796);
-  brainy({ x: 1820, gy, S: 300, face: -1, prof: true }, Object.assign(pose({}), walkPose(.6)));
+  brainy({ x: V('wx', 1820), gy, S: 300, face: -1, prof: true }, Object.assign(pose({}), walkPose(V('wph', .6))));
   headline('Intelligence isn\'t', 'a percentage.', C.ginger, 238, 84);
-  label('Ending  ·  The final boss', 124, 150);
+  if (!HIDE) label('Ending  ·  The final boss', 124, 150);
   subtitle('Memory, learning, reasoning, creativity, experience.');
 };
 function walkPose(ph) { const p = rest(), A = .07; p.lfx = A * Math.sin(ph); p.rfx = -A * Math.sin(ph); p.lfy = .045 * Math.max(0, Math.cos(ph)); p.la = -.7 * Math.sin(ph) - .3; p.lb = .5; p.ra = .7 * Math.sin(ph) + .3; p.rb = -.5; p.lean = .06; return p; }
@@ -677,13 +686,13 @@ SB.b18e = () => {
   rect(1290, 470, 220, 220, '#FBE7A1'); rect(1560, 500, 140, GY - 500, '#B97C47'); rrect(1580, 540, 100, 40, 8, C2.white, { lw: 3 }); text('OPEN', 1630, 568, { size: 22, w: 600, align: 'center', col: C.grass });
   rect(-20, GY, W + 40, 200, '#BDB6A8', { lw: 0 });
   // the couple, holding hands (one curve through the clasp)
-  const A = brainy({ x: 900, gy: GY, S: 360 }, pose({ ra: .95, rb: -.35, la: -.4, lb: .2, head: .2 }));
-  const B = gf({ x: 1080, gy: GY, S: 350, face: -1 }, pose({ la: -.95, lb: .35, ra: .4, rb: -.2, head: -.15 }));
+  const ox = V('cx', 0); const A = brainy({ x: 900 + ox, gy: GY, S: 360 }, pz('you', pose({ ra: .95, rb: -.35, la: -.4, lb: .2, head: .2 })));
+  const B = gf({ x: 1080 + ox, gy: GY, S: 350, face: -1 }, pz('gf', pose({ la: -.95, lb: .35, ra: .4, rb: -.2, head: -.15 })));
   const cl = [(A.aR[1][0] + B.aL[1][0]) / 2, (A.aR[1][1] + B.aL[1][1]) / 2]; circ(cl[0], cl[1], 7, C.ink, { lw: 0 });
-  text('♥', 990, 470, { size: 44, w: 400, col: C.pink, align: 'center' });
+  vis('heart', 990 + ox, 455, () => text('♥', 990 + ox, 470, { size: 44, w: 400, col: C.pink, align: 'center' }));
   ground(GY, -20, W + 20);
-  text('See you in the next', 118, 238, { size: 84, w: 600, track: -2, col: C.paper }); text('experiment!', 118, 329, { size: 84, w: 600, track: -2, col: C.ginger });
-  label('Curious Mind', 124, 150, { col: '#BFC4D8' });
+  if (!HIDE) { text('See you in the next', 118, 238, { size: 84, w: 600, track: -2, col: C.paper }); text('experiment!', 118, 329, { size: 84, w: 600, track: -2, col: C.ginger });
+  label('Curious Mind', 124, 150, { col: '#BFC4D8' }); }
   subtitle('See you in the next experiment!');
 };
 
