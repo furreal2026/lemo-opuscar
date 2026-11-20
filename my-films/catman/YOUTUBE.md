@@ -32,4 +32,4 @@ Next time: What if a dog licked you? Subscribe so you don't miss it.
 
 ## Tags
 
-what if, what if a cat bit you, cat powers, cat superpowers, what if you became a cat, cat superhero, meow man, superhero animation, stick figure animation, animated explainer, science explained, fun science, cat facts, cat science, how cats see in the dark, cat night vision, why cats land on their feet, cat righting reflex, how high can cats jump, cat hearing, cat reflexes, cats and laser pointers, why cats knock things off tables, why cats sleep so much, cats can't taste sweet, curious mind, hypothetical scenarios, funny animation
+what if, what if a cat bit you, cat powers, cat superpowers, what if you became a cat, cat superhero, meow man, stick figure animation, animated explainer, science explained, cat facts, cat science, how cats see in the dark, cat night vision, why cats land on their feet, cat righting reflex, how high can cats jump, cat hearing, cat reflexes, cats and laser pointers, why cats knock things off tables, why cats sleep so much, cats can't taste sweet, curious mind, funny animation
