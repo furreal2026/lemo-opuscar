@@ -1,0 +1,202 @@
+[
+ {
+  "id": "l01",
+  "text": "What if a cat bit you... and you got cat powers?",
+  "voice": "am_puck",
+  "speed": 1.08,
+  "scene": "s1"
+ },
+ {
+  "id": "l02",
+  "text": "Step one: pet a cat that has clearly said no.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "s1",
+  "asr": "Step 1, petacat that has clearly said no."
+ },
+ {
+  "id": "l03",
+  "text": "Chomp!",
+  "voice": "am_puck",
+  "speed": 1.0,
+  "scene": "s1",
+  "asr": "Chompa"
+ },
+ {
+  "id": "l04",
+  "text": "Quick reality check! A real cat bite won't give you powers. It gives you an infection. Please see a doctor.",
+  "voice": "am_puck",
+  "speed": 1.14,
+  "scene": "s2"
+ },
+ {
+  "id": "l05",
+  "text": "But this is a what-if. So: day one. You wake up, look in the mirror, and... ears! Two extra ears. On top.",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "s2",
+  "asr": "But this is a what if so day one you wake up look in the mirror and ears to extra ears on top"
+ },
+ {
+  "id": "l06",
+  "text": "Also a tail. Nobody asked for the tail.",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "s2"
+ },
+ {
+  "id": "l07",
+  "text": "Power number one: night vision! Cats can see in light about six times dimmer than you need.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "s3"
+ },
+ {
+  "id": "l08",
+  "text": "Behind the eye there's a mirror layer that bounces light back for a second try. That's why cat eyes glow in photos.",
+  "voice": "am_puck",
+  "speed": 1.14,
+  "scene": "s3"
+ },
+ {
+  "id": "l09",
+  "text": "So at three in the morning, in total darkness, you can finally find the TV remote. Hero stuff.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "s3"
+ },
+ {
+  "id": "l10",
+  "text": "Power number two: you always land on your feet!",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "s4"
+ },
+ {
+  "id": "l11",
+  "text": "Cats twist in mid-air, head first, then the body, like a spring unwinding. They can do it from a fall of about thirty centimeters.",
+  "voice": "am_puck",
+  "speed": 1.14,
+  "scene": "s4",
+  "asr": "Cats twist in mid-air headfirst then the body like a spring unwinding. They can do it from a fall of about 30 centimeters."
+ },
+ {
+  "id": "l12",
+  "text": "You fall off a ladder? Ta-da! The paint bucket? Not so lucky.",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "s4",
+  "asr": "You fall off a ladder, tada, the paint bucket, not so lucky."
+ },
+ {
+  "id": "l13",
+  "text": "Power number three: the jump! A cat can leap up to five times its own height.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "s5"
+ },
+ {
+  "id": "l14",
+  "text": "You're one point eight meters tall. Times five... that's nine meters. A two-story roof. From standing!",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "s5",
+  "asr": "You're 1.8 meters tall, times 5, that's 9 meters, a 2-story roof from standing."
+ },
+ {
+  "id": "l15",
+  "text": "Your neighbors have questions.",
+  "voice": "am_puck",
+  "speed": 1.06,
+  "scene": "s5"
+ },
+ {
+  "id": "l16",
+  "text": "Power number four: super hearing! You hear sounds up to twenty thousand hertz. A cat? Up to sixty-four thousand.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "s9",
+  "asr": "Power number four superhearing you hear sounds up to 20,000 hertz, a cat up to 64,000."
+ },
+ {
+  "id": "l17",
+  "text": "You can hear a mouse in the walls. And the neighbor's microwave. And your fridge. All day. Every day.",
+  "voice": "am_puck",
+  "speed": 1.14,
+  "scene": "s9"
+ },
+ {
+  "id": "l18",
+  "text": "Here's the catch. Cat powers come with cat habits.",
+  "voice": "am_puck",
+  "speed": 1.06,
+  "scene": "s6"
+ },
+ {
+  "id": "l19",
+  "text": "Side effect one: things on edges must fall. Your boss's mug is on the edge of the desk. You look at it. It looks at you.",
+  "voice": "am_puck",
+  "speed": 1.14,
+  "scene": "s6"
+ },
+ {
+  "id": "l20",
+  "text": "You don't know why you did it. You would do it again.",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "s6"
+ },
+ {
+  "id": "l21",
+  "text": "Side effect two: cats can't taste sweet. The gene is broken. So birthday cake now tastes like... wet bread.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "s10",
+  "asr": "Side effect too, cats can't taste sweet. The gene is broken, so birthday cake now tastes like wet bread."
+ },
+ {
+  "id": "l22",
+  "text": "And the big one. Cats sleep twelve to sixteen hours a day. So do you now.",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "s7",
+  "asr": "And the big one, cat sleep 12 to 16 hours a day, so do you now."
+ },
+ {
+  "id": "l23",
+  "text": "A superhero shift is eight hours. You are awake for eight hours. Total.",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "s7",
+  "asr": "The superhero shift is 8 hours. You are awake for 8 hours total."
+ },
+ {
+  "id": "l24",
+  "text": "The city calls for Meow Man. Meow Man is in a box. In a sunbeam. Do not disturb.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "s7",
+  "asr": "The city calls for meow man, meow man is in a box, and a sunbeam do not disturb."
+ },
+ {
+  "id": "l25",
+  "text": "Day thirty. Mr. Biscuits bit your boss too. The city now has two Meow Men.",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "s8"
+ },
+ {
+  "id": "l26",
+  "text": "Both asleep. The cat is fine.",
+  "voice": "am_puck",
+  "speed": 1.06,
+  "scene": "s8"
+ },
+ {
+  "id": "l27",
+  "text": "Next time: what if a dog licked you?",
+  "voice": "am_puck",
+  "speed": 1.06,
+  "scene": "s8"
+ }
+]
