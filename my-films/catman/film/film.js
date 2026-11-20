@@ -229,7 +229,7 @@ const FILM = {};
     scr();
     L('Power 2  ·  The landing', 1300, 190, t, s.t0 + .1);
     T('Cats can twist', 1296, 290, { size: 56, w: 500 }, t, lt('l11'));
-    T('feet-first', 1296, 380, { size: 84, w: 600, col: C.ginger, track: -2 }, t, wt('l11', 'body'));
+    T('feet-first', 1296, 380, { size: 84, w: 600, col: C.ginger, track: -2 }, t, wt('l11', 'front'));
     T('in a fall of', 1296, 460, { size: 56, w: 500 }, t, wt('l11', 'fall') - .3);
     T('just 30 cm.', 1296, 530, { size: 56, w: 600 }, t, wt('l11', '30') - .1);
   };
@@ -308,6 +308,122 @@ function waves(x, y, t, a, dir = 1, n = 3, col = C.ginger) { if (t < a) return; 
   };
 }
 
+// ---- S11: super reflexes (the burger) ----
+function burger(x, y, sc = 1, bite = 0) { g.save(); g.translate(x, y); g.scale(sc, sc);
+  shape(() => { g.moveTo(-50, 8); g.quadraticCurveTo(0, 22, 50, 8); g.lineTo(50, 0); g.lineTo(-50, 0); g.closePath(); }, '#E2A65A', { lw: 4 });
+  rrect(-54, -14, 108, 14, 6, '#7A4B2A', { lw: 4 });
+  poly([[-56, -14], [56, -14], [40, -6], [20, -16], [0, -6], [-20, -16], [-40, -6]], C.wall, { lw: 3 });
+  shape(() => { g.moveTo(-58, -18); for (let i = 0; i <= 6; i++) g.quadraticCurveTo(-58 + i * 19.3 + 9, -28, -58 + (i + 1) * 19.3, -18); g.lineTo(58, -14); g.lineTo(-58, -14); g.closePath(); }, C2.leaf, { lw: 3 });
+  shape(() => { g.moveTo(-52, -22); g.quadraticCurveTo(-50, -66, 0, -68); g.quadraticCurveTo(50, -66, 52, -22); g.closePath(); }, '#E2A65A', { lw: 4 });
+  for (const [a, b] of [[-26, -44], [-6, -54], [14, -46], [30, -36], [-34, -32], [4, -36]]) shape(() => g.ellipse(a, b, 4, 2.4, .4, 0, Math.PI * 2), C2.white, { lw: 0 });
+  if (bite > 0) { g.globalCompositeOperation = 'destination-out'; for (const [a, b] of [[54, -30], [60, -10], [52, -50]]) { g.beginPath(); g.arc(a, b, 16 * bite, 0, Math.PI * 2); g.fill(); } }
+  g.restore(); }
+function stopwatch(x, y, k, label) { scaled(x, y, k, () => { circ(x, y, 60, C2.white, { lw: 6 }); rect(x - 12, y - 82, 24, 16, C.ink, { lw: 0 }); line([[x, y], [x + 30, y - 34]], C.ginger, 6); circ(x, y, 6, C.ink, { lw: 0 });
+  text(label, x, y + 104, { size: 40, w: 600, col: C.ginger, align: 'center' }); }); }
+{ const s = SC.s11, tSteal = wt('l29', 'mine') + .3, tGone = wt('l29', 'gone'), tReplay = lt('l30'), tThirty = wt('l30', '30'), tYum = wt('l30', 'delicious'), tRaise = lt('l29') + .4;
+  ev(s.t0 + .1, 'title'); ev(wt('l28', 'quarter'), 'grow'); ev(wt('l28', '20'), 'grow2'); ev(tSteal, 'zip'); ev(tGone, 'blink'); ev(tThirty, 'ding'); ev(tYum, 'chomp');
+  FILM.s11 = t => {
+    const gy = 880, dt = 650, [sx, sy] = shake(t, tSteal, 6, .2);
+    cam(1 + .05 * ss(seg(t, lt('l29'), tSteal)), lerp(960, 1150, ss(seg(t, lt('l29'), tSteal))), lerp(540, 560, ss(seg(t, lt('l29'), tSteal))), sx, sy);
+    // diner wall: a menu board with a burger on it
+    rect(1080, 150, 360, 230, C.ink, { lw: 0 }); text('MENU', 1260, 200, { size: 30, w: 600, col: C2.white, align: 'center', track: 4 });
+    for (let i = 0; i < 4; i++) { dline([[1110, 236 + i * 34], [1300, 236 + i * 34]], '#8A8F9C'); text('$' + (5 + i), 1390, 244 + i * 34, { size: 22, w: 600, col: C.wall, align: 'right' }); }
+    ground(gy, -400, 2400);
+    // friend (ink) and Meow Man, the table in front of them
+    const holdLow = pose({ la: -1.25, lb: -.9, ra: .45, rb: -.2, head: -.05 }), toMouth = pose({ la: -.75, lb: -2.15, ra: .45, rb: -.2, head: -.1 });
+    const fP = poseAt([[0, holdLow], [tRaise, toMouth], [tGone + .2, pose({ la: -.75, lb: -2.15, ra: .45, rb: -.2, head: .35, lean: -.04 })]], t);
+    const fJ = villain({ x: 1500, gy, S: 420 }, breathe(fP, t, 2));
+    { const k = ein(t, lt('l29') + .2, .4); if (k > 0) { g.save(); g.globalAlpha = k; label('Dr. Woof, arch-enemy', 1600, 400); line([[1640, 412], [1580, 452]], C.mute, 3); arrowHead(1580, 452, Math.atan2(40, -60), 12, C.mute, 3); g.restore(); } }
+    const has = t >= tSteal;
+    if (!has) burger(fJ.aL[1][0] - 10, fJ.aL[1][1] + 6, .9);
+    if (t > tGone) { const k = pop(t, tGone); scaled(1640, 530, k, () => text('...?', 1600, 550, { size: 48, w: 600, col: C.mute })); }
+    const mP = poseAt([[0, pose({ la: -.45, lb: .2, ra: .45, rb: -.2, head: .2 })], [tSteal, pose({ la: -.45, lb: .2, ra: .55, rb: -2.55, head: -.05 })], [tYum, pose({ la: -.45, lb: .2, ra: .35, rb: -2.85, head: .15 })]], t);
+    const mJ = catK({ x: 860, gy, S: 420 }, breathe(mP, t), { wag: .1 * Math.sin(t * 4) });
+    if (has) burger(mJ.aR[1][0] + 18, mJ.aR[1][1] + 4, .9, ss(seg(t, tYum, tYum + .15)));
+    if (t > tYum) { const k = pop(t, tYum + .05), hx = mJ.Hd[0] + 70, hy = mJ.Hd[1] - 70; scaled(hx, hy, k, () => text('nom', hx, hy, { size: 40, w: 600, col: C.ginger })); }
+    // the steal: two frames of speed lines, then nothing
+    if (t >= tSteal - .02 && t < tSteal + .12) { const a = [fJ.aL[1][0], fJ.aL[1][1]], b = [mJ.aR[1][0] + 18, mJ.aR[1][1]];
+      for (let i = -2; i <= 2; i++) line([[a[0], a[1] + i * 16], [b[0], b[1] + i * 16]], C.ginger, 5); }
+    rect(980, dt, 440, 26, C2.woodL); rect(1010, dt + 26, 24, gy - dt - 26, C2.wood); rect(1366, dt + 26, 24, gy - dt - 26, C2.wood);
+    shape(() => g.ellipse(1060, dt - 4, 70, 12, 0, 0, Math.PI * 2), C2.white, { lw: 4 });
+    for (let i = 0; i < 6; i++) circ(1030 + i * 12, dt - 16 - (i % 2) * 6, 9, C2.leaf, { lw: 2 });   // his salad
+    shape(() => g.ellipse(1330, dt - 4, 70, 12, 0, 0, Math.PI * 2), C2.white, { lw: 4 });
+    rrect(1196, dt - 70, 30, 70, 6, C.red, { lw: 4 }); rrect(1236, dt - 60, 26, 60, 6, C.wall, { lw: 4 });
+    // replay: ghosts dash to the burger and back
+    const kr = ein(t, tReplay - .1, .3) * (1 - ein(t, tYum - .2, .3));
+    if (kr > 0) { const P = [[900, 560], [1150, 420], [1350, 420], [1450, 560]];
+      g.save(); g.globalAlpha = kr; dashedArc(P, 1); g.restore();
+      for (const [x, a] of [[1060, .22], [1220, .32], [1380, .42]]) alpha(a * kr, () => catK({ x, gy, S: 420 }, walkP(x * .05, 1), { tail: 0 }));
+      g.save(); g.globalAlpha = kr; text('REPLAY · 1000× SLOWER', 1000, 820 - 380, { size: 26, w: 600, col: C.mute, track: 3 }); g.restore(); }
+    scr();
+    stopwatch(1710, 190, pop(t, tThirty), '0.03 s');
+    L('Power 5  ·  Super reflexes', 124, 118, t, s.t0 + .05);
+    T('Faster than', 116, 226, { size: 96, w: 600, track: -2 }, t, s.t0 + .2);
+    T('your enemy.', 116, 326, { size: 96, w: 600, track: -2, col: C.ginger }, t, s.t0 + .45);
+    // reaction-time bars during l28
+    const kc = 1 - ein(t, lt('l29') - .3, .3);
+    if (kc > 0) { const x0 = 124, y0 = 430, px = 1.6;
+      const w1 = 250 * px * ss(seg(t, wt('l28', 'quarter') - .2, wt('l28', 'quarter') + .4)), w2 = 70 * px * ss(seg(t, wt('l28', '20') - .2, wt('l28', '20') + .4));
+      g.save(); g.globalAlpha = kc;
+      if (w1 > 2) rect(x0 + 90, y0, w1, 40, C.tint, { lw: 4 }); if (w2 > 2) { rect(x0 + 90, y0 + 60, w2, 40, C.ginger, { lw: 4 }); rect(x0 + 90, y0 + 60, Math.min(w2, 20 * px), 40, C.gingerD, { lw: 4 }); }
+      text('You', x0, y0 + 30, { size: 28, w: 600, a: ein(t, s.t0 + .6) }); text('Cat', x0, y0 + 90, { size: 28, w: 600, col: C.ginger, a: ein(t, s.t0 + .8) });
+      if (w1 > 380) text('250 ms', x0 + 110 + w1, y0 + 30, { size: 28, w: 600 }); if (w2 > 100) text('20–70 ms', x0 + 110 + w2, y0 + 90, { size: 28, w: 600, col: C.ginger });
+      g.restore(); }
+  };
+}
+
+// Dr. Woof: the even-hose figure + floppy grey dog ears and a black eye mask (a costume, not a face)
+function villain(f, p) {
+  const j = figure(f, p), r = GEO.headR * f.S, sc = clamp(Math.sqrt(f.S / 380), .6, 1.05);
+  const up = Math.atan2(j.Hd[1] - j.N[1], j.Hd[0] - j.N[0]);
+  for (const sd of [-1, 1]) { const a = up + sd * 1.25, ex = j.Hd[0] + Math.cos(a) * r * .95, ey = j.Hd[1] + Math.sin(a) * r * .95;
+    shape(() => { g.ellipse(ex + sd * r * .18, ey + r * .55, r * .32, r * .7, sd * -.25, 0, Math.PI * 2); }, '#8A8F9C', { lw: 6 * sc }); }
+  g.save(); g.translate(j.Hd[0], j.Hd[1]); g.rotate(up + Math.PI / 2);
+  shape(() => g.roundRect(-r * 1.05, -r * .28, r * 2.1, r * .5, r * .2), C.ink, { lw: 0 });
+  for (const sd of [-1, 1]) circ(sd * r * .42, -r * .03, r * .14, C.paper, { lw: 0 });
+  g.restore(); return j;
+}
+
+// ---- S12: the weakness (red light, no focus) ----
+function floorLamp(x, gy, rot) { withRot(x, gy, rot, () => { shape(() => g.ellipse(x, gy - 8, 60, 12, 0, 0, Math.PI * 2), C2.chrome, { lw: 5 }); line([[x, gy - 10], [x, gy - 330]], C.ink, 10); line([[x, gy - 10], [x, gy - 330]], C2.chrome, 4);
+  poly([[x - 80, gy - 330], [x + 80, gy - 330], [x + 50, gy - 440], [x - 50, gy - 440]], C.wall); for (const dx of [-40, 0, 40]) dline([[x + dx * .9, gy - 336], [x + dx * .6, gy - 434]], '#D9B65E'); }); }
+{ const s = SC.s12, tRed = wt('l31', 'red'), tOn = wt('l32', 'switches'), tWall = wt('l32', 'wall'), tFloor = wt('l32', 'floor'), tLamp = wt('l32', 'lamp'), tFocus = wt('l33', 'focus'), tStare = wt('l33', 'staring'), tCity = wt('l33', 'saving');
+  ev(s.t0 + .1, 'title'); ev(tRed, 'sting2'); ev(tOn, 'tick'); ev(tWall, 'jump'); ev(tFloor, 'whoosh'); ev(tLamp + .3, 'crash'); ev(tFocus, 'womp');
+  const DOT = [[tOn, 1080, 868], [tWall - .1, 1000, 860], [tWall + .5, 900, 300], [tFloor - .2, 820, 380], [tFloor + .5, 420, 868], [tLamp - .25, 560, 868], [tLamp + .2, 700, 520], [tLamp + 1.2, 900, 430]];
+  function dotAt(t) { if (t < DOT[0][0]) return null; for (let i = 1; i < DOT.length; i++) if (t < DOT[i][0]) { const u = ss((t - DOT[i - 1][0]) / (DOT[i][0] - DOT[i - 1][0])); return [lerp(DOT[i - 1][1], DOT[i][1], u), lerp(DOT[i - 1][2], DOT[i][2], u)]; }
+    const L0 = DOT[DOT.length - 1]; return [L0[1] + 10 * Math.sin(t * 7), L0[2] + 6 * Math.cos(t * 9)]; }
+  FILM.s12 = t => {
+    const gy = 880, [sx, sy] = shake(t, tLamp + .3, 10, .3); cam(1, 960, 540, sx, sy);
+    rect(124, 150, 1672, 730, '#E9E2F0', { lw: 0 });   // a pale lilac wall
+    for (let x = 300; x < 1796; x += 260) dline([[x, 150], [x, 880]], '#D7CDE2');
+    rect(1180, 230, 220, 160, C2.wood); rect(1196, 246, 188, 128, C.sky, { lw: DL }); shape(() => { g.moveTo(1230, 330); g.lineTo(1280, 280); g.lineTo(1320, 320); g.lineTo(1350, 300); g.lineTo(1384, 340); g.lineTo(1384, 374); g.lineTo(1196, 374); g.lineTo(1196, 350); g.closePath(); }, C2.leaf, { lw: DL });
+    ground(gy, -400, 2400);
+    const crashed = ss(seg(t, tLamp + .25, tLamp + .55));
+    floorLamp(700, gy, -1.25 * crashed);
+    // Dr. Woof with the laser pointer, leaves while you stare
+    const vx = lerp(1640, 2150, ss(seg(t, tCity, tCity + 2.2)));
+    const vP = t < tOn - .3 ? pose({ la: -.45, lb: .2, ra: .45, rb: -.2 }) : pose({ la: -1.55, lb: -.05, ra: .45, rb: -.2, head: -.1 });
+    const vJ = villain({ x: vx, gy, S: 420 }, breathe(vx > 1650 ? walkP(t * 9) : vP, t, 1));
+    const d = dotAt(t), hand = vJ.aL[1];
+    if (d && t < tCity) { rrect(hand[0] - 26, hand[1] - 7, 34, 14, 5, C2.chrome, { lw: 3 }); g.save(); g.globalAlpha = .45; line([[hand[0] - 26, hand[1]], d], C.red, 3); g.restore(); }
+    if (d) { g.save(); g.globalAlpha = .35; circ(d[0], d[1], 22, C.red, { lw: 0 }); g.restore(); circ(d[0], d[1], 10, C.red, { lw: 0 }); }
+    // Meow Man follows the dot a beat late, leaps when it climbs
+    const dl = dotAt(t - .35); let mx = 1150, lift = 0, P = pose({ la: -.45, lb: .2, ra: .45, rb: -.2, head: .15 });
+    if (dl && t < tLamp + .3) { mx = clamp(dl[0], 300, 1500); lift = Math.max(0, (860 - dl[1]) * .55); P = lift > 20 ? pose({ la: -2.5, lb: .3, ra: 2.4, rb: -.3, lfy: .06, rfy: .04, head: -.2 }) : walkP(t * 14, 1); }
+    else if (t >= tLamp + .3) { mx = lerp(clamp(dotAt(tLamp - .05)[0], 300, 1500), 780, ss(seg(t, tLamp + .3, tLamp + 1.6))); P = poseAt([[tLamp + .3, pose({ hy: .03, lean: -.1, la: -1.4, ra: 1.4, head: .3 })], [tFocus, pose({ la: -.3, lb: .1, ra: .3, rb: -.1, head: -.35, lean: -.03 })]], t); }
+    catK({ x: mx, gy: gy - lift, S: 380 }, breathe(P, t), { wag: .15 * Math.sin(t * 10) });
+    if (t > tLamp + .3) { const k = pop(t, tLamp + .3); scaled(640, 470, k, () => text('BONK', 600, 480, { size: 48, w: 600, col: C.red, track: 2 })); }
+    scr();
+    L('The weakness', 124, 118, t, s.t0 + .05);
+    T('Every hero has', 116, 226, { size: 96, w: 600, track: -2 }, t, s.t0 + .2);
+    T('one: red light.', 116, 326, { size: 96, w: 600, track: -2, col: C.red }, t, tRed - .1);
+    // focus meter
+    const kf = ein(t, tOn, .4); if (kf > 0) { const f = 1 - ss(seg(t, tOn + .5, tStare + .5)), x0 = 124, y0 = 400; g.save(); g.globalAlpha = kf;
+      label('Focus', x0, y0, {}); rect(x0, y0 + 16, 340, 30, C2.white, { lw: 4 }); if (f > .01) rect(x0, y0 + 16, 340 * f, 30, f > .5 ? C.ginger : C.red, { lw: 0 }); rect(x0, y0 + 16, 340, 30, null, { lw: 4 });
+      text(Math.round(f * 100) + '%', x0 + 360, y0 + 42, { size: 28, w: 600, col: f > .5 ? C.ink : C.red }); g.restore(); }
+  };
+}
+
 // ---- S6: things on edges ----
 { const s = SC.s6, tSwap = lt('l19') - .1, tLook = wt('l19', 'look'), tLooksAt = wt('l19', 'looks'), tPush = le('l19') + .25, tFall = tPush + .35, tCrash = tFall + .55;
   ev(s.t0 + .1, 'title'); ev(tSwap, 'title'); ev(tLooksAt, 'blink'); ev(tPush, 'tick'); ev(tFall, 'whoosh'); ev(tCrash, 'crash'); ev(tCrash + .1, 'sting2');
@@ -340,10 +456,10 @@ function waves(x, y, t, a, dir = 1, n = 3, col = C.ginger) { if (t < a) return; 
     figure({ x: 1730, gy, S: 420 }, breathe(bossP, t, 1));
     if (t > tFall) { const k = pop(t, tFall); scaled(1730, 440, k, () => text('NOOO', 1650, 450, { size: 52, w: 600, col: C.red, track: 2 })); }
     scr();
-    L('Here’s the catch', 124, 118, t, s.t0 + .05, tSwap);
+    L('Cat habits', 124, 118, t, s.t0 + .05, tSwap);
     T('Cat powers come', 116, 226, { size: 96, w: 600, track: -2 }, t, s.t0 + .2, tSwap);
     T('with cat habits.', 116, 326, { size: 96, w: 600, track: -2, col: C.ginger }, t, wt('l18', 'habits') - .2, tSwap);
-    L('Side effect 1', 124, 118, t, tSwap + .1);
+    L('Habit 1', 124, 118, t, tSwap + .1);
     T('Things on edges', 116, 226, { size: 96, w: 600, track: -2 }, t, tSwap + .2);
     T('must fall.', 116, 326, { size: 96, w: 600, track: -2, col: C.red }, t, wt('l19', 'fall') - .1);
   };
@@ -369,7 +485,7 @@ function bread(x, y, k) { scaled(x, y, k, () => { shape(() => { g.moveTo(x - 60,
     if (t > tBread) { const k = pop(t, tBread + .15); scaled(1460, 600, k, () => text('= wet bread', 1400, 610, { size: 34, w: 600, col: C.mute })); }
     catK({ x: 1660, gy, S: 400, face: -1 }, breathe(poseAt([[0, pose({ la: -.4, lb: .2, ra: .4, rb: -.2 })], [tCake, pose({ la: -1.35, lb: .3, ra: .4, rb: -.2, head: -.15 })], [tBread + .3, pose({ la: -.4, lb: .2, ra: .4, rb: -.2, head: .3 })]], t), t), {});
     scr();
-    L('Side effect 2', 124, 118, t, s.t0 + .05);
+    L('Habit 2', 124, 118, t, s.t0 + .05);
     T('Cats can’t', 116, 226, { size: 96, w: 600, track: -2 }, t, s.t0 + .2);
     T('taste sweet.', 116, 326, { size: 96, w: 600, track: -2, col: C.red }, t, wt('l21', 'sweet') - .2);
     T('The sweet-taste gene is broken.', 122, 392, { size: 36, w: 400, col: C.mute }, t, tGene - .2);
@@ -422,24 +538,20 @@ function zzzA(x, y, t, k = 1) { for (let i = 0; i < 3; i++) { const u = (t * .45
 }
 
 // ---- S8: ending ----
-{ const s = SC.s8, tBoss = wt('l25', 'boss'), tTwo = wt('l25', 'two'), tFine = wt('l26', 'cat'), tNext = lt('l27');
-  ev(s.t0 + .1, 'title'); ev(s.t0 + .3, 'pop'); ev(tBoss, 'pop'); ev(tBoss + .25, 'boing'); ev(tTwo, 'sting'); ev(tNext, 'end');
+{ const s = SC.s8, tAm = wt('l27', 'amazing'), tTer = wt('l27', 'terrible'), tNext = wt('l27', 'next');
+  ev(s.t0 + .1, 'title'); ev(tAm, 'tick'); ev(tTer, 'blink'); ev(tNext, 'end');
   FILM.s8 = t => {
-    const gy = 880; cam(lerp(1.06, 1, ss(seg(t, s.t0, s.t1 - 1))), 1250, 620);
+    const gy = 880; cam(lerp(1.05, 1, ss(seg(t, s.t0, tNext))), 1100, 600);
     ground(gy, -400, 2400);
-    const b1 = gy - 190; scaled(850, gy, pop(t, s.t0 + .3), () => { box(700, gy, 300, 190); peek(830, b1, 330, { tilt: .25 }); });
-    const b2 = gy - 300; box(1110, gy, 240, 300, { label: false }); cat(1230, b2, 250, { d: -1, mood: 'calm' });
-    const kb = pop(t, tBoss); scaled(1610, gy, kb, () => { box(1460, gy, 300, 190, { label: false });
-      g.save(); g.beginPath(); g.rect(0, 0, W, b1 + 4); g.clip(); catK({ x: 1610, gy: b1 + 330 * .75, S: 330 }, pose({ head: -.22 }), { tail: 0, ears: sp(t - tBoss - .25, 16, .4), head: ss(seg(t, tBoss + .2, tBoss + .4)), whisk: ss(seg(t, tBoss + .2, tBoss + .4)) }); g.restore(); });
-    zzzA(890, b1 - 60, t, .8); if (t > lt('l26')) zzzA(1670, b1 - 60, t + .3, .8);
-    L('You', 760, b1 - 210, t, s.t0 + .6); if (t > tBoss) L('Your boss', 1500, b1 - 210, t, tBoss + .3);
-    T('(the cat is fine)', 1230, b2 - 290, { size: 28, w: 500, col: C.mute, align: 'center' }, t, tFine);
+    poly([[1180, 520], [1340, 520], [1460, gy], [1060, gy]], C.sun, { lw: 0 });
+    const bx = 1110, bw = 300, bt = box(bx, gy, bw, 190);
+    peek(bx + bw * .42, bt, 330, { tilt: .2 + .04 * Math.sin(t * .8) });
+    for (const [c, w] of [[C.ink, 23], [C.ginger, 14]]) { g.save(); g.strokeStyle = c; g.lineWidth = w; g.lineCap = 'round'; g.beginPath(); g.moveTo(bx + bw - 30, bt + 2); g.bezierCurveTo(bx + bw + 40, bt - 40, bx + bw + 70, bt + 30 + Math.sin(t * 1.6) * 20, bx + bw + 110, bt - 20 + Math.sin(t * 1.6) * 20); g.stroke(); g.restore(); }
+    zzzA(bx + bw * .42 + 60, bt - 50, t, .9);
     scr();
-    L('Day 30', 124, 118, t, s.t0 + .1);
-    T('The city now has', 116, 226, { size: 92, w: 600, track: -2 }, t, s.t0 + .3);
-    T('two Meow Men.', 116, 326, { size: 92, w: 600, track: -2, col: C.ginger }, t, tTwo - .1);
-    T('Both asleep.', 122, 392, { size: 40, w: 400, col: C.mute }, t, lt('l26'));
-    // end: fade to paper with the next question
+    L('So, being a cat superhero?', 124, 118, t, s.t0 + .1);
+    T('Amazing powers.', 116, 226, { size: 96, w: 600, track: -2, col: C.ginger }, t, tAm - .1);
+    T('Terrible schedule.', 116, 326, { size: 96, w: 600, track: -2, col: C.red }, t, tTer - .1);
     const ke = ein(t, tNext - .2, .5); if (ke > 0) { g.save(); g.globalAlpha = ke * .94; g.fillStyle = C.paper; g.fillRect(0, 0, W, H); g.restore();
       T('Next time', 124, 430, { size: 22, w: 500, col: C.mute, track: 3 }, t, tNext);
       T('What if a dog', 116, 540, { size: 104, w: 600, track: -2 }, t, tNext + .1);

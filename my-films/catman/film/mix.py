@@ -25,7 +25,7 @@ MAJ = [('F2', ['F3', 'A3', 'C4']), ('D2', ['D3', 'F3', 'A3']), ('A#1', ['A#2', '
 MIN = [('D2', ['D3', 'F3', 'A3']), ('A#1', ['A#2', 'D3', 'F3']), ('G1', ['G2', 'A#2', 'D3']), ('A1', ['A2', 'C#3', 'E3'])]
 END = [('F2', ['F3', 'A3', 'C4']), ('A#1', ['A#2', 'D3', 'F3']), ('C2', ['C3', 'E3', 'G3']), ('F2', ['F3', 'A3', 'C4'])]
 FEEL = {'s1': ('maj', 'walk'), 's2': ('maj', 'light'), 's3': ('maj', 'tick'), 's4': ('maj', 'light'), 's5': ('maj', 'bounce'),
-        's9': ('maj', 'tick'), 's6': ('min', 'walk'), 's10': ('min', 'light'), 's7': ('min', 'sleepy'), 's8': ('end', 'light')}
+        's9': ('maj', 'tick'), 's11': ('maj', 'bounce'), 's12': ('min', 'walk'), 's6': ('min', 'walk'), 's10': ('min', 'light'), 's7': ('min', 'sleepy'), 's8': ('end', 'light')}
 MOTIF = ['C6', 'A5', 'F5', 'G5', 'A5', 'C6']   # glockenspiel figure at each scene start (on beats)
 ev = []
 mute = []   # windows where the music drops out (a real silence before a hit)
@@ -122,6 +122,7 @@ for e in EV:
     elif tp == 'blink': add(fx, tone(2400, .06, .3, 40), t, .4, .4)
     elif tp == 'whoosh': add(fx, X.whoosh(.5, .7), t, .45, .3)
     elif tp == 'crash': add(fx, X.crash(1), t, .7, .3); [add(fx, X.click(2 + k * .3, .6), t + .03 + k * .05, .5, .3) for k in range(5)]
+    elif tp == 'zip': add(fx, X.whoosh(.12, 1.0), t - .04, .8, -.2); add(fx, X.click(2.2, .8), t + .06, .5, -.4)
     elif tp == 'tvon': add(fx, X.hp(X.noise(.3) * X.env_exp(.3, .12), 2000).astype(np.float32), t, .25, .3); add(fx, X.click(.9, .8), t, .4, .3)
 
 # ---------------- mix ----------------
