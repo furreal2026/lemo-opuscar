@@ -8,6 +8,7 @@ A guy gets bitten by a cat and gains cat powers (night vision, landing on his fe
 |---|---|
 | `what-if-a-cat-bit-you.mp4` | the finished film |
 | `what-if-a-cat-bit-you.srt` | English subtitles |
+| `what-if-a-cat-bit-you-poster.jpg` | poster frame |
 | `TREATMENT.md` | structure and storyboard notes |
 | `storyboard/storyboard.jpg` | the 8 key shots |
 | `voice/` | script (`lines.json`) and narration (Kokoro `am_puck`), word timings |
