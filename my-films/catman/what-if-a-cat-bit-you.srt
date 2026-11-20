@@ -1,191 +1,263 @@
 1
-00:00:01,350 --> 00:00:03,630
-What if a cat bit you… and you got cat powers?
+00:00:00,850 --> 00:00:04,880
+What if a cat bit you, and instead of a trip to the doctor, you got actual cat powers?
 
 2
-00:00:04,103 --> 00:00:06,503
-Step one: pet a cat that has clearly said no.
+00:00:04,930 --> 00:00:05,872
+Let's find out.
 
 3
-00:00:07,235 --> 00:00:09,035
-Chomp!
+00:00:05,922 --> 00:00:09,802
+Step one: pet a grumpy cat that has clearly, loudly, repeatedly said no.
 
 4
-00:00:09,950 --> 00:00:13,040
-Quick reality check! A real cat bite won't give you powers.
+00:00:10,169 --> 00:00:11,969
+Chomp!
 
 5
-00:00:13,090 --> 00:00:15,490
-It gives you an infection. Please see a doctor.
+00:00:12,150 --> 00:00:16,830
+Quick reality check: in real life, a cat bite gives you an infection, not superpowers.
 
 6
-00:00:15,959 --> 00:00:17,229
-But this is a what-if. So: day one.
+00:00:17,050 --> 00:00:20,970
+Cat teeth are tiny needles full of bacteria, so please, see a doctor.
 
 7
-00:00:17,279 --> 00:00:20,049
-You wake up, look in the mirror, and… ears! Two extra ears.
+00:00:21,067 --> 00:00:22,577
+But this is a what-if. So: day one.
 
 8
-00:00:20,099 --> 00:00:21,775
-On top.
+00:00:22,627 --> 00:00:24,437
+You wake up, look in the mirror, and… ears!
 
 9
-00:00:21,825 --> 00:00:23,865
-Also a tail. Nobody asked for the tail.
+00:00:24,487 --> 00:00:27,023
+Two brand new ears, right on top of your head.
 
 10
-00:00:26,050 --> 00:00:27,840
-Power number one: night vision!
+00:00:27,073 --> 00:00:28,983
+Also a tail. Nobody asked for the tail.
 
 11
-00:00:27,890 --> 00:00:30,910
-Cats can see in light about six times dimmer than you need.
+00:00:29,033 --> 00:00:30,833
+The tail is here anyway.
 
 12
-00:00:31,310 --> 00:00:35,220
-Behind the eye there's a mirror layer that bounces light back for a second try.
+00:00:31,250 --> 00:00:32,640
+Power number one: night vision!
 
 13
-00:00:35,270 --> 00:00:37,370
-That's why cat eyes glow in photos.
+00:00:32,690 --> 00:00:39,478
+Cats can see in light about six times dimmer than you need, which is why they can sprint across a dark room without hitting anything.
 
 14
-00:00:37,903 --> 00:00:42,333
-So at three in the morning, in total darkness, you can finally find the TV remote.
+00:00:39,528 --> 00:00:43,958
+Behind the eye there's a mirror layer that bounces light back through the eye for a second try.
 
 15
-00:00:42,383 --> 00:00:44,183
-Hero stuff.
+00:00:44,008 --> 00:00:46,468
+That's also why cat eyes glow in photos.
 
 16
-00:00:45,450 --> 00:00:47,770
-Power number two: you always land on your feet!
+00:00:46,688 --> 00:00:50,898
+So at three in the morning, in total darkness, you can finally find the TV remote.
 
 17
-00:00:48,093 --> 00:00:52,123
-Cats twist in mid-air, head first, then the body, like a spring unwinding.
+00:00:50,948 --> 00:00:52,748
+True hero stuff.
 
 18
-00:00:52,173 --> 00:00:54,693
-They can do it from a fall of about thirty centimeters.
+00:00:53,150 --> 00:00:55,940
+Next up, power number two: you always land on your feet!
 
 19
-00:00:55,304 --> 00:00:57,454
-You fall off a ladder? Ta-da! The paint bucket?
+00:00:55,990 --> 00:00:59,740
+Cats twist in mid-air: head first, then the front legs, then the back, like a spring unwinding.
 
 20
-00:00:57,504 --> 00:00:59,304
-Not so lucky.
+00:00:59,790 --> 00:01:04,030
+They can do it from a fall of about thirty centimeters, without even thinking.
 
 21
-00:01:00,450 --> 00:01:02,000
-Power number three: the jump!
+00:01:04,434 --> 00:01:06,824
+So you fall off a ladder? Ta-da! Perfect landing.
 
 22
-00:01:02,050 --> 00:01:04,430
-A cat can leap up to five times its own height.
+00:01:06,874 --> 00:01:08,674
+The paint bucket? Not so lucky.
 
 23
-00:01:04,738 --> 00:01:07,608
-You're one point eight meters tall. Times five…
+00:01:09,650 --> 00:01:11,140
+Power number three: the jump!
 
 24
-00:01:07,658 --> 00:01:10,398
-that's nine meters. A two-story roof. From standing!
+00:01:11,190 --> 00:01:14,370
+A cat can leap up to five times its own height in a single bounce.
 
 25
-00:01:11,030 --> 00:01:12,830
-Your neighbors have questions.
+00:01:14,562 --> 00:01:17,352
+You're one point eight meters tall. Times five…
 
 26
-00:01:14,450 --> 00:01:16,200
-Power number four: super hearing!
+00:01:17,402 --> 00:01:18,372
+that's nine meters.
 
 27
-00:01:16,250 --> 00:01:18,940
-You hear sounds up to twenty thousand hertz. A cat?
+00:01:18,422 --> 00:01:20,822
+A two-story roof, from standing, with no run-up!
 
 28
-00:01:18,990 --> 00:01:20,790
-Up to sixty-four thousand.
+00:01:21,151 --> 00:01:22,951
+Your neighbors have questions.
 
 29
-00:01:20,967 --> 00:01:22,117
-You can hear a mouse in the walls.
+00:01:23,650 --> 00:01:25,580
+Power number four: super hearing!
 
 30
-00:01:22,167 --> 00:01:24,977
-And the neighbor's microwave. And your fridge. All day.
+00:01:25,630 --> 00:01:28,900
+Humans hear sounds up to about twenty thousand hertz. A cat?
 
 31
-00:01:25,027 --> 00:01:26,827
-Every day.
+00:01:28,950 --> 00:01:30,560
+Up to sixty-four thousand.
 
 32
-00:01:27,950 --> 00:01:30,330
-Here's the catch. Cat powers come with cat habits.
+00:01:30,610 --> 00:01:32,430
+That's way past anything you've ever heard.
 
 33
-00:01:30,873 --> 00:01:33,283
-Side effect one: things on edges must fall.
+00:01:32,499 --> 00:01:37,029
+So now you can hear a mouse in the walls, the neighbor's microwave, and your own fridge humming.
 
 34
-00:01:33,333 --> 00:01:36,183
-Your boss's mug is on the edge of the desk. You look at it.
+00:01:37,079 --> 00:01:38,879
+All day. Every day.
 
 35
-00:01:36,233 --> 00:01:38,033
-It looks at you.
+00:01:39,150 --> 00:01:40,960
+Power number five: super reflexes!
 
 36
-00:01:38,401 --> 00:01:40,621
-You don't know why you did it. You would do it again.
+00:01:41,010 --> 00:01:42,860
+You react in about a quarter of a second.
 
 37
-00:01:42,450 --> 00:01:45,980
-Side effect two: cats can't taste sweet. The gene is broken.
+00:01:42,910 --> 00:01:45,140
+A cat reacts in twenty to seventy milliseconds.
 
 38
-00:01:46,030 --> 00:01:48,690
-So birthday cake now tastes like… wet bread.
+00:01:45,190 --> 00:01:47,070
+That's faster than a blink.
 
 39
-00:01:50,950 --> 00:01:53,720
-And the big one. Cats sleep twelve to sixteen hours a day.
+00:01:47,154 --> 00:01:51,684
+So your arch-enemy, Doctor Woof, sits down with your favorite food: a double cheeseburger.
 
 40
-00:01:53,770 --> 00:01:54,955
-So do you now.
+00:01:51,734 --> 00:01:54,814
+And before he can even say mine… the burger is gone.
 
 41
-00:01:55,005 --> 00:01:56,975
-A superhero shift is eight hours.
+00:01:55,157 --> 00:01:57,207
+Thirty milliseconds. He didn't even see you move. Delicious.
 
 42
-00:01:57,025 --> 00:01:58,985
-You are awake for eight hours. Total.
+00:01:57,257 --> 00:01:59,057
+Justice!
 
 43
-00:01:59,394 --> 00:02:02,224
-The city calls for Meow Man. Meow Man is in a box.
+00:01:59,150 --> 00:02:02,275
+But every hero has a weakness. Yours? A tiny red dot.
 
 44
-00:02:02,274 --> 00:02:04,114
-In a sunbeam. Do not disturb.
+00:02:02,325 --> 00:02:05,895
+Doctor Woof switches on a laser pointer, and your cat brain takes over.
 
 45
-00:02:06,650 --> 00:02:09,100
-Day thirty. Mr. Biscuits bit your boss too.
+00:02:05,945 --> 00:02:09,265
+You chase it up the wall, across the floor, and straight into a lamp.
 
 46
-00:02:09,150 --> 00:02:10,950
-The city now has two Meow Men.
+00:02:09,351 --> 00:02:13,751
+Cats are wired to chase small, fast things, and that makes it really hard to focus.
 
 47
-00:02:11,414 --> 00:02:13,214
-Both asleep. The cat is fine.
+00:02:14,051 --> 00:02:15,841
+You were in the middle of saving the city.
 
 48
-00:02:13,909 --> 00:02:15,809
+00:02:15,891 --> 00:02:17,691
+Now you are staring at a wall.
+
+49
+00:02:18,650 --> 00:02:20,368
+And cat powers come with cat habits.
+
+50
+00:02:20,418 --> 00:02:22,108
+Habit one: things on edges must fall.
+
+51
+00:02:22,158 --> 00:02:24,488
+Your boss's mug is right on the edge of the desk.
+
+52
+00:02:24,538 --> 00:02:26,478
+You look at it. It looks at you.
+
+53
+00:02:27,458 --> 00:02:28,568
+You don't know why you did it.
+
+54
+00:02:28,618 --> 00:02:30,418
+You would absolutely do it again.
+
+55
+00:02:31,150 --> 00:02:33,220
+Habit two: cats can't taste sweet.
+
+56
+00:02:33,270 --> 00:02:36,000
+The sweet-taste gene is broken, so birthday cake now tastes like…
+
+57
+00:02:36,050 --> 00:02:37,850
+wet bread.
+
+58
+00:02:38,650 --> 00:02:41,260
+And the big one: cats sleep twelve to sixteen hours a day.
+
+59
+00:02:41,310 --> 00:02:42,194
+So do you now.
+
+60
+00:02:42,244 --> 00:02:44,054
+A superhero shift is eight hours.
+
+61
+00:02:44,104 --> 00:02:46,004
+You are awake for eight hours. Total.
+
+62
+00:02:46,098 --> 00:02:47,728
+The city calls for Meow Man.
+
+63
+00:02:47,778 --> 00:02:50,718
+Meow Man is in a box, in a sunbeam. Do not disturb.
+
+64
+00:02:51,750 --> 00:02:53,260
+So, being a cat superhero?
+
+65
+00:02:53,310 --> 00:02:55,360
+Amazing powers, terrible schedule.
+
+66
+00:02:55,410 --> 00:02:57,270
 Next time: what if a dog licked you?
