@@ -464,8 +464,10 @@ SB.b18 = () => {
 };
 
 const QS3 = new URLSearchParams(location.search).get('scene') || 'b01';
+if (!window.FILM_MODE) {
 window.render = (t = 0) => { TT = t; g.setTransform(1, 0, 0, 1, 0, 0); paper(); (SB[QS3] || SB.b01)(); };
 document.fonts.load(`600 40px ${EN}`).then(() => Promise.all([document.fonts.load(`500 40px ${EN}`), document.fonts.load(`400 40px ${EN}`)])).then(() => { window.render(0); window.READY = true; });
+}
 
 // ======================= v2 storyboard: 15 more frames, camera moves and the notification zoom =======================
 // camera: draw a scene through a zoom/rotate about world point (cx, cy); text overlays (chapter, headline, subtitle) hidden

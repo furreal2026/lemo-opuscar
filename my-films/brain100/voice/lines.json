@@ -1,0 +1,1930 @@
+[
+ {
+  "id": "p001",
+  "text": "… What if you woke up tomorrow and your brain suddenly unlocked one hundred percent of its full potential?",
+  "sub": "What if you woke up tomorrow and your brain suddenly unlocked one hundred percent of its full potential?",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "h1"
+ },
+ {
+  "id": "p002",
+  "text": "… You could memorize entire books, solve complicated equations in seconds, and learn new languages faster than a toddler learns to scream in a supermarket.",
+  "sub": "You could memorize entire books, solve complicated equations in seconds, and learn new languages faster than a toddler learns to scream in a supermarket.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "h1"
+ },
+ {
+  "id": "p003",
+  "text": "… You might even become smarter than Einstein.",
+  "sub": "You might even become smarter than Einstein.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "h1"
+ },
+ {
+  "id": "p004",
+  "text": "… You could predict people's behavior, understand complex emotions, and solve problems that ordinary humans couldn't even imagine.",
+  "sub": "You could predict people's behavior, understand complex emotions, and solve problems that ordinary humans couldn't even imagine.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "h2"
+ },
+ {
+  "id": "p005",
+  "text": "… You'd basically become a walking supercomputer.",
+  "sub": "You'd basically become a walking supercomputer.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "h2"
+ },
+ {
+  "id": "p006",
+  "text": "… Except…",
+  "sub": "Except…",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "h2"
+ },
+ {
+  "id": "p007",
+  "text": "… There's still one problem.",
+  "sub": "There's still one problem.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "h2"
+ },
+ {
+  "id": "p008",
+  "text": "… Your girlfriend.",
+  "sub": "Your girlfriend.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "h2"
+ },
+ {
+  "id": "p009",
+  "text": "… Because no matter how powerful your brain becomes, there's one mysterious creature whose messages might still crash your entire operating system.",
+  "sub": "Because no matter how powerful your brain becomes, there's one mysterious creature whose messages might still crash your entire operating system.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "h2"
+ },
+ {
+  "id": "p010",
+  "text": "… But before we get to that…",
+  "sub": "But before we get to that…",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "h3"
+ },
+ {
+  "id": "p011",
+  "text": "… Let's find out what would actually happen if your brain reached its maximum potential.",
+  "sub": "Let's find out what would actually happen if your brain reached its maximum potential.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "h3"
+ },
+ {
+  "id": "p012",
+  "text": "… Day one.",
+  "sub": "Day one.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "c1a"
+ },
+ {
+  "id": "p013",
+  "text": "… You wake up, look at your phone, and suddenly remember everything.",
+  "sub": "You wake up, look at your phone, and suddenly remember everything.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1a"
+ },
+ {
+  "id": "p014",
+  "text": "… Every conversation, every book you've read, every password you've forgotten since twenty twelve.",
+  "sub": "Every conversation, every book you've read, every password you've forgotten since 2012.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1a"
+ },
+ {
+  "id": "p015",
+  "text": "… Your memory is now ridiculously powerful.",
+  "sub": "Your memory is now ridiculously powerful.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1a"
+ },
+ {
+  "id": "p016",
+  "text": "… Normally, your brain constantly filters information, keeping some memories and discarding others.",
+  "sub": "Normally, your brain constantly filters information, keeping some memories and discarding others.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1b"
+ },
+ {
+  "id": "p017",
+  "text": "… But imagine being able to recall almost every detail with incredible accuracy.",
+  "sub": "But imagine being able to recall almost every detail with incredible accuracy.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1b"
+ },
+ {
+  "id": "p018",
+  "text": "… You read a three-hundred-page book once.",
+  "sub": "You read a three-hundred-page book once.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1c"
+ },
+ {
+  "id": "p019",
+  "text": "… Done.",
+  "sub": "Done.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "c1c"
+ },
+ {
+  "id": "p020",
+  "text": "… You remember the characters, the story, and even that suspicious typo on page one forty-seven.",
+  "sub": "You remember the characters, the story, and even that suspicious typo on page 147.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1c"
+ },
+ {
+  "id": "p021",
+  "text": "… You walk into an exam.",
+  "sub": "You walk into an exam.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1d"
+ },
+ {
+  "id": "p022",
+  "text": "… The teacher asks a question.",
+  "sub": "The teacher asks a question.",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "c1d"
+ },
+ {
+  "id": "p023",
+  "text": "… You close your eyes.",
+  "sub": "You close your eyes.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1d"
+ },
+ {
+  "id": "p024",
+  "text": "… And suddenly, the entire textbook appears inside your head.",
+  "sub": "And suddenly, the entire textbook appears inside your head.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1d"
+ },
+ {
+  "id": "p025",
+  "text": "… You answer every question perfectly.",
+  "sub": "You answer every question perfectly.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1d"
+ },
+ {
+  "id": "p026",
+  "text": "… Your classmates stare at you.",
+  "sub": "Your classmates stare at you.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1d"
+ },
+ {
+  "id": "p027",
+  "text": "… The teacher starts questioning your existence.",
+  "sub": "The teacher starts questioning your existence.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1d"
+ },
+ {
+  "id": "p028",
+  "text": "… But then…",
+  "sub": "But then…",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "c1e"
+ },
+ {
+  "id": "p029",
+  "text": "… Your girlfriend sends you a message.",
+  "sub": "Your girlfriend sends you a message.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1e"
+ },
+ {
+  "id": "p030",
+  "text": "… Fine.",
+  "sub": "\"Fine.\"",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "c1e"
+ },
+ {
+  "id": "p031",
+  "text": "… Just one word.",
+  "sub": "Just one word.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1e"
+ },
+ {
+  "id": "p032",
+  "text": "… You immediately activate your upgraded memory.",
+  "sub": "You immediately activate your upgraded memory.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1f"
+ },
+ {
+  "id": "p033",
+  "text": "… You search through thousands of previous conversations.",
+  "sub": "You search through thousands of previous conversations.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1f"
+ },
+ {
+  "id": "p034",
+  "text": "… Three months ago, she said fine with a heart emoji.",
+  "sub": "Three months ago, she said \"fine\" with a heart emoji.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1f"
+ },
+ {
+  "id": "p035",
+  "text": "… Two weeks ago, she said fine followed by a full stop.",
+  "sub": "Two weeks ago, she said \"fine\" followed by a full stop.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1f"
+ },
+ {
+  "id": "p036",
+  "text": "… Yesterday, she said fine after you forgot to compliment her new haircut.",
+  "sub": "Yesterday, she said \"fine\" after you forgot to compliment her new haircut.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1f"
+ },
+ {
+  "id": "p037",
+  "text": "… You analyze the punctuation, message timing, previous arguments, and even the weather.",
+  "sub": "You analyze the punctuation, message timing, previous arguments, and even the weather.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1f"
+ },
+ {
+  "id": "p038",
+  "text": "… After seventeen minutes of calculations, your brain produces a result.",
+  "sub": "After seventeen minutes of calculations, your brain produces a result.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1f"
+ },
+ {
+  "id": "p039",
+  "text": "… Danger level: ninety-eight point seven percent.",
+  "sub": "Danger level: 98.7 percent.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1f"
+ },
+ {
+  "id": "p040",
+  "text": "… You reply:",
+  "sub": "You reply:",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "c1g"
+ },
+ {
+  "id": "p041",
+  "text": "… Are you sure?",
+  "sub": "\"Are you sure?\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1g"
+ },
+ {
+  "id": "p042",
+  "text": "… She replies:",
+  "sub": "She replies:",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "c1g"
+ },
+ {
+  "id": "p043",
+  "text": "… Whatever.",
+  "sub": "\"Whatever.\"",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "c1g"
+ },
+ {
+  "id": "p044",
+  "text": "… Your brain crashes.",
+  "sub": "Your brain crashes.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1g"
+ },
+ {
+  "id": "p045",
+  "text": "… Congratulations.",
+  "sub": "Congratulations.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "c1g"
+ },
+ {
+  "id": "p046",
+  "text": "… You can remember the entire history of humanity, but apparently, you still need a P H D in girlfriend communication.",
+  "sub": "You can remember the entire history of humanity, but apparently, you still need a PhD in girlfriend communication.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "c1g"
+ },
+ {
+  "id": "p047",
+  "text": "… Next, your thinking speed.",
+  "sub": "Next, your thinking speed.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p048",
+  "text": "… Your brain processes enormous amounts of information every second, but conscious thinking and decision-making have their own limitations.",
+  "sub": "Your brain processes enormous amounts of information every second, but conscious thinking and decision-making have their own limitations.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p049",
+  "text": "… Now imagine your brain becoming incredibly efficient at recognizing patterns and connecting information.",
+  "sub": "Now imagine your brain becoming incredibly efficient at recognizing patterns and connecting information.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p050",
+  "text": "… Let's test this with chess.",
+  "sub": "Let's test this with chess.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p051",
+  "text": "… An ordinary player looks at the board and considers a few possible moves.",
+  "sub": "An ordinary player looks at the board and considers a few possible moves.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p052",
+  "text": "… A professional chess player can recognize familiar patterns and anticipate several possible responses.",
+  "sub": "A professional chess player can recognize familiar patterns and anticipate several possible responses.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p053",
+  "text": "… But with your upgraded brain?",
+  "sub": "But with your upgraded brain?",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p054",
+  "text": "… You examine the board, calculate possible strategies, and predict your opponent's mistakes before they even touch a piece.",
+  "sub": "You examine the board, calculate possible strategies, and predict your opponent's mistakes before they even touch a piece.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p055",
+  "text": "… Your opponent moves a pawn.",
+  "sub": "Your opponent moves a pawn.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p056",
+  "text": "… You smile.",
+  "sub": "You smile.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p057",
+  "text": "… Checkmate in twelve moves.",
+  "sub": "Checkmate in twelve moves.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p058",
+  "text": "… He starts sweating.",
+  "sub": "He starts sweating.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p059",
+  "text": "… Then he asks for a rematch.",
+  "sub": "Then he asks for a rematch.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p060",
+  "text": "… You calculate another twelve moves.",
+  "sub": "You calculate another twelve moves.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p061",
+  "text": "… He starts questioning his career choices.",
+  "sub": "He starts questioning his career choices.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p062",
+  "text": "… At this point, even a chess computer might need a coffee break.",
+  "sub": "At this point, even a chess computer might need a coffee break.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p063",
+  "text": "… Feeling unstoppable, you decide to test your processing speed on something even harder.",
+  "sub": "Feeling unstoppable, you decide to test your processing speed on something even harder.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p064",
+  "text": "… Your girlfriend asks:",
+  "sub": "Your girlfriend asks:",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p065",
+  "text": "… Do you think I look fat in this dress?",
+  "sub": "\"Do you think I look fat in this dress?\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p066",
+  "text": "… Your brain immediately activates every available processor.",
+  "sub": "Your brain immediately activates every available processor.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p067",
+  "text": "… You calculate her facial expression, the dress design, previous conversations, emotional context, and the possible consequences of every answer.",
+  "sub": "You calculate her facial expression, the dress design, previous conversations, emotional context, and the possible consequences of every answer.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p068",
+  "text": "… Option A: Tell the truth.",
+  "sub": "Option A: Tell the truth.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p069",
+  "text": "… Option B: Say she looks beautiful.",
+  "sub": "Option B: Say she looks beautiful.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p070",
+  "text": "… Option C: Pretend you didn't hear the question.",
+  "sub": "Option C: Pretend you didn't hear the question.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p071",
+  "text": "… Your brain simulates ten million possible outcomes.",
+  "sub": "Your brain simulates ten million possible outcomes.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p072",
+  "text": "… And finally, it chooses option B.",
+  "sub": "And finally, it chooses option B.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p073",
+  "text": "… You look beautiful.",
+  "sub": "\"You look beautiful.\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p074",
+  "text": "… She responds:",
+  "sub": "She responds:",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p075",
+  "text": "… So you're saying I looked ugly yesterday?",
+  "sub": "\"So you're saying I looked ugly yesterday?\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p076",
+  "text": "… System error.",
+  "sub": "System error.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p077",
+  "text": "… No solution found.",
+  "sub": "No solution found.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter2"
+ },
+ {
+  "id": "p078",
+  "text": "… But how smart could you actually become?",
+  "sub": "But how smart could you actually become?",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p079",
+  "text": "… Let's talk about Albert Einstein.",
+  "sub": "Let's talk about Albert Einstein.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p080",
+  "text": "… Einstein is famous for developing the theory of relativity, which completely changed how scientists understand space and time.",
+  "sub": "Einstein is famous for developing the theory of relativity, which completely changed how scientists understand space and time.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p081",
+  "text": "… But here's the interesting part.",
+  "sub": "But here's the interesting part.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p082",
+  "text": "… There is no scientific evidence that Einstein used only a certain percentage of his brain.",
+  "sub": "There is no scientific evidence that Einstein used only a certain percentage of his brain.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p083",
+  "text": "… His intelligence wasn't caused by unlocking a secret brain region.",
+  "sub": "His intelligence wasn't caused by unlocking a secret brain region.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p084",
+  "text": "… It involved extraordinary mathematical thinking, imagination, curiosity, and years of scientific work.",
+  "sub": "It involved extraordinary mathematical thinking, imagination, curiosity, and years of scientific work.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p085",
+  "text": "… So, if you had an optimized brain, would you automatically become Einstein?",
+  "sub": "So, if you had an optimized brain, would you automatically become Einstein?",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p086",
+  "text": "… Not necessarily.",
+  "sub": "Not necessarily.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p087",
+  "text": "… Having a powerful computer doesn't mean you automatically know how to build a spaceship.",
+  "sub": "Having a powerful computer doesn't mean you automatically know how to build a spaceship.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p088",
+  "text": "… You still need knowledge, experience, and practice.",
+  "sub": "You still need knowledge, experience, and practice.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p089",
+  "text": "… Although, at least now you could understand why your computer keeps crashing.",
+  "sub": "Although, at least now you could understand why your computer keeps crashing.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p090",
+  "text": "… But imagine Einstein had your upgraded brain.",
+  "sub": "But imagine Einstein had your upgraded brain.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p091",
+  "text": "… He could spend years calculating the mysteries of the universe.",
+  "sub": "He could spend years calculating the mysteries of the universe.",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p092",
+  "text": "… Developing complicated equations.",
+  "sub": "Developing complicated equations.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p093",
+  "text": "… Understanding the nature of time and space.",
+  "sub": "Understanding the nature of time and space.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p094",
+  "text": "… And then his girlfriend walks into the room.",
+  "sub": "And then his girlfriend walks into the room.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p095",
+  "text": "… Baby, what are you thinking about?",
+  "sub": "\"Baby, what are you thinking about?\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p096",
+  "text": "… The curvature of spacetime.",
+  "sub": "\"The curvature of spacetime.\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p097",
+  "text": "… Okay. So you're not thinking about me?",
+  "sub": "\"Okay. So you're not thinking about me?\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p098",
+  "text": "… Einstein might have understood the universe.",
+  "sub": "Einstein might have understood the universe.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p099",
+  "text": "… But explaining why he didn't text back for three hours?",
+  "sub": "But explaining why he didn't text back for three hours?",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p100",
+  "text": "… That's a different theory of relativity.",
+  "sub": "That's a different theory of relativity.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter3"
+ },
+ {
+  "id": "p101",
+  "text": "… Now let's move from laboratories to the sports field.",
+  "sub": "Now let's move from laboratories to the sports field.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p102",
+  "text": "… Imagine becoming a professional athlete.",
+  "sub": "Imagine becoming a professional athlete.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p103",
+  "text": "… Do Olympic athletes use one hundred and fifty percent of their brains?",
+  "sub": "Do Olympic athletes use one hundred and fifty percent of their brains?",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p104",
+  "text": "… Of course not.",
+  "sub": "Of course not.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p105",
+  "text": "… There is no special brain-power percentage for professional athletes.",
+  "sub": "There is no special brain-power percentage for professional athletes.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p106",
+  "text": "… Their advantage comes from years of training that improve coordination, timing, reaction, and decision-making.",
+  "sub": "Their advantage comes from years of training that improve coordination, timing, reaction, and decision-making.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p107",
+  "text": "… Take a professional goalkeeper.",
+  "sub": "Take a professional goalkeeper.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p108",
+  "text": "… When a striker prepares to kick a football, the goalkeeper doesn't simply wait for the ball to arrive.",
+  "sub": "When a striker prepares to kick a football, the goalkeeper doesn't simply wait for the ball to arrive.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p109",
+  "text": "… Their brain uses visual information, body position, movement, and experience to anticipate where the ball might go.",
+  "sub": "Their brain uses visual information, body position, movement, and experience to anticipate where the ball might go.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p110",
+  "text": "… Now imagine your brain processing those patterns much more efficiently.",
+  "sub": "Now imagine your brain processing those patterns much more efficiently.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p111",
+  "text": "… A football flies toward your face.",
+  "sub": "A football flies toward your face.",
+  "voice": "am_puck",
+  "speed": 1.1,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p112",
+  "text": "… You move your head.",
+  "sub": "You move your head.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p113",
+  "text": "… The ball misses by a few centimeters.",
+  "sub": "The ball misses by a few centimeters.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p114",
+  "text": "… You catch it with one hand.",
+  "sub": "You catch it with one hand.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p115",
+  "text": "… Your friends are shocked.",
+  "sub": "Your friends are shocked.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p116",
+  "text": "… You look at them and say…",
+  "sub": "You look at them and say…",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p117",
+  "text": "… That was calculated.",
+  "sub": "\"That was calculated.\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p118",
+  "text": "… Then someone throws a pillow at you.",
+  "sub": "Then someone throws a pillow at you.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p119",
+  "text": "… You dodge it.",
+  "sub": "You dodge it.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p120",
+  "text": "… Someone throws another.",
+  "sub": "Someone throws another.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p121",
+  "text": "… You dodge that too.",
+  "sub": "You dodge that too.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p122",
+  "text": "… Suddenly, your entire family is testing your reflexes.",
+  "sub": "Suddenly, your entire family is testing your reflexes.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p123",
+  "text": "… Congratulations.",
+  "sub": "Congratulations.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p124",
+  "text": "… You've become the household goalkeeper.",
+  "sub": "You've become the household goalkeeper.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p125",
+  "text": "… But your girlfriend decides to test your reflexes too.",
+  "sub": "But your girlfriend decides to test your reflexes too.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p126",
+  "text": "… She suddenly asks:",
+  "sub": "She suddenly asks:",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p127",
+  "text": "… Do you remember what day today is?",
+  "sub": "\"Do you remember what day today is?\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p128",
+  "text": "… Your brain scans the calendar.",
+  "sub": "Your brain scans the calendar.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p129",
+  "text": "… Anniversaries.",
+  "sub": "Anniversaries.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p130",
+  "text": "… Birthdays.",
+  "sub": "Birthdays.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p131",
+  "text": "… First dates.",
+  "sub": "First dates.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p132",
+  "text": "… The day you first met.",
+  "sub": "The day you first met.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p133",
+  "text": "… The day she first called you handsome.",
+  "sub": "The day she first called you handsome.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p134",
+  "text": "… Within milliseconds, you identify the correct answer.",
+  "sub": "Within milliseconds, you identify the correct answer.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p135",
+  "text": "… You smile confidently.",
+  "sub": "You smile confidently.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p136",
+  "text": "… Of course. It's our six-month anniversary.",
+  "sub": "\"Of course. It's our six-month anniversary.\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p137",
+  "text": "… She stares at you.",
+  "sub": "She stares at you.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p138",
+  "text": "… It's our seven-month anniversary.",
+  "sub": "\"It's our seven-month anniversary.\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p139",
+  "text": "… Your reflexes were perfect.",
+  "sub": "Your reflexes were perfect.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p140",
+  "text": "… Your survival instincts were not.",
+  "sub": "Your survival instincts were not.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter4"
+ },
+ {
+  "id": "p141",
+  "text": "… But perhaps your greatest power isn't memory or reaction.",
+  "sub": "But perhaps your greatest power isn't memory or reaction.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p142",
+  "text": "… It's learning.",
+  "sub": "It's learning.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p143",
+  "text": "… Your brain has something called neuroplasticity.",
+  "sub": "Your brain has something called neuroplasticity.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p144",
+  "text": "… This is the ability of your brain to change and reorganize its connections as you learn and experience new things.",
+  "sub": "This is the ability of your brain to change and reorganize its connections as you learn and experience new things.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p145",
+  "text": "… Every time you practice something, your brain adapts.",
+  "sub": "Every time you practice something, your brain adapts.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p146",
+  "text": "… Think about learning a new language.",
+  "sub": "Think about learning a new language.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p147",
+  "text": "… Normally, you struggle with pronunciation, grammar, and remembering vocabulary.",
+  "sub": "Normally, you struggle with pronunciation, grammar, and remembering vocabulary.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p148",
+  "text": "… You spend hours trying to understand the difference between their, there, and they're.",
+  "sub": "You spend hours trying to understand the difference between \"their\", \"there\", and \"they're\".",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p149",
+  "text": "… Your brain starts questioning your life choices.",
+  "sub": "Your brain starts questioning your life choices.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p150",
+  "text": "… But imagine learning much more efficiently.",
+  "sub": "But imagine learning much more efficiently.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p151",
+  "text": "… You recognize patterns in sentences, connect new words with existing knowledge, and improve your pronunciation through practice.",
+  "sub": "You recognize patterns in sentences, connect new words with existing knowledge, and improve your pronunciation through practice.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p152",
+  "text": "… You could become conversational in a new language much faster.",
+  "sub": "You could become conversational in a new language much faster.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p153",
+  "text": "… You walk into a Japanese restaurant.",
+  "sub": "You walk into a Japanese restaurant.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p154",
+  "text": "… You confidently order your food.",
+  "sub": "You confidently order your food.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p155",
+  "text": "… The waiter responds in Japanese.",
+  "sub": "The waiter responds in Japanese.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p156",
+  "text": "… You understand everything.",
+  "sub": "You understand everything.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p157",
+  "text": "… Then he asks whether you want extra wasabi.",
+  "sub": "Then he asks whether you want extra wasabi.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p158",
+  "text": "… Your brain processes the information.",
+  "sub": "Your brain processes the information.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p159",
+  "text": "… You confidently say yes.",
+  "sub": "You confidently say yes.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p160",
+  "text": "… Five seconds later, your entire face turns red.",
+  "sub": "Five seconds later, your entire face turns red.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p161",
+  "text": "… Apparently, intelligence doesn't protect your tongue.",
+  "sub": "Apparently, intelligence doesn't protect your tongue.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p162",
+  "text": "… But that's not all.",
+  "sub": "But that's not all.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p163",
+  "text": "… You decide to learn the language of relationships.",
+  "sub": "You decide to learn the language of relationships.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p164",
+  "text": "… You study psychology, emotional intelligence, facial expressions, body language, and communication.",
+  "sub": "You study psychology, emotional intelligence, facial expressions, body language, and communication.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p165",
+  "text": "… You analyze thousands of conversations.",
+  "sub": "You analyze thousands of conversations.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p166",
+  "text": "… You build a database of emotional patterns.",
+  "sub": "You build a database of emotional patterns.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p167",
+  "text": "… Finally, you think you've cracked the code.",
+  "sub": "Finally, you think you've cracked the code.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p168",
+  "text": "… Your girlfriend says:",
+  "sub": "Your girlfriend says:",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p169",
+  "text": "… Nothing's wrong.",
+  "sub": "\"Nothing's wrong.\"",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p170",
+  "text": "… You confidently respond:",
+  "sub": "You confidently respond:",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p171",
+  "text": "… Based on your facial expression, tone, and previous behavior, I believe something is wrong.",
+  "sub": "\"Based on your facial expression, tone, and previous behavior, I believe something is wrong.\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p172",
+  "text": "… She looks at you.",
+  "sub": "She looks at you.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p173",
+  "text": "… Wow. So now I'm not allowed to have feelings?",
+  "sub": "\"Wow. So now I'm not allowed to have feelings?\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p174",
+  "text": "… You have successfully learned twelve languages.",
+  "sub": "You have successfully learned twelve languages.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p175",
+  "text": "… But the language of nothing's wrong remains undocumented.",
+  "sub": "But the language of \"nothing's wrong\" remains undocumented.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter5"
+ },
+ {
+  "id": "p176",
+  "text": "… But there's one tiny problem.",
+  "sub": "But there's one tiny problem.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p177",
+  "text": "… Your brain is already an energy-hungry organ.",
+  "sub": "Your brain is already an energy-hungry organ.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p178",
+  "text": "… Although it makes up only about two percent of your body weight, it uses roughly twenty percent of your body's energy at rest.",
+  "sub": "Although it makes up only about two percent of your body weight, it uses roughly twenty percent of your body's energy at rest.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p179",
+  "text": "… That's a lot of electricity for something that sometimes forgets why you opened the refrigerator.",
+  "sub": "That's a lot of electricity for something that sometimes forgets why you opened the refrigerator.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p180",
+  "text": "… Now imagine making your brain work even more efficiently and intensely.",
+  "sub": "Now imagine making your brain work even more efficiently and intensely.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p181",
+  "text": "… Your body still needs oxygen, glucose, blood flow, and the right balance of chemicals to keep everything functioning.",
+  "sub": "Your body still needs oxygen, glucose, blood flow, and the right balance of chemicals to keep everything functioning.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p182",
+  "text": "… You can't just turn your brain into a supercomputer and expect your body to keep up.",
+  "sub": "You can't just turn your brain into a supercomputer and expect your body to keep up.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p183",
+  "text": "… You might need more energy, better sleep, and plenty of recovery.",
+  "sub": "You might need more energy, better sleep, and plenty of recovery.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p184",
+  "text": "… And no, drinking seventeen energy drinks won't turn you into Einstein.",
+  "sub": "And no, drinking seventeen energy drinks won't turn you into Einstein.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p185",
+  "text": "… It will probably just turn your heart into a washing machine.",
+  "sub": "It will probably just turn your heart into a washing machine.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p186",
+  "text": "… Meanwhile, your girlfriend sends another message.",
+  "sub": "Meanwhile, your girlfriend sends another message.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p187",
+  "text": "… Can we talk?",
+  "sub": "\"Can we talk?\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p188",
+  "text": "… Your brain immediately activates every available resource.",
+  "sub": "Your brain immediately activates every available resource.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p189",
+  "text": "… The memory system starts reviewing your past mistakes.",
+  "sub": "The memory system starts reviewing your past mistakes.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p190",
+  "text": "… The emotional system detects possible danger.",
+  "sub": "The emotional system detects possible danger.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p191",
+  "text": "… The reasoning system calculates possible outcomes.",
+  "sub": "The reasoning system calculates possible outcomes.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p192",
+  "text": "… Your body starts sweating.",
+  "sub": "Your body starts sweating.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p193",
+  "text": "… Your brain is now using more processing power than a NASA supercomputer.",
+  "sub": "Your brain is now using more processing power than a NASA supercomputer.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p194",
+  "text": "… And all of this…",
+  "sub": "And all of this…",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p195",
+  "text": "… For a conversation that starts with:",
+  "sub": "For a conversation that starts with:",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p196",
+  "text": "… Why did you like her Instagram picture?",
+  "sub": "\"Why did you like her Instagram picture?\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter6"
+ },
+ {
+  "id": "p197",
+  "text": "… And here's where things get really interesting.",
+  "sub": "And here's where things get really interesting.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p198",
+  "text": "… What if you literally forced one hundred percent of your neurons to fire simultaneously?",
+  "sub": "What if you literally forced one hundred percent of your neurons to fire simultaneously?",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p199",
+  "text": "… Would you become a god?",
+  "sub": "Would you become a god?",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p200",
+  "text": "… Absolutely not.",
+  "sub": "Absolutely not.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p201",
+  "text": "… Your brain doesn't work like a light switch.",
+  "sub": "Your brain doesn't work like a light switch.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p202",
+  "text": "… Different groups of neurons perform different jobs, communicating through carefully coordinated electrical and chemical signals.",
+  "sub": "Different groups of neurons perform different jobs, communicating through carefully coordinated electrical and chemical signals.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p203",
+  "text": "… Think of your brain as a massive orchestra.",
+  "sub": "Think of your brain as a massive orchestra.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p204",
+  "text": "… The violin, drums, piano, and trumpet all have different roles.",
+  "sub": "The violin, drums, piano, and trumpet all have different roles.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p205",
+  "text": "… Now imagine forcing every musician to play as loudly as possible at exactly the same time.",
+  "sub": "Now imagine forcing every musician to play as loudly as possible at exactly the same time.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p206",
+  "text": "… No rhythm.",
+  "sub": "No rhythm.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p207",
+  "text": "… No coordination.",
+  "sub": "No coordination.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p208",
+  "text": "… Just noise.",
+  "sub": "Just noise.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p209",
+  "text": "… That's not intelligence.",
+  "sub": "That's not intelligence.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p210",
+  "text": "… That's a musical disaster.",
+  "sub": "That's a musical disaster.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p211",
+  "text": "… In reality, uncontrolled synchronized electrical activity in the brain can cause seizures.",
+  "sub": "In reality, uncontrolled synchronized electrical activity in the brain can cause seizures.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p212",
+  "text": "… So the goal isn't to make every neuron fire at once.",
+  "sub": "So the goal isn't to make every neuron fire at once.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p213",
+  "text": "… It's to make the right neurons communicate at the right time.",
+  "sub": "It's to make the right neurons communicate at the right time.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p214",
+  "text": "… And this is exactly what happens when your girlfriend says:",
+  "sub": "And this is exactly what happens when your girlfriend says:",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p215",
+  "text": "… We need to talk.",
+  "sub": "\"We need to talk.\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p216",
+  "text": "… Your memory starts playing every argument from the last five years.",
+  "sub": "Your memory starts playing every argument from the last five years.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p217",
+  "text": "… Your imagination creates seventeen different disaster scenarios.",
+  "sub": "Your imagination creates seventeen different disaster scenarios.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p218",
+  "text": "… Your reasoning tries to identify what you did wrong.",
+  "sub": "Your reasoning tries to identify what you did wrong.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p219",
+  "text": "… Your emotional system activates.",
+  "sub": "Your emotional system activates.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p220",
+  "text": "… And your entire brain becomes one giant emergency meeting.",
+  "sub": "And your entire brain becomes one giant emergency meeting.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p221",
+  "text": "… All neurons are working.",
+  "sub": "All neurons are working.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p222",
+  "text": "… None of them has a solution.",
+  "sub": "None of them has a solution.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "chapter7"
+ },
+ {
+  "id": "p223",
+  "text": "… So, would unlocking one hundred percent of your brain make you the smartest human alive?",
+  "sub": "So, would unlocking one hundred percent of your brain make you the smartest human alive?",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p224",
+  "text": "… Not automatically.",
+  "sub": "Not automatically.",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "ending"
+ },
+ {
+  "id": "p225",
+  "text": "… Because intelligence isn't a percentage.",
+  "sub": "Because intelligence isn't a percentage.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p226",
+  "text": "… It's a combination of memory, learning, reasoning, creativity, experience, and how efficiently your brain uses information.",
+  "sub": "It's a combination of memory, learning, reasoning, creativity, experience, and how efficiently your brain uses information.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p227",
+  "text": "… Einstein didn't need a secret brain switch.",
+  "sub": "Einstein didn't need a secret brain switch.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p228",
+  "text": "… Professional athletes didn't unlock hidden brain regions.",
+  "sub": "Professional athletes didn't unlock hidden brain regions.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p229",
+  "text": "… They developed extraordinary abilities through practice, experience, and dedication.",
+  "sub": "They developed extraordinary abilities through practice, experience, and dedication.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p230",
+  "text": "… And perhaps the greatest lesson is this:",
+  "sub": "And perhaps the greatest lesson is this:",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p231",
+  "text": "… You might be able to solve complicated equations, memorize thousands of books, predict the movement of a football, and understand the mysteries of the universe.",
+  "sub": "You might be able to solve complicated equations, memorize thousands of books, predict the movement of a football, and understand the mysteries of the universe.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p232",
+  "text": "… But when your girlfriend says:",
+  "sub": "But when your girlfriend says:",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p233",
+  "text": "… Do whatever you want.",
+  "sub": "\"Do whatever you want.\"",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p234",
+  "text": "… Even a supercomputer might need professional help.",
+  "sub": "Even a supercomputer might need professional help.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p235",
+  "text": "… Because you can study the human brain for decades.",
+  "sub": "Because you can study the human brain for decades.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p236",
+  "text": "… You can understand the universe.",
+  "sub": "You can understand the universe.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p237",
+  "text": "… You can calculate the distance between galaxies.",
+  "sub": "You can calculate the distance between galaxies.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p238",
+  "text": "… But sometimes…",
+  "sub": "But sometimes…",
+  "voice": "am_puck",
+  "speed": 1.12,
+  "scene": "ending"
+ },
+ {
+  "id": "p239",
+  "text": "… The hardest problem isn't science.",
+  "sub": "The hardest problem isn't science.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p240",
+  "text": "… It's deciding where to eat.",
+  "sub": "It's deciding where to eat.",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ },
+ {
+  "id": "p241",
+  "text": "… See you in the next experiment!",
+  "sub": "See you in the next experiment!",
+  "voice": "am_puck",
+  "speed": 1.25,
+  "scene": "ending"
+ }
+]
