@@ -6,7 +6,7 @@ A guy gets bitten by a cat and gains cat powers (night vision, landing on his fe
 
 | Path | What it is |
 |---|---|
-| `what-if-a-cat-bit-you.mp4` | the finished film |
+| `what-if-a-cat-bit-you.mp4` | the finished film, with the channel watermark ([`brand/curious-mind`](../../brand/curious-mind/README.md)) |
 | `what-if-a-cat-bit-you.srt` | English subtitles |
 | `what-if-a-cat-bit-you-poster.jpg` | poster frame |
 | `TREATMENT.md` | structure and storyboard notes |

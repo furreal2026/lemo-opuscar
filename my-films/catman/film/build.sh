@@ -17,3 +17,5 @@ node core/render/events.mjs "$HERE"
 .venv/bin/python core/render/srt.py "$HERE/cues.json" "$HERE/../what-if-a-cat-bit-you.srt"
 node core/render/video.mjs "$HERE" --fps 60 --workers ${WORKERS:-4} --out "$HERE/out/video.mp4"
 sh "$HERE/master.sh"
+# channel watermark (Curious Mind), top centre
+sh "$LIB/brand/curious-mind/add-watermark.sh" "$HERE/../what-if-a-cat-bit-you.mp4" "$HERE/out/wm.mp4" && mv "$HERE/out/wm.mp4" "$HERE/../what-if-a-cat-bit-you.mp4"
