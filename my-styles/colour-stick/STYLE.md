@@ -26,6 +26,8 @@ Not Whiteboard Explainer (no hand drawing the frame, no marker texture), not Pic
 - **Rotation**: a figure can stand on a circle with its feet on the circle and its head outward. Joints are computed in the figure's own frame and mapped to the world, and "down" (where hands hang and elbows bend) follows the figure, so rings and globes use the same rig.
 - **World and camera**: everything lives in world coordinates under one camera (centre and zoom, zoom interpolated in log space). Screen space is only for titles, the count column, sources and subtitles.
 
+- **Hand-inked props** (v2): every outline of a prop, set or chart is a tapered ink ribbon (warm ink #2B2622), wobbling about 1 px along its length; the wobble is seeded from the shape, so a moving prop keeps its line. Props carry real drawn detail: fur tufts and stripes, wood grain and knots, turned table legs, corrugated cardboard, labels and stamps, chalk menus, speaker grills, glare on dark screens. The stick figures (and Meow Man's ears, whiskers and tail) stay clean even-hose lines: simple people in a richly drawn world.
+
 ## 3. Colour logic
 
 - Neutral ground: warm paper. Ink for lines, type and outlines.
@@ -66,6 +68,8 @@ Example: paper #F3F0EA, ink #24242C, mute #9C978C, tint #E2DDD2, ginger #F28C28 
 | Through a shape | a jump to another place or time | diving into a head, a node, a ring |
 | Match transform | the same thing seen anew | a line bending into an arc, a row into a ring |
 | Slow drift / push | holding attention on data | a count, a comparison |
+
+Each new scene opens with a two-finger gesture (from Tablet Sketch Explainer): a pinch from 1.06× to 1× and a 2° turn that settles with momentum (≈0.85 s), then a slow drift of about 0.5°.
 
 Keep the subject in the upper 85 % of the frame; text columns sit beside the figures, never on them. Cut on a beat or move through something; no page turns, no wipes, no zoom-blur.
 

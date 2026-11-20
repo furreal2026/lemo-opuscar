@@ -16,7 +16,13 @@ function walkP(ph, k = 1) { const p = rest(), A = .07 * k;
   p.lfx = A * Math.sin(ph); p.rfx = -A * Math.sin(ph); p.lfy = .045 * k * Math.max(0, Math.cos(ph)); p.rfy = .045 * k * Math.max(0, -Math.cos(ph));
   p.hy = .012 + .012 * Math.abs(Math.cos(ph)); p.lean = .06 * k; p.head = .04; p.la = -.7 * k * Math.sin(ph) - .3; p.lb = .5; p.ra = .7 * k * Math.sin(ph) + .3; p.rb = -.5; return p; }
 function breathe(p, t, ph = 0) { const q = { ...p }; q.hy += .004 * Math.sin(t * 2.1 + ph); q.head += .015 * Math.sin(t * 1.3 + ph); return q; }
-function cam(z = 1, cx = W / 2, cy = H / 2, sx = 0, sy = 0) { g.setTransform(z, 0, 0, z, W / 2 - cx * z + sx, H / 2 - cy * z + sy); }
+let GEST = { z: 1, r: 0 };
+const gease = u => { u = clamp(u); const a = u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2, b = 1 - Math.pow(1 - u, 3); return .45 * a + .55 * b; };
+function gestureAt(t) { const i = TLS.scenes.findIndex(x => t >= x.t0 && t < x.t1), sc = TLS.scenes[Math.max(0, i)], sg = i % 2 ? 1 : -1, u = gease((t - sc.t0) / .85);
+  const drift = seg(t, sc.t0 + .85, sc.t1);
+  return { z: lerp(1.06, 1, u) * (1 + .012 * drift), r: (sg * lerp(2.0, .6, u) - sg * .4 * drift) * Math.PI / 180 }; }
+function cam(z = 1, cx = W / 2, cy = H / 2, sx = 0, sy = 0) { z *= GEST.z; const c = Math.cos(GEST.r) * z, sn = Math.sin(GEST.r) * z;
+  g.setTransform(c, sn, -sn, c, W / 2 + sx - (c * cx - sn * cy), H / 2 + sy - (sn * cx + c * cy)); }
 function scr() { g.setTransform(1, 0, 0, 1, 0, 0); }
 function shake(t, a, amp = 10, d = .3) { const u = t - a; if (u < 0 || u > d) return [0, 0]; const k = (1 - u / d) * amp; return [Math.sin(u * 83) * k, Math.cos(u * 71) * k]; }
 // text that slides up 18 px while fading in, fades out at `out`
@@ -29,7 +35,8 @@ function dashedArc(P, upto, col = C.ginger) { // P: cubic [p0,p1,p2,p3]; draw fi
 function bez(P, u) { const s = 1 - u; return [0, 1].map(i => s * s * s * P[0][i] + 3 * s * s * u * P[1][i] + 3 * s * u * u * P[2][i] + u * u * u * P[3][i]); }
 
 // Meow Man with partial transformation: k.head (fill), k.ears, k.whisk, k.tail in 0..1 (springy)
-function catK(f, p, k = {}) {
+function catK(f, p, k = {}) { RAW++; try { return catK0(f, p, k); } finally { RAW--; } }
+function catK0(f, p, k = {}) {
   const S = f.S, sc = clamp(Math.sqrt(S / 380), .6, 1.05), w = 8 * sc, j = joints(f, p);
   const ke = k.ears ?? 1, kt = k.tail ?? 1, kw = k.whisk ?? 1, kh = k.head ?? 1;
   if (kt > 0.01) { const Hp = j.Hp, d = f.face || 1, wag = (k.wag || 0);
@@ -61,7 +68,7 @@ const FILM = {};
   const reachP = pose({ lean: .34, bend: -.03, head: .5, hy: .015, ra: 1.12, rb: .08, la: -.2, lb: .35, lfx: -.06, rfx: .12 });
   const ouch = pose({ lean: -.12, head: -.25, ra: -2.2, rb: .9, la: -.9, lb: .5, hy: .01, lfx: -.04, rfx: .06 });
   FILM.s1 = t => {
-    const gy = 880, f0 = { x: 1000, gy, S: 470 }, J = joints(f0, reachP), hand = J.aR[1], cs = 270, cx = hand[0] + .4 * cs, base = hand[1] + .66 * cs;
+    const gy = 880, f0 = { x: 1000, gy, S: 470 }, J = joints(f0, reachP), hand = J.aR[1], cs = 270, CSs = .62, cx = hand[0] + 14 + 42 * CSs, base = hand[1] + 4 + 290 * CSs;
     const z = 1 + .07 * ss(seg(t, 2, tBite)), [sx, sy] = shake(t, tBite, 12, .35);
     cam(z, lerp(960, hand[0], ss(seg(t, 2, tBite))), lerp(540, hand[1] + 60, ss(seg(t, 2, tBite))), sx, sy);
     rect(1440, 170, 280, 210, C2.wood); rect(1462, 192, 236, 166, C.sky, { lw: DL });
@@ -73,8 +80,8 @@ const FILM = {};
     shape(() => g.ellipse(1300, gy + 12, 470, 30, 0, 0, Math.PI * 2), C.blue, { lw: 5 });
     shape(() => g.ellipse(1300, gy + 12, 410, 19, 0, 0, Math.PI * 2), null, { col: C2.rugL, lw: DL });
     for (const sg of [-1, 1]) for (let k = -2; k <= 2; k++) dline([[1300 + sg * 470, gy + 12 + k * 9], [1300 + sg * 495, gy + 12 + k * 11]]);
-    rrect(cx - .42 * cs, base, .86 * cs, gy - base, 20, C.pink);
-    g.save(); g.setLineDash([8, 10]); rrect(cx - .42 * cs + 12, base + 12, .86 * cs - 24, gy - base - 24, 12, null, { lw: DL, col: '#C9746C' }); g.restore();
+    rrect(cx - .3 * cs, base - 6, .86 * cs, gy - base + 6, 20, C.pink);
+    g.save(); g.setLineDash([8, 10]); ORIG.shape(() => g.roundRect(cx - .3 * cs + 12, base + 6, .86 * cs - 24, gy - base - 18, 12), null, { lw: DL, col: '#C9746C' }); g.restore();
     const bx = 1650; poly([[bx - 60, gy - 50], [bx + 60, gy - 50], [bx + 45, gy], [bx - 45, gy]], C2.bowl);
     for (let i = 0; i < 9; i++) circ(bx - 42 + i * 10.5, gy - 55 - (i % 3) * 5, 7, C2.kibble, { lw: 2 });
     text('MR. B', bx, gy - 16, { size: 20, w: 600, col: C2.white, align: 'center', track: 2 });
@@ -85,8 +92,8 @@ const FILM = {};
     const handNow = t >= tBite && t < tBite + .18;
     figure({ x, gy, S: 470 }, handNow ? reachP : p);
     const ck = pop(t, .3), lunge = bell(t, tBite - .08, tBite + .25) * 14;
-    scaled(cx, gy, ck, () => { g.save(); g.translate(-lunge, 0); cat(cx, base, cs, { d: 1, mood: 'angry', mouth: t > tBite - .06 && t < tBite + .7 ? 1 : 0 }); g.restore(); });
-    if (t > tBite) { const k = pop(t, tBite); scaled(hand[0] - 8, hand[1] - 14, k, () => jag(hand[0] - 8, hand[1] - 14, 30, 5, C.red, 6));
+    scaled(cx, gy, ck, () => { g.save(); g.translate(-lunge, 0); catD(cx, base, CSs, { paw: false, angry: true, mouth: t > tBite - .06 && t < tBite + .7 ? 'open' : 'closed' }); g.restore(); });
+    if (t > tBite) { const k = pop(t, tBite); scaled(hand[0] - 34, hand[1] + 6, k, () => jag(hand[0] - 34, hand[1] + 6, 26, 5, C.red, 6));
       scaled(hand[0] + 40, hand[1] - 165, k, () => text('CHOMP', hand[0] - 30, hand[1] - 150, { size: 44, w: 600, col: C.red, track: 2 })); }
     const lk = ein(t, 1.0, .4); if (lk > 0) { g.save(); g.globalAlpha = lk; label('Mr. Biscuits, 4 kg', cx + 150, base - 150); line([[cx + 230, base - 134], [cx + 160, base - 80]], C.mute, 3); arrowHead(cx + 160, base - 80, Math.atan2(54, -70), 12, C.mute, 3); g.restore(); }
     scr();
@@ -202,6 +209,7 @@ const FILM = {};
     const top = [560, 420];
     for (const [a, b] of [[[470, gy], top], [[650, gy], top]]) { line([a, b], C.ink, 14); line([a, b], C2.woodL, 7); }
     for (let i = 1; i < 6; i++) { const u = i / 6, y = gy + (top[1] - gy) * u, xl = 470 + 90 * u, xr = 650 - 90 * u; line([[xl, y], [xr, y]], C.ink, 6); }
+    for (let k = 0; k < 7; k++) { const u = .08 + k * .13; for (const [bx, sgn] of [[470, 1], [650, -1]]) { const x = lerp(bx, top[0], u), y = lerp(gy, top[1], u); ORIG.line([[x - 1 * sgn, y], [lerp(bx, top[0], u + .05) - 1 * sgn, lerp(gy, top[1], u + .05)]], C2.wood, 1.6); } }
     rect(520, 406, 80, 18, C2.wood, { lw: 4 });
     // bucket: on the ladder top, falls at the slip, splashes at "bucket"
     const fb = seg(t, tSlip + .3, tSplash);
@@ -327,7 +335,7 @@ function stopwatch(x, y, k, label) { scaled(x, y, k, () => { circ(x, y, 60, C2.w
     cam(1 + .05 * ss(seg(t, lt('l29'), tSteal)), lerp(960, 1150, ss(seg(t, lt('l29'), tSteal))), lerp(540, 560, ss(seg(t, lt('l29'), tSteal))), sx, sy);
     // diner wall: a menu board with a burger on it
     rect(1080, 150, 360, 230, C.ink, { lw: 0 }); text('MENU', 1260, 200, { size: 30, w: 600, col: C2.white, align: 'center', track: 4 });
-    for (let i = 0; i < 4; i++) { dline([[1110, 236 + i * 34], [1300, 236 + i * 34]], '#8A8F9C'); text('$' + (5 + i), 1390, 244 + i * 34, { size: 22, w: 600, col: C.wall, align: 'right' }); }
+    ['CHEESEBURGER', 'FRIES', 'SALAD :(', 'MILK'].forEach((it, i) => { text(it, 1110, 244 + i * 34, { size: 20, w: 500, col: '#E9E4DA', track: 1 }); line([[1110 + it.length * 13, 238 + i * 34], [1350, 238 + i * 34]], '#5A5F6C', 2); text('$' + [7, 3, 6, 2][i], 1405, 244 + i * 34, { size: 22, w: 600, col: C.wall, align: 'right' }); }); line([[1100, 214], [1420, 214]], '#8A8F9C', 2);
     ground(gy, -400, 2400);
     // friend (ink) and Meow Man, the table in front of them
     const holdLow = pose({ la: -1.25, lb: -.9, ra: .45, rb: -.2, head: -.05 }), toMouth = pose({ la: -.75, lb: -2.15, ra: .45, rb: -.2, head: -.1 });
@@ -344,7 +352,7 @@ function stopwatch(x, y, k, label) { scaled(x, y, k, () => { circ(x, y, 60, C2.w
     // the steal: two frames of speed lines, then nothing
     if (t >= tSteal - .02 && t < tSteal + .12) { const a = [fJ.aL[1][0], fJ.aL[1][1]], b = [mJ.aR[1][0] + 18, mJ.aR[1][1]];
       for (let i = -2; i <= 2; i++) line([[a[0], a[1] + i * 16], [b[0], b[1] + i * 16]], C.ginger, 5); }
-    rect(980, dt, 440, 26, C2.woodL); rect(1010, dt + 26, 24, gy - dt - 26, C2.wood); rect(1366, dt + 26, 24, gy - dt - 26, C2.wood);
+    tableP(980, 1420, dt, gy, 40);
     shape(() => g.ellipse(1060, dt - 4, 70, 12, 0, 0, Math.PI * 2), C2.white, { lw: 4 });
     for (let i = 0; i < 6; i++) circ(1030 + i * 12, dt - 16 - (i % 2) * 6, 9, C2.leaf, { lw: 2 });   // his salad
     shape(() => g.ellipse(1330, dt - 4, 70, 12, 0, 0, Math.PI * 2), C2.white, { lw: 4 });
@@ -479,7 +487,7 @@ function bread(x, y, k) { scaled(x, y, k, () => { shape(() => { g.moveTo(x - 60,
   FILM.s10 = t => {
     cam(1 + .04 * seg(t, s.t0, s.t1), 1200, 560);
     const gy = 880; ground(gy, -400, 2400);
-    rect(820, 700, 760, 30, C2.woodL); rect(860, 730, 30, 150, C2.wood); rect(1510, 730, 30, 150, C2.wood);
+    tableP(820, 1580, 700, 880, 50);
     cake(1020, 700, pop(t, tCake - .2), t);
     rrect(1240, 690, 150, 12, 6, C2.white); if (t < tBread) { scaled(1315, 690, pop(t, tCake + .2), () => poly([[1270, 690], [1360, 690], [1300, 640]], C.pink)); } else bread(1315, 690, pop(t, tBread));
     if (t > tBread) { const k = pop(t, tBread + .15); scaled(1460, 600, k, () => text('= wet bread', 1400, 610, { size: 34, w: 600, col: C.mute })); }
@@ -514,8 +522,12 @@ function zzzA(x, y, t, k = 1) { for (let i = 0; i < 3; i++) { const u = (t * .45
     const tx = 1000, ty = 330, tw = 720, th = 470;
     line([[tx + 120, ty + th], [tx + 90, gy]], C.ink, 8); line([[tx + tw - 120, ty + th], [tx + tw - 90, gy]], C.ink, 8);
     rrect(tx, ty, tw, th, 14, C.ink, { lw: 0 }); for (let i = 0; i < 3; i++) circ(tx + tw - 60 - i * 26, ty + th - 19, 6, C2.chrome, { lw: 0 });
+    for (let i = 0; i < 9; i++) ORIG.line([[tx + 40 + i * 9, ty + th - 26], [tx + 40 + i * 9, ty + th - 12]], '#4A505E', 3);
+    text('MEOWTRON', tx + tw / 2, ty + th - 13, { size: 14, w: 600, col: '#8A8F9C', align: 'center', track: 3 });
+    for (const fx of [tx + 90, tx + tw - 90]) shape(() => g.ellipse(fx, gy - 2, 34, 7, 0, 0, Math.PI * 2), C.ink, { lw: 0 });
     const on = ss(seg(t, tTV, tTV + .25));
     rect(tx + 22, ty + 22, tw - 44, th - 60, '#2A3040', { lw: 0 });
+    if (on < 1) { g.save(); g.globalAlpha = .12 * (1 - on); g.fillStyle = '#FFFFFF'; g.beginPath(); g.moveTo(tx + 80, ty + 22); g.lineTo(tx + 200, ty + 22); g.lineTo(tx + 60, ty + th - 38); g.lineTo(tx + 22, ty + th - 38); g.lineTo(tx + 22, ty + 90); g.closePath(); g.fill(); g.fillRect(tx + 230, ty + 22, 30, th - 60); g.restore(); }
     if (on > 0) { g.save(); g.beginPath(); const hh = (th - 60) * on; g.rect(tx + 22, ty + 22 + (th - 60 - hh) / 2, tw - 44, hh); g.clip();
       rect(tx + 22, ty + 22, tw - 44, th - 60, C.screen, { lw: 0 });
       for (const [x, w, h] of [[tx + 40, 80, 180], [tx + 130, 60, 240], [tx + 200, 90, 150], [tx + 420, 70, 210], [tx + 500, 100, 160], [tx + 610, 80, 230]]) rect(x, ty + th - 150 - h, w, h + 20, '#B4CFDD', { lw: 2, col: '#8FB0C2' });
@@ -569,7 +581,7 @@ function drawSubs(t) { const q = TLS.cues.find(c => t >= c.t0 && t < c.t1); if (
 window.EV = EV.sort((a, b) => a.t - b.t);
 window.DUR = DUR;
 window.render = t => {
-  scr(); paper();
+  scr(); paper(); GEST = gestureAt(t);
   const s = TLS.scenes.find(x => t >= x.t0 && t < x.t1) || TLS.scenes[TLS.scenes.length - 1];
   g.save(); FILM[s.id](t); g.restore(); scr();
   drawSubs(t);
