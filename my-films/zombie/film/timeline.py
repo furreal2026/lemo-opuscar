@@ -11,9 +11,9 @@ byScene = {}
 for l in lines: byScene.setdefault(l['scene'], []).append(l)
 t = 0.0; scenes = []; L = {}; cues = []
 for sid, d in plan:
-    t0 = t; end = t0 + d
-    for l in byScene.get(sid, []):
-        c = t0 + l['at']; lid = l['id']
+    t0 = t; end = t0 + d; prev = t0
+    for l in sorted(byScene.get(sid, []), key=lambda l: l['at']):
+        lid = l['id']; c = max(t0 + l['at'], prev + (.3 if prev > t0 else 0)); prev = c + dur[lid]
         w = [[x, round(c + max(0, a), 3), round(c + b, 3)] for x, a, b in words[lid]]
         L[lid] = {'t': round(c, 3), 'dur': dur[lid], 'scene': sid, 'text': l['text'], 'words': w, 'voice': l['voice']}
         text = l['text'].replace('...', '…')

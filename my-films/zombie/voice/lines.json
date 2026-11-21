@@ -152,5 +152,911 @@
   "speed": 0.95,
   "scene": "110",
   "at": 1.6
+ },
+ {
+  "id": "v001",
+  "text": "It's almost midnight, and you are starving.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "001",
+  "at": 0.25
+ },
+ {
+  "id": "v002",
+  "text": "Mustard. Half a lemon. That's dinner, apparently.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "002",
+  "at": 0.25
+ },
+ {
+  "id": "v003",
+  "text": "Then you spot it: the last of the bread.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "003",
+  "at": 0.25
+ },
+ {
+  "id": "v004",
+  "text": "What you don't see is the bottom of the loaf.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "004",
+  "at": 0.25
+ },
+ {
+  "id": "v005",
+  "text": "You don't even look. You're busy watching cat videos.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "005",
+  "at": 0.25
+ },
+ {
+  "id": "v006",
+  "text": "Bite after bite, all the way to the sofa.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "006",
+  "at": 0.25
+ },
+ {
+  "id": "v007",
+  "text": "And with every bite, something tiny comes along for the ride.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "007",
+  "at": 0.25
+ },
+ {
+  "id": "v008",
+  "text": "You flop down and lick your fingers. Life is good.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "008",
+  "at": 0.25
+ },
+ {
+  "id": "v009",
+  "text": "Your cat sniffs the crumbs, and wants nothing to do with you. Weird.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "009",
+  "at": 0.25
+ },
+ {
+  "id": "v010",
+  "text": "The TV goes off. The house goes quiet.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "010",
+  "at": 0.25
+ },
+ {
+  "id": "v011",
+  "text": "While you sleep, the bread keeps growing.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "011",
+  "at": 0.25
+ },
+ {
+  "id": "v013",
+  "text": "Seven in the morning. Your hand can't find the alarm. Twice.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "013",
+  "at": 0.25
+ },
+ {
+  "id": "v014",
+  "text": "Your head feels heavy, like it's full of wet sand.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "014",
+  "at": 0.25
+ },
+ {
+  "id": "v015",
+  "text": "While you brush your teeth, your reflection is a little late.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "015",
+  "at": 0.25
+ },
+ {
+  "id": "v016",
+  "text": "You watch the coffee miss the cup. You just watch.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "016",
+  "at": 0.25
+ },
+ {
+  "id": "v017",
+  "text": "The sun is way too bright today. It almost hurts.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "017",
+  "at": 0.25
+ },
+ {
+  "id": "v018",
+  "text": "The menu won't hold still. You point at anything.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "018",
+  "at": 0.25
+ },
+ {
+  "id": "v019",
+  "text": "Leo is talking. Your head keeps sinking.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "019",
+  "at": 0.25
+ },
+ {
+  "id": "v020",
+  "text": "Your finger is tapping. You are not tapping it.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "020",
+  "at": 0.25
+ },
+ {
+  "id": "v021",
+  "text": "On the walk home, the street starts to tilt. You hold on.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "021",
+  "at": 0.25
+ },
+ {
+  "id": "v022",
+  "text": "Everything is swimming.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "022",
+  "at": 0.25
+ },
+ {
+  "id": "v023",
+  "text": "A fever. The internet says you're probably just tired. Okay.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "023",
+  "at": 0.25
+ },
+ {
+  "id": "v024",
+  "text": "A pill, some water. Your hand won't stop shaking.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "024",
+  "at": 0.25
+ },
+ {
+  "id": "v027",
+  "text": "That night, you can't get comfortable. Something feels wrong.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "027",
+  "at": 0.25
+ },
+ {
+  "id": "v028",
+  "text": "Morning. There are lines on your neck. Dark, branching lines.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "028",
+  "at": 0.25
+ },
+ {
+  "id": "v029",
+  "text": "You scrub until it burns. They don't go away.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "029",
+  "at": 0.25
+ },
+ {
+  "id": "v030",
+  "text": "You've seen this pattern before.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "030",
+  "at": 0.25
+ },
+ {
+  "id": "v031",
+  "text": "You pull the hood up and zip it to the chin. Nobody needs to see.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "031",
+  "at": 0.25
+ },
+ {
+  "id": "v032",
+  "text": "Raw steak has never looked this good. That scares you.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "032",
+  "at": 0.25
+ },
+ {
+  "id": "v033",
+  "text": "The apple tastes like nothing. Like chewing paper.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "033",
+  "at": 0.25
+ },
+ {
+  "id": "v034",
+  "text": "Even your cat runs from you now.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "034",
+  "at": 0.25
+ },
+ {
+  "id": "v035",
+  "text": "Your own phone doesn't recognise your face.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "035",
+  "at": 0.25,
+  "asr": "Your own phone doesn't recognize your face."
+ },
+ {
+  "id": "v036",
+  "text": "It's your little sister, Mia. You try to sound normal.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "036",
+  "at": 0.25
+ },
+ {
+  "id": "v037",
+  "text": "You and Mia, years ago. You remember that day perfectly.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "037",
+  "at": 0.25
+ },
+ {
+  "id": "v038",
+  "text": "You stand at the window. You don't know for how long. Hours.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "038",
+  "at": 0.25
+ },
+ {
+  "id": "v039",
+  "text": "Then you blink, and you're outside. Barefoot. In the dark.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "039",
+  "at": 0.25
+ },
+ {
+  "id": "v040",
+  "text": "You don't remember walking here. Your feet do.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "040",
+  "at": 0.25
+ },
+ {
+  "id": "v042",
+  "text": "You take back control. For now. And you lock the door twice.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "042",
+  "at": 0.25
+ },
+ {
+  "id": "v043",
+  "text": "You reach for the bread knife. Your hand reaches for the steak.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "043",
+  "at": 0.25
+ },
+ {
+  "id": "v044",
+  "text": "You grab your own wrist. It's like fighting a stranger.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "044",
+  "at": 0.25
+ },
+ {
+  "id": "v045",
+  "text": "Everything hits the floor. So do you.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "045",
+  "at": 0.25
+ },
+ {
+  "id": "v046",
+  "text": "Make a fist. Three fingers listen. Two don't.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "046",
+  "at": 0.25
+ },
+ {
+  "id": "v047",
+  "text": "Inside, you pull with everything you have. It barely moves.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "047",
+  "at": 0.25
+ },
+ {
+  "id": "v048",
+  "text": "Your arm swings on its own. The mirror cracks.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "048",
+  "at": 0.25
+ },
+ {
+  "id": "v049",
+  "text": "You try to warn your sister. Your thumb has other plans.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "049",
+  "at": 0.25
+ },
+ {
+  "id": "v050",
+  "text": "You need a doctor. Your right leg doesn't agree.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "050",
+  "at": 0.25
+ },
+ {
+  "id": "v051",
+  "text": "Your neighbour waves. You try to wave back. It goes badly.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "051",
+  "at": 0.25,
+  "asr": "Your neighbor waves, you try to wave back, it goes badly."
+ },
+ {
+  "id": "v052",
+  "text": "You stop in the middle of the road, and you don't know why.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "052",
+  "at": 0.25
+ },
+ {
+  "id": "v053",
+  "text": "A pigeon lands, and your head snaps toward it like a hunter.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "053",
+  "at": 0.25
+ },
+ {
+  "id": "v054",
+  "text": "Leo. Leo will help. You push the door open.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "054",
+  "at": 0.25
+ },
+ {
+  "id": "v055",
+  "text": "The smell of people hits you. Warm. Alive. Delicious.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "055",
+  "at": 0.25
+ },
+ {
+  "id": "v056",
+  "text": "A growl comes out of you. You cover your mouth.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "056",
+  "at": 0.25,
+  "asr": "Growl comes out of you, you cover your mouth."
+ },
+ {
+  "id": "v057",
+  "text": "Leo can't see you like this. Nobody can.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "057",
+  "at": 0.5,
+  "after": true
+ },
+ {
+  "id": "v058",
+  "text": "You run home before anyone else notices.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "058",
+  "at": 0.25
+ },
+ {
+  "id": "v059",
+  "text": "You slide down the door. You're shaking.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "059",
+  "at": 0.25
+ },
+ {
+  "id": "v061",
+  "text": "You wake up standing in a corner, facing the wall.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "061",
+  "at": 0.25
+ },
+ {
+  "id": "v062",
+  "text": "The room is wrecked. And you remember every second. You watched it happen.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "062",
+  "at": 0.25
+ },
+ {
+  "id": "v063",
+  "text": "You lower the hood, and finally, you see it.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "063",
+  "at": 0.25
+ },
+ {
+  "id": "v064",
+  "text": "It snaps. Something drifts out. You cough and cough.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "064",
+  "at": 0.25
+ },
+ {
+  "id": "v065",
+  "text": "Ants, with fungus growing out of their heads. Just like you.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "065",
+  "at": 0.25
+ },
+ {
+  "id": "v067",
+  "text": "You write it down, so you won't forget. I am still me.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "067",
+  "at": 0.25
+ },
+ {
+  "id": "v068",
+  "text": "The news says stay indoors. The orange dots are everywhere.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "068",
+  "at": 0.25
+ },
+ {
+  "id": "v069",
+  "text": "People with guns, guarding the bridges. From people like you.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "069",
+  "at": 0.25
+ },
+ {
+  "id": "v070",
+  "text": "You take the photo. In case you ever forget their faces.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "070",
+  "at": 0.25
+ },
+ {
+  "id": "v071",
+  "text": "The fridge keeps calling you. You hold it shut with your whole body.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "071",
+  "at": 0.25
+ },
+ {
+  "id": "v072",
+  "text": "You leave notes for yourself on every lever.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "072",
+  "at": 0.25
+ },
+ {
+  "id": "v073",
+  "text": "You build a wall to keep the world out, and to keep you in.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "073",
+  "at": 0.25
+ },
+ {
+  "id": "v074",
+  "text": "In the dark, your veins glow. You don't feel sleepy at all.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "074",
+  "at": 0.25
+ },
+ {
+  "id": "v075",
+  "text": "Mia is coming to get you. You type no. Your thumb sends okay.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "075",
+  "at": 0.25
+ },
+ {
+  "id": "v076",
+  "text": "Day seven. The street is empty.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "076",
+  "at": 0.25
+ },
+ {
+  "id": "v077",
+  "text": "Someone is knocking.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "077",
+  "at": 0.25
+ },
+ {
+  "id": "v078",
+  "text": "A stranger, checking every house.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "078",
+  "at": 0.25
+ },
+ {
+  "id": "v079",
+  "text": "Your nails dig into the windowsill. Your body wants to go to him.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "079",
+  "at": 0.25
+ },
+ {
+  "id": "v080",
+  "text": "He pushes. You push back. Please leave. Please.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "080",
+  "at": 0.25
+ },
+ {
+  "id": "v081",
+  "text": "He marks your door. Now everyone will know.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "081",
+  "at": 0.25
+ },
+ {
+  "id": "v082",
+  "text": "Others shuffle past. Empty. Nobody home behind their eyes.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "082",
+  "at": 0.25
+ },
+ {
+  "id": "v083",
+  "text": "One of them looks at you. You wave. It doesn't wave back.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "083",
+  "at": 0.25
+ },
+ {
+  "id": "v084",
+  "text": "Your cat comes back. It sits with you. It doesn't run this time.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "084",
+  "at": 0.25
+ },
+ {
+  "id": "v085",
+  "text": "Then you see them. Mia. Leo. And a stranger with a rifle.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "085",
+  "at": 0.25
+ },
+ {
+  "id": "v086",
+  "text": "Your name. She came for you.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "086",
+  "at": 0.3,
+  "after": true
+ },
+ {
+  "id": "v087",
+  "text": "You run to the window. But the mouth lever is tangled tight.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "087",
+  "at": 0.25
+ },
+ {
+  "id": "v088",
+  "text": "You want to say her name. Something else comes out.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "088",
+  "at": 0.25
+ },
+ {
+  "id": "v089",
+  "text": "The light burns. You flinch away like an animal.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "089",
+  "at": 0.25
+ },
+ {
+  "id": "v090",
+  "text": "You only meant to move the sofa. Your body throws it.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "090",
+  "at": 0.25
+ },
+ {
+  "id": "v091",
+  "text": "And there they are. Waiting. Afraid of you.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "091",
+  "at": 0.25
+ },
+ {
+  "id": "v092",
+  "text": "Your sister steps back. Away from you.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "092",
+  "at": 0.25
+ },
+ {
+  "id": "v093",
+  "text": "A red dot settles on your head.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "093",
+  "at": 0.25,
+  "asr": "Red dot settles on your head."
+ },
+ {
+  "id": "v094",
+  "text": "Hands up. You surrender. But your fingers curl into claws.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "094",
+  "at": 0.25
+ },
+ {
+  "id": "v095",
+  "text": "Inside, you hang on the levers with all your weight.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "095",
+  "at": 0.25
+ },
+ {
+  "id": "v096",
+  "text": "To them, you're just a monster, twitching.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "096",
+  "at": 0.25
+ },
+ {
+  "id": "v097",
+  "text": "You step forward to explain. It comes out as a lunge.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "097",
+  "at": 0.25,
+  "asr": "You step forward to explain, it comes out as a lunch."
+ },
+ {
+  "id": "v098",
+  "text": "You force your knees down. Look. You're harmless. Please.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "098",
+  "at": 0.25,
+  "asr": "You force your knees down, look your harmless, please."
+ },
+ {
+  "id": "v099",
+  "text": "Mia hesitates.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "099",
+  "at": 0.25
+ },
+ {
+  "id": "v100",
+  "text": "The photo. You hold it out. Remember? It's me.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "100",
+  "at": 0.25
+ },
+ {
+  "id": "v101",
+  "text": "She knows. She knows that picture.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "101",
+  "at": 0.25
+ },
+ {
+  "id": "v102",
+  "text": "And that's when the hunger comes back. Stronger than ever.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "102",
+  "at": 0.25
+ },
+ {
+  "id": "v103",
+  "text": "It comes from everywhere at once.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "103",
+  "at": 0.25
+ },
+ {
+  "id": "v104",
+  "text": "You lunge. The photo flies out of your hand.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "104",
+  "at": 0.25
+ },
+ {
+  "id": "v105",
+  "text": "Leo pulls her back. Inches. Just inches.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "105",
+  "at": 0.25
+ },
+ {
+  "id": "v107",
+  "text": "You freeze. Two orders at once. Stop. Go.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "107",
+  "at": 0.25
+ },
+ {
+  "id": "v108",
+  "text": "The photo lands in the grass, face up.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "108",
+  "at": 0.25
+ },
+ {
+  "id": "v109",
+  "text": "Mia looks at the photo, then at you. Leo pulls her away.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "109",
+  "at": 0.25
+ },
+ {
+  "id": "v110",
+  "text": "One more step, and he will shoot.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "110",
+  "at": 1.7,
+  "after": true
+ },
+ {
+  "id": "v111",
+  "text": "Say something. Anything. Her name. The lever won't move.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "111",
+  "at": 0.25
+ },
+ {
+  "id": "v112",
+  "text": "You're crying. Your hand is still a claw.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "112",
+  "at": 0.25
+ },
+ {
+  "id": "v113",
+  "text": "They back away slowly, and they never lower the gun.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "113",
+  "at": 0.25
+ },
+ {
+  "id": "v114",
+  "text": "This is what they see: a monster.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "114",
+  "at": 0.25
+ },
+ {
+  "id": "v115",
+  "text": "You stop fighting. You just watch them go.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "115",
+  "at": 0.25
+ },
+ {
+  "id": "v116",
+  "text": "At the gate, Mia looks back. Just once.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "116",
+  "at": 0.25
+ },
+ {
+  "id": "v117",
+  "text": "Your body turns around. You didn't tell it to.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "117",
+  "at": 0.25
+ },
+ {
+  "id": "v118",
+  "text": "Out there, the streets belong to people like you now.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "118",
+  "at": 0.25
+ },
+ {
+  "id": "v119",
+  "text": "And you're still in here. Watching.",
+  "voice": "am_puck",
+  "speed": 1.05,
+  "scene": "119",
+  "at": 0.25,
+  "asr": "You're still in here watching."
  }
 ]

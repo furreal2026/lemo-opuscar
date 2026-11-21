@@ -15,7 +15,7 @@ A young man eats a slice of mouldy bread at midnight. A fictional fungus inspire
 | `TREATMENT.md` | structure, characters, expression and lighting rules, environments used |
 | `STORYBOARD.md` | the 120 scenes: action, expression, camera, environment, light, objects, transition, sound |
 | `zombie-intro.mp4` / `intro/` | the title sequence (scene 012) on its own, and its code |
-| `voice/` | script (`lines.json`): 6 narration lines (Kokoro `am_puck`) and 13 short dialogue lines |
+| `voice/` | script (`lines.json`): a narrator on almost every scene (114 lines of what you do and feel, plus 6 science lines and the closing quote, Kokoro `am_puck`) and 13 short dialogue lines |
 | `film/` | the film as code: `lib.js` (people, light, camera), `sets.js` (environments, control room, body diagram), `a1.js`–`a8.js` (the eight acts), `timeline.py`, `mix.py`, `master.sh` |
 
 Rebuild: `sh my-films/zombie/intro/build.sh && sh my-films/zombie/film/build.sh` (needs the library tiers `deps voice music`).
