@@ -6,7 +6,8 @@ A young man eats a slice of mouldy bread at midnight. A fictional fungus inspire
 
 | Path | What it is |
 |---|---|
-| `what-if-you-became-a-zombie.mp4` | the finished film, with the channel watermark |
+| `what-if-you-became-a-zombie.mp4` | the finished film, with the channel watermark (211 MB, not in git: rebuild it with `film/build.sh`) |
+| `what-if-you-became-a-zombie-small.mp4` | the same film, re-encoded to 87 MB to fit in git |
 | `what-if-you-became-a-zombie.srt` | English subtitles |
 | `what-if-you-became-a-zombie-poster.jpg` | poster frame |
 | `thumbnail-a.jpg` / `thumbnail-b.jpg` | YouTube thumbnails, 1280×720 (source in `thumb/`) |
