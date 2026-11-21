@@ -8,7 +8,7 @@ Oranye = jamur (warna kekuatan, satu makna). Merah = bahaya (demam, senjata, X, 
 
 | Babak | Adegan | Durasi |
 |---|---|---|
-| 1 · Awal infeksi tanpa disadari | 1–12 | 0:58 |
+| 1 · Awal infeksi tanpa disadari | 1–12 | 1:07 |
 | 2 · Gejala pertama | 13–27 | 1:13 |
 | 3 · Perubahan fisik dan perilaku | 28–42 | 1:19 |
 | 4 · Kehilangan kendali atas tubuh | 43–60 | 1:33 |
@@ -16,7 +16,7 @@ Oranye = jamur (warna kekuatan, satu makna). Merah = bahaya (demam, senjata, X, 
 | 6 · Bertemu manusia lain | 76–90 | 1:16 |
 | 7 · Konflik naluri melawan kesadaran | 91–108 | 1:25 |
 | 8 · Ending emosional | 109–120 | 1:21 |
-| **Total** | **120** | **10:30** |
+| **Total** | **120** | **10:39** |
 
 ---
 
@@ -132,15 +132,15 @@ Oranye = jamur (warna kekuatan, satu makna). Merah = bahaya (demam, senjata, X, 
 - **Transisi:** Kamera bergerak ke kepala yang sedang tidur, lalu menembus cakram kepala (*through a shape*).
 - **Suara:** Detak jam, motif jamur menebal.
 
-**012 · 5 s · Judul**
-- **Aksi:** Di dalam kepala, layar kertas kosong. Judul muncul rata kiri, baris demi baris.
-- **Ekspresi:** —
-- **Kamera:** Locked.
-- **Env:** Kertas (ruang tipografi).
-- **Cahaya:** —
-- **Objek:** `WHAT IF YOU BECAME A ZOMBIE…` / `BUT NEVER LOST YOUR MIND?` (kata *MIND* tinta, satu titik oranye). Label `What if? · Episode 2`.
-- **Transisi:** Judul memudar, lalu *cut keras* ke weker berbunyi.
-- **Suara:** Akor vibraphone pendek, lalu hening.
+**012 · 14 s · Judul: intro ala film zombie** (sudah dirender: `zombie-intro.mp4`, kode di `intro/`)
+- **Aksi:** (0–1.3 s) Di dalam kepala yang gelap, satu spora oranye berdenyut mengikuti detak jantung. (1.3 s) Spora pecah dan hifa menjalar seperti akar ke seluruh layar, simpul-simpulnya menyala satu per satu. (4.0 s) Lampu neon berkedip tiga kali, lalu kertas menyala. (4.75 s) `WHAT IF YOU BECAME` tercetak kata demi kata mengikuti dentum timpani. (5.95 s) `A ZOMBIE` jatuh huruf demi huruf dengan sentakan kecil seperti tubuh yang berkedut; benang oranye merambat **masuk ke dalam huruf-huruf**, dan huruf E melorot seperti anggota tubuh yang mati. Titik ketiga elipsis menetes jatuh seperti spora. (8.35 s) `BUT NEVER LOST YOUR` tampil tenang. (9.7 s) `MIND?` muncul, lalu lingkaran tinta (kepala) melingkarinya. Benang yang mendekat **mundur dan tidak bisa masuk**. (11.1 s) Label `What if? · Episode 2`.
+- **Ekspresi:** Ekspresinya dibawa huruf: huruf ZOMBIE berkedut, sedangkan MIND tetap bersih dan diam.
+- **Kamera:** Gestur dua jari di awal dan saat lampu menyala, drift pelan 1.8%, guncangan kecil pada setiap kata yang tercetak.
+- **Env:** Ruang tipografi (layar gelap, lalu kertas).
+- **Cahaya:** Gelap total dengan halo datar di sekitar spora, kedip neon (gelap/kertas bergantian), lalu kertas terang.
+- **Objek:** Hifa tinta-tangan oranye, simpul, spora, lingkaran kepala tinta.
+- **Transisi:** Tahan, lalu *cut keras* ke weker berbunyi (sc. 013).
+- **Suara:** Room tone dan dengung kontrabas, detak jantung yang makin cepat, glockenspiel sumbang di simpul, kedip neon (klik dan dengung), timpani per kata, gong dan bass drum di huruf Z. Pada MIND semuanya berhenti dan hanya tersisa satu akor vibraphone yang bersih (E mayor).
 
 ## Babak 2 · Gejala pertama (Hari 1)
 
