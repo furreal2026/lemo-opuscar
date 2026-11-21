@@ -1,7 +1,7 @@
 # YouTube upload: What if you became a zombie… but never lost your mind?
 
 **Title:** What If You Became a Zombie… But Never Lost Your Mind?
-**Thumbnail:** `thumbnail-a.jpg` (alternative: `thumbnail-b.jpg`)
+**Thumbnail:** `thumbnail-title.jpg` (the title frame; alternatives: `thumbnail-title-f60.jpg`, `thumbnail-a.jpg`, `thumbnail-b.jpg`)
 **Subtitles:** `what-if-you-became-a-zombie.srt` (English)
 
 ## Description
