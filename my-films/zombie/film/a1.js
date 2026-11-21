@@ -1,5 +1,10 @@
 // Act 1 · the infection nobody noticed (Hour 0)
 const ME = (x, gy = GY, S = 400, o = {}) => ({ x, gy, S, ...o });
+// seated on a seat whose top is at seatY: hips on the seat, feet on the floor (profile)
+function sitOn(x, seatY, S, o = {}, face = 1) { const gy = seatY + (GEO.hipH - .2) * S, fy = -(GY - gy) / S;
+  return [{ x, gy, S, prof: true, face }, P({ hy: .2, lfx: .2, rfx: .27, lfy: fy, rfy: fy, la: -.5, lb: .4, ra: .5, rb: -.4, lean: -.06, ...o })]; }
+const SEAT = GY - 140;
+
 
 // 001 · midnight, POV from inside the fridge
 S('001', (t, d) => {
@@ -111,8 +116,9 @@ S('008', (t, d) => {
   rect(1010, 760, 180, 20, C2.woodL); line([[1030, 780], [1030, 880]], C.ink, 7); line([[1170, 780], [1170, 880]], C.ink, 7);
   rrect(1060, 735, 80, 25, 4, '#E8E2CF', { lw: 4 });   // the empty bread bag
   const fall = ss(seg(t, .2, .8)), lick = t > 1.8 && t < 4.2 ? Math.max(0, Math.sin((t - 1.8) * 7.8)) : 0;
-  const p = lerpPose(P({ la: -.4, lb: .2, ra: .4, rb: -.2 }), P({ hy: .2, lfx: .36, rfx: .44, lfy: .13, rfy: .14, la: -.9, lb: .5, ra: .6 + lick * 1.9, rb: -1.4 * lick - .2, lean: -.12, head: -.1 }), fall);
-  hero(ME(lerp(780, 650, fall), GY - 110 * fall, 400, { prof: true, face: 1 }), p);
+  const [sf, sp2] = sitOn(640, SEAT, 400, { la: -.9, lb: .5, ra: .6 + lick * 1.9, rb: -1.4 * lick - .2, head: -.1 });
+  const p = lerpPose(P({ la: -.4, lb: .2, ra: .4, rb: -.2 }), sp2, fall);
+  hero({ ...sf, x: lerp(780, 640, fall), gy: lerp(GY, sf.gy, fall) }, p);
   night(1);
   const fl = .25 + .12 * Math.sin(t * 11) * Math.sin(t * 2.3); cone([[1318, 378], [1802, 378], [1500, 880], [500, 880]], '#BFDDF2', fl);
 }, [[.75, 'boing'], [2.0, 'lick'], [2.8, 'lick'], [3.6, 'lick']]);
@@ -123,13 +129,13 @@ S('009', (t, d) => {
   livingroom({ win: 'night', door: false });
   rrect(1060, 735, 80, 25, 4, '#E8E2CF', { lw: 4 }); rect(1010, 760, 180, 20, C2.woodL); line([[1030, 780], [1030, 880]], C.ink, 7); line([[1170, 780], [1170, 880]], C.ink, 7);
   const shrug = bell(t, 3.4, 4.8);
-  hero(ME(650, GY - 110, 400, { prof: true, face: 1 }), breathe(P({ hy: .2, lfx: .36, rfx: .44, lfy: .13, rfy: .14, la: -.9 - shrug * .5, lb: .5 - 1.4 * shrug, ra: .6 + shrug * .7, rb: -.2 + shrug * 1.3, lean: -.12, head: -.1 + .2 * shrug }), t));
-  const run = ss(seg(t, tRun, tRun + .5)), cx = lerp(1010, -200, run), hop = Math.sin(Math.PI * clamp((t - tRun) / .5)) * 120;
-  scaled(cx, 640 - hop, .62, () => catD(cx, 640 - hop, .62, { paw: false, angry: t > tH, mouth: t > tH && t < tRun ? 'open' : 'closed' }));
-  if (t > tH && t < tRun) for (const a of [-2.4, -2.0, -1.6]) line([[1000 + Math.cos(a) * 110, 560 + Math.sin(a) * 110], [1000 + Math.cos(a) * 150, 560 + Math.sin(a) * 150]], C.ink, 5);
+  { const [sf, sp2] = sitOn(640, SEAT, 400, { la: -.9 - shrug * .5, lb: .5 - 1.4 * shrug, ra: .6 + shrug * .7, rb: -.2 + shrug * 1.3, head: -.1 + .2 * shrug }); hero(sf, breathe(sp2, t)); }
+  const run = ss(seg(t, tRun, tRun + .5)), cx = lerp(930, -300, run), hop = Math.sin(Math.PI * clamp((t - tRun) / .5)) * 160, base = lerp(SEAT - 8, GY, clamp((t - tRun) / .5)) - hop;
+  catD(cx, base, .5, { paw: false, angry: t > tH, mouth: t > tH && t < tRun ? 'open' : 'closed' });
+  if (t > tH && t < tRun) for (const a of [-2.4, -2.0, -1.6]) line([[cx + Math.cos(a) * 110, base - 90 + Math.sin(a) * 110], [cx + Math.cos(a) * 150, base - 90 + Math.sin(a) * 150]], C.ink, 5);
   night(1);
   const fl = .25 + .12 * Math.sin(t * 11) * Math.sin(t * 2.3); cone([[1318, 378], [1802, 378], [1500, 880], [500, 880]], '#BFDDF2', fl);
-  pointer('Mr. Biscuits', 1150, 430, 1040, 520, t, .4, tH);
+  pointer('Mr. Biscuits', 1080, 470, 960, 560, t, .4, tH);
 }, [[1.0, 'sniff'], [2.0, 'hiss'], [2.9, 'scamper'], [3.4, 'shrug']]);
 
 // 010 · the house at night; the TV window goes dark

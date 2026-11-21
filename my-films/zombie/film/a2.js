@@ -23,11 +23,12 @@ S('013', (t, d) => {
 
 // 014 · sitting on the edge of the bed, swaying
 S('014', (t, d) => {
-  camTilt(1.15, 900, 520, sway(t, 3, .45));
+  camTilt(1.15, 1000, 560, sway(t, 3, .45));
   bedroomF(BED_DAY);
-  const rub = Math.sin(t * 6) * .3 * ein(t, .6, .3), p = P({ hy: .2, lfx: -.04, rfx: .06, la: -.5, lb: .4, ra: 2.3 + rub, rb: 1.6, head: .2 + .12 * Math.sin(t * 2.6), lean: .06 * Math.sin(t * 2.6) });
-  hero({ x: 820, gy: 850, S: 520 }, p);
-  shape(() => g.ellipse(700, 870, 40, 14, 0, 0, Math.PI * 2), C.pink, { lw: 4 }); shape(() => g.ellipse(940, 872, 40, 14, 0, 0, Math.PI * 2), C.pink, { lw: 4 });
+  const rub = Math.sin(t * 6) * .3 * ein(t, .6, .3), seat = bp(0, 330)[1] + 6;
+  const [sf, sp2] = sitOn(1000, seat, 480, { la: -.5, lb: .4, ra: 2.45 + rub, rb: 1.5, head: .25 + .12 * Math.sin(t * 2.6), lean: .05 + .06 * Math.sin(t * 2.6) });
+  hero(sf, sp2);
+  shape(() => g.ellipse(1150, GY + 4, 40, 12, 0, 0, Math.PI * 2), C.pink, { lw: 4 }); shape(() => g.ellipse(1250, GY + 6, 40, 12, 0, 0, Math.PI * 2), C.pink, { lw: 4 });
 }, [[0, 'tinnitus', { d: 4 }]]);
 
 // 015 · brushing teeth; the reflection lags and doubles
@@ -135,7 +136,7 @@ S('022', (t, d) => {
 // 023 · thermometer, then the search
 S('023', (t, d) => {
   const ph = t < 2 ? 0 : t < 3.6 ? 1 : 2;
-  if (ph === 0) { cam(1.05, 900, 560); livingroom({ win: 'dusk', door: false }); const j = hero({ x: 640, gy: GY - 110, S: 400, prof: true, face: 1 }, breathe(P({ hy: .2, lfx: .36, rfx: .44, lfy: .02, rfy: .02, la: -.4, lb: .3, ra: .5, rb: -2.0, lean: .03, head: .1 }), t));
+  if (ph === 0) { cam(1.05, 900, 560); livingroom({ win: 'dusk', door: false }); const j = hero(...(([f, q]) => [f, breathe(q, t)])(sitOn(640, SEAT, 400, { la: -.4, lb: .3, ra: .5, rb: -2.0, lean: .03, head: .1 })));
     const h = handR(j); line([h, [h[0] + 40, j.Hd[1] + 8]], C2.white, 10); line([h, [h[0] + 40, j.Hd[1] + 8]], C.ink, 3); dusk(.5); }
   else if (ph === 1) { cam(1); rect(-100, -100, 2200, 1300, K.lilac, { lw: 0 }); bigArm([700, 1300], [900, 760], 34, 4, .3); thermo(980, 640, 2.6, '39.4 °C', true); bigNumber('39.4 °C', 1260, 520, t, 2.3, C.red, 110); }
   else { cam(1); rect(-100, -100, 2200, 1300, K.lilac, { lw: 0 }); const q = 'dizzy blurry finger twitch', n = Math.floor(clamp((t - 3.7) / 1.2) * q.length);

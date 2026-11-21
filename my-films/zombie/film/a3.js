@@ -75,7 +75,7 @@ S('034', (t, d) => {
   const p = lerpPose(P({ la: -.3, lb: .2, ra: .3, rb: -.2 }), P({ hy: .2, lfx: .05, rfx: .2, la: -.4, lb: .3, ra: -1.5, rb: -.05, lean: -.4, head: -.35 }), kneel);
   // under the bed: dark, two eyes
   rect(bp(70, 420)[0], bp(70, 420)[1], 360 * BK, 60 * BK, '#2C2A2E', { lw: 0 });
-  if (t < .9) { const u = ein(t, 0, .8); scaled(lerp(1500, 600, u), 780, .4, () => catD(lerp(1500, 600, u), 780, .4, { angry: true, mouth: 'open' })); }
+  if (t < .9) { const u = ein(t, 0, .8); catD(lerp(1700, 500, u), 1000 - 60 * Math.sin(Math.PI * u), .45, { angry: true, mouth: 'open' }); }
   else { const bl = Math.floor(t * 2) % 5 === 0 ? .2 : 1; for (const dx of [0, 34]) { g.save(); g.globalAlpha = bl; circ(540 + dx, 960, 9, '#F7E3A0', { lw: 0 }); g.restore(); } }
   line([[bp(70, 420)[0], bp(70, 420)[1]], [bp(430, 420)[0], bp(430, 420)[1]]], C.ink, 6);
   hero({ x: 1300, gy: 1010, S: 560, prof: true, face: -1 }, p, { hood: 1, veins: .12 });

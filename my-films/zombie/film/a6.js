@@ -106,7 +106,7 @@ S('084', (t, d) => {
   rect(400, 380, 1120, 40, C2.woodL); for (const x of [450, 1440]) { line([[x, 420], [x, GY]], C.ink, 30); line([[x, 420], [x, GY]], C2.wood, 18); for (let k = 0; k < 4; k++) circ(x, 480 + k * 100, 22, C2.wood, { lw: 5 }); }
   const pet = ein(t, 2.0, .6), stroke = Math.sin(t * 3) * pet;
   hero({ x: 820, gy: GY, S: 400 }, P({ hy: .24, lfx: .1, rfx: .14, la: .4, lb: -1.2, ra: .9 + .4 * pet + .1 * stroke, rb: -1.6 + 1.2 * pet, head: .4 + .1 * pet, lean: .2 }), INF6);
-  const cx = 1120; scaled(cx, 830, .55, () => catD(cx, 830, .55, { paw: false, mouth: 'closed' }));
+  const cx = 1120; catD(cx, GY, .45, { paw: false, mouth: 'closed' });
   if (t > 4.6) popText('!', cx + 40, 640, t, 4.7, { size: 50, col: C.ink });
   gloom(.4);
 }, [[1.0, 'purr', { d: 4 }], [2.0, 'family']]);

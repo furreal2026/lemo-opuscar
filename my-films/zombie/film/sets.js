@@ -150,7 +150,7 @@ function street(o = {}) {
   if (o.trees !== false) { tree(o.treeX ?? 1060, GY, 380); tree(1900, GY, 330); }
   if (o.lampPost) { line([[o.lampPost, GY], [o.lampPost, GY - 420]], C.ink, 10); rect(o.lampPost - 30, GY - 440, 60, 30, '#3A4052'); if (o.lampOn) cone([[o.lampPost - 26, GY - 410], [o.lampPost + 26, GY - 410], [o.lampPost + 150, GY], [o.lampPost - 150, GY]], '#FFF1B8', .35); }
   ground(GY, -400, 2400);
-  rect(-300, GY, 2600, 24, K.walk, { lw: 0 });
+  sidewalkRoad();
   if (o.fence !== false) fence(o.f0 ?? -100, o.f1 ?? 280, GY, 70), fence(o.f2 ?? 780, o.f3 ?? 1240, GY, 70);
 }
 function bicycle(x, gy, k = 1) { scaled(x, gy, k, () => { for (const dx of [-70, 70]) { circ(x + dx, gy - 46, 46, null, { lw: 6 }); for (let i = 0; i < 6; i++) { const a = i / 6 * Math.PI; ORIG.line([[x + dx - Math.cos(a) * 44, gy - 46 - Math.sin(a) * 44], [x + dx + Math.cos(a) * 44, gy - 46 + Math.sin(a) * 44]], C.mute, 1.5); } }
@@ -313,4 +313,16 @@ function news(x, y, w, h, t, o = {}) {
   if (o.barricade) { const bx = x + 80; for (let i = 0; i < 4; i++) box(bx + i * 110, y + h - 70, 100, 80 + (i % 2) * 30, { label: false }); RAW++; try { for (let i = 0; i < 3; i++) { const j = figure({ x: bx + 90 + i * 140, gy: y + h - 70 - 100, S: 130, lws: .5 }, P({ ra: 1.5, rb: 0 })); const m = [j.aR[1][0] + 60, j.aR[1][1]]; line([j.aR[1], m], C.ink, 6); g.save(); g.setLineDash([6, 8]); line([m, [x + w, m[1] + 20]], C.red, 3); g.restore(); } } finally { RAW--; } }
   rect(x, y + h - 60, w, 60, C.red, { lw: 0 }); text(o.ticker || 'BREAKING  ·  STAY INDOORS', x + 24, y + h - 20, { size: 26, w: 600, col: C.paper, track: 2 });
   rect(x + 20, y + 20, 110, 44, C.red, { lw: 0 }); text('LIVE', x + 75, y + 52, { size: 26, w: 600, col: C.paper, align: 'center', track: 3 });
+}
+
+// the pavement (slabs, a kerb) and the asphalt road in front of the houses
+function sidewalkRoad(x0 = -3000, x1 = 5000) {
+  rect(x0, GY, x1 - x0, 74, '#CFCAC0', { lw: 0 });
+  for (let x = Math.floor(x0 / 130) * 130; x < x1; x += 130) ORIG.line([[x, GY + 4], [x - 18, GY + 72]], '#B4AEA2', 3);
+  ORIG.line([[x0, GY + 36], [x1, GY + 36]], '#BDB7AC', 2);
+  rect(x0, GY + 74, x1 - x0, 16, '#E3DFD6', { lw: 0 }); ORIG.line([[x0, GY + 74], [x1, GY + 74]], C.ink, 4); ORIG.line([[x0, GY + 90], [x1, GY + 90]], C.ink, 5);
+  rect(x0, GY + 90, x1 - x0, 1400, '#5C5E66', { lw: 0 });
+  const r = mulberry(77); g.save(); g.fillStyle = '#6E7079'; for (let i = 0; i < 420; i++) { const x = x0 + r() * (x1 - x0), y = GY + 96 + r() * 600; g.fillRect(x, y, 3 + r() * 4, 2 + r() * 3); } g.restore();
+  for (let x = Math.floor(x0 / 260) * 260; x < x1; x += 260) rect(x, GY + 200, 130, 14, '#EDE6C8', { lw: 0 });
+  ink([[x0, GY + 120], [x1 * .3, GY + 124], [x1, GY + 119]], { w: 2, col: '#4A4C53', amp: .8 });
 }

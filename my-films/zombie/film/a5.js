@@ -93,7 +93,7 @@ S('068', (t, d) => {
   const ins = ss(seg(t, 1.6, 2.4)); cam(lerp(1, 1.7, ins), lerp(960, 1560, ins), lerp(540, 520, ins));
   livingroom({ door: false, win: 'day', lamp: false, screen: (x, y, w, h) => news(x, y, w, h, t, { map: seg(t, 1.6, d) }) });
   const reach = ein(t, 3.4, 1.4);
-  hero({ x: 640, gy: GY - 110, S: 400, prof: true, face: 1 }, P({ hy: .2, lfx: .36, rfx: .44, lfy: .02, rfy: .02, la: -.4, lb: .3, ra: .3 + 1.2 * reach, rb: -.1, lean: .08 + .1 * reach }), INF5b);
+  hero(...(([f, q]) => [f, q])(sitOn(640, SEAT, 400, { la: -.4, lb: .3, ra: .3 + 1.2 * reach, rb: -.1, lean: .08 + .1 * reach })), INF5b);
   gloom(1);
 }, [[.2, 'tvNews', { d: 5.8 }]]);
 

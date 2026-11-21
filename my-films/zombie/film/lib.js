@@ -136,8 +136,7 @@ function person(f, p, o = {}) {
     const hand = j.aR[1], el = j.aR[0], a = Math.atan2(hand[1] - el[1], hand[0] - el[0]);
     if (o.bat) { const ba = o.batA ?? a - .9; line([hand, [hand[0] + Math.cos(ba) * S * .38, hand[1] + Math.sin(ba) * S * .38]], C.ink, 15 * sc); line([hand, [hand[0] + Math.cos(ba) * S * .38, hand[1] + Math.sin(ba) * S * .38]], C2.woodL, 8 * sc); }
     if (o.torch) { const h2 = j.aL[1], e2 = j.aL[0], a2 = o.torchA ?? Math.atan2(h2[1] - e2[1], h2[0] - e2[0]); j.torch = [h2[0] + Math.cos(a2) * 40 * sc, h2[1] + Math.sin(a2) * 40 * sc]; j.torchA = a2; withRot(h2[0], h2[1], a2, () => { rrect(h2[0] - 8, h2[1] - 8, 44 * sc, 16 * sc, 4, C2.chrome, { lw: 4 * sc }); }); }
-    if (o.rifle) { const ra = o.rifleA ?? 0, L = S * .55, b = [j.aR[1][0] - Math.cos(ra) * S * .12, j.aR[1][1] - Math.sin(ra) * S * .12], e = [b[0] + Math.cos(ra) * L, b[1] + Math.sin(ra) * L];
-      line([b, e], C.ink, 14 * sc); line([[b[0] - Math.cos(ra) * S * .08, b[1] - Math.sin(ra) * S * .08 + 10 * sc], b], C.ink, 22 * sc); line([b, [b[0] + Math.cos(ra) * L * .45, b[1] + Math.sin(ra) * L * .45]], C2.wood, 6 * sc); j.muzzle = e; j.rifleA = ra; }
+    if (o.rifle) { const ra = o.rifleA ?? 0; j.muzzle = rifle(j.aR[1], ra, S / 400 * .85); j.rifleA = ra; }
     return j;
   } finally { RAW--; }
 }
@@ -162,3 +161,41 @@ const glare = (a = 1) => wash('#FFFFFF', .45 * a, 'screen');
 const greyAll = (a = 1) => wash('#808080', a, 'saturation');
 function cone(Pts, col = '#FFF1B8', a = .3) { g.save(); g.globalAlpha = a; g.fillStyle = col; g.beginPath(); g.moveTo(...Pts[0]); for (const p of Pts.slice(1)) g.lineTo(...p); g.closePath(); g.fill(); g.restore(); }
 function flicker(t, rate = 1) { const f = Math.floor(t * 20 * rate); return hash1(f * 7 + 3) > .9 ? .5 : 1; }
+
+// a detailed hunting rifle (2D, hand-inked): grip at g0, pointing along angle a; k = scale (1 at a 400 px figure). Returns the muzzle point.
+const GUN = { metal: '#4A4F59', metalL: '#6E7480', dark: '#2F333B', wood: '#A8683A', woodL: '#C98A55', grain: '#7E4A26', glass: '#9FD0EE' };
+function rifle(g0, a, k = 1) {
+  const flip = Math.cos(a) < 0 ? -1 : 1, M = (x, y) => [g0[0] + (x * Math.cos(a) - y * flip * Math.sin(a)) * k, g0[1] + (x * Math.sin(a) + y * flip * Math.cos(a)) * k];
+  const PL = (pts, fill, lw = 4) => poly(pts.map(([x, y]) => M(x, y)), fill, { lw: lw * Math.max(.6, k) });
+  const LN = (pts, col, lw) => line(pts.map(([x, y]) => M(x, y)), col, lw * Math.max(.6, k));
+  // sling (behind)
+  const sl = []; for (let i = 0; i <= 12; i++) { const u = i / 12, x = lerp(-120, 150, u), y = lerp(24, 14, u) + Math.sin(Math.PI * u) * 46; sl.push([x, y]); } LN(sl, '#5A4630', 5);
+  // stock with a pistol grip and a dark butt pad
+  PL([[-8, -12], [-150, -16], [-152, 30], [-118, 30], [-46, 12], [-18, 34], [2, 34], [6, 10]], GUN.wood);
+  PL([[-150, -16], [-162, -16], [-164, 31], [-152, 30]], GUN.dark, 3);
+  for (let i = 0; i < 3; i++) LN([[-140 + i * 12, -8 + i * 8], [-60 + i * 6, -6 + i * 6]], GUN.grain, 2);
+  for (let i = 0; i < 4; i++) LN([[-14 + i * 4, 16], [-6 + i * 4, 30]], GUN.grain, 1.5);   // checkering on the grip
+  // receiver, ejection port, bolt handle
+  PL([[-10, -20], [96, -20], [96, 8], [-10, 8]], GUN.metal);
+  PL([[30, -15], [70, -15], [70, -5], [30, -5]], GUN.metalL, 2.5);
+  LN([[76, -6], [84, 14]], GUN.dark, 5); circ(...M(85, 17), 6 * k, GUN.metalL, { lw: 3 * k });
+  // trigger guard + trigger
+  g.save(); g.strokeStyle = C.ink; g.lineWidth = 4 * k; g.lineCap = 'round'; g.beginPath(); const tg = [[8, 8], [6, 26], [22, 32], [40, 26], [40, 8]].map(([x, y]) => M(x, y)); g.moveTo(...tg[0]); for (const q of tg.slice(1)) g.lineTo(...q); g.stroke(); g.restore();
+  LN([[22, 8], [20, 20]], C.ink, 4);
+  // magazine
+  PL([[50, 8], [72, 8], [76, 40], [56, 42]], GUN.dark);
+  // fore-end (wood, checkered) and barrel with a front sight
+  PL([[96, -16], [200, -14], [196, 8], [96, 10]], GUN.woodL);
+  for (let i = 0; i < 6; i++) LN([[118 + i * 12, -10], [126 + i * 12, 4]], GUN.grain, 1.5);
+  PL([[96, -16], [320, -12], [320, -4], [96, -4]], GUN.metal, 3.5);
+  PL([[318, -14], [330, -14], [330, -2], [318, -2]], GUN.dark, 3);
+  PL([[300, -12], [306, -22], [312, -12]], GUN.dark, 2.5);
+  // scope: mounts, tube, bells, lens glints
+  PL([[20, -20], [30, -20], [30, -30], [20, -30]], GUN.dark, 2.5); PL([[78, -20], [88, -20], [88, -30], [78, -30]], GUN.dark, 2.5);
+  PL([[-4, -30], [120, -30], [120, -46], [-4, -46]], GUN.dark);
+  PL([[120, -28], [150, -24], [150, -52], [120, -48]], GUN.dark); PL([[-4, -28], [-20, -26], [-20, -50], [-4, -48]], GUN.dark);
+  LN([[52, -46], [52, -54]], GUN.dark, 6);
+  PL([[150, -26], [154, -26], [154, -50], [150, -50]], GUN.glass, 2);
+  LN([[10, -42], [100, -42]], GUN.metalL, 2);
+  return M(330, -8);
+}

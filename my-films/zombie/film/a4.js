@@ -107,7 +107,6 @@ S('051', (t, d) => {
 S('052', (t, d) => {
   cam(1, 960, 520);
   street({ hx: 300, fence: false, trees: false, neighbour: false, lampPost: 1500 });
-  rect(-300, GY + 24, 2600, 300, K.road, { lw: 0 });
   const bx = lerp(2300, -400, seg(t, .6, 3.4)), swerve = Math.exp(-Math.pow((bx - 960) / 300, 2)) * -120;
   bicycle(bx, GY + 60 + swerve * -.2, .9); RAW++; try { figure({ x: bx + 10, gy: GY - 30 + swerve * -.2, S: 300, prof: true, face: -1 }, P({ hy: .2, la: -1.6, lb: .3, ra: -1.3, rb: .2, lean: -.25, lfx: -.1, rfx: .1 })); } finally { RAW--; }
   const late = ein(t, 2.6, .5);
