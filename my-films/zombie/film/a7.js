@@ -42,8 +42,8 @@ S('093', (t, d) => {
   const follow = ss(seg(t, 1.2, 2.6)); cam(lerp(1.8, 1, follow), lerp(dx7 - 100, 960, follow), lerp(520, 540, follow));
   garden();
   hero(ME7(), P({ la: -.25, ra: .25, head: -.05 }), INF7);
-  const dj = DAN(dx7, GY, 410, P({ ra: -1.4, rb: -.2, la: -1.2, lb: -.4, head: -.1 }), t, { rifleA: Math.PI + .03 });
   const hj = joints(ME7(), P({}));
+  const dj = DAN(dx7, GY, 410, P({ ra: -1.4, rb: -.2, la: -1.2, lb: -.4, head: -.1 }), t, { aimAt: hj.Hd });
   aimLine(dj.muzzle, hj.Hd, ein(t, .5, .4) * clamp((t - .5) * 2));
   bubble('Stay back!', dx7 - 260, 360, dx7 - 40, 420, t, LT('d10'), LE('d10') + .8);
   goldenToDusk(t);
@@ -183,7 +183,7 @@ S('106', (t, d) => {
   const [sx, sy] = shake(t, .3, 22, .5); cam(1.05, 960, 540, sx, sy);
   garden({ splinter: ein(t, .3, .4), hole: t > .3 });
   hero({ ...ME7(), x: GDX + GDW / 2 + 460 }, P({ la: -2.0, lb: -.1, ra: 1.5, rb: .2, lean: .35, head: .2 }), { ...INF7, claw: 1 });
-  const dj = DAN(dx7, GY, 410, P({ ra: -1.4, rb: -.2, la: -1.2, lb: -.4, lean: -.05 * bell(t, .3, .6) }), t, { rifleA: Math.PI - .2 });
+  const dj = DAN(dx7, GY, 410, P({ ra: -1.4, rb: -.2, la: -1.2, lb: -.4, lean: -.05 * bell(t, .3, .6) }), t, { aimAt: [GDX + GDW + 8, GY - GDH * .72] });
   if (t > .3 && t < .34 + 2 / 60) { star5(dj.muzzle[0] - 30, dj.muzzle[1], 46, '#FFF1B8'); line([dj.muzzle, [GDX + GDW + 8, GY - GDH * .72]], C.red, 5); }
   goldenToDusk(t);
 }, [[.3, 'gunshot']]);

@@ -136,7 +136,7 @@ function person(f, p, o = {}) {
     const hand = j.aR[1], el = j.aR[0], a = Math.atan2(hand[1] - el[1], hand[0] - el[0]);
     if (o.bat) { const ba = o.batA ?? a - .9; line([hand, [hand[0] + Math.cos(ba) * S * .38, hand[1] + Math.sin(ba) * S * .38]], C.ink, 15 * sc); line([hand, [hand[0] + Math.cos(ba) * S * .38, hand[1] + Math.sin(ba) * S * .38]], C2.woodL, 8 * sc); }
     if (o.torch) { const h2 = j.aL[1], e2 = j.aL[0], a2 = o.torchA ?? Math.atan2(h2[1] - e2[1], h2[0] - e2[0]); j.torch = [h2[0] + Math.cos(a2) * 40 * sc, h2[1] + Math.sin(a2) * 40 * sc]; j.torchA = a2; withRot(h2[0], h2[1], a2, () => { rrect(h2[0] - 8, h2[1] - 8, 44 * sc, 16 * sc, 4, C2.chrome, { lw: 4 * sc }); }); }
-    if (o.rifle) { const ra = o.rifleA ?? 0; j.muzzle = rifle(j.aR[1], ra, S / 400 * .85); j.rifleA = ra; }
+    if (o.rifle) { const k = S / 400 * .6, g0 = j.aR[1]; let ra = o.rifleA ?? 0; if (o.aimAt) ra = Math.atan2(o.aimAt[1] - g0[1], o.aimAt[0] - g0[0]) + Math.asin(clamp(8 * k / Math.hypot(o.aimAt[0] - g0[0], o.aimAt[1] - g0[1]), -1, 1)) * (Math.cos(ra = Math.atan2(o.aimAt[1] - g0[1], o.aimAt[0] - g0[0])) < 0 ? -1 : 1); j.muzzle = rifle(g0, ra, k); j.rifleA = ra; }
     return j;
   } finally { RAW--; }
 }

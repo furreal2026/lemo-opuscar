@@ -21,9 +21,10 @@ S('110', (t, d) => {
   cam(1.5, dx7 - 150, 520);
   garden({ hole: true });
   const rl = bell(t, .3, 1.2);
-  const dj = DAN(dx7, GY, 410, P({ ra: -1.4, rb: -.2, la: -1.2 + .6 * rl, lb: -.4 - .8 * rl, head: -.1 }), t, { rifleA: Math.PI - .12 });
+  const tgt = [GDX + GDW / 2 + 460, GY - 400 * .9];
+  const dj = DAN(dx7, GY, 410, P({ ra: -1.4, rb: -.2, la: -1.2 + .6 * rl, lb: -.4 - .8 * rl, head: -.1 }), t, { aimAt: tgt });
   if (t > .9) { const u = clamp((t - .9) / .6); shape(() => g.ellipse(dj.muzzle[0] + 360 + 30 * u, dj.muzzle[1] + 20 + 260 * u * u, 6, 12, u * 8, 0, Math.PI * 2), '#E8C35A', { lw: 2 }); }
-  aimLine(dj.muzzle, [GDX + GDW / 2 + 460, GY - 400 * .9], ein(t, 1.4, .3));
+  aimLine(dj.muzzle, tgt, ein(t, 1.4, .3));
   bubble('Last warning.', dx7 - 300, 340, dx7 - 60, 400, t, LT('d13'), LE('d13') + .8);
   lateLight(.25);
 }, [[.4, 'reload'], [1.0, 'shell']]);
