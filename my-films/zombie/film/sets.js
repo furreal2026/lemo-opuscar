@@ -100,7 +100,7 @@ function bedroomF(pal = BED_DAY) { bedroom(BX, BY, 800 * BK, 520 * BK, pal); }
 
 // ---------- the living room (Meow Man S7/S12: lilac wall, window, TV on legs, floor lamp) ----------
 function sofa(x0, x1, gy, col = '#7FA6E0') {
-  const h = 230, sh = 120; rrect(x0, gy - h, x1 - x0, h - 30, 26, col); rrect(x0 - 26, gy - 170, 70, 140, 24, col); rrect(x1 - 44, gy - 170, 70, 140, 24, col);
+  const h = 210, sh = 75; rrect(x0, gy - h, x1 - x0, h - 30, 26, col); rrect(x0 - 26, gy - 150, 70, 120, 24, col); rrect(x1 - 44, gy - 150, 70, 120, 24, col);
   const n = 3, cw = (x1 - x0 - 60) / n; for (let i = 0; i < n; i++) { rrect(x0 + 30 + i * cw, gy - sh - 20, cw - 6, 70, 16, '#9BBBEA'); for (let k = 0; k < 3; k++) dline([[x0 + 50 + i * cw + k * cw * .3, gy - sh - 4], [x0 + 50 + i * cw + k * cw * .3, gy - sh + 34]], '#6E93CC'); }
   for (const x of [x0 + 10, x1 - 30]) rect(x, gy - 30, 20, 30, C2.wood, { lw: 4 });
 }

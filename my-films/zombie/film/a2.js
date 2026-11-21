@@ -26,7 +26,7 @@ S('014', (t, d) => {
   camTilt(1.15, 1000, 560, sway(t, 3, .45));
   bedroomF(BED_DAY);
   const rub = Math.sin(t * 6) * .3 * ein(t, .6, .3), seat = bp(0, 330)[1] + 6;
-  const [sf, sp2] = sitOn(1000, seat, 480, { la: -.5, lb: .4, ra: 2.45 + rub, rb: 1.5, head: .25 + .12 * Math.sin(t * 2.6), lean: .05 + .06 * Math.sin(t * 2.6) });
+  const [sf, sp2] = sitOn(1000, seat, 480, { la: -.5, lb: .4, ra: 2.45 + rub, rb: 1.5, head: .25 + .12 * Math.sin(t * 2.6), lean: .05 + .06 * Math.sin(t * 2.6) }, 1, true);
   hero(sf, sp2);
   shape(() => g.ellipse(1150, GY + 4, 40, 12, 0, 0, Math.PI * 2), C.pink, { lw: 4 }); shape(() => g.ellipse(1250, GY + 6, 40, 12, 0, 0, Math.PI * 2), C.pink, { lw: 4 });
 }, [[0, 'tinnitus', { d: 4 }]]);

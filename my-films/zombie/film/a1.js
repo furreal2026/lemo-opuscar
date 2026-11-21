@@ -1,9 +1,12 @@
 // Act 1 · the infection nobody noticed (Hour 0)
 const ME = (x, gy = GY, S = 400, o = {}) => ({ x, gy, S, ...o });
 // seated on a seat whose top is at seatY: hips on the seat, feet on the floor (profile)
-function sitOn(x, seatY, S, o = {}, face = 1) { const gy = seatY + (GEO.hipH - .2) * S, fy = -(GY - gy) / S;
+function sitOn(x, seatY, S, o = {}, face = 1, reachFloor = false) {
+  if (!reachFloor) { const gy = seatY + (GEO.hipH - .2) * S;      // thighs level on the seat, shins straight down
+    return [{ x, gy, S, prof: true, face }, P({ hy: .2, lfx: .2, rfx: .23, lfy: 0, rfy: 0, la: -.5, lb: .4, ra: .5, rb: -.4, lean: -.04, ...o })]; }
+  const gy = seatY + (GEO.hipH - .2) * S, fy = -(GY - gy) / S;
   return [{ x, gy, S, prof: true, face }, P({ hy: .2, lfx: .2, rfx: .27, lfy: fy, rfy: fy, la: -.5, lb: .4, ra: .5, rb: -.4, lean: -.06, ...o })]; }
-const SEAT = GY - 140;
+const SEAT = GY - .22 * 400;          // the sofa seat (cushion top, sunk a little under the sitter)
 
 
 // 001 · midnight, POV from inside the fridge
@@ -130,7 +133,7 @@ S('009', (t, d) => {
   rrect(1060, 735, 80, 25, 4, '#E8E2CF', { lw: 4 }); rect(1010, 760, 180, 20, C2.woodL); line([[1030, 780], [1030, 880]], C.ink, 7); line([[1170, 780], [1170, 880]], C.ink, 7);
   const shrug = bell(t, 3.4, 4.8);
   { const [sf, sp2] = sitOn(640, SEAT, 400, { la: -.9 - shrug * .5, lb: .5 - 1.4 * shrug, ra: .6 + shrug * .7, rb: -.2 + shrug * 1.3, head: -.1 + .2 * shrug }); hero(sf, breathe(sp2, t)); }
-  const run = ss(seg(t, tRun, tRun + .5)), cx = lerp(930, -300, run), hop = Math.sin(Math.PI * clamp((t - tRun) / .5)) * 160, base = lerp(SEAT - 8, GY, clamp((t - tRun) / .5)) - hop;
+  const run = ss(seg(t, tRun, tRun + .5)), cx = lerp(935, -300, run), hop = Math.sin(Math.PI * clamp((t - tRun) / .5)) * 160, base = lerp(GY - 152, GY, clamp((t - tRun) / .5)) - hop;
   catD(cx, base, .5, { paw: false, angry: t > tH, mouth: t > tH && t < tRun ? 'open' : 'closed' });
   if (t > tH && t < tRun) for (const a of [-2.4, -2.0, -1.6]) line([[cx + Math.cos(a) * 110, base - 90 + Math.sin(a) * 110], [cx + Math.cos(a) * 150, base - 90 + Math.sin(a) * 150]], C.ink, 5);
   night(1);
